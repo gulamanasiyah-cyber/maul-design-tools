@@ -1,0 +1,332 @@
+---
+// Dollhouse Y2K — Win98/kawaii card scene: ticker, bubble logo header, quick-links
+// window, chrome "made 4 the internet" hero with cute.jpg photo window + CSS flip
+// phone, new-message + now-playing windows, holographic feature strip. Pure CSS/SVG.
+---
+
+<div class="scene" aria-hidden="true">
+  <div class="ticker">
+    <span>✧ NEW DROP ALERT! ✧ CHECK OUT THE Y2K COLLECTION ✧ FREE SHIPPING ON ORDERS OVER $50 ✧</span>
+  </div>
+
+  <header class="bar">
+    <span class="logo">doll<i>♡</i>house</span>
+    <span class="nav">
+      <b class="on">⌂ home</b><b>✦ shop</b><b>♡ about</b><b>▤ lookbook</b><b>☺ community</b><b>✉ contact</b>
+    </span>
+    <span class="search">search the site... <i>⌕</i></span>
+  </header>
+
+  <div class="main">
+    <div class="side">
+      <div class="win">
+        <div class="tb tb-lav">quick links <span class="btns"><i>_</i><i>□</i><i>×</i></span></div>
+        <div class="links">
+          <span>♡ new arrivals</span><span>★ best sellers</span><span>✚ clothing</span><span>✿ accessories</span><span>❀ beauty</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero">
+      <span class="fly f1">🦋</span>
+      <span class="spark s1">✦</span>
+      <span class="spark s2">✦</span>
+      <span class="cd"></span>
+      <h1><span class="c1">made 4</span><span class="c2">the internet</span></h1>
+      <p>Y2K fashion, digital dreams, and good vibes only.</p>
+      <div class="ctas">
+        <span class="b-pink">shop the collection →</span>
+        <span class="b-blue">about us</span>
+      </div>
+      <span class="mini">new in&nbsp;&nbsp;|&nbsp;&nbsp;trending&nbsp;&nbsp;|&nbsp;&nbsp;back in stock</span>
+
+      <div class="photo-win win">
+        <div class="tb tb-blue">cute.jpg <span class="btns"><i>_</i><i>□</i><i>×</i></span></div>
+        <img src="/assets/dollhouse-y2k/hero.jpg" alt="" />
+        <div class="phone">
+          <span class="scr"></span>
+          <span class="keys"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="win">
+        <div class="tb tb-pink">new message! <span class="btns"><i>_</i><i>□</i><i>×</i></span></div>
+        <div class="msg">
+          <span class="heart">♥</span>
+          <em>you have</em>
+          <b>(1) new message</b>
+          <span class="ok">ok</span>
+        </div>
+      </div>
+      <div class="win">
+        <div class="tb tb-lav">now playing <span class="btns"><i>_</i><i>□</i><i>×</i></span></div>
+        <div class="play">
+          <em>dreaming.mp3</em>
+          <b>by daydream</b>
+          <span class="eq"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="ctrl">◀◀ &nbsp;▶ &nbsp;▶▶</span>
+          <span class="prog"><i></i></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="holo">
+      <span class="feat">▤ <b>FAST SHIPPING</b><em>worldwide!</em></span>
+      <span class="feat">♥ <b>EASY RETURNS</b><em>no stress</em></span>
+      <span class="feat">✿ <b>SECURE PAYMENTS</b><em>100% safe</em></span>
+    </div>
+    <div class="checker"></div>
+  </div>
+</div>
+
+<style>
+  .scene {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    min-height: 260px;
+    background: #fdf8f3;
+    overflow: hidden;
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    font-family: Tahoma, Verdana, sans-serif;
+    --pink: #ff6ec7;
+    --pink-soft: #ffd3ec;
+    --lav: #c9a6f5;
+    --blue: #a8d8f0;
+  }
+
+  /* ticker */
+  .ticker {
+    background: #ff9ad5;
+    color: #7a1257;
+    font: 700 0.85cqw 'VT323', monospace;
+    letter-spacing: 0.08em;
+    padding: 0.55cqw 1cqw;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  /* header */
+  .bar {
+    display: flex;
+    align-items: center;
+    gap: 1.2cqw;
+    padding: 1cqw 1.4cqw 0.8cqw;
+    border-bottom: 0.18cqw solid #f3c7e3;
+    background: #fff;
+  }
+  .logo {
+    font-family: 'Titan One', sans-serif;
+    font-size: 2cqw;
+    color: var(--pink);
+    text-shadow: 0.12cqw 0.12cqw 0 #fff, 0.2cqw 0.2cqw 0 #f7b8dd;
+    transform: rotate(-4deg);
+    white-space: nowrap;
+  }
+  .logo i { font-style: normal; font-size: 1.3cqw; color: #ff4fb0; }
+  .nav { display: flex; gap: 1.1cqw; flex: 1; justify-content: center; }
+  .nav b { font-size: 0.85cqw; color: #6b6b6b; font-weight: 600; white-space: nowrap; }
+  .nav .on { color: var(--pink); }
+  .search {
+    background: #fff;
+    border: 0.15cqw solid #d9d9d9;
+    box-shadow: inset 0.2cqw 0.2cqw 0 #eee;
+    font-size: 0.8cqw;
+    color: #999;
+    padding: 0.5cqw 0.7cqw;
+    display: inline-flex;
+    align-items: center;
+    gap: 2.5cqw;
+  }
+  .search i {
+    font-style: normal;
+    background: var(--pink);
+    color: #fff;
+    padding: 0.15cqw 0.5cqw;
+    border-radius: 0.2cqw;
+  }
+
+  /* main grid */
+  .main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 15cqw 1fr 17cqw;
+    gap: 1.1cqw;
+    padding: 1.1cqw 1.4cqw;
+    min-height: 0;
+  }
+
+  /* win98 window */
+  .win {
+    background: #fff;
+    border: 0.16cqw solid #5a5a5a;
+    box-shadow:
+      inset 0.22cqw 0.22cqw 0 #fff,
+      inset -0.22cqw -0.22cqw 0 #b9b9b9,
+      0.45cqw 0.45cqw 0 rgba(90, 40, 70, 0.12);
+  }
+  .tb {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.85cqw;
+    font-weight: 700;
+    color: #fff;
+    padding: 0.35cqw 0.55cqw;
+    text-shadow: 0.08cqw 0.08cqw 0 rgba(0, 0, 0, 0.25);
+  }
+  .tb-pink { background: linear-gradient(90deg, #ff9ad5, #ff6ec7); }
+  .tb-lav { background: linear-gradient(90deg, #d7bdf8, #b78ef2); }
+  .tb-blue { background: linear-gradient(90deg, #9cd2f2, #6cb8e8); }
+  .btns { display: inline-flex; gap: 0.25cqw; }
+  .btns i {
+    font-style: normal;
+    background: #fff;
+    color: #666;
+    font-size: 0.6cqw;
+    line-height: 1;
+    padding: 0.08cqw 0.3cqw;
+    border: 0.1cqw solid #999;
+  }
+
+  .links { display: flex; flex-direction: column; padding: 0.5cqw 0.6cqw; gap: 0.55cqw; }
+  .links span { font-size: 0.82cqw; color: #444; font-weight: 600; white-space: nowrap; }
+
+  /* hero center */
+  .hero { position: relative; text-align: center; padding-top: 1.6cqw; }
+  .fly { position: absolute; top: -0.4cqw; left: 4cqw; font-size: 2.2cqw; }
+  .spark { position: absolute; color: var(--pink); }
+  .s1 { top: 0.2cqw; right: 3cqw; font-size: 1.6cqw; }
+  .s2 { bottom: 2cqw; left: 1cqw; font-size: 1.2cqw; color: var(--lav); }
+  .cd {
+    position: absolute;
+    top: -1cqw;
+    right: 8cqw;
+    width: 4.6cqw;
+    height: 4.6cqw;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 50% 50%, #fdf8f3 0 12%, transparent 12.5%),
+      conic-gradient(#f8b6e3, #cde7f7, #f9e3b8, #d9c6f5, #f8b6e3);
+    transform: rotate(18deg);
+    box-shadow: 0.2cqw 0.3cqw 0.5cqw rgba(0, 0, 0, 0.18);
+  }
+  h1 {
+    margin: 0;
+    font-family: 'Titan One', sans-serif;
+    font-weight: 400;
+    line-height: 0.95;
+    transform: rotate(-3deg);
+  }
+  h1 span { display: block; font-size: 4.1cqw; }
+  .c1, .c2 {
+    background: linear-gradient(180deg, #fff 8%, #ffd3ec 30%, #ff6ec7 52%, #fff 56%, #d9c6f5 74%, #8f5fc9 96%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-stroke: 0.09cqw #e24aa8;
+    filter: drop-shadow(0.18cqw 0.22cqw 0 rgba(160, 60, 120, 0.35));
+  }
+  .hero p { margin: 1cqw 0 1.2cqw; font-size: 0.95cqw; color: #555; }
+  .ctas { display: flex; justify-content: center; gap: 0.9cqw; margin-bottom: 1cqw; }
+  .b-pink, .b-blue {
+    font-size: 0.85cqw;
+    font-weight: 700;
+    color: #fff;
+    padding: 0.55cqw 1cqw;
+    border: 0.16cqw solid #5a5a5a;
+    box-shadow: inset 0.2cqw 0.2cqw 0 rgba(255, 255, 255, 0.55), 0.3cqw 0.3cqw 0 rgba(90, 40, 70, 0.18);
+  }
+  .b-pink { background: var(--pink); }
+  .b-blue { background: var(--blue); color: #235; }
+  .mini { font-size: 0.78cqw; color: #8a8a8a; }
+
+  .photo-win { position: absolute; right: -0.4cqw; top: 2.6cqw; width: 13cqw; text-align: left; }
+  .photo-win img { width: 100%; height: 12cqw; object-fit: cover; display: block; }
+  .phone {
+    position: absolute;
+    right: -1cqw;
+    bottom: -2cqw;
+    width: 3.4cqw;
+    background: linear-gradient(180deg, #ffb7e2, #ff8ed0);
+    border: 0.16cqw solid #d1569f;
+    border-radius: 0.7cqw;
+    padding: 0.35cqw;
+    transform: rotate(10deg);
+    box-shadow: 0.3cqw 0.35cqw 0.5cqw rgba(0, 0, 0, 0.2);
+  }
+  .phone .scr {
+    display: block;
+    height: 2cqw;
+    background: linear-gradient(180deg, #e8fbff, #9adcf5);
+    border: 0.12cqw solid #b06;
+    border-radius: 0.25cqw;
+  }
+  .phone .keys { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.18cqw; margin-top: 0.3cqw; }
+  .phone .keys i { height: 0.55cqw; background: #fff; border-radius: 0.12cqw; opacity: 0.85; }
+
+  /* right widgets */
+  .right { display: flex; flex-direction: column; gap: 1cqw; }
+  .msg { display: flex; flex-direction: column; align-items: center; padding: 0.8cqw; gap: 0.35cqw; }
+  .msg .heart { color: var(--pink); font-size: 1.7cqw; line-height: 1; }
+  .msg em { font-style: normal; font-size: 0.78cqw; color: #888; }
+  .msg b { font-size: 0.88cqw; color: #333; }
+  .msg .ok {
+    margin-top: 0.4cqw;
+    background: var(--pink);
+    color: #fff;
+    font-size: 0.8cqw;
+    font-weight: 700;
+    padding: 0.25cqw 1.6cqw;
+    border: 0.14cqw solid #5a5a5a;
+    box-shadow: inset 0.18cqw 0.18cqw 0 rgba(255, 255, 255, 0.5);
+  }
+  .play { padding: 0.7cqw 0.9cqw; display: flex; flex-direction: column; gap: 0.4cqw; }
+  .play em { font-style: normal; font-size: 0.85cqw; font-weight: 700; color: #333; }
+  .play b { font-size: 0.75cqw; color: #999; font-weight: 600; }
+  .eq { display: flex; align-items: flex-end; gap: 0.22cqw; height: 1.5cqw; margin: 0.2cqw 0; }
+  .eq i {
+    width: 0.5cqw;
+    background: var(--lav);
+    animation: eq 0.9s ease-in-out infinite alternate;
+  }
+  .eq i:nth-child(1) { height: 40%; animation-delay: 0s; }
+  .eq i:nth-child(2) { height: 80%; animation-delay: 0.15s; }
+  .eq i:nth-child(3) { height: 55%; animation-delay: 0.3s; }
+  .eq i:nth-child(4) { height: 95%; animation-delay: 0.1s; }
+  .eq i:nth-child(5) { height: 60%; animation-delay: 0.25s; }
+  .eq i:nth-child(6) { height: 85%; animation-delay: 0.05s; }
+  .eq i:nth-child(7) { height: 45%; animation-delay: 0.2s; }
+  @keyframes eq { to { transform: scaleY(0.35); } }
+  .ctrl { font-size: 0.8cqw; color: #555; letter-spacing: 0.1em; }
+  .prog { display: block; height: 0.5cqw; background: #eee; border: 0.1cqw solid #ccc; }
+  .prog i { display: block; width: 55%; height: 100%; background: var(--lav); }
+
+  /* feature strip */
+  .strip { padding: 0 1.4cqw 1.2cqw; }
+  .holo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(90deg, #ffd3ec, #e8d6fb, #cde9fa, #ffd9ee);
+    border: 0.16cqw solid #5a5a5a;
+    box-shadow: inset 0.22cqw 0.22cqw 0 #fff, inset -0.22cqw -0.22cqw 0 #c9c9c9;
+    padding: 0.8cqw 1cqw;
+  }
+  .feat { display: flex; align-items: center; gap: 0.55cqw; font-size: 0.9cqw; color: #444; }
+  .feat b { font-size: 0.92cqw; color: #222; }
+  .feat em { font-style: normal; font-size: 0.75cqw; color: #777; }
+  .checker {
+    height: 0.9cqw;
+    margin-top: 0.5cqw;
+    background:
+      repeating-conic-gradient(#1a1a1a 0% 25%, #fff 0% 50%) 0 0 / 1.2cqw 1.2cqw;
+    opacity: 0.85;
+  }
+</style>

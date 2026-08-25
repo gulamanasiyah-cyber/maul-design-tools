@@ -1,0 +1,120 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import ReferenceCard from '../components/ReferenceCard.astro';
+
+const entries = (await getCollection('references')).sort((a, b) =>
+  a.data.name.localeCompare(b.data.name)
+);
+
+const families = [...new Set(entries.map((e) => e.data.family))];
+const webFonts = [
+  ...new Set(
+    entries.flatMap((e) => [e.data.fonts.heading, e.data.fonts.body]).filter(Boolean)
+  ),
+];
+---
+
+<Base title="Design Reference Library" fonts={webFonts}>
+  <div class="wrap">
+    <section class="hero">
+      <h1>Design Reference Library</h1>
+      <p>
+        Personal taste library. Every entry carries a live CSS/SVG preview, palette,
+        type pairing and precision prompts — so any design can be reproduced
+        <em>exactly</em>, never approximated.
+      </p>
+    </section>
+
+    <nav class="tabs" id="tabs">
+      <button class="tab active" data-family="all">All</button>
+      {families.map((f) => <button class="tab" data-family={f}>{f}</button>)}
+    </nav>
+
+    <section class="grid" id="grid">
+      {entries.map((entry) => (
+        <div class="cell" data-family={entry.data.family}>
+          <ReferenceCard ref={entry} />
+        </div>
+      ))}
+    </section>
+
+    {entries.length === 0 && (
+      <p class="empty">
+        Library is empty. Add your first reference:
+        <code>src/content/references/&lt;slug&gt;.md</code> — see README.md.
+      </p>
+    )}
+  </div>
+</Base>
+
+<style>
+  .hero {
+    padding: 64px 0 34px;
+    max-width: 720px;
+  }
+  .hero h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    margin: 0 0 14px;
+    letter-spacing: -0.02em;
+    font-weight: 650;
+  }
+  .hero p {
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+  }
+  .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-bottom: 26px;
+  }
+  .tab {
+    appearance: none;
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--muted);
+    border-radius: 999px;
+    padding: 8px 16px;
+    font: 500 13px var(--ui-font);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    text-transform: capitalize;
+  }
+  .tab:hover {
+    color: var(--text);
+    border-color: #3a4046;
+  }
+  .tab.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #14100b;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 22px;
+  }
+  .cell.hidden {
+    display: none;
+  }
+  .empty {
+    color: var(--muted);
+    padding: 40px 0;
+  }
+</style>
+
+<script is:inline>
+  document.getElementById('tabs').addEventListener('click', function (e) {
+    var btn = e.target.closest('.tab');
+    if (!btn) return;
+    this.querySelectorAll('.tab').forEach(function (t) {
+      t.classList.toggle('active', t === btn);
+    });
+    var fam = btn.dataset.family;
+    document.querySelectorAll('#grid .cell').forEach(function (cell) {
+      cell.classList.toggle('hidden', fam !== 'all' && cell.dataset.family !== fam);
+    });
+  });
+</script>

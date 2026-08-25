@@ -1,0 +1,246 @@
+---
+// Botanic Dark Botanical — dark greenhouse hero, gold brush, floating green review card
+// with olive blob + plant silhouette, hint of best-seller row. Pure CSS/SVG, cqw units.
+---
+
+<div class="scene" aria-hidden="true">
+  <!-- hero photo atmosphere: dark green + warm radial + foliage silhouettes -->
+  <div class="hero-bg"></div>
+  <svg class="foliage" viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <!-- soft leaf clusters — abstract, blurred feel -->
+    <g opacity="0.22" fill="#1a4d38">
+      <ellipse cx="70" cy="38" rx="48" ry="26" />
+      <ellipse cx="330" cy="42" rx="54" ry="28" />
+      <ellipse cx="210" cy="26" rx="70" ry="22" />
+      <ellipse cx="40" cy="110" rx="38" ry="52" />
+      <ellipse cx="368" cy="116" rx="36" ry="56" />
+    </g>
+    <g opacity="0.14" fill="#0f3d2e">
+      <ellipse cx="110" cy="92" rx="44" ry="30" />
+      <ellipse cx="285" cy="98" rx="46" ry="32" />
+    </g>
+    <!-- hanging light glows -->
+    <g opacity="0.35">
+      <circle cx="118" cy="14" r="2.2" fill="#DAB76A" />
+      <circle cx="118" cy="14" r="7" fill="#DAB76A" opacity="0.18" />
+      <circle cx="282" cy="18" r="1.8" fill="#DAB76A" />
+      <circle cx="282" cy="18" r="6" fill="#DAB76A" opacity="0.15" />
+    </g>
+  </svg>
+  <div class="vignette"></div>
+
+  <header class="nav">
+    <span class="brand"><span class="leaf">❦</span> Botanic</span>
+    <span class="navpill">Home &nbsp; About &nbsp; Service</span>
+    <span class="cta">Sign Up Now</span>
+  </header>
+
+  <div class="hero">
+    <h1><span class="l1">Leafy Beauties For</span><span class="l2">Every Space.</span></h1>
+    <div class="brush"></div>
+    <p class="sub">Lush greenhouse calm — dense foliage, warm light, editorial serif on dark.</p>
+    <div class="hero-actions">
+      <span class="watch">Watch Our Video <span class="play">▶</span></span>
+      <span class="call"><span class="call-ic">◷</span><span class="call-tx"><em>Call Us Now</em><b>+123-456-7890</b></span></span>
+    </div>
+  </div>
+
+  <!-- floating overlapping card -->
+  <div class="float-card">
+    <div class="float-left">
+      <div class="review">
+        <span class="stars">★★★★★ (5/5)</span>
+        <span class="rline"></span>
+        <span class="rline short"></span>
+      </div>
+      <div class="client">
+        <span class="avatar"></span>
+        <span class="who"><b>Estelle Darcy</b><em>Our Client</em></span>
+      </div>
+    </div>
+    <div class="float-right">
+      <span class="tag t1">Quick Payment</span>
+      <span class="tag t2">Good Quality Plant</span>
+      <div class="blob"></div>
+      <!-- plant silhouette -->
+      <svg class="plant" viewBox="0 0 120 110" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <!-- stems -->
+          <path d="M60 92 C 58 72  48 58  34 42" stroke="#4a0f14" stroke-width="2.2" />
+          <path d="M60 92 C 62 70  74 56  92 38" stroke="#5a1620" stroke-width="2" />
+          <path d="M60 92 C 60 68  60 46  60 18" stroke="#6b1a1a" stroke-width="1.8" />
+          <path d="M60 92 C 54 74  42 64  22 56" stroke="#4a0f14" stroke-width="1.6" />
+          <path d="M60 92 C 66 74  82 62  98 52" stroke="#5a1620" stroke-width="1.6" />
+          <!-- leaves - calathea-like striped -->
+          <g fill="#2a7a4a" stroke="#1e5a36" stroke-width="0.9">
+            <ellipse cx="30" cy="36" rx="18" ry="10" transform="rotate(-28 30 36)" />
+            <ellipse cx="88" cy="34" rx="19" ry="10.5" transform="rotate(26 88 34)" />
+            <ellipse cx="60" cy="20" rx="14" ry="22" />
+            <ellipse cx="22" cy="56" rx="16" ry="8.5" transform="rotate(-18 22 56)" />
+            <ellipse cx="98" cy="52" rx="16" ry="8.5" transform="rotate(18 98 52)" />
+            <ellipse cx="42" cy="48" rx="13" ry="9" transform="rotate(-12 42 48)" />
+            <ellipse cx="78" cy="48" rx="13" ry="9" transform="rotate(14 78 48)" />
+          </g>
+          <!-- leaf veins / stripes hint -->
+          <g stroke="#cfe8b8" stroke-width="0.55" opacity="0.95">
+            <path d="M30 36 C 28 33  26 36  30 39" />
+            <path d="M88 34 C 90 31  92 34  88 37" />
+            <path d="M60 8 L 60 36" />
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- bottom hint: best-seller + logobar -->
+  <div class="bottom">
+    <div class="cards">
+      <span class="pc"></span><span class="pc mid"></span><span class="pc"></span>
+    </div>
+    <div class="logobar">logoipsum &nbsp; ◆ &nbsp; logoipsum &nbsp; ◆ &nbsp; logoipsum</div>
+  </div>
+</div>
+
+<style>
+  .scene{
+    position:relative;
+    width:100%;height:100%;min-height:260px;
+    background:#06110e;
+    overflow:hidden;
+    border-radius:inherit;
+    font-family:'DM Sans',system-ui,sans-serif;
+  }
+  .hero-bg{
+    position:absolute;inset:0;
+    background:
+      radial-gradient(70cqw 30cqh at 50% 22%, rgba(218,183,106,0.09), transparent 62%),
+      linear-gradient(180deg, rgba(6,17,14,0.18) 0%, rgba(6,17,14,0.42) 52%, #06110e 88%),
+      linear-gradient(180deg, #0a1e16 0%, #0b2e22 100%);
+  }
+  .foliage{
+    position:absolute;inset:0;width:100%;height:100%;
+    filter:blur(0.3px);
+  }
+  .vignette{
+    position:absolute;inset:0;
+    background:radial-gradient(90cqw 70cqh at 50% 38%, transparent 46%, rgba(0,0,0,0.34) 100%);
+    pointer-events:none;
+  }
+  .nav{
+    position:relative;display:flex;align-items:center;justify-content:space-between;
+    padding:3.2cqw 3.6cqw 0;
+    font-size:1.55cqw;
+  }
+  .brand{
+    font-family:'Cormorant Garamond',serif;font-weight:700;letter-spacing:-0.02em;
+    color:#fff;font-size:2.2cqw;display:flex;align-items:center;gap:0.9cqw;
+  }
+  .leaf{
+    width:2.6cqw;height:2.6cqw;border-radius:50%;display:grid;place-items:center;
+    background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.14);
+    font-size:1.4cqw;
+  }
+  .navpill{
+    background:rgba(255,255,255,0.10);backdrop-filter:blur(8px);
+    border:1px solid rgba(255,255,255,0.13);border-radius:999px;
+    padding:0.7cqh 1.4cqw;color:rgba(255,255,255,0.92);font-size:1.22cqw;letter-spacing:0.02em;
+  }
+  .cta{
+    background:#DAB76A;color:#1a1408;font-weight:700;font-size:1.18cqw;
+    padding:0.8cqh 1.5cqw;border-radius:999px;
+  }
+
+  .hero{
+    position:relative;text-align:center;padding:4.2cqh 3cqw 0;
+  }
+  h1{
+    margin:0;font-family:'Cormorant Garamond',serif;font-weight:600;
+    color:#fff;line-height:0.98;letter-spacing:-0.03em;
+  }
+  .l1,.l2{display:block;font-size:5.2cqw}
+  .brush{
+    width:22cqw;height:1.45cqh;margin:1.2cqh auto 1.2cqh;
+    background:#DAB76A;border-radius:999px;transform:rotate(-1.2deg);
+    opacity:0.95;box-shadow:0 0.6cqh 1.2cqh rgba(218,183,106,0.22);
+  }
+  .sub{
+    margin:0 auto;color:rgba(255,255,255,0.62);font-size:1.35cqw;line-height:1.6;max-width:44cqw;
+  }
+  .hero-actions{
+    display:flex;align-items:center;justify-content:center;gap:1.6cqw;margin-top:1.8cqh;
+  }
+  .watch{
+    display:inline-flex;align-items:center;gap:0.8cqw;
+    background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);
+    color:#fff;font-size:1.15cqw;font-weight:600;padding:0.5cqh 0.6cqw 0.5cqh 1.2cqw;border-radius:999px;
+  }
+  .play{
+    width:2.2cqw;height:2.2cqw;border-radius:50%;background:#fff;color:#0B2E22;
+    display:grid;place-items:center;font-size:0.9cqw;
+  }
+  .call{display:inline-flex;align-items:center;gap:0.8cqw;color:#fff;text-align:left}
+  .call-ic{
+    width:2.8cqw;height:2.8cqw;border-radius:50%;background:#1A4D38;
+    border:1px solid rgba(255,255,255,0.12);display:grid;place-items:center;font-size:1.1cqw;
+  }
+  .call-tx em{display:block;font-style:normal;font-size:0.95cqw;color:rgba(255,255,255,0.6);font-weight:400}
+  .call-tx b{display:block;font-size:1.05cqw;line-height:1}
+
+  .float-card{
+    position:relative;margin:2.2cqh auto 0;
+    width:82cqw;max-width:82cqw;
+    background:linear-gradient(135deg,#14503B 0%,#0F3D2E 100%);
+    border:1px solid rgba(255,255,255,0.08);border-radius:2cqw;
+    display:grid;grid-template-columns:1fr 1fr;gap:1.2cqw;
+    padding:1.6cqw;overflow:hidden;
+    box-shadow:0 1.6cqh 3cqh rgba(0,0,0,0.38);
+  }
+  .float-left{display:flex;flex-direction:column;gap:1cqh;position:relative;z-index:2}
+  .review{
+    background:#fff;border-radius:1.2cqw;padding:1cqw 1.1cqw;
+  }
+  .stars{
+    display:inline-block;background:#0B2E22;color:#fff;font-size:0.95cqw;font-weight:700;
+    padding:0.4cqh 0.8cqw;border-radius:999px;letter-spacing:0.06em;
+  }
+  .rline{
+    display:block;height:0.5cqh;background:#e6ecea;border-radius:999px;margin-top:0.7cqh;
+  }
+  .rline.short{width:62%}
+  .client{display:flex;align-items:center;gap:0.8cqw}
+  .avatar{width:2.4cqw;height:2.4cqw;border-radius:50%;background:linear-gradient(135deg,#d8b48a,#9aa0a6);border:1.5px solid rgba(255,255,255,0.22)}
+  .who b{display:block;color:#fff;font-size:1.05cqw;line-height:1}
+  .who em{display:block;color:rgba(255,255,255,0.58);font-style:normal;font-size:0.95cqw}
+
+  .float-right{position:relative;min-height:14cqh}
+  .blob{
+    position:absolute;right:-2cqw;bottom:-3cqw;width:22cqw;height:18cqw;
+    background:#9DB66B;border-radius:50% 50% 30% 70% / 60% 40% 60% 40%;opacity:0.95;
+  }
+  .plant{
+    position:absolute;left:50%;bottom:-1cqh;transform:translateX(-50%);
+    width:18cqw;height:16cqh;filter:drop-shadow(0 0.8cqh 1.2cqh rgba(0,0,0,0.28));
+  }
+  .tag{
+    position:absolute;background:#fff;color:#1a2a22;font-size:0.9cqw;font-weight:700;
+    padding:0.45cqh 0.7cqw;border-radius:999px;white-space:nowrap;z-index:3;
+    box-shadow:0 0.6cqh 1cqh rgba(0,0,0,0.14);
+  }
+  .tag::before{content:"● ";color:#1A4D38;font-size:0.7cqw}
+  .t1{right:0.2cqw;top:0.2cqh}
+  .t2{left:0;top:3.2cqh}
+
+  .bottom{position:relative;padding:1.6cqh 3cqw 0}
+  .cards{display:flex;gap:1cqw;justify-content:center}
+  .pc{
+    flex:1;height:7.5cqh;background:#0e1f1a;border:1px solid rgba(255,255,255,0.06);
+    border-radius:1.2cqw;position:relative;overflow:hidden;
+  }
+  .pc::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,0.38))}
+  .pc.mid{transform:translateY(0.7cqh);background:#1a2e1c}
+  .logobar{
+    margin-top:1.2cqh;background:#DAB76A;color:#1a1408;font-weight:700;
+    font-size:1.05cqw;text-align:center;padding:0.7cqh 1cqw;border-radius:0.6cqw;
+    letter-spacing:0.04em;
+  }
+</style>

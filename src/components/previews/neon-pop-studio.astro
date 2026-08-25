@@ -1,0 +1,356 @@
+---
+// Neon Pop Studio — electric blue hero, giant stacked CREATIVE/AGENCY type over a
+// blue-duotone figure with lime headphones, diagonal black marquee, dark service-card
+// hint with one blue card. Pure CSS/SVG, cqw units, 16/10 scene.
+---
+
+<div class="scene" aria-hidden="true">
+  <header class="nav">
+    <span class="brand"><i class="st">✦</i> AURELIA<sup>®</sup></span>
+    <span class="links"><b>HOME</b><b>ABOUT US</b><b>SERVICES</b><b>PORTFOLIO</b><b>CONTACT</b></span>
+    <span class="callpill">REQUEST A CALL</span>
+  </header>
+
+  <div class="hero">
+    <div class="stats">
+      <div class="stat"><b>500+</b><i>HAPPY CLIENT</i></div>
+      <div class="stat"><b>125+</b><i>PROJECT DONE</i></div>
+      <div class="stat"><b>450+</b><i>MEMBER REVIEW</i></div>
+    </div>
+
+    <div class="stage">
+      <svg class="figure" viewBox="0 0 240 280" xmlns="http://www.w3.org/2000/svg">
+        <!-- torso -->
+        <path d="M24 280 C32 212 72 188 120 188 C168 188 208 212 216 280 Z" fill="#1A1AA8" />
+        <path d="M96 190 L120 216 L144 190" fill="none" stroke="#4343FF" stroke-width="6" stroke-linecap="round" />
+        <!-- neck + head -->
+        <rect x="102" y="148" width="36" height="46" rx="14" fill="#2C2CC2" />
+        <ellipse cx="120" cy="104" rx="48" ry="56" fill="#2C2CC2" />
+        <ellipse cx="120" cy="120" rx="27" ry="30" fill="#3838D6" opacity="0.45" />
+        <!-- hair + bun -->
+        <path d="M72 100 C74 52 166 52 168 100 C154 76 138 66 120 66 C102 66 86 76 72 100 Z" fill="#131392" />
+        <circle cx="179" cy="62" r="13" fill="#131392" />
+        <!-- headphones: the only lime element -->
+        <path d="M60 104 C60 42 180 42 180 104" fill="none" stroke="#D6FF3B" stroke-width="11" stroke-linecap="round" />
+        <rect x="47" y="95" width="22" height="38" rx="10" fill="#D6FF3B" />
+        <rect x="171" y="95" width="22" height="38" rx="10" fill="#D6FF3B" />
+      </svg>
+      <span class="spark s1">✦</span>
+      <span class="spark s2">✦</span>
+      <span class="spark s3">✦</span>
+      <h1 class="display"><span class="fill">CREATIVE</span><span class="line">AGENCY</span></h1>
+    </div>
+
+    <div class="side">
+      <p>We design bold brands, websites and campaigns that refuse to be ignored.</p>
+      <span class="cta">GET STARTED <span class="arr">→</span></span>
+    </div>
+  </div>
+
+  <div class="band">
+    <div class="marquee">
+      <div class="track">
+        <span>BRANDING</span><em>✦</em><span class="lm">GRAPHIC DESIGN</span><em>✦</em><span>WEB DESIGN</span><em>✦</em><span class="lm">DIGITAL MARKETING</span><em>✦</em>
+        <span>BRANDING</span><em>✦</em><span class="lm">GRAPHIC DESIGN</span><em>✦</em><span>WEB DESIGN</span><em>✦</em><span class="lm">DIGITAL MARKETING</span><em>✦</em>
+      </div>
+    </div>
+
+    <div class="hint-head">
+      <div class="hint-copy">
+        <span class="label">✦ WHAT WE DO</span>
+        <h2>DESIGNING FOR SEAMLESS AND ENJOYABLE INTERACTIONS.</h2>
+      </div>
+      <span class="ghost">ALL SERVICES <span class="arr">→</span></span>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <b>BRAND BUILDING &amp; STRATEGY.</b>
+        <span class="cir">→</span>
+        <div class="img"></div>
+      </div>
+      <div class="card blue">
+        <b>CREATIVE DIGITAL SOLUTION.</b>
+        <span class="cir">→</span>
+        <div class="img"></div>
+      </div>
+      <div class="card">
+        <b>MARKETING &amp; CAMPAIGN.</b>
+        <span class="cir">✦</span>
+        <div class="img"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .scene {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    min-height: 260px;
+    background: #2b2bf0;
+    overflow: hidden;
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  /* ---- nav ---- */
+  .nav {
+    position: relative;
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.7cqw 3.2cqw 0;
+  }
+  .brand {
+    font-family: 'Anton', 'Arial Narrow', sans-serif;
+    color: #fff;
+    font-size: 1.5cqw;
+    letter-spacing: 0.06em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6cqw;
+  }
+  .brand sup { font-size: 0.6cqw; }
+  .st { color: #d6ff3b; font-style: normal; }
+  .links { display: inline-flex; gap: 1.7cqw; }
+  .links b {
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 0.72cqw;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+  }
+  .callpill {
+    background: #d6ff3b;
+    color: #111;
+    font-size: 0.72cqw;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    padding: 0.75cqw 1.2cqw;
+    border-radius: 999px;
+  }
+
+  /* ---- hero ---- */
+  .hero {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: grid;
+    grid-template-columns: 12cqw 1fr 14cqw;
+    gap: 1.6cqw;
+    align-items: center;
+    padding: 0 3.2cqw 4.6cqw;
+    min-height: 0;
+  }
+  .stats { display: flex; flex-direction: column; }
+  .stat { padding: 0.9cqw 0; }
+  .stat + .stat { border-top: 1px solid rgba(255, 255, 255, 0.32); }
+  .stat b {
+    display: block;
+    font-family: 'Anton', 'Arial Narrow', sans-serif;
+    font-weight: 400;
+    color: #fff;
+    font-size: 2.1cqw;
+    line-height: 1;
+  }
+  .stat i {
+    font-style: normal;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.66cqw;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+  }
+
+  .stage {
+    position: relative;
+    height: 26cqw;
+    display: grid;
+    place-items: center;
+  }
+  .figure {
+    position: absolute;
+    height: 100%;
+    bottom: 0;
+    filter: drop-shadow(0 1cqw 2cqw rgba(0, 0, 0, 0.28));
+  }
+  .display {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    font-family: 'Anton', 'Arial Narrow', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    line-height: 0.88;
+    letter-spacing: 0.015em;
+  }
+  .display span { display: block; font-size: 7.6cqw; }
+  .fill { color: #d6ff3b; }
+  .line {
+    color: transparent;
+    -webkit-text-stroke: 0.14cqw #e9ffb0;
+  }
+  .spark { position: absolute; color: #d6ff3b; line-height: 1; z-index: 3; }
+  .s1 { top: -1.4cqw; right: 3cqw; font-size: 2.6cqw; }
+  .s2 { top: 3.4cqw; left: 1cqw; font-size: 1.1cqw; }
+  .s3 {
+    bottom: 0.4cqw;
+    right: 6cqw;
+    font-size: 1.7cqw;
+    color: transparent;
+    -webkit-text-stroke: 0.08cqw #d6ff3b;
+  }
+
+  .side { justify-self: end; max-width: 13cqw; }
+  .side p {
+    margin: 0 0 1.3cqw;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 0.78cqw;
+    line-height: 1.6;
+  }
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7cqw;
+    background: #d6ff3b;
+    color: #111;
+    font-size: 0.78cqw;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    padding: 0.8cqw 0.8cqw 0.8cqw 1.3cqw;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .arr {
+    width: 1.7cqw;
+    height: 1.7cqw;
+    border-radius: 50%;
+    background: #111;
+    color: #d6ff3b;
+    display: grid;
+    place-items: center;
+    font-size: 0.85cqw;
+  }
+
+  /* ---- dark band + diagonal marquee ---- */
+  .band {
+    position: relative;
+    z-index: 4;
+    background: #111;
+    padding: 3.6cqw 3.2cqw 2cqw;
+  }
+  .marquee {
+    position: absolute;
+    top: 0;
+    left: -4cqw;
+    right: -4cqw;
+    transform: translateY(-52%) rotate(-1.6deg);
+    background: #111;
+    padding: 0.95cqw 0;
+    overflow: hidden;
+    box-shadow: 0 1cqw 2.6cqw rgba(0, 0, 0, 0.35);
+  }
+  .track {
+    display: flex;
+    align-items: center;
+    gap: 2.1cqw;
+    width: max-content;
+    font-family: 'Anton', 'Arial Narrow', sans-serif;
+    font-size: 1.6cqw;
+    letter-spacing: 0.06em;
+    animation: mq 26s linear infinite;
+  }
+  .track span { color: #fff; white-space: nowrap; }
+  .track .lm { color: #d6ff3b; }
+  .track em { color: #d6ff3b; font-style: normal; font-size: 1cqw; }
+  @keyframes mq {
+    to { transform: translateX(-50%); }
+  }
+
+  .hint-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2cqw;
+  }
+  .label {
+    color: #d6ff3b;
+    font-size: 0.72cqw;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+  }
+  .hint-head h2 {
+    margin: 0.8cqw 0 0;
+    max-width: 42cqw;
+    font-family: 'Anton', 'Arial Narrow', sans-serif;
+    font-weight: 400;
+    color: #fff;
+    font-size: 1.9cqw;
+    line-height: 1.04;
+    letter-spacing: 0.02em;
+  }
+  .ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6cqw;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    color: #fff;
+    font-size: 0.72cqw;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    padding: 0.65cqw 0.65cqw 0.65cqw 1.1cqw;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .ghost .arr { background: #d6ff3b; color: #111; }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.1cqw;
+    margin-top: 1.5cqw;
+  }
+  .card {
+    position: relative;
+    background: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 0.8cqw;
+    padding: 1cqw;
+    display: flex;
+    flex-direction: column;
+  }
+  .card b {
+    font-family: 'Anton', 'Arial Narrow', sans-serif;
+    font-weight: 400;
+    color: #fff;
+    font-size: 1.1cqw;
+    line-height: 1.08;
+    letter-spacing: 0.03em;
+    max-width: 72%;
+  }
+  .cir {
+    position: absolute;
+    top: 0.9cqw;
+    right: 0.9cqw;
+    width: 2.1cqw;
+    height: 2.1cqw;
+    border-radius: 50%;
+    border: 1px solid rgba(214, 255, 59, 0.75);
+    color: #d6ff3b;
+    display: grid;
+    place-items: center;
+    font-size: 0.9cqw;
+  }
+  .img {
+    margin-top: auto;
+    height: 5.2cqw;
+    border-radius: 0.5cqw;
+    background: linear-gradient(135deg, #3d3d3d, #222);
+  }
+  .card.blue { background: #2b2bf0; border-color: rgba(255, 255, 255, 0.16); }
+  .card.blue .img { background: linear-gradient(135deg, #4c4cff, #2e2ed6); }
+  .card.blue .cir { border-color: rgba(255, 255, 255, 0.75); color: #fff; }
+</style>

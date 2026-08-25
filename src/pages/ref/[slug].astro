@@ -1,0 +1,228 @@
+---
+import { render, getCollection, type CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import LivePreview from '../../components/LivePreview.astro';
+import PaletteSwatches from '../../components/PaletteSwatches.astro';
+import PromptBox from '../../components/PromptBox.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('references');
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+type Props = { entry: CollectionEntry<'references'> };
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const ref = entry.data;
+
+const webFonts = [ref.fonts.heading, ref.fonts.body].filter(Boolean);
+---
+
+<Base title={`${ref.name} — Design Reference Library`} fonts={webFonts}>
+  <div class="wrap">
+    <nav class="crumbs"><a href="/">← Library</a></nav>
+
+    <header class="head">
+      <p class="family">{ref.family}</p>
+      <h1>{ref.name}</h1>
+      <div class="tags">
+        {ref.tags.map((t) => <span class="tag">{t}</span>)}
+      </div>
+      {ref.source && (
+        <a class="source" href={ref.source} target="_blank" rel="noopener noreferrer">
+          {ref.source}
+        </a>
+      )}
+    </header>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>Live preview</h2>
+        {ref.preview && (
+          <a
+            class="full-btn"
+            href={`/preview/${ref.preview}/`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >Open full page ↗</a>
+        )}
+      </div>
+      <LivePreview slug={ref.preview} large />
+    </section>
+
+    <section class="grid-2">
+      <div class="block">
+        <h2>Palette</h2>
+        <PaletteSwatches palette={ref.palette} />
+      </div>
+      <div class="block">
+        <h2>Type pairing</h2>
+        {ref.fonts.heading && (
+          <p class="font-line heading-font" style={`font-family:'${ref.fonts.heading}', serif`}>
+            {ref.fonts.heading} <span class="font-role">heading</span>
+          </p>
+        )}
+        {ref.fonts.body && (
+          <p class="font-line body-font" style={`font-family:'${ref.fonts.body}', sans-serif`}>
+            {ref.fonts.body} <span class="font-role">body</span>
+          </p>
+        )}
+        {ref.texture && (
+          <p class="texture"><strong>Texture:</strong> {ref.texture}</p>
+        )}
+      </div>
+    </section>
+
+    {ref.prompts.length > 0 && (
+      <section class="block">
+        <h2>Prompts — reproduce this exact style</h2>
+        {ref.prompts.map((p) => (
+          <PromptBox label={p.label} text={p.text} />
+        ))}
+      </section>
+    )}
+
+    {ref.notes && (
+      <section class="block">
+        <h2>Composition & feel notes</h2>
+        <ul class="notes">
+          {ref.notes.split('\n').filter(Boolean).map((n) => <li>{n.replace(/^-\s*/, '')}</li>)}
+        </ul>
+      </section>
+    )}
+
+    <section class="block prose">
+      <Content />
+    </section>
+  </div>
+</Base>
+
+<style>
+  .crumbs {
+    padding-top: 26px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .crumbs a:hover {
+    color: var(--accent);
+  }
+  .head {
+    padding: 10px 0 6px;
+  }
+  .family {
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 11px;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+  h1 {
+    font-size: clamp(30px, 4.5vw, 44px);
+    margin: 0 0 14px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .tag {
+    border: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+  .source {
+    display: inline-block;
+    color: var(--muted);
+    font-size: 13px;
+    border-bottom: 1px dashed var(--line);
+  }
+  .source:hover {
+    color: var(--accent);
+  }
+  h2 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    margin: 42px 0 16px;
+  }
+  .section-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .section-head h2 {
+    margin-bottom: 16px;
+  }
+  .full-btn {
+    border: 1px solid var(--line);
+    background: var(--surface-2);
+    color: var(--muted);
+    font: 600 11px/1 var(--ui-font);
+    letter-spacing: 0.06em;
+    padding: 8px 12px;
+    border-radius: 999px;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+  }
+  .full-btn:hover {
+    color: var(--text);
+    border-color: #3a4046;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 32px;
+  }
+  @media (max-width: 760px) {
+    .grid-2 {
+      grid-template-columns: 1fr;
+    }
+  }
+  .font-line {
+    font-size: 24px;
+    margin: 0 0 10px;
+  }
+  .heading-font {
+    font-weight: 400;
+  }
+  .font-role {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-left: 8px;
+  }
+  .texture {
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .notes li {
+    margin-bottom: 10px;
+    line-height: 1.55;
+    color: #cfd3d7;
+  }
+  .prose {
+    max-width: 720px;
+    line-height: 1.7;
+    color: #cfd3d7;
+  }
+  .prose :global(h3) {
+    color: var(--text);
+  }
+  .prose :global(code) {
+    background: var(--surface-2);
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-size: 0.9em;
+  }
+</style>

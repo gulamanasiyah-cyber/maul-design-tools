@@ -1,0 +1,64 @@
+---
+interface Props {
+  palette: string[];
+}
+const { palette } = Astro.props;
+const uid = Math.random().toString(36).slice(2, 8);
+---
+
+<div class="swatches">
+  {
+    palette.map((hex, i) => (
+      <span class="swatch">
+        <button
+          class="chip"
+          data-copy={`hex-${uid}-${i}`}
+          style={`background:${hex}`}
+          aria-label={`Copy ${hex}`}
+        />
+        <span class="hex" id={`hex-${uid}-${i}`}>
+          {hex}
+        </span>
+      </span>
+    ))
+  }
+</div>
+
+<style>
+  .swatches {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .swatch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 76px;
+  }
+  .chip {
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    cursor: pointer;
+    transition:
+      transform 0.15s ease,
+      box-shadow 0.2s ease;
+    padding: 0;
+  }
+  .chip:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px -8px rgba(0, 0, 0, 0.8);
+  }
+  .hex {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    cursor: pointer;
+  }
+  .hex:hover {
+    color: var(--accent);
+  }
+</style>
