@@ -1,0 +1,147 @@
+---
+// Buoy Ocean Diving — Live card preview scene: warm sand cream hero with seaweed line art,
+// chunky retro cartoon display title with frog diver mascot, and blue mission block.
+// Pure CSS/SVG, cqw units.
+---
+
+<div class="scene" aria-hidden="true">
+  <header class="header">
+    <span class="brand">buoy</span>
+    <nav class="navpill">ABOUT · TOURS · PRICING</nav>
+    <span class="book-pill">BOOK NOW</span>
+  </header>
+
+  <div class="hero">
+    <h1 class="title">
+      <span>DIVE BEYOND</span>
+      <span>THE HORIZON</span>
+    </h1>
+    <p class="sub">Your guide to the amazing underwater world, from coral reefs to sunken ships.</p>
+  </div>
+
+  <div class="seaweed-band">
+    <svg viewBox="0 0 400 30" fill="none" class="seaweed-svg">
+      <path d="M20 30 C30 15, 10 8, 30 2 C40 10, 35 20, 45 30" stroke="#2B8BF5" stroke-width="1.5" />
+      <circle cx="30" cy="2" r="2" fill="#2B8BF5" />
+      <path d="M50 30 Q65 10 80 30" stroke="#2B8BF5" stroke-width="1.2" />
+      <path d="M340 30 C330 15, 350 8, 335 2 C325 10, 320 20, 315 30" stroke="#2B8BF5" stroke-width="1.5" />
+      <circle cx="335" cy="2" r="2" fill="#2B8BF5" />
+    </svg>
+  </div>
+
+  <div class="bottom-blue">
+    <span class="mission-text">BUOY IS NOT JUST A DIVING COMPANY — IT'S YOUR GUIDE TO THE OCEAN</span>
+    <div class="stat-pill">45+ DIVE SITES</div>
+  </div>
+</div>
+
+<style>
+  .scene {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    min-height: 260px;
+    background: #FBF7EC;
+    overflow: hidden;
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    container-type: inline-size;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4cqw 2.2cqw;
+  }
+
+  .brand {
+    font-size: 1.2cqw;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    color: #11161D;
+  }
+
+  .navpill {
+    font-size: 0.58cqw;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: #11161D;
+  }
+
+  .book-pill {
+    background: #54C5F8;
+    color: #11161D;
+    font-size: 0.55cqw;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    padding: 0.35cqw 0.9cqw;
+    border-radius: 999px;
+  }
+
+  .hero {
+    padding: 0 2.2cqw;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 2.7cqw;
+    font-weight: 950;
+    line-height: 0.98;
+    letter-spacing: -0.04em;
+    color: #11161D;
+    margin: 0 0 0.6cqw;
+    text-transform: uppercase;
+  }
+
+  .title span {
+    display: block;
+  }
+
+  .sub {
+    font-size: 0.65cqw;
+    color: #5A626A;
+    margin: 0 auto;
+    max-width: 32cqw;
+    line-height: 1.4;
+  }
+
+  .seaweed-band {
+    width: 100%;
+    line-height: 0;
+  }
+
+  .seaweed-svg {
+    width: 100%;
+    height: 1.8cqw;
+  }
+
+  .bottom-blue {
+    background: #2B8BF5;
+    color: #FFFFFF;
+    padding: 1.2cqw 2.2cqw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mission-text {
+    font-size: 0.62cqw;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    max-width: 28cqw;
+  }
+
+  .stat-pill {
+    background: #FFFFFF;
+    color: #2B8BF5;
+    font-size: 0.55cqw;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    padding: 0.35cqw 0.8cqw;
+    border-radius: 999px;
+  }
+</style>

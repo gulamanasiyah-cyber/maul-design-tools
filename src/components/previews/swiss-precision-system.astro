@@ -1,0 +1,183 @@
+---
+// Swiss Precision System — Live card preview scene: rigid hairline grid borders,
+// bold Swiss display typography, electric red-orange accent (#FF3E00), and grayscale architectural split.
+// Pure CSS/SVG, cqw units.
+---
+
+<div class="scene" aria-hidden="true">
+  <header class="header">
+    <span class="brand">
+      <span class="sq"></span> SWISS APP
+    </span>
+    <span class="btn-red">START PROJECT</span>
+  </header>
+
+  <div class="hero">
+    <div class="copy">
+      <h1 class="title">
+        <span>PRECISION</span>
+        <span>DESIGN</span>
+        <span class="orange">SYSTEM</span>
+      </h1>
+      <p class="sub">Rigorous execution of design principles adapted for modern web interfaces.</p>
+    </div>
+    <div class="arch">
+      <img src="/assets/swiss/arch.jpg" alt="" class="arch-img" />
+    </div>
+  </div>
+
+  <div class="band">
+    <span>EFFICIENCY + CLARITY + STRUCTURE + GRID SYSTEMS + TYPOGRAPHY + FUNCTION</span>
+  </div>
+
+  <div class="metrics">
+    <div class="m-col"><span class="m-lbl">UPTIME</span><span class="m-val">99.9%</span></div>
+    <div class="m-col"><span class="m-lbl">USERS</span><span class="m-val">120K</span></div>
+    <div class="m-col"><span class="m-lbl">REACH</span><span class="m-val">45+</span></div>
+  </div>
+</div>
+
+<style>
+  .scene {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    min-height: 260px;
+    background: #FFFFFF;
+    overflow: hidden;
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    container-type: inline-size;
+    border: 1px solid #111111;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1cqw 2cqw;
+    border-bottom: 1px solid #111111;
+  }
+
+  .brand {
+    font-size: 0.85cqw;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    color: #111111;
+    display: flex;
+    align-items: center;
+    gap: 0.5cqw;
+  }
+
+  .sq {
+    width: 0.8cqw;
+    height: 0.8cqw;
+    background: #FF3E00;
+  }
+
+  .btn-red {
+    background: #FF3E00;
+    color: #FFFFFF;
+    font-size: 0.55cqw;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    padding: 0.35cqw 0.8cqw;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    flex: 1;
+    border-bottom: 1px solid #111111;
+  }
+
+  .copy {
+    padding: 1.6cqw 2cqw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid #111111;
+  }
+
+  .title {
+    font-size: 2.5cqw;
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: #111111;
+    margin: 0 0 0.8cqw;
+  }
+
+  .title span {
+    display: block;
+  }
+
+  .orange {
+    color: #FF3E00;
+  }
+
+  .sub {
+    font-size: 0.65cqw;
+    line-height: 1.5;
+    color: #525252;
+    margin: 0;
+  }
+
+  .arch {
+    position: relative;
+    background: #E5E5E5;
+  }
+
+  .arch-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+  }
+
+  .band {
+    background: #111111;
+    color: #FFFFFF;
+    font-size: 0.52cqw;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    padding: 0.4cqw 1cqw;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: #FFFFFF;
+  }
+
+  .m-col {
+    padding: 0.8cqw 1.2cqw;
+    border-right: 1px solid #E5E5E5;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .m-col:last-child {
+    border-right: none;
+  }
+
+  .m-lbl {
+    font-size: 0.45cqw;
+    font-weight: 800;
+    color: #737373;
+    letter-spacing: 0.08em;
+  }
+
+  .m-val {
+    font-size: 1.2cqw;
+    font-weight: 900;
+    color: #111111;
+    line-height: 1.1;
+  }
+</style>

@@ -1,0 +1,316 @@
+---
+// Be Yours Beauty Store — Live card preview scene: premium clinical-white skincare storefront.
+// Announcement black countdown ticker, white header with inline search, full-bleed hero slideshow
+// with a lime (#DFFF4F) boxed word, and a serum product row. Pure CSS/SVG, cqw units.
+---
+
+<div class="scene" aria-hidden="true">
+  <!-- Announcement Countdown Ticker -->
+  <div class="announce-countdown">
+    <span class="timer">ENDS IN <em>00 :</em> <em>02 :</em> <em>14 :</em> <em>09</em></span>
+    <span class="ship">Complimentary shipping on orders over $100</span>
+  </div>
+
+  <!-- Header -->
+  <div class="header-nav-bar">
+    <div class="drawer">☰</div>
+    <div class="logo"><span class="wordmark">BE&nbsp;YOURS</span></div>
+    <div class="nav-search">
+      <span class="search-ic">🔍</span>
+      <input class="search-fld" placeholder="Search" readonly />
+    </div>
+    <div class="nav-icons">
+      <span class="icon">👤</span>
+      <span class="icon cart">🛍</span>
+    </div>
+  </div>
+
+  <!-- Hero Slideshow -->
+  <div class="hero-stage">
+    <div class="hero-grad"></div>
+    <div class="hero-copy">
+      <span class="hero-eyebrow">ADVANCED CARE</span>
+      <h1 class="hero-headline">BEAUTY <em class="lime-box">YOU</em><br/>COLLECTION</h1>
+      <div class="hero-cta">VIEW COLLECTION</div>
+    </div>
+    <div class="hero-dots"><span></span><span class="on"></span><span></span></div>
+  </div>
+
+  <!-- Serum Product Row -->
+  <div class="product-bar">
+    <div class="b-prod">
+      <div class="b-thumb g1"></div>
+      <div class="b-meta">
+        <span class="b-name">Glow Drops</span>
+        <span class="b-price">$34</span>
+        <span class="b-badge lime">Just dropped</span>
+      </div>
+    </div>
+    <div class="b-prod">
+      <div class="b-thumb g2"></div>
+      <div class="b-meta">
+        <span class="b-name">Calming Serum</span>
+        <span class="b-price">$52</span>
+        <span class="b-badge">–20%</span>
+      </div>
+    </div>
+    <div class="b-prod">
+      <div class="b-thumb g3"></div>
+      <div class="b-meta">
+        <span class="b-name">Vitamin C</span>
+        <span class="b-price">$28</span>
+        <span class="b-badge">TikTok fave</span>
+      </div>
+    </div>
+    <div class="b-prod">
+      <div class="b-thumb g4"></div>
+      <div class="b-meta">
+        <span class="b-name">Sun Drops</span>
+        <span class="b-price">$38</span>
+        <span class="b-badge lime">Just dropped</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .scene {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    min-height: 260px;
+    background: #FFFFFF;
+    overflow: hidden;
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Assistant', system-ui, -apple-system, sans-serif;
+    container-type: inline-size;
+    color: #000000;
+  }
+
+  * { box-sizing: border-box; }
+
+  /* Announcement Countdown */
+  .announce-countdown {
+    background: #000000;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5cqw;
+    padding: 0.35cqw 1.5cqw;
+    font-size: 0.62cqw;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+
+  .announce-countdown .timer { font-weight: 700; }
+  .announce-countdown .timer em {
+    font-style: normal;
+    color: #DFFF4F;
+    font-family: 'Jost', sans-serif;
+  }
+  .announce-countdown .ship { opacity: 0.75; font-weight: 500; }
+
+  /* Header */
+  .header-nav-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.2cqw;
+    padding: 0.5cqw 1.5cqw;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .drawer {
+    font-size: 1.1cqw;
+    line-height: 1;
+    color: #000000;
+  }
+
+  .logo { flex: 0 0 auto; }
+
+  .wordmark {
+    font-family: 'Jost', sans-serif;
+    font-weight: 700;
+    font-size: 1.05cqw;
+    letter-spacing: 0.14em;
+    white-space: nowrap;
+  }
+
+  .nav-search {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.4cqw;
+    background: #F5F5F5;
+    border-radius: 0.5cqw;
+    padding: 0.25cqw 0.6cqw;
+    max-width: 24cqw;
+    margin: 0 auto;
+  }
+
+  .search-ic { font-size: 0.7cqw; opacity: 0.6; }
+  .search-fld {
+    border: none;
+    background: none;
+    font-size: 0.62cqw;
+    font-family: inherit;
+    color: #000;
+    width: 100%;
+  }
+
+  .nav-icons {
+    display: flex;
+    gap: 0.8cqw;
+    font-size: 0.9cqw;
+  }
+
+  /* Hero Slideshow */
+  .hero-stage {
+    position: relative;
+    flex: 1;
+    margin: 0.4cqw 1.5cqw;
+    border-radius: 0.6cqw;
+    overflow: hidden;
+  }
+
+  .hero-grad {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 78% 30%, #E9E4DC 0%, #CFC7B8 24%, transparent 55%),
+      radial-gradient(circle at 20% 75%, #E8E091 0%, #D5C98A 22%, transparent 50%),
+      linear-gradient(135deg, #F6EFE6 0%, #EAE0CF 45%, #D8CBB4 100%);
+    filter: brightness(0.88);
+  }
+
+  .hero-copy {
+    position: absolute;
+    left: 2cqw;
+    bottom: 1.6cqw;
+    color: #000000;
+    z-index: 2;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.55cqw;
+    letter-spacing: 0.22em;
+    font-weight: 600;
+    opacity: 0.8;
+    text-transform: uppercase;
+  }
+
+  .hero-headline {
+    font-family: 'Jost', sans-serif;
+    font-weight: 700;
+    font-size: 2.1cqw;
+    line-height: 1.0;
+    margin: 0.3cqw 0 0.7cqw;
+    letter-spacing: 0.01em;
+  }
+
+  .lime-box {
+    font-style: normal;
+    background: #DFFF4F;
+    padding: 0 0.25cqw;
+    display: inline-block;
+    border-radius: 0.2cqw;
+    line-height: 1.1;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: #000000;
+    color: #FFFFFF;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.6cqw;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    padding: 0.4cqw 1cqw;
+    text-transform: uppercase;
+  }
+
+  .hero-dots {
+    position: absolute;
+    right: 1.5cqw;
+    bottom: 1cqw;
+    display: flex;
+    gap: 0.4cqw;
+    z-index: 2;
+  }
+
+  .hero-dots span {
+    width: 0.45cqw;
+    height: 0.45cqw;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.35);
+  }
+
+  .hero-dots span.on { background: #000000; }
+
+  /* Product Row */
+  .product-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.8cqw;
+    padding: 0 1.5cqw 0.9cqw;
+    border-top: 1px solid #F0F0F0;
+    padding-top: 0.8cqw;
+  }
+
+  .b-prod {
+    display: flex;
+    align-items: center;
+    gap: 0.55cqw;
+    background: #FAFAFA;
+    padding: 0.3cqw 0.5cqw;
+    border-radius: 0.35cqw;
+  }
+
+  .b-thumb {
+    width: 2cqw;
+    height: 2cqw;
+    border-radius: 0.35cqw;
+    flex: 0 0 auto;
+  }
+  .g1 { background: linear-gradient(160deg,#F4E3D0,#D9B98F 70%,#B98C5A); }
+  .g2 { background: linear-gradient(160deg,#EED9CF,#CFA6A6 70%,#A87777); }
+  .g3 { background: linear-gradient(160deg,#F1E3B8,#D8B95A 70%,#A88A2F); }
+  .g4 { background: linear-gradient(160deg,#DCECF0,#A6C8D8 70%,#6F9AB0); }
+
+  .b-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.05cqw;
+    min-width: 0;
+  }
+
+  .b-name {
+    font-size: 0.62cqw;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .b-price { font-size: 0.55cqw; font-weight: 700; color: #555555; }
+
+  .b-badge {
+    font-size: 0.48cqw;
+    font-weight: 700;
+    background: #000000;
+    color: #DFFF4F;
+    border-radius: 0.25cqw;
+    padding: 0.08cqw 0.4cqw;
+    width: max-content;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .b-badge.lime {
+    background: #DFFF4F;
+    color: #000000;
+  }
+</style>

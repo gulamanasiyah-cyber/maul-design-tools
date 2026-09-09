@@ -1,0 +1,304 @@
+---
+// Harvestra AgriTech — Live card preview scene: lush aerial farmland background,
+// modern pill nav, bold Next—Gen headline, yellow play button, preview thumbnails,
+// and about tillage / global connection preview. Pure CSS/SVG, cqw units.
+---
+
+<div class="scene" aria-hidden="true">
+  <div class="hero-bg">
+    <img src="/assets/harvestra/hero.jpg" alt="" class="bg-img" />
+    <div class="hero-shade"></div>
+  </div>
+
+  <header class="header">
+    <span class="brand">
+      <svg class="brand-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+        <path d="M12 2L12 22M12 2C8 6 4 11 4 16C4 19.3 6.7 22 10 22M12 2C16 6 20 11 20 16C20 19.3 17.3 22 14 22" />
+      </svg>
+      Harvestra
+    </span>
+    <nav class="navpill">
+      <span>Home</span>
+      <span>About</span>
+      <span>Service</span>
+    </nav>
+    <span class="cta-dark">Contact us <i>↗</i></span>
+  </header>
+
+  <div class="hero-body">
+    <h1 class="hero-title">
+      <span>Next—Gen</span>
+      <span>Farming Growth</span>
+      <span>Innovation</span>
+    </h1>
+    <p class="hero-sub">
+      We don't just grow crops — we grow relationships rooted in trust, innovation, and sustainability.
+    </p>
+    <div class="hero-actions">
+      <span class="cta-white">Start growing with us <i>↗</i></span>
+    </div>
+  </div>
+
+  <!-- Play button -->
+  <div class="play-btn">▶</div>
+
+  <!-- Thumbnails -->
+  <div class="thumbs">
+    <div class="thumb"><img src="/assets/harvestra/thumb1.jpg" alt="" /></div>
+    <div class="thumb"><img src="/assets/harvestra/thumb2.jpg" alt="" /></div>
+    <div class="thumb hi"><img src="/assets/harvestra/thumb3.jpg" alt="" /></div>
+  </div>
+
+  <!-- Bottom strip: Global Connection / Tillage hint -->
+  <div class="bottom-strip">
+    <div class="about-hint">
+      <span class="badge">About us</span>
+      <span class="hint-text">We Blend Agricultural Expertise With Technology</span>
+    </div>
+    <div class="gc-hint">
+      <span class="pill">USA</span>
+      <span class="pill">Brazil</span>
+      <span class="pill hi">Africa</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .scene {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    min-height: 260px;
+    background: #0d120e;
+    overflow: hidden;
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    container-type: inline-size;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(10, 16, 12, 0.5) 0%,
+      rgba(10, 16, 12, 0.25) 45%,
+      rgba(10, 16, 12, 0.75) 100%
+    );
+  }
+
+  /* Header */
+  .header {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.8cqw 2.4cqw;
+  }
+
+  .brand {
+    font-size: 1.25cqw;
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: -0.02em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5cqw;
+  }
+
+  .brand-ic {
+    width: 1.4cqw;
+    height: 1.4cqw;
+    color: #72C08A;
+  }
+
+  .navpill {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    padding: 0.4cqw 1.4cqw;
+    display: flex;
+    gap: 1.2cqw;
+    font-size: 0.72cqw;
+    font-weight: 600;
+    color: #FFFFFF;
+  }
+
+  .cta-dark {
+    background: #111612;
+    color: #FFFFFF;
+    font-size: 0.68cqw;
+    font-weight: 700;
+    padding: 0.45cqw 1cqw;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4cqw;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  }
+
+  .cta-dark i {
+    font-style: normal;
+    font-size: 0.75cqw;
+  }
+
+  /* Hero Body */
+  .hero-body {
+    position: relative;
+    z-index: 10;
+    padding: 0 2.4cqw;
+    max-width: 44cqw;
+  }
+
+  .hero-title {
+    margin: 0 0 0.8cqw;
+    font-size: 2.8cqw;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+    color: #FFFFFF;
+  }
+
+  .hero-title span {
+    display: block;
+  }
+
+  .hero-sub {
+    margin: 0 0 1.2cqw;
+    font-size: 0.72cqw;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.88);
+  }
+
+  .cta-white {
+    background: #FFFFFF;
+    color: #111612;
+    font-size: 0.72cqw;
+    font-weight: 700;
+    padding: 0.5cqw 1.2cqw;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5cqw;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  }
+
+  .cta-white i {
+    font-style: normal;
+  }
+
+  /* Play Button */
+  .play-btn {
+    position: absolute;
+    right: 8cqw;
+    top: 38%;
+    z-index: 10;
+    width: 3.2cqw;
+    height: 3.2cqw;
+    border-radius: 50%;
+    background: #F4CD56;
+    color: #111612;
+    font-size: 0.9cqw;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 0.6cqw 1.6cqw rgba(244, 205, 86, 0.45);
+  }
+
+  /* Thumbs */
+  .thumbs {
+    position: absolute;
+    right: 2.4cqw;
+    bottom: 5.6cqw;
+    z-index: 10;
+    display: flex;
+    gap: 0.6cqw;
+  }
+
+  .thumb {
+    width: 4.2cqw;
+    height: 2.8cqw;
+    border-radius: 0.4cqw;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+
+  .thumb.hi {
+    border-color: #F4CD56;
+  }
+
+  .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Bottom Strip */
+  .bottom-strip {
+    position: relative;
+    z-index: 10;
+    background: rgba(17, 22, 18, 0.92);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.9cqw 2.4cqw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .about-hint {
+    display: flex;
+    align-items: center;
+    gap: 0.8cqw;
+  }
+
+  .badge {
+    background: #FFFFFF;
+    color: #111612;
+    font-size: 0.55cqw;
+    font-weight: 700;
+    padding: 0.25cqw 0.7cqw;
+    border-radius: 999px;
+  }
+
+  .hint-text {
+    font-size: 0.65cqw;
+    font-weight: 600;
+    color: #FFFFFF;
+  }
+
+  .gc-hint {
+    display: flex;
+    gap: 0.4cqw;
+  }
+
+  .pill {
+    font-size: 0.55cqw;
+    font-weight: 600;
+    color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.25cqw 0.6cqw;
+    border-radius: 999px;
+  }
+
+  .pill.hi {
+    background: #F4CD56;
+    color: #111612;
+  }
+</style>

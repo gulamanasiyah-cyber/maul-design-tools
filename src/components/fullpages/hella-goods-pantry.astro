@@ -1,0 +1,1676 @@
+---
+// Hella Goods Pantry — FULL-PAGE 1:1 recreation of the live "Shapes" theme pantry storefront.
+// Palettes: Red Scheme #FF2524, Yellow Scheme #FFCC36, Neon Green Scheme #5AFF24, White #FFFFFF, Black #000000.
+// Fonts: Prompt 900 (display headings), Inter 500/700 (body).
+// Authentic Shapes theme components: .push-btn with offset shadow, SVG wavy shape dividers,
+// floating parallax stickers, real product images with hover-swap, 3-tab collections,
+// comparison table, interactive focus carousel, product of the month, video banner,
+// recipe grid, highlight cards with EVOO bottle, merch cards, newsletter, and giant footer wordmark.
+---
+
+<div class="hella-store">
+
+  <!-- ==================== HEADER (TRANSPARENT OVER RED HERO) ==================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-left">
+        <button class="menu-btn" aria-label="Menu">
+          <svg viewBox="0 0 48 48" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M43 38H5m38-14H5m38-14H5"/></svg>
+        </button>
+        <nav class="nav-links">
+          <div class="nav-dropdown">
+            <button class="nav-link">Shop <span class="chevron">▼</span></button>
+          </div>
+          <a href="#restaurant" class="nav-link">Restaurant</a>
+          <a href="#recipes" class="nav-link">Recipes</a>
+          <a href="#about" class="nav-link">About</a>
+        </nav>
+      </div>
+
+      <div class="header-center">
+        <a href="/" class="header-logo-link">
+          <img src="/assets/hella-goods-pantry/logo.svg" alt="Hella Goods" class="header-logo-img" />
+        </a>
+      </div>
+
+      <div class="header-right">
+        <button class="icon-btn search-trigger" aria-label="Search">
+          <svg viewBox="0 0 48 48" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="21" cy="21" r="14"/><path d="M43 43l-12-12" stroke-linecap="round"/></svg>
+        </button>
+        <button class="icon-btn cart-trigger" aria-label="Cart">
+          <svg viewBox="0 0 48 48" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M38.3 17H9.7C8.8 17 8 17.7 8 18.7v21.6C8 41.3 8.8 42 9.7 42h28.6c.9 0 1.7-.7 1.7-1.7V18.7c0-.9-.8-1.7-1.7-1.7ZM16 13v-2.5a7.5 7.5 0 0 1 15 0V13"/></svg>
+          <span class="cart-badge">0</span>
+        </button>
+        <a href="#goods" class="push-btn push-btn--yellow header-shop-btn">
+          <span class="push-btn__surface">Shop</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION (SCHEME 2 - RED) ==================== -->
+  <section class="section-hero">
+    <div class="hero-wrap">
+      <!-- Giant SVG Wordmark -->
+      <div class="hero-logo-banner">
+        <img src="/assets/hella-goods-pantry/logo.svg" alt="Hella Goods" class="hero-logo-svg" />
+      </div>
+
+      <!-- Hero Overlapping Food Photo -->
+      <div class="hero-media-box">
+        <div class="hero-photo-wrap">
+          <img src="/assets/hella-goods-pantry/hero-header.png" alt="Hella Goods Pantry Table" class="hero-photo-img" />
+        </div>
+      </div>
+
+      <!-- Floating Parallax Stickers -->
+      <div class="sticker-badge sticker-flavour" style="top: 36%; right: 5%; transform: rotate(24deg);">
+        <div class="starburst-shape bg-green">
+          <span>Full of<br/>Flavour</span>
+        </div>
+      </div>
+
+      <div class="sticker-badge sticker-hotstuff" style="top: 48%; left: 4%; transform: rotate(-12deg);">
+        <div class="semicircle-shape bg-white">
+          <span>Hot stuff!</span>
+        </div>
+      </div>
+
+      <div class="sticker-badge sticker-chili" style="top: 72%; right: 7%; transform: rotate(-38deg);">
+        <img src="/assets/hella-goods-pantry/chili-sticker.png" alt="" class="sticker-img" />
+      </div>
+
+      <div class="sticker-badge sticker-star" style="top: 86%; left: 6%; transform: rotate(54deg);">
+        <img src="/assets/hella-goods-pantry/star-sticker.png" alt="" class="sticker-img" />
+      </div>
+    </div>
+
+    <!-- Scalloped Wave Divider (Red to White) -->
+    <div class="shape-divider divider-bottom fill-white">
+      <svg viewBox="0 0 1200 20" preserveAspectRatio="none"><path d="M0 8.46C8 3.85 16 3.85 24 8.46C32 13.08 40 13.08 48 8.46C56 3.85 64 3.85 72 8.46C80 13.08 88 13.08 96 8.46C104 3.85 112 3.85 120 8.46C128 13.08 136 13.08 144 8.46C152 3.85 160 3.85 168 8.46C176 13.08 184 13.08 192 8.46C200 3.85 208 3.85 216 8.46C224 13.08 232 13.08 240 8.46C248 3.85 256 3.85 264 8.46C272 13.08 280 13.08 288 8.46C296 3.85 304 3.85 312 8.46C320 13.08 328 13.08 336 8.46C344 3.85 352 3.85 360 8.46C368 13.08 376 13.08 384 8.46C392 3.85 400 3.85 408 8.46C416 13.08 424 13.08 432 8.46C440 3.85 448 3.85 456 8.46C464 13.08 472 13.08 480 8.46C488 3.85 496 3.85 504 8.46C512 13.08 520 13.08 528 8.46C536 3.85 544 3.85 552 8.46C560 13.08 568 13.08 576 8.46C584 3.85 592 3.85 600 8.46C608 13.08 616 13.08 624 8.46C632 3.85 640 3.85 648 8.46C656 13.08 664 13.08 672 8.46C680 3.85 688 3.85 696 8.46C704 13.08 712 13.08 720 8.46C728 3.85 736 3.85 744 8.46C752 13.08 760 13.08 768 8.46C776 3.85 784 3.85 792 8.46C800 13.08 808 13.08 816 8.46C824 3.85 832 3.85 840 8.46C848 13.08 856 13.08 864 8.46C872 3.85 880 3.85 888 8.46C896 13.08 904 13.08 912 8.46C920 3.85 928 3.85 936 8.46C944 13.08 952 13.08 960 8.46C968 3.85 976 3.85 984 8.46C992 13.08 1000 13.08 1008 8.46C1016 3.85 1024 3.85 1032 8.46C1040 13.08 1048 13.08 1056 8.46C1064 3.85 1072 3.85 1080 8.46C1088 13.08 1096 13.08 1104 8.46C1112 3.85 1120 3.85 1128 8.46C1136 13.08 1144 13.08 1152 8.46C1160 3.85 1168 3.85 1176 8.46C1184 13.08 1192 13.08 1200 8.46V20H0Z" fill="currentColor"/><path d="M0 8.46C8 3.85 16 3.85 24 8.46C32 13.08 40 13.08 48 8.46C56 3.85 64 3.85 72 8.46C80 13.08 88 13.08 96 8.46C104 3.85 112 3.85 120 8.46C128 13.08 136 13.08 144 8.46C152 3.85 160 3.85 168 8.46C176 13.08 184 13.08 192 8.46C200 3.85 208 3.85 216 8.46C224 13.08 232 13.08 240 8.46C248 3.85 256 3.85 264 8.46C272 13.08 280 13.08 288 8.46C296 3.85 304 3.85 312 8.46C320 13.08 328 13.08 336 8.46C344 3.85 352 3.85 360 8.46C368 13.08 376 13.08 384 8.46C392 3.85 400 3.85 408 8.46C416 13.08 424 13.08 432 8.46C440 3.85 448 3.85 456 8.46C464 13.08 472 13.08 480 8.46C488 3.85 496 3.85 504 8.46C512 13.08 520 13.08 528 8.46C536 3.85 544 3.85 552 8.46C560 13.08 568 13.08 576 8.46C584 3.85 592 3.85 600 8.46C608 13.08 616 13.08 624 8.46C632 3.85 640 3.85 648 8.46C656 13.08 664 13.08 672 8.46C680 3.85 688 3.85 696 8.46C704 13.08 712 13.08 720 8.46C728 3.85 736 3.85 744 8.46C752 13.08 760 13.08 768 8.46C776 3.85 784 3.85 792 8.46C800 13.08 808 13.08 816 8.46C824 3.85 832 3.85 840 8.46C848 13.08 856 13.08 864 8.46C872 3.85 880 3.85 888 8.46C896 13.08 904 13.08 912 8.46C920 3.85 928 3.85 936 8.46C944 13.08 952 13.08 960 8.46C968 3.85 976 3.85 984 8.46C992 13.08 1000 13.08 1008 8.46C1016 3.85 1024 3.85 1032 8.46C1040 13.08 1048 13.08 1056 8.46C1064 3.85 1072 3.85 1080 8.46C1088 13.08 1096 13.08 1104 8.46C1112 3.85 1120 3.85 1128 8.46C1136 13.08 1144 13.08 1152 8.46C1160 3.85 1168 3.85 1176 8.46C1184 13.08 1192 13.08 1200 8.46" stroke="#000" stroke-width="2" fill="none"/></svg>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURE STATEMENT ==================== -->
+  <section class="section-statement">
+    <div class="container narrow">
+      <h2 class="statement-text">Everyday pantry goods for the everyday chef.</h2>
+      <div class="statement-cta">
+        <a href="#goods" class="push-btn">
+          <span class="push-btn__surface">Shop Now</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ICON ROW (6 BADGES) ==================== -->
+  <section class="section-icon-row">
+    <div class="container">
+      <ul class="icon-list">
+        <li class="icon-card">
+          <div class="icon-circle">
+            <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2"><path d="M15.5 32.7L8 40.2M40.2 8l-6.8 6.8"/><path d="M26.6 33.4a4.3 4.3 0 0 0 6 0l.8-.8a4.3 4.3 0 0 0 0-6l-1.5-1.5a1 1 0 0 0-1.5 0l-5.3 5.3a1 1 0 0 0 0 1.5l1.5 1.5Z"/><path d="M25.1 30.4l5.3-5.3s-.8-6.8-4.2-10.2c-3.4-3.4-5.2-4.6-7.9-1.9L13 18.3c-2.7 2.7-1.5 4.5 1.9 7.9 3.4 3.4 10.2 4.2 10.2 4.2Z"/></svg>
+          </div>
+          <span class="icon-name">Low salt</span>
+        </li>
+        <li class="icon-card">
+          <div class="icon-circle">
+            <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2"><path d="m12.3 16.9 6.2 6.2 2 13.1a2.2 2.2 0 0 0 3.7 1.2l13.2-13.2a2.2 2.2 0 0 0-1.2-3.7L23.1 18.4l-6.2-6.2m1.9 1.9-1.5 1.6m5.4 2.3-1.5 1.5m-.4-3.5L18.4 18.4m1.3 11.1 9.8-9.8M15.5 32.7 8 40.2M40.2 8l-6.8 6.8"/></svg>
+          </div>
+          <span class="icon-name">No bad stuff</span>
+        </li>
+        <li class="icon-card">
+          <div class="icon-circle">
+            <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2"><path d="M33.3 26.4C28.1 29 25.6 36 25.6 36a38 38 0 0 0-10.9-18.2m14.3 5.9c-2.1 1.4-3.2 4 0 6.1 1.7 4.4 5 3.2 6.8 1.2 1.8-1.8 2.7-6.6 1.9-9.8a.8.8 0 0 0-.5-.5.7.7 0 0 0-.7.1c-2.7 1.7-5.2 1.3-7.5 3Z"/><path d="m27.3 20.2 2.2 2.6c1.2 2.7-.2 6.2-5.5 8.6-2.5 5.5-6.2 3.5-8.7.5-2.3-2.7-3.2-9.8-1.6-14.1a.8.8 0 0 1 .5-.5.7.7 0 0 1 .6.1c3.9 2.8 8.5 2.3 11.1 5.4Z"/></svg>
+          </div>
+          <span class="icon-name">Organic</span>
+        </li>
+        <li class="icon-card">
+          <div class="icon-circle">
+            <svg viewBox="0 0 48 48" width="40" height="40" fill="currentColor"><text x="50%" y="58%" text-anchor="middle" dominant-baseline="middle" font-family="Prompt, sans-serif" font-weight="900" font-size="13">NON GMO</text></svg>
+          </div>
+          <span class="icon-name">Non-GMO</span>
+        </li>
+        <li class="icon-card">
+          <div class="icon-circle">
+            <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2"><path d="M15.5 32.7 8 40.2M40.2 8l-6.8 6.8"/><path d="m13.7 23.3 9.6-9.6m-1.6 8 4.8 4.8M12.1 12.1a3.8 3.8 0 0 0 0 5.3L23.8 29.1a3.8 3.8 0 0 0 4 .9l1.9 1.8a.8.8 0 0 0 1 0l1.1-1a.8.8 0 0 0 0-1.1L30 28a3.8 3.8 0 0 0-.8-4L17.4 12.1a3.8 3.8 0 0 0-5.3 0Z"/></svg>
+          </div>
+          <span class="icon-name">No fake stuff</span>
+        </li>
+        <li class="icon-card">
+          <div class="icon-circle">
+            <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2"><path d="M15.5 26c.1.6.4 1.1.8 1.5l9 9a1 1 0 0 0 1.3 0l9.9-9.9a1 1 0 0 0 0-1.3L27.5 16.2a2.8 2.8 0 0 0-1.4-.8l-.8-.1a2.8 2.8 0 1 0-4-4l-9.9 10a2.8 2.8 0 1 0 4 3.9l.2.8Z"/></svg>
+          </div>
+          <span class="icon-name">Low carb</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==================== COLLECTION FOCUS CAROUSEL ==================== -->
+  <section class="section-focus" id="goods">
+    <div class="container text-center">
+      <h2 class="heading-headline full_shadow">Our Goods</h2>
+      <p class="section-subheading">You'll be cooking like Carmy in no time.</p>
+
+      <!-- 4-Product Focus Carousel -->
+      <div class="focus-carousel-wrap">
+        <div class="focus-carousel-grid">
+          <!-- Slide 1: Crispy Chili Oil (Active Focus) -->
+          <div class="focus-slide active">
+            <div class="product-media-tile">
+              <div class="media-push-shadow">
+                <img src="/assets/hella-goods-pantry/chili-oil.png" alt="Crispy Chili Oil" class="prod-img img-primary" />
+                <img src="/assets/hella-goods-pantry/chili-oil-hover.png" alt="Crispy Chili Oil Back" class="prod-img img-hover" />
+              </div>
+              <h3 class="prod-tile-title">Crispy Chili Oil</h3>
+              <div class="prod-tile-price">$12.00</div>
+            </div>
+            <p class="slide-caption">A must-have for everything from stir-fries to noodles, and even as a spicy dip.</p>
+            <div class="slide-cta">
+              <a href="#" class="push-btn push-btn--yellow">
+                <span class="push-btn__surface">Add to Cart</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Slide 2: Wild Yuzu Garlic Rub -->
+          <div class="focus-slide">
+            <div class="product-media-tile">
+              <div class="media-push-shadow">
+                <img src="/assets/hella-goods-pantry/garlic-rub.png" alt="Wild Yuzu Garlic Rub" class="prod-img img-primary" />
+                <img src="/assets/hella-goods-pantry/garlic-rub-hover.png" alt="Wild Yuzu Garlic Rub Back" class="prod-img img-hover" />
+              </div>
+              <h3 class="prod-tile-title">Wild Yuzu Garlic Rub</h3>
+              <div class="prod-tile-price">$25.00</div>
+            </div>
+            <p class="slide-caption">This vibrant blend of tangy yuzu and bold garlic is your ticket to zesting up any dish.</p>
+            <div class="slide-cta">
+              <a href="#" class="push-btn push-btn--yellow">
+                <span class="push-btn__surface">Add to Cart</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Slide 3: Very Good Spice Rub (Sold Out) -->
+          <div class="focus-slide">
+            <div class="product-media-tile">
+              <div class="sold-out-badge">Sold Out</div>
+              <div class="media-push-shadow">
+                <img src="/assets/hella-goods-pantry/spice-rub.png" alt="Very Good Spice Rub" class="prod-img img-primary" />
+                <img src="/assets/hella-goods-pantry/spice-rub-hover.png" alt="Very Good Spice Rub Back" class="prod-img img-hover" />
+              </div>
+              <h3 class="prod-tile-title">Very Good Spice Rub</h3>
+              <div class="prod-tile-price">$25.00</div>
+            </div>
+            <p class="slide-caption">For those who savor every bite, rich and savory with a hint of smoky spice.</p>
+            <div class="slide-cta">
+              <button class="push-btn-disabled" disabled>Sold Out</button>
+            </div>
+          </div>
+
+          <!-- Slide 4: Umami Chili Salt -->
+          <div class="focus-slide">
+            <div class="product-media-tile">
+              <div class="media-push-shadow">
+                <img src="/assets/hella-goods-pantry/chili-salt.png" alt="Umami Chili Salt" class="prod-img img-primary" />
+                <img src="/assets/hella-goods-pantry/chili-salt-hover.png" alt="Umami Chili Salt Back" class="prod-img img-hover" />
+              </div>
+              <h3 class="prod-tile-title">Umami Chili Salt</h3>
+              <div class="prod-tile-price">$17.00</div>
+            </div>
+            <p class="slide-caption">This magical mix of savory umami goodness and spicy chili kick is here to make your taste buds do a happy dance.</p>
+            <div class="slide-cta">
+              <a href="#" class="push-btn push-btn--yellow">
+                <span class="push-btn__surface">Add to Cart</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carousel Nav Controls -->
+        <div class="carousel-nav-arrows">
+          <button class="push-btn push-btn--arrow" aria-label="Previous">
+            <span class="push-btn__surface">←</span>
+          </button>
+          <button class="push-btn push-btn--arrow" aria-label="Next">
+            <span class="push-btn__surface">→</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TESTIMONIALS (SCHEME 4 - NEON GREEN) ==================== -->
+  <section class="section-testimonials">
+    <!-- Top Wave Divider (White to Green) -->
+    <div class="shape-divider divider-top fill-white">
+      <svg viewBox="0 0 1200 20" preserveAspectRatio="none"><path d="M0 8.46C8 3.85 16 3.85 24 8.46C32 13.08 40 13.08 48 8.46C56 3.85 64 3.85 72 8.46C80 13.08 88 13.08 96 8.46C104 3.85 112 3.85 120 8.46C128 13.08 136 13.08 144 8.46C152 3.85 160 3.85 168 8.46C176 13.08 184 13.08 192 8.46C200 3.85 208 3.85 216 8.46C224 13.08 232 13.08 240 8.46C248 3.85 256 3.85 264 8.46C272 13.08 280 13.08 288 8.46C296 3.85 304 3.85 312 8.46C320 13.08 328 13.08 336 8.46C344 3.85 352 3.85 360 8.46C368 13.08 376 13.08 384 8.46C392 3.85 400 3.85 408 8.46C416 13.08 424 13.08 432 8.46C440 3.85 448 3.85 456 8.46C464 13.08 472 13.08 480 8.46C488 3.85 496 3.85 504 8.46C512 13.08 520 13.08 528 8.46C536 3.85 544 3.85 552 8.46C560 13.08 568 13.08 576 8.46C584 3.85 592 3.85 600 8.46C608 13.08 616 13.08 624 8.46C632 3.85 640 3.85 648 8.46C656 13.08 664 13.08 672 8.46C680 3.85 688 3.85 696 8.46C704 13.08 712 13.08 720 8.46C728 3.85 736 3.85 744 8.46C752 13.08 760 13.08 768 8.46C776 3.85 784 3.85 792 8.46C800 13.08 808 13.08 816 8.46C824 3.85 832 3.85 840 8.46C848 13.08 856 13.08 864 8.46C872 3.85 880 3.85 888 8.46C896 13.08 904 13.08 912 8.46C920 3.85 928 3.85 936 8.46C944 13.08 952 13.08 960 8.46C968 3.85 976 3.85 984 8.46C992 13.08 1000 13.08 1008 8.46C1016 3.85 1024 3.85 1032 8.46C1040 13.08 1048 13.08 1056 8.46C1064 3.85 1072 3.85 1080 8.46C1088 13.08 1096 13.08 1104 8.46C1112 3.85 1120 3.85 1128 8.46C1136 13.08 1144 13.08 1152 8.46C1160 3.85 1168 3.85 1176 8.46C1184 13.08 1192 13.08 1200 8.46V20H0Z" fill="currentColor"/></svg>
+    </div>
+
+    <div class="container text-center py-section">
+      <h2 class="heading-headline full_shadow">Word on the street</h2>
+
+      <div class="testi-card-wrap">
+        <div class="testi-single">
+          <div class="testi-stars">★★★★★</div>
+          <blockquote class="testi-text">“This hot sauce is the perfect blend of heat and flavor. It's become a kitchen staple, enhancing every dish without overpowering it. Highly recommend to all spice lovers!”</blockquote>
+          <footer class="testi-author">Auguste Gusteau</footer>
+        </div>
+      </div>
+
+      <div class="testi-arrows">
+        <button class="push-btn push-btn--arrow" aria-label="Previous review">
+          <span class="push-btn__surface">←</span>
+        </button>
+        <button class="push-btn push-btn--arrow" aria-label="Next review">
+          <span class="push-btn__surface">→</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Bottom Wave Divider (Green to White) -->
+    <div class="shape-divider divider-bottom fill-white">
+      <svg viewBox="0 0 1200 20" preserveAspectRatio="none"><path d="M0 8.46C8 3.85 16 3.85 24 8.46C32 13.08 40 13.08 48 8.46C56 3.85 64 3.85 72 8.46C80 13.08 88 13.08 96 8.46C104 3.85 112 3.85 120 8.46C128 13.08 136 13.08 144 8.46C152 3.85 160 3.85 168 8.46C176 13.08 184 13.08 192 8.46C200 3.85 208 3.85 216 8.46C224 13.08 232 13.08 240 8.46C248 3.85 256 3.85 264 8.46C272 13.08 280 13.08 288 8.46C296 3.85 304 3.85 312 8.46C320 13.08 328 13.08 336 8.46C344 3.85 352 3.85 360 8.46C368 13.08 376 13.08 384 8.46C392 3.85 400 3.85 408 8.46C416 13.08 424 13.08 432 8.46C440 3.85 448 3.85 456 8.46C464 13.08 472 13.08 480 8.46C488 3.85 496 3.85 504 8.46C512 13.08 520 13.08 528 8.46C536 3.85 544 3.85 552 8.46C560 13.08 568 13.08 576 8.46C584 3.85 592 3.85 600 8.46C608 13.08 616 13.08 624 8.46C632 3.85 640 3.85 648 8.46C656 13.08 664 13.08 672 8.46C680 3.85 688 3.85 696 8.46C704 13.08 712 13.08 720 8.46C728 3.85 736 3.85 744 8.46C752 13.08 760 13.08 768 8.46C776 3.85 784 3.85 792 8.46C800 13.08 808 13.08 816 8.46C824 3.85 832 3.85 840 8.46C848 13.08 856 13.08 864 8.46C872 3.85 880 3.85 888 8.46C896 13.08 904 13.08 912 8.46C920 3.85 928 3.85 936 8.46C944 13.08 952 13.08 960 8.46C968 3.85 976 3.85 984 8.46C992 13.08 1000 13.08 1008 8.46C1016 3.85 1024 3.85 1032 8.46C1040 13.08 1048 13.08 1056 8.46C1064 3.85 1072 3.85 1080 8.46C1088 13.08 1096 13.08 1104 8.46C1112 3.85 1120 3.85 1128 8.46C1136 13.08 1144 13.08 1152 8.46C1160 3.85 1168 3.85 1176 8.46C1184 13.08 1192 13.08 1200 8.46V20H0Z" fill="currentColor"/></svg>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURED COLLECTIONS (TABBED) ==================== -->
+  <section class="section-collections">
+    <div class="container">
+      <nav class="collection-tabs">
+        <button class="col-tab active">Hot Sauces</button>
+        <button class="col-tab">Spices &amp; Rubs</button>
+        <button class="col-tab">Oils</button>
+      </nav>
+
+      <!-- 3-Column Product Grid -->
+      <div class="grid-3 col-products">
+        <!-- Product 1: Pina Picante (On Sale) -->
+        <article class="product-card">
+          <div class="card-media-wrap">
+            <div class="sale-badge">On Sale</div>
+            <div class="media-push-shadow">
+              <img src="/assets/hella-goods-pantry/hot-sauce-pina.png" alt="Pina Picante Hot Sauce" class="prod-img img-primary" />
+              <img src="/assets/hella-goods-pantry/hot-sauce-pina-hover.png" alt="Pina Picante Hot Sauce Back" class="prod-img img-hover" />
+            </div>
+          </div>
+          <h3 class="prod-card-title">Pina Picante Hot Sauce</h3>
+          <div class="prod-card-price">
+            <span class="sale-now">$12.00</span>
+            <s class="sale-was">$20.00</s>
+          </div>
+          <div class="prod-card-cta">
+            <a href="#" class="push-btn push-btn--yellow">
+              <span class="push-btn__surface">Add to Cart</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Product 2: El Diablo -->
+        <article class="product-card">
+          <div class="card-media-wrap">
+            <div class="media-push-shadow">
+              <img src="/assets/hella-goods-pantry/hot-sauce-diablo.png" alt="El Diablo Hot Sauce" class="prod-img img-primary" />
+              <img src="/assets/hella-goods-pantry/hot-sauce-diablo-hover.png" alt="El Diablo Hot Sauce Back" class="prod-img img-hover" />
+            </div>
+          </div>
+          <h3 class="prod-card-title">El Diablo Hot Sauce</h3>
+          <div class="prod-card-price">$12.00</div>
+          <div class="prod-card-cta">
+            <a href="#" class="push-btn push-btn--yellow">
+              <span class="push-btn__surface">Add to Cart</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Product 3: Crispy Chili Oil Extra Spicy -->
+        <article class="product-card">
+          <div class="card-media-wrap">
+            <div class="media-push-shadow">
+              <img src="/assets/hella-goods-pantry/chili-oil-extra-hot.png" alt="Crispy Chili Oil Extra Spicy" class="prod-img img-primary" />
+              <img src="/assets/hella-goods-pantry/chili-oil-hover.png" alt="Crispy Chili Oil Extra Spicy Back" class="prod-img img-hover" />
+            </div>
+          </div>
+          <h3 class="prod-card-title">Crispy Chili Oil Extra Spicy</h3>
+          <div class="prod-card-price">$12.00</div>
+          <div class="prod-card-cta">
+            <a href="#" class="push-btn push-btn--yellow">
+              <span class="push-btn__surface">Add to Cart</span>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== COMPARISON TABLE ("HOW WE STACK UP") ==================== -->
+  <section class="section-comparison">
+    <div class="container narrow text-center">
+      <h2 class="heading-headline full_shadow">How we stack up</h2>
+
+      <div class="table-scroll-wrap">
+        <table class="comparison-tbl">
+          <thead>
+            <tr>
+              <th class="col-feature"></th>
+              <th class="col-brand bg-green">
+                <img src="/assets/hella-goods-pantry/logo.svg" alt="Hella Goods" class="tbl-logo" />
+              </th>
+              <th class="col-other">Other hot sauces</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="feature-label">Certified B Corp</td>
+              <td class="brand-check bg-green"><span class="check-icon">✓</span></td>
+              <td class="other-check"><span class="cross-icon">✗</span></td>
+            </tr>
+            <tr>
+              <td class="feature-label">Locally sourced ingredients</td>
+              <td class="brand-check bg-green"><span class="check-icon">✓</span></td>
+              <td class="other-check"><span class="cross-icon">✗</span></td>
+            </tr>
+            <tr>
+              <td class="feature-label">Out of control flavours</td>
+              <td class="brand-check bg-green"><span class="check-icon">✓</span></td>
+              <td class="other-check"><span class="cross-icon">✗</span></td>
+            </tr>
+            <tr>
+              <td class="feature-label">Will make you a better chef</td>
+              <td class="brand-check bg-green"><span class="check-icon">✓</span></td>
+              <td class="other-check"><span class="cross-icon">✗</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PRODUCT OF THE MONTH ==================== -->
+  <section class="section-spotlight">
+    <div class="container">
+      <h2 class="heading-headline full_shadow text-center">Product of the month</h2>
+
+      <div class="spotlight-2col">
+        <!-- Media Column with Thumbnail Side Strip -->
+        <div class="spotlight-media-wrap">
+          <div class="thumbs-vertical">
+            <div class="thumb-item active"><img src="/assets/hella-goods-pantry/chili-oil.png" alt="" /></div>
+            <div class="thumb-item"><img src="/assets/hella-goods-pantry/chili-oil-hover.png" alt="" /></div>
+          </div>
+          <div class="spotlight-main-photo">
+            <div class="starburst-badge-yellow">New!</div>
+            <div class="media-push-shadow">
+              <img src="/assets/hella-goods-pantry/chili-oil.png" alt="Crispy Chili Oil" class="spot-photo-img" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Column -->
+        <div class="spotlight-content">
+          <h3 class="spotlight-title">Crispy Chili Oil</h3>
+          <div class="spotlight-price">$12.00</div>
+          <p class="spotlight-desc">Deliciously fiery and surprisingly versatile! Bold, aromatic chilies get a savory boost from garlic and shallots, while a hint of soy sauce adds a delightful umami depth. This Crispy Chili Oil will elevate any dish with its perfect balance of heat and crunch, making it a must-have for everything from stir-fries to noodles, and even as a spicy dip. Indulge in its irresistible flavors anytime you crave a burst of zesty excitement!</p>
+          <div class="spotlight-actions">
+            <a href="#" class="push-btn push-btn--yellow spot-btn">
+              <span class="push-btn__surface">Add to Cart</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== DINING VIDEO BANNER (FULL-BLEED) ==================== -->
+  <section class="section-dining" id="restaurant">
+    <div class="shape-divider divider-top fill-white">
+      <svg viewBox="0 0 1200 20" preserveAspectRatio="none"><path d="M0 8.46C8 3.85 16 3.85 24 8.46C32 13.08 40 13.08 48 8.46C56 3.85 64 3.85 72 8.46C80 13.08 88 13.08 96 8.46C104 3.85 112 3.85 120 8.46C128 13.08 136 13.08 144 8.46C152 3.85 160 3.85 168 8.46C176 13.08 184 13.08 192 8.46C200 3.85 208 3.85 216 8.46C224 13.08 232 13.08 240 8.46C248 3.85 256 3.85 264 8.46C272 13.08 280 13.08 288 8.46C296 3.85 304 3.85 312 8.46C320 13.08 328 13.08 336 8.46C344 3.85 352 3.85 360 8.46C368 13.08 376 13.08 384 8.46C392 3.85 400 3.85 408 8.46C416 13.08 424 13.08 432 8.46C440 3.85 448 3.85 456 8.46C464 13.08 472 13.08 480 8.46C488 3.85 496 3.85 504 8.46C512 13.08 520 13.08 528 8.46C536 3.85 544 3.85 552 8.46C560 13.08 568 13.08 576 8.46C584 3.85 592 3.85 600 8.46C608 13.08 616 13.08 624 8.46C632 3.85 640 3.85 648 8.46C656 13.08 664 13.08 672 8.46C680 3.85 688 3.85 696 8.46C704 13.08 712 13.08 720 8.46C728 3.85 736 3.85 744 8.46C752 13.08 760 13.08 768 8.46C776 3.85 784 3.85 792 8.46C800 13.08 808 13.08 816 8.46C824 3.85 832 3.85 840 8.46C848 13.08 856 13.08 864 8.46C872 3.85 880 3.85 888 8.46C896 13.08 904 13.08 912 8.46C920 3.85 928 3.85 936 8.46C944 13.08 952 13.08 960 8.46C968 3.85 976 3.85 984 8.46C992 13.08 1000 13.08 1008 8.46C1016 3.85 1024 3.85 1032 8.46C1040 13.08 1048 13.08 1056 8.46C1064 3.85 1072 3.85 1080 8.46C1088 13.08 1096 13.08 1104 8.46C1112 3.85 1120 3.85 1128 8.46C1136 13.08 1144 13.08 1152 8.46C1160 3.85 1168 3.85 1176 8.46C1184 13.08 1192 13.08 1200 8.46V20H0Z" fill="currentColor"/></svg>
+    </div>
+
+    <div class="dining-bg-wrap">
+      <img src="/assets/hella-goods-pantry/video-poster.jpg" alt="" class="dining-bg-img" />
+      <div class="dining-overlay-card">
+        <h2 class="heading-headline full_shadow">Hella good dining</h2>
+        <p class="dining-sub">Quality street food in quality cities.</p>
+        <a href="#restaurant" class="push-btn">
+          <span class="push-btn__surface">Our restaurants</span>
+        </a>
+      </div>
+      <div class="sticker-badge sticker-cook" style="top: 25%; left: 12%; transform: rotate(-18deg);">
+        <div class="starburst-shape bg-yellow">
+          <span>Let us cook!</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="shape-divider divider-bottom fill-yellow">
+      <svg viewBox="0 0 1200 20" preserveAspectRatio="none"><path d="M0 8.46C8 3.85 16 3.85 24 8.46C32 13.08 40 13.08 48 8.46C56 3.85 64 3.85 72 8.46C80 13.08 88 13.08 96 8.46C104 3.85 112 3.85 120 8.46C128 13.08 136 13.08 144 8.46C152 3.85 160 3.85 168 8.46C176 13.08 184 13.08 192 8.46C200 3.85 208 3.85 216 8.46C224 13.08 232 13.08 240 8.46C248 3.85 256 3.85 264 8.46C272 13.08 280 13.08 288 8.46C296 3.85 304 3.85 312 8.46C320 13.08 328 13.08 336 8.46C344 3.85 352 3.85 360 8.46C368 13.08 376 13.08 384 8.46C392 3.85 400 3.85 408 8.46C416 13.08 424 13.08 432 8.46C440 3.85 448 3.85 456 8.46C464 13.08 472 13.08 480 8.46C488 3.85 496 3.85 504 8.46C512 13.08 520 13.08 528 8.46C536 3.85 544 3.85 552 8.46C560 13.08 568 13.08 576 8.46C584 3.85 592 3.85 600 8.46C608 13.08 616 13.08 624 8.46C632 3.85 640 3.85 648 8.46C656 13.08 664 13.08 672 8.46C680 3.85 688 3.85 696 8.46C704 13.08 712 13.08 720 8.46C728 3.85 736 3.85 744 8.46C752 13.08 760 13.08 768 8.46C776 3.85 784 3.85 792 8.46C800 13.08 808 13.08 816 8.46C824 3.85 832 3.85 840 8.46C848 13.08 856 13.08 864 8.46C872 3.85 880 3.85 888 8.46C896 13.08 904 13.08 912 8.46C920 3.85 928 3.85 936 8.46C944 13.08 952 13.08 960 8.46C968 3.85 976 3.85 984 8.46C992 13.08 1000 13.08 1008 8.46C1016 3.85 1024 3.85 1032 8.46C1040 13.08 1048 13.08 1056 8.46C1064 3.85 1072 3.85 1080 8.46C1088 13.08 1096 13.08 1104 8.46C1112 3.85 1120 3.85 1128 8.46C1136 13.08 1144 13.08 1152 8.46C1160 3.85 1168 3.85 1176 8.46C1184 13.08 1192 13.08 1200 8.46V20H0Z" fill="currentColor"/></svg>
+    </div>
+  </section>
+
+  <!-- ==================== IMAGE WITH TEXT (SCHEME 3 - YELLOW) ==================== -->
+  <section class="section-img-text" id="recipes">
+    <div class="container">
+      <div class="img-text-grid">
+        <!-- Text Column -->
+        <div class="img-text-col">
+          <h2 class="heading-headline full_shadow">Pulled pork tacos</h2>
+          <p class="recipe-desc">Spice up your life with these party-pleasing pulled-pork tacos.</p>
+          <a href="#" class="push-btn">
+            <span class="push-btn__surface">View recipe</span>
+          </a>
+        </div>
+
+        <!-- Scalloped Media Column -->
+        <div class="img-media-col">
+          <div class="scallop-frame media-push-shadow">
+            <img src="/assets/hella-goods-pantry/tacos.png" alt="Pulled pork tacos" class="tacos-img" />
+          </div>
+          <div class="sticker-badge sticker-newrecipe" style="top: 10%; right: 10%; transform: rotate(-14deg);">
+            <div class="starburst-shape bg-white">
+              <span>New recipe!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== MORE RECIPES (SCHEME 3 - YELLOW) ==================== -->
+  <section class="section-recipes-grid">
+    <div class="container text-center">
+      <h2 class="heading-headline full_shadow">More recipes</h2>
+
+      <div class="grid-3 recipes-list">
+        <article class="recipe-card">
+          <div class="media-push-shadow">
+            <img src="/assets/hella-goods-pantry/recipe-salad.jpg" alt="Roasted Vegetable and Quinoa Salad" class="recipe-photo" />
+          </div>
+          <h3 class="recipe-card-title">Roasted Vegetable and Quinoa Salad with Bold Finishing Oil</h3>
+        </article>
+        <article class="recipe-card">
+          <div class="media-push-shadow">
+            <img src="/assets/hella-goods-pantry/recipe-noodles.png" alt="Crispy Chili Oil Noodles" class="recipe-photo" />
+          </div>
+          <h3 class="recipe-card-title">Crispy Chili Oil Noodles</h3>
+        </article>
+        <article class="recipe-card">
+          <div class="media-push-shadow">
+            <img src="/assets/hella-goods-pantry/recipe-shrimp.png" alt="Piña Picante Grilled Shrimp Skewers" class="recipe-photo" />
+          </div>
+          <h3 class="recipe-card-title">Piña Picante Grilled Shrimp Skewers</h3>
+        </article>
+      </div>
+
+      <div class="recipes-more-cta">
+        <a href="#" class="push-btn">
+          <span class="push-btn__surface">Read more</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="shape-divider divider-bottom fill-white">
+      <svg viewBox="0 0 1200 20" preserveAspectRatio="none"><path d="M0 8.46C8 3.85 16 3.85 24 8.46C32 13.08 40 13.08 48 8.46C56 3.85 64 3.85 72 8.46C80 13.08 88 13.08 96 8.46C104 3.85 112 3.85 120 8.46C128 13.08 136 13.08 144 8.46C152 3.85 160 3.85 168 8.46C176 13.08 184 13.08 192 8.46C200 3.85 208 3.85 216 8.46C224 13.08 232 13.08 240 8.46C248 3.85 256 3.85 264 8.46C272 13.08 280 13.08 288 8.46C296 3.85 304 3.85 312 8.46C320 13.08 328 13.08 336 8.46C344 3.85 352 3.85 360 8.46C368 13.08 376 13.08 384 8.46C392 3.85 400 3.85 408 8.46C416 13.08 424 13.08 432 8.46C440 3.85 448 3.85 456 8.46C464 13.08 472 13.08 480 8.46C488 3.85 496 3.85 504 8.46C512 13.08 520 13.08 528 8.46C536 3.85 544 3.85 552 8.46C560 13.08 568 13.08 576 8.46C584 3.85 592 3.85 600 8.46C608 13.08 616 13.08 624 8.46C632 3.85 640 3.85 648 8.46C656 13.08 664 13.08 672 8.46C680 3.85 688 3.85 696 8.46C704 13.08 712 13.08 720 8.46C728 3.85 736 3.85 744 8.46C752 13.08 760 13.08 768 8.46C776 3.85 784 3.85 792 8.46C800 13.08 808 13.08 816 8.46C824 3.85 832 3.85 840 8.46C848 13.08 856 13.08 864 8.46C872 3.85 880 3.85 888 8.46C896 13.08 904 13.08 912 8.46C920 3.85 928 3.85 936 8.46C944 13.08 952 13.08 960 8.46C968 3.85 976 3.85 984 8.46C992 13.08 1000 13.08 1008 8.46C1016 3.85 1024 3.85 1032 8.46C1040 13.08 1048 13.08 1056 8.46C1064 3.85 1072 3.85 1080 8.46C1088 13.08 1096 13.08 1104 8.46C1112 3.85 1120 3.85 1128 8.46C1136 13.08 1144 13.08 1152 8.46C1160 3.85 1168 3.85 1176 8.46C1184 13.08 1192 13.08 1200 8.46V20H0Z" fill="currentColor"/></svg>
+    </div>
+  </section>
+
+  <!-- ==================== IMAGE WITH HIGHLIGHTS (THE SECRET SAUCE) ==================== -->
+  <section class="section-secret-sauce" id="about">
+    <!-- Starburst BG Vector Shape -->
+    <div class="starburst-bg-decal"></div>
+
+    <div class="container text-center">
+      <h2 class="heading-headline full_shadow">the secret sauce</h2>
+
+      <div class="secret-sauce-grid">
+        <!-- Left Highlights -->
+        <div class="highlight-col left-col">
+          <div class="highlight-card">
+            <h3 class="highlight-title">100% Extra Virgin Olive Oil</h3>
+            <p class="highlight-desc">Made from Picual olives, ensuring a pure and unblended product.</p>
+          </div>
+          <div class="highlight-card">
+            <h3 class="highlight-title">High Yield</h3>
+            <p class="highlight-desc">It takes about 13 pounds of olives to produce one liter of oil.</p>
+          </div>
+          <div class="highlight-card">
+            <h3 class="highlight-title">Single-Origin</h3>
+            <p class="highlight-desc">Sourced exclusively from Jaén, Spain, known for its premium olive production.</p>
+          </div>
+        </div>
+
+        <!-- Center Bottle -->
+        <div class="highlight-bottle-center">
+          <div class="bottle-shadow-wrap">
+            <img src="/assets/hella-goods-pantry/bottle.png" alt="Hella Goods EVOO Squeeze Bottle" class="bottle-img" />
+          </div>
+        </div>
+
+        <!-- Right Highlights -->
+        <div class="highlight-col right-col">
+          <div class="highlight-card">
+            <h3 class="highlight-title">Harvested at Peak Season</h3>
+            <p class="highlight-desc">Olives are picked during peak ripeness, providing a balanced, mellow flavor.</p>
+          </div>
+          <div class="highlight-card">
+            <h3 class="highlight-title">Versatile Cooking</h3>
+            <p class="highlight-desc">Ideal for various cooking methods like roasting, frying, and baking due to its high smoke point.</p>
+          </div>
+          <div class="highlight-card">
+            <h3 class="highlight-title">Eco-Friendly Packaging</h3>
+            <p class="highlight-desc">Comes in a squeezable, easy-to-use bottle, minimizing waste.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="shape-divider divider-bottom fill-green">
+      <svg viewBox="0 0 1200 20" preserveAspectRatio="none"><path d="M0 8.46C8 3.85 16 3.85 24 8.46C32 13.08 40 13.08 48 8.46C56 3.85 64 3.85 72 8.46C80 13.08 88 13.08 96 8.46C104 3.85 112 3.85 120 8.46C128 13.08 136 13.08 144 8.46C152 3.85 160 3.85 168 8.46C176 13.08 184 13.08 192 8.46C200 3.85 208 3.85 216 8.46C224 13.08 232 13.08 240 8.46C248 3.85 256 3.85 264 8.46C272 13.08 280 13.08 288 8.46C296 3.85 304 3.85 312 8.46C320 13.08 328 13.08 336 8.46C344 3.85 352 3.85 360 8.46C368 13.08 376 13.08 384 8.46C392 3.85 400 3.85 408 8.46C416 13.08 424 13.08 432 8.46C440 3.85 448 3.85 456 8.46C464 13.08 472 13.08 480 8.46C488 3.85 496 3.85 504 8.46C512 13.08 520 13.08 528 8.46C536 3.85 544 3.85 552 8.46C560 13.08 568 13.08 576 8.46C584 3.85 592 3.85 600 8.46C608 13.08 616 13.08 624 8.46C632 3.85 640 3.85 648 8.46C656 13.08 664 13.08 672 8.46C680 3.85 688 3.85 696 8.46C704 13.08 712 13.08 720 8.46C728 3.85 736 3.85 744 8.46C752 13.08 760 13.08 768 8.46C776 3.85 784 3.85 792 8.46C800 13.08 808 13.08 816 8.46C824 3.85 832 3.85 840 8.46C848 13.08 856 13.08 864 8.46C872 3.85 880 3.85 888 8.46C896 13.08 904 13.08 912 8.46C920 3.85 928 3.85 936 8.46C944 13.08 952 13.08 960 8.46C968 3.85 976 3.85 984 8.46C992 13.08 1000 13.08 1008 8.46C1016 3.85 1024 3.85 1032 8.46C1040 13.08 1048 13.08 1056 8.46C1064 3.85 1072 3.85 1080 8.46C1088 13.08 1096 13.08 1104 8.46C1112 3.85 1120 3.85 1128 8.46C1136 13.08 1144 13.08 1152 8.46C1160 3.85 1168 3.85 1176 8.46C1184 13.08 1192 13.08 1200 8.46V20H0Z" fill="currentColor"/></svg>
+    </div>
+  </section>
+
+  <!-- ==================== MERCH SECTION (SCHEME 4 - NEON GREEN) ==================== -->
+  <section class="section-merch">
+    <div class="container text-center">
+      <h2 class="heading-headline full_shadow">Hella Good Merch</h2>
+      <p class="section-subheading">Fresh fits for fresh food.</p>
+
+      <div class="grid-3 merch-grid">
+        <article class="product-card">
+          <div class="card-media-wrap">
+            <div class="media-push-shadow">
+              <img src="/assets/hella-goods-pantry/beanie.png" alt="Hella Good Beanie" class="prod-img" />
+            </div>
+          </div>
+          <h3 class="prod-card-title">Hella Good Beanie</h3>
+          <div class="prod-card-price">$40.00</div>
+        </article>
+
+        <article class="product-card">
+          <div class="card-media-wrap">
+            <div class="media-push-shadow">
+              <img src="/assets/hella-goods-pantry/hat-green.png" alt="Hella Good Hat" class="prod-img img-primary" />
+              <img src="/assets/hella-goods-pantry/hat-white.png" alt="Hella Good Hat White" class="prod-img img-hover" />
+            </div>
+          </div>
+          <h3 class="prod-card-title">Hella Good Hat</h3>
+          <div class="prod-card-price">$40.00</div>
+        </article>
+
+        <article class="product-card">
+          <div class="card-media-wrap">
+            <div class="sold-out-badge">Sold Out</div>
+            <div class="media-push-shadow">
+              <img src="/assets/hella-goods-pantry/tee-white.jpg" alt="Hella Good Tee" class="prod-img img-primary" />
+              <img src="/assets/hella-goods-pantry/tee-green.png" alt="Hella Good Tee Green" class="prod-img img-hover" />
+            </div>
+          </div>
+          <h3 class="prod-card-title">Hella Good Tee</h3>
+          <div class="prod-card-price">$40.00</div>
+        </article>
+      </div>
+
+      <div class="sticker-badge sticker-lookfresh" style="top: 12%; right: 6%; transform: rotate(8deg);">
+        <div class="scallop-shape bg-yellow">
+          <span>Look<br/>Fresh!</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="shape-divider divider-bottom fill-white">
+      <svg viewBox="0 0 1200 20" preserveAspectRatio="none"><path d="M0 8.46C8 3.85 16 3.85 24 8.46C32 13.08 40 13.08 48 8.46C56 3.85 64 3.85 72 8.46C80 13.08 88 13.08 96 8.46C104 3.85 112 3.85 120 8.46C128 13.08 136 13.08 144 8.46C152 3.85 160 3.85 168 8.46C176 13.08 184 13.08 192 8.46C200 3.85 208 3.85 216 8.46C224 13.08 232 13.08 240 8.46C248 3.85 256 3.85 264 8.46C272 13.08 280 13.08 288 8.46C296 3.85 304 3.85 312 8.46C320 13.08 328 13.08 336 8.46C344 3.85 352 3.85 360 8.46C368 13.08 376 13.08 384 8.46C392 3.85 400 3.85 408 8.46C416 13.08 424 13.08 432 8.46C440 3.85 448 3.85 456 8.46C464 13.08 472 13.08 480 8.46C488 3.85 496 3.85 504 8.46C512 13.08 520 13.08 528 8.46C536 3.85 544 3.85 552 8.46C560 13.08 568 13.08 576 8.46C584 3.85 592 3.85 600 8.46C608 13.08 616 13.08 624 8.46C632 3.85 640 3.85 648 8.46C656 13.08 664 13.08 672 8.46C680 3.85 688 3.85 696 8.46C704 13.08 712 13.08 720 8.46C728 3.85 736 3.85 744 8.46C752 13.08 760 13.08 768 8.46C776 3.85 784 3.85 792 8.46C800 13.08 808 13.08 816 8.46C824 3.85 832 3.85 840 8.46C848 13.08 856 13.08 864 8.46C872 3.85 880 3.85 888 8.46C896 13.08 904 13.08 912 8.46C920 3.85 928 3.85 936 8.46C944 13.08 952 13.08 960 8.46C968 3.85 976 3.85 984 8.46C992 13.08 1000 13.08 1008 8.46C1016 3.85 1024 3.85 1032 8.46C1040 13.08 1048 13.08 1056 8.46C1064 3.85 1072 3.85 1080 8.46C1088 13.08 1096 13.08 1104 8.46C1112 3.85 1120 3.85 1128 8.46C1136 13.08 1144 13.08 1152 8.46C1160 3.85 1168 3.85 1176 8.46C1184 13.08 1192 13.08 1200 8.46V20H0Z" fill="currentColor"/></svg>
+    </div>
+  </section>
+
+  <!-- ==================== NEWSLETTER SECTION (WHITE) ==================== -->
+  <section class="section-newsletter">
+    <div class="container narrow text-center">
+      <h2 class="heading-headline full_shadow">Sign up to our newsletter</h2>
+      <p class="newsletter-sub">Receive special offers and first look at new products.</p>
+      
+      <form class="newsletter-form" onsubmit="return false;">
+        <input type="email" placeholder="email@example.com" class="newsletter-input" required />
+        <button type="submit" class="push-btn push-btn--yellow">
+          <span class="push-btn__surface">Subscribe</span>
+        </button>
+      </form>
+    </div>
+
+    <!-- Divider to Red Footer -->
+    <div class="shape-divider divider-bottom fill-red">
+      <svg viewBox="0 0 1200 20" preserveAspectRatio="none"><path d="M0 8.46C8 3.85 16 3.85 24 8.46C32 13.08 40 13.08 48 8.46C56 3.85 64 3.85 72 8.46C80 13.08 88 13.08 96 8.46C104 3.85 112 3.85 120 8.46C128 13.08 136 13.08 144 8.46C152 3.85 160 3.85 168 8.46C176 13.08 184 13.08 192 8.46C200 3.85 208 3.85 216 8.46C224 13.08 232 13.08 240 8.46C248 3.85 256 3.85 264 8.46C272 13.08 280 13.08 288 8.46C296 3.85 304 3.85 312 8.46C320 13.08 328 13.08 336 8.46C344 3.85 352 3.85 360 8.46C368 13.08 376 13.08 384 8.46C392 3.85 400 3.85 408 8.46C416 13.08 424 13.08 432 8.46C440 3.85 448 3.85 456 8.46C464 13.08 472 13.08 480 8.46C488 3.85 496 3.85 504 8.46C512 13.08 520 13.08 528 8.46C536 3.85 544 3.85 552 8.46C560 13.08 568 13.08 576 8.46C584 3.85 592 3.85 600 8.46C608 13.08 616 13.08 624 8.46C632 3.85 640 3.85 648 8.46C656 13.08 664 13.08 672 8.46C680 3.85 688 3.85 696 8.46C704 13.08 712 13.08 720 8.46C728 3.85 736 3.85 744 8.46C752 13.08 760 13.08 768 8.46C776 3.85 784 3.85 792 8.46C800 13.08 808 13.08 816 8.46C824 3.85 832 3.85 840 8.46C848 13.08 856 13.08 864 8.46C872 3.85 880 3.85 888 8.46C896 13.08 904 13.08 912 8.46C920 3.85 928 3.85 936 8.46C944 13.08 952 13.08 960 8.46C968 3.85 976 3.85 984 8.46C992 13.08 1000 13.08 1008 8.46C1016 3.85 1024 3.85 1032 8.46C1040 13.08 1048 13.08 1056 8.46C1064 3.85 1072 3.85 1080 8.46C1088 13.08 1096 13.08 1104 8.46C1112 3.85 1120 3.85 1128 8.46C1136 13.08 1144 13.08 1152 8.46C1160 3.85 1168 3.85 1176 8.46C1184 13.08 1192 13.08 1200 8.46V20H0Z" fill="currentColor"/></svg>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER (SCHEME 2 - RED) ==================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <!-- Col 1 -->
+      <div class="footer-col footer-col-1">
+        <p class="footer-demo-text">This is a demo store. Hella Goods packaging design by James Karanikos.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2c2.7 0 3 0 4.1.1 1 .1 1.7.3 2.3.5.7.3 1.2.6 1.8 1.2.6.6.9 1.1 1.2 1.8.2.6.4 1.3.5 2.3.1 1.1.1 1.4.1 4.1s0 3-.1 4.1c-.1 1-.3 1.7-.5 2.3-.3.7-.6 1.2-1.2 1.8-.6.6-1.1.9-1.8 1.2-.6.2-1.3.4-2.3.5-1.1.1-1.4.1-4.1.1s-3 0-4.1-.1c-1-.1-1.7-.3-2.3-.5-.7-.3-1.2-.6-1.8-1.2-.6-.6-.9-1.1-1.2-1.8-.2-.6-.4-1.3-.5-2.3C2 15 2 14.7 2 12s0-3 .1-4.1c.1-1 .3-1.7.5-2.3.3-.7.6-1.2 1.2-1.8.6-.6 1.1-.9 1.8-1.2.6-.2 1.3-.4 2.3-.5C9 2 9.3 2 12 2zm0 4.9a5.1 5.1 0 1 0 0 10.2 5.1 5.1 0 0 0 0-10.2zm0 8.4a3.3 3.3 0 1 1 0-6.6 3.3 3.3 0 0 1 0 6.6zm5.3-8.9a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M16 2h-3.4v13.6a2.4 2.4 0 0 1-2.4 2.4 2.4 2.4 0 0 1-2.4-2.4 2.4 2.4 0 0 1 2.4-2.4v-3.4a5.8 5.8 0 0 0-5.8 5.8 5.8 5.8 0 0 0 5.8 5.8 5.8 5.8 0 0 0 5.8-5.8V8.6c1.3.9 2.9 1.5 4.5 1.5V6.7c-2.5 0-4.5-2.1-4.5-4.7z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M21.8 8c0 0-.2-1.4-.8-2-.8-.8-1.6-.8-2-.8C16.2 5 12 5 12 5s-4.2 0-7 .2c-.4 0-1.2 0-2 .8-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.6c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.9 1.6.1 6.8.1 6.8.1s4.2 0 7-.2c.4 0 1.2 0 2-.8.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.6C22 9.6 21.8 8 21.8 8zM9.9 14.6V9l5.4 2.8-5.4 2.8z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Navigation Links -->
+      <div class="footer-col footer-col-2">
+        <div class="footer-nav-sub">
+          <ul class="footer-links">
+            <li><a href="#goods">Shop</a></li>
+            <li><a href="#restaurant">Restaurant</a></li>
+            <li><a href="#recipes">Recipes</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+          <ul class="footer-links">
+            <li><a href="#">Search</a></li>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Col 3: Footer Newsletter -->
+      <div class="footer-col footer-col-3">
+        <h4 class="footer-sub-title">Sign up to our newsletter</h4>
+        <form class="footer-form" onsubmit="return false;">
+          <input type="email" placeholder="email@example.com" class="footer-input" required />
+          <button type="submit" class="push-btn push-btn--yellow">
+            <span class="push-btn__surface">Subscribe</span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer Copyright & Payments -->
+    <div class="container footer-bottom-row">
+      <p class="copyright-text">© 2026, Hella Goods. Powered by Shopify.</p>
+      <div class="payment-icons-row">
+        <span class="pay-chip">VISA</span>
+        <span class="pay-chip">MC</span>
+        <span class="pay-chip">AMEX</span>
+        <span class="pay-chip">PAYPAL</span>
+      </div>
+    </div>
+
+    <!-- Giant Hero Logo across bottom footer -->
+    <div class="footer-giant-logo">
+      <img src="/assets/hella-goods-pantry/logo.svg" alt="Hella Goods" class="giant-logo-img" />
+    </div>
+  </footer>
+</div>
+
+<style>
+  /* ==================== GLOBAL TOKENS & RESET ==================== */
+  .hella-store {
+    --red: #FF2524;
+    --yellow: #FFCC36;
+    --green: #5AFF24;
+    --white: #FFFFFF;
+    --black: #000000;
+    --cream: #FFF9F0;
+    --gray-card: #FAFAFA;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--black);
+    background: var(--white);
+    line-height: 1.4;
+    overflow-x: hidden;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
+
+  .container { max-width: 1360px; margin: 0 auto; padding: 0 24px; position: relative; }
+  .container.narrow { max-width: 920px; }
+  .text-center { text-align: center; }
+
+  /* ==================== SHAPES THEME HEADLINE EFFECTS ==================== */
+  .heading-headline {
+    font-family: 'Prompt', sans-serif;
+    font-weight: 900;
+    font-size: clamp(32px, 4.5vw, 64px);
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+  }
+
+  .full_shadow {
+    color: var(--yellow);
+    -webkit-text-stroke: 2.5px var(--black);
+    text-shadow:
+      0.02em 0.02em 0 var(--green),
+      0.04em 0.04em 0 var(--green),
+      0.06em 0.06em 0 var(--green),
+      0.08em 0.08em 0 var(--green),
+      0.10em 0.10em 0 var(--green);
+  }
+
+  .section-subheading {
+    font-size: 18px;
+    font-weight: 500;
+    color: #444;
+    margin-top: 14px;
+  }
+
+  /* ==================== PUSH BUTTON SYSTEM ==================== */
+  .push-btn {
+    display: inline-block;
+    position: relative;
+    background: var(--black);
+    border-radius: 9999px;
+    padding: 3px 0 0 3px;
+    cursor: pointer;
+    vertical-align: middle;
+  }
+
+  .push-btn__surface {
+    display: block;
+    background: var(--white);
+    color: var(--black);
+    font-family: 'Prompt', sans-serif;
+    font-weight: 900;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 10px 24px;
+    border-radius: 9999px;
+    border: 2px solid var(--black);
+    transform: translate(-3px, -3px);
+    transition: transform 0.12s ease;
+    white-space: nowrap;
+  }
+
+  .push-btn:hover .push-btn__surface {
+    transform: translate(-1.5px, -1.5px);
+  }
+
+  .push-btn:active .push-btn__surface {
+    transform: translate(0, 0);
+  }
+
+  .push-btn--yellow .push-btn__surface { background: var(--yellow); }
+  .push-btn--green .push-btn__surface { background: var(--green); }
+  .push-btn--red .push-btn__surface { background: var(--red); color: var(--white); }
+
+  .push-btn--arrow .push-btn__surface {
+    padding: 8px 16px;
+    font-size: 18px;
+  }
+
+  .push-btn-disabled {
+    background: #E5E5E5;
+    color: #888;
+    border: 2px solid var(--black);
+    border-radius: 9999px;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 900;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 10px 24px;
+    cursor: not-allowed;
+  }
+
+  /* ==================== PUSH MEDIA SHADOW ==================== */
+  .media-push-shadow {
+    position: relative;
+    background: var(--white);
+    border: 3px solid var(--black);
+    border-radius: 8px;
+    box-shadow: 6px 6px 0 var(--black);
+    overflow: hidden;
+  }
+
+  /* ==================== SHAPE DIVIDERS ==================== */
+  .shape-divider {
+    position: relative;
+    width: 100%;
+    line-height: 0;
+    z-index: 10;
+  }
+
+  .shape-divider svg {
+    display: block;
+    width: 100%;
+    height: 24px;
+  }
+
+  .shape-divider.fill-white { color: var(--white); }
+  .shape-divider.fill-yellow { color: var(--yellow); }
+  .shape-divider.fill-green { color: var(--green); }
+  .shape-divider.fill-red { color: var(--red); }
+
+  .divider-top svg { transform: rotate(180deg); }
+
+  /* ==================== HEADER ==================== */
+  .site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    background: transparent;
+  }
+
+  .header-inner {
+    max-width: 1820px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-left { display: flex; align-items: center; gap: 20px; }
+  .menu-btn { background: none; border: none; cursor: pointer; color: var(--black); display: none; }
+  @media (max-width: 990px) { .menu-btn { display: block; } .nav-links { display: none !important; } }
+
+  .nav-links { display: flex; align-items: center; gap: 16px; }
+  .nav-link {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .chevron { font-size: 9px; vertical-align: middle; margin-left: 2px; }
+
+  .header-center { text-align: center; }
+  .header-logo-img { height: 28px; display: block; }
+
+  .header-right { display: flex; align-items: center; gap: 16px; }
+  .icon-btn { background: none; border: none; cursor: pointer; color: var(--black); position: relative; }
+  .cart-badge {
+    position: absolute;
+    top: -4px;
+    right: -6px;
+    background: var(--black);
+    color: var(--white);
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ==================== HERO ==================== */
+  .section-hero {
+    position: relative;
+    background: var(--red);
+    padding-top: 80px;
+    overflow: hidden;
+  }
+
+  .hero-wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 24px 60px;
+    position: relative;
+    text-align: center;
+  }
+
+  .hero-logo-banner {
+    max-width: 80%;
+    margin: 0 auto 20px;
+  }
+
+  .hero-logo-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .hero-media-box {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 5;
+  }
+
+  .hero-photo-wrap {
+    border: 3px solid var(--black);
+    border-radius: 8px;
+    box-shadow: 10px 10px 0 var(--black);
+    overflow: hidden;
+    background: var(--white);
+  }
+
+  .hero-photo-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Parallax Stickers */
+  .sticker-badge {
+    position: absolute;
+    z-index: 20;
+    pointer-events: none;
+  }
+
+  .starburst-shape {
+    width: 110px;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    border: 2px solid var(--black);
+  }
+
+  .semicircle-shape {
+    width: 100px;
+    height: 60px;
+    background: var(--white);
+    border: 2px solid var(--black);
+    border-radius: 100px 100px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 900;
+    font-size: 13px;
+  }
+
+  .scallop-shape {
+    padding: 14px 20px;
+    border: 2px solid var(--black);
+    border-radius: 20px;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 900;
+    font-size: 13px;
+    text-align: center;
+    line-height: 1.1;
+    text-transform: uppercase;
+    box-shadow: 4px 4px 0 var(--black);
+  }
+
+  .bg-green { background: var(--green); color: var(--black); }
+  .bg-yellow { background: var(--yellow); color: var(--black); }
+  .bg-white { background: var(--white); color: var(--black); }
+
+  .sticker-img { width: 90px; height: auto; display: block; filter: drop-shadow(4px 4px 0 var(--black)); }
+
+  /* ==================== STATEMENT SECTION ==================== */
+  .section-statement {
+    padding: 70px 0 50px;
+    background: var(--white);
+    text-align: center;
+  }
+
+  .statement-text {
+    font-family: 'Prompt', sans-serif;
+    font-weight: 900;
+    font-size: clamp(30px, 4vw, 56px);
+    line-height: 1.05;
+    text-transform: uppercase;
+    max-width: 900px;
+    margin: 0 auto 28px;
+  }
+
+  /* ==================== ICON ROW ==================== */
+  .section-icon-row {
+    padding: 20px 0 60px;
+    background: var(--white);
+  }
+
+  .icon-list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) { .icon-list { grid-template-columns: repeat(3, 1fr); gap: 24px; } }
+
+  .icon-card { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .icon-circle {
+    width: 80px;
+    height: 80px;
+    border: 2.5px solid var(--black);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--white);
+    transition: transform 0.2s ease;
+  }
+  .icon-card:hover .icon-circle { transform: scale(1.08); }
+  .icon-name { font-weight: 700; font-size: 13px; text-transform: uppercase; }
+
+  /* ==================== FOCUS CAROUSEL ==================== */
+  .section-focus {
+    padding: 60px 0;
+    background: var(--white);
+  }
+
+  .focus-carousel-wrap {
+    margin-top: 48px;
+    position: relative;
+  }
+
+  .focus-carousel-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    align-items: start;
+  }
+
+  @media (max-width: 990px) { .focus-carousel-grid { grid-template-columns: repeat(2, 1fr); } }
+
+  .focus-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .product-media-tile {
+    width: 100%;
+    position: relative;
+    margin-bottom: 16px;
+  }
+
+  .prod-img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    display: block;
+  }
+
+  .img-hover {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .media-push-shadow:hover .img-hover { opacity: 1; }
+
+  .prod-tile-title {
+    font-family: 'Prompt', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin: 12px 0 4px;
+  }
+
+  .prod-tile-price {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .slide-caption {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.4;
+    margin-bottom: 16px;
+    min-height: 40px;
+  }
+
+  .carousel-nav-arrows {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .sold-out-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Prompt', sans-serif;
+    font-weight: 900;
+    font-size: 11px;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border-radius: 9999px;
+    z-index: 10;
+  }
+
+  .sale-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: var(--green);
+    color: var(--black);
+    font-family: 'Prompt', sans-serif;
+    font-weight: 900;
+    font-size: 11px;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border: 1.5px solid var(--black);
+    border-radius: 9999px;
+    z-index: 10;
+  }
+
+  /* ==================== TESTIMONIALS ==================== */
+  .section-testimonials {
+    background: var(--green);
+    position: relative;
+  }
+
+  .py-section { padding: 60px 0; }
+  .testi-card-wrap { max-width: 800px; margin: 40px auto 24px; }
+  .testi-stars { font-size: 24px; letter-spacing: 4px; margin-bottom: 16px; }
+  .testi-text {
+    font-family: 'Prompt', sans-serif;
+    font-weight: 900;
+    font-size: clamp(22px, 3vw, 36px);
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .testi-author {
+    font-family: 'Prompt', sans-serif;
+    font-weight: 900;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  .testi-arrows { display: flex; justify-content: center; gap: 12px; margin-top: 16px; }
+
+  /* ==================== TABBED COLLECTIONS ==================== */
+  .section-collections {
+    padding: 60px 0;
+    background: var(--white);
+  }
+
+  .collection-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    margin-bottom: 40px;
+  }
+
+  .col-tab {
+    font-family: 'Prompt', sans-serif;
+    font-weight: 900;
+    font-size: clamp(22px, 2.5vw, 32px);
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #999;
+    padding-bottom: 4px;
+    position: relative;
+  }
+
+  .col-tab.active {
+    color: var(--black);
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 3px;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  @media (max-width: 768px) { .grid-3 { grid-template-columns: 1fr; } }
+
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card-media-wrap { width: 100%; position: relative; margin-bottom: 14px; }
+  .prod-card-title { font-family: 'Prompt', sans-serif; font-weight: 900; font-size: 20px; text-transform: uppercase; margin-bottom: 6px; }
+  .prod-card-price { font-size: 16px; font-weight: 700; margin-bottom: 16px; }
+  .sale-now { color: var(--black); margin-right: 6px; }
+  .sale-was { color: #888; font-weight: 400; }
+
+  /* ==================== COMPARISON TABLE ==================== */
+  .section-comparison {
+    padding: 60px 0;
+    background: var(--white);
+  }
+
+  .table-scroll-wrap { margin-top: 40px; overflow-x: auto; }
+  .comparison-tbl {
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid var(--black);
+    box-shadow: 6px 6px 0 var(--black);
+    background: var(--white);
+  }
+
+  .comparison-tbl th,
+  .comparison-tbl td {
+    padding: 18px 24px;
+    border: 2px solid var(--black);
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .comparison-tbl .col-feature,
+  .comparison-tbl .feature-label {
+    text-align: left;
+    font-weight: 600;
+    width: 40%;
+  }
+
+  .comparison-tbl .col-brand { width: 30%; }
+  .comparison-tbl .col-other { width: 30%; font-family: 'Prompt', sans-serif; font-weight: 900; font-size: 16px; text-transform: uppercase; }
+
+  .tbl-logo { height: 26px; display: block; margin: 0 auto; }
+  .check-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: 2px solid var(--black);
+    border-radius: 50%;
+    font-weight: 900;
+    font-size: 18px;
+    background: var(--white);
+  }
+  .cross-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: 2px solid var(--black);
+    border-radius: 50%;
+    font-weight: 900;
+    font-size: 18px;
+    background: #FAFAFA;
+    color: #888;
+  }
+
+  /* ==================== SPOTLIGHT ==================== */
+  .section-spotlight {
+    padding: 60px 0;
+    background: var(--white);
+  }
+
+  .spotlight-2col {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 48px;
+    align-items: center;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 900px) { .spotlight-2col { grid-template-columns: 1fr; } }
+
+  .spotlight-media-wrap {
+    display: flex;
+    gap: 20px;
+  }
+
+  .thumbs-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .thumb-item {
+    width: 70px;
+    height: 70px;
+    border: 2px solid var(--black);
+    border-radius: 6px;
+    box-shadow: 3px 3px 0 var(--black);
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .thumb-item img { width: 100%; height: 100%; object-fit: cover; }
+  .thumb-item.active { border-color: var(--red); }
+
+  .spotlight-main-photo {
+    flex: 1;
+    position: relative;
+  }
+
+  .starburst-badge-yellow {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    width: 70px;
+    height: 70px;
+    background: var(--yellow);
+    border: 2px solid var(--black);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 900;
+    font-size: 12px;
+    z-index: 10;
+  }
+
+  .spot-photo-img { width: 100%; height: auto; display: block; }
+
+  .spotlight-title {
+    font-family: 'Prompt', sans-serif;
+    font-weight: 900;
+    font-size: clamp(32px, 3.5vw, 48px);
+    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .spotlight-price {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .spotlight-desc {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+
+  /* ==================== DINING BANNER ==================== */
+  .section-dining {
+    position: relative;
+    background: #111;
+  }
+
+  .dining-bg-wrap {
+    position: relative;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dining-bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+  }
+
+  .dining-overlay-card {
+    position: relative;
+    z-index: 10;
+    background: var(--white);
+    border: 3px solid var(--black);
+    border-radius: 8px;
+    box-shadow: 8px 8px 0 var(--black);
+    padding: 40px 48px;
+    max-width: 600px;
+    text-align: center;
+  }
+
+  .dining-sub {
+    font-size: 16px;
+    color: #444;
+    margin: 14px 0 24px;
+  }
+
+  /* ==================== IMAGE WITH TEXT (YELLOW) ==================== */
+  .section-img-text {
+    padding: 60px 0;
+    background: var(--yellow);
+    position: relative;
+  }
+
+  .img-text-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  @media (max-width: 900px) { .img-text-grid { grid-template-columns: 1fr; } }
+
+  .recipe-desc {
+    font-size: 18px;
+    color: #333;
+    margin: 16px 0 24px;
+    line-height: 1.5;
+  }
+
+  .img-media-col { position: relative; }
+  .tacos-img { width: 100%; height: auto; display: block; }
+
+  /* ==================== MORE RECIPES (YELLOW) ==================== */
+  .section-recipes-grid {
+    padding: 20px 0 60px;
+    background: var(--yellow);
+    position: relative;
+  }
+
+  .recipes-list { margin-top: 40px; }
+  .recipe-photo { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+  .recipe-card-title {
+    font-family: 'Prompt', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-top: 14px;
+    line-height: 1.2;
+  }
+  .recipes-more-cta { margin-top: 40px; }
+
+  /* ==================== SECRET SAUCE / HIGHLIGHTS ==================== */
+  .section-secret-sauce {
+    padding: 80px 0 60px;
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .starburst-bg-decal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 600px;
+    background: var(--green);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    transform: translate(-50%, -50%) rotate(20deg) scale(1.4);
+    opacity: 0.9;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .secret-sauce-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 32px;
+    align-items: center;
+    margin-top: 48px;
+    position: relative;
+    z-index: 5;
+  }
+
+  @media (max-width: 990px) {
+    .secret-sauce-grid { grid-template-columns: 1fr; }
+    .bottle-img { max-height: 320px; }
+  }
+
+  .highlight-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .highlight-card {
+    background: var(--white);
+    border: 3px solid var(--black);
+    border-radius: 8px;
+    box-shadow: 6px 6px 0 var(--black);
+    padding: 22px 24px;
+    text-align: center;
+  }
+
+  .highlight-title {
+    font-family: 'Prompt', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .highlight-desc {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.4;
+  }
+
+  .bottle-img {
+    max-height: 480px;
+    width: auto;
+    display: block;
+    filter: drop-shadow(8px 8px 0 var(--black));
+  }
+
+  /* ==================== MERCH SECTION (GREEN) ==================== */
+  .section-merch {
+    padding: 60px 0;
+    background: var(--green);
+    position: relative;
+  }
+
+  .merch-grid { margin-top: 40px; }
+
+  /* ==================== NEWSLETTER ==================== */
+  .section-newsletter {
+    padding: 70px 0 60px;
+    background: var(--white);
+    position: relative;
+  }
+
+  .newsletter-sub { font-size: 16px; color: #555; margin: 12px 0 28px; }
+  .newsletter-form {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  @media (max-width: 600px) { .newsletter-form { flex-direction: column; } }
+
+  .newsletter-input {
+    flex: 1;
+    border: 2px solid var(--black);
+    border-radius: 9999px;
+    padding: 12px 20px;
+    font-size: 15px;
+    font-family: inherit;
+    background: var(--white);
+  }
+  .newsletter-input:focus { outline: none; box-shadow: 3px 3px 0 var(--black); }
+
+  /* ==================== FOOTER ==================== */
+  .site-footer {
+    background: var(--red);
+    color: var(--black);
+    padding-top: 60px;
+    position: relative;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1.2fr 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+  }
+
+  @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr; } }
+
+  .footer-demo-text {
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  .footer-socials { display: flex; gap: 14px; }
+  .social-link { color: var(--black); transition: transform 0.15s; }
+  .social-link:hover { transform: scale(1.15); }
+
+  .footer-nav-sub { display: flex; gap: 40px; }
+  .footer-links { display: flex; flex-direction: column; gap: 10px; }
+  .footer-links a { font-weight: 600; font-size: 15px; }
+  .footer-links a:hover { text-decoration: underline; }
+
+  .footer-sub-title {
+    font-family: 'Prompt', sans-serif;
+    font-weight: 900;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .footer-form { display: flex; flex-direction: column; gap: 10px; }
+  .footer-input {
+    border: 2px solid var(--black);
+    border-radius: 9999px;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-family: inherit;
+    background: var(--white);
+  }
+
+  .footer-bottom-row {
+    border-top: 1px solid rgba(0,0,0,0.15);
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .copyright-text { font-size: 13px; font-weight: 500; }
+  .payment-icons-row { display: flex; gap: 8px; }
+  .pay-chip {
+    background: var(--white);
+    border: 1px solid var(--black);
+    font-family: 'Prompt', sans-serif;
+    font-weight: 900;
+    font-size: 10px;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+
+  .footer-giant-logo {
+    width: 100%;
+    padding: 20px 24px 30px;
+    border-top: 2px solid var(--black);
+  }
+
+  .giant-logo-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+</style>

@@ -19,7 +19,9 @@ const ref = entry.data;
 const fullpages = import.meta.glob('../../components/fullpages/*.astro', {
   eager: true,
 });
-const fullMod = fullpages[`../../components/fullpages/${entry.id}.astro`];
+const fullMod =
+  fullpages[`../../components/fullpages/${entry.id}.astro`] ||
+  (ref.preview ? fullpages[`../../components/fullpages/${ref.preview}.astro`] : undefined);
 const FullPage = fullMod?.default;
 
 const webFonts = [ref.fonts.heading, ref.fonts.body].filter(Boolean);
@@ -45,7 +47,7 @@ const fontQuery = webFonts.length
       body {
         margin: 0;
         padding: 0;
-        background: #FBFBF7;
+        background: #FFFFFF;
       }
       body {
         min-height: 100vh;

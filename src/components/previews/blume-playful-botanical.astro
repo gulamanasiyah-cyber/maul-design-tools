@@ -1,0 +1,185 @@
+---
+// Blume Playful Botanical — Live card preview scene: meadow hero with giant blume* wordmark,
+// 3-pill floating nav, ticker ribbon, and illustrated seed pouches.
+// Pure CSS/SVG, cqw units.
+---
+
+<div class="scene" aria-hidden="true">
+  <div class="hero-bg">
+    <img src="/assets/blume/meadow.jpg" alt="" class="bg-img" />
+    <div class="hero-shade"></div>
+  </div>
+
+  <header class="header">
+    <span class="pill dark">home</span>
+    <span class="pill light">shop</span>
+    <span class="pill dark">learn</span>
+  </header>
+
+  <div class="brand-center">
+    <h1 class="brand-title">blume<span class="ast">*</span></h1>
+    <p class="brand-sub">gardens for everyone</p>
+  </div>
+
+  <div class="ticker-strip">
+    <span>no yard doesn't have to mean no garden! let your flowers blume*</span>
+  </div>
+
+  <!-- Pouch row preview -->
+  <div class="pouch-row">
+    <div class="mini-pouch">
+      <span class="p-title">mood boost</span>
+      <div class="p-flower lime"></div>
+    </div>
+    <div class="mini-pouch">
+      <span class="p-title">good cookin'</span>
+      <div class="p-flower green"></div>
+    </div>
+    <div class="mini-pouch">
+      <span class="p-title">clean air</span>
+      <div class="p-flower gray"></div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .scene {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    min-height: 260px;
+    background: #18181B;
+    overflow: hidden;
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    container-type: inline-size;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-shade {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.22);
+  }
+
+  .header {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.6cqw 2.4cqw;
+  }
+
+  .pill {
+    padding: 0.35cqw 1cqw;
+    border-radius: 999px;
+    font-size: 0.62cqw;
+    font-weight: 700;
+  }
+
+  .pill.dark {
+    background: #18181B;
+    color: #FFFFFF;
+  }
+
+  .pill.light {
+    background: #FFFFFF;
+    color: #18181B;
+  }
+
+  .brand-center {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    margin: 0;
+  }
+
+  .brand-title {
+    font-size: 6.8cqw;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    color: #FFFFFF;
+    line-height: 0.9;
+    margin: 0;
+    text-shadow: 0 0.4cqw 1.8cqw rgba(0,0,0,0.3);
+  }
+
+  .ast {
+    font-size: 0.6em;
+    vertical-align: super;
+  }
+
+  .brand-sub {
+    font-size: 1.3cqw;
+    color: #FFFFFF;
+    letter-spacing: 0.04em;
+    margin: 0.4cqw 0 0;
+  }
+
+  .ticker-strip {
+    position: relative;
+    z-index: 10;
+    background: #FFFFFF;
+    font-size: 0.55cqw;
+    font-weight: 600;
+    color: #18181B;
+    padding: 0.4cqw 1cqw;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .pouch-row {
+    position: relative;
+    z-index: 10;
+    background: #FAF8F5;
+    padding: 0.9cqw 2cqw;
+    display: flex;
+    justify-content: center;
+    gap: 1cqw;
+  }
+
+  .mini-pouch {
+    background: #FFFFFF;
+    border: 1px solid #E4E4E7;
+    border-radius: 0.4cqw;
+    padding: 0.5cqw;
+    width: 6.5cqw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3cqw;
+  }
+
+  .p-title {
+    font-size: 0.45cqw;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #18181B;
+  }
+
+  .p-flower {
+    width: 2.2cqw;
+    height: 2.2cqw;
+    border-radius: 50%;
+  }
+
+  .p-flower.lime { background: #A3E635; }
+  .p-flower.green { background: #22C55E; }
+  .p-flower.gray { background: #A1A1AA; }
+</style>

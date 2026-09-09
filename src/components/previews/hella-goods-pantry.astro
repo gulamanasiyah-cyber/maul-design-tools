@@ -1,0 +1,256 @@
+---
+// Hella Goods Pantry — Live card preview scene: faithful Shapes theme pantry storefront.
+// Red #FF2524 hero stage, transparent header with logo, giant wordmark, overlapping food photo
+// with 8px push shadow, floating starburst stickers ("Full of Flavour", "Hot stuff!", chili sticker),
+// wavy scallop divider, and "Everyday pantry goods" headline with push-button CTA. Pure CSS/SVG, cqw units.
+---
+
+<div class="scene" aria-hidden="true">
+  <!-- Red Hero Canvas -->
+  <div class="hero-stage">
+    <!-- Header bar -->
+    <div class="header-bar">
+      <span class="hdr-menu">☰</span>
+      <div class="hdr-nav">
+        <span>Shop ▼</span>
+        <span>Restaurant</span>
+        <span>Recipes</span>
+      </div>
+      <div class="hdr-right">
+        <span class="hdr-ic">🔍</span>
+        <span class="hdr-ic">🛍 <em>0</em></span>
+        <div class="hdr-pill">Shop</div>
+      </div>
+    </div>
+
+    <!-- Giant Wordmark in Hero -->
+    <div class="hero-wordmark">
+      <svg viewBox="0 0 438 48" class="wordmark-svg"><text x="50%" y="82%" text-anchor="middle" font-family="'Prompt', sans-serif" font-weight="900" font-size="46" fill="#000" letter-spacing="0.04em">HELLA GOODS</text></svg>
+    </div>
+
+    <!-- Hero Food Photo with push shadow -->
+    <div class="hero-photo-holder">
+      <div class="hero-photo-box">
+        <img src="/assets/hella-goods-pantry/hero-header.png" alt="" class="hero-img" />
+      </div>
+
+      <!-- Floating Starburst Stickers -->
+      <div class="sticker-flavour">
+        <span>Full of<br/>Flavour</span>
+      </div>
+      <div class="sticker-hot">
+        <span>Hot stuff!</span>
+      </div>
+      <div class="sticker-chili">
+        <img src="/assets/hella-goods-pantry/chili-sticker.png" alt="" />
+      </div>
+    </div>
+
+    <!-- Bottom Scallop Wave Divider -->
+    <div class="wave-divider">
+      <svg viewBox="0 0 1200 20" preserveAspectRatio="none"><path d="M0 8.46C8 3.85 16 3.85 24 8.46C32 13.08 40 13.08 48 8.46C56 3.85 64 3.85 72 8.46C80 13.08 88 13.08 96 8.46C104 3.85 112 3.85 120 8.46C128 13.08 136 13.08 144 8.46C152 3.85 160 3.85 168 8.46C176 13.08 184 13.08 192 8.46C200 3.85 208 3.85 216 8.46C224 13.08 232 13.08 240 8.46C248 3.85 256 3.85 264 8.46C272 13.08 280 13.08 288 8.46C296 3.85 304 3.85 312 8.46C320 13.08 328 13.08 336 8.46C344 3.85 352 3.85 360 8.46C368 13.08 376 13.08 384 8.46C392 3.85 400 3.85 408 8.46C416 13.08 424 13.08 432 8.46C440 3.85 448 3.85 456 8.46C464 13.08 472 13.08 480 8.46C488 3.85 496 3.85 504 8.46C512 13.08 520 13.08 528 8.46C536 3.85 544 3.85 552 8.46C560 13.08 568 13.08 576 8.46C584 3.85 592 3.85 600 8.46C608 13.08 616 13.08 624 8.46C632 3.85 640 3.85 648 8.46C656 13.08 664 13.08 672 8.46C680 3.85 688 3.85 696 8.46C704 13.08 712 13.08 720 8.46C728 3.85 736 3.85 744 8.46C752 13.08 760 13.08 768 8.46C776 3.85 784 3.85 792 8.46C800 13.08 808 13.08 816 8.46C824 3.85 832 3.85 840 8.46C848 13.08 856 13.08 864 8.46C872 3.85 880 3.85 888 8.46C896 13.08 904 13.08 912 8.46C920 3.85 928 3.85 936 8.46C944 13.08 952 13.08 960 8.46C968 3.85 976 3.85 984 8.46C992 13.08 1000 13.08 1008 8.46C1016 3.85 1024 3.85 1032 8.46C1040 13.08 1048 13.08 1056 8.46C1064 3.85 1072 3.85 1080 8.46C1088 13.08 1096 13.08 1104 8.46C1112 3.85 1120 3.85 1128 8.46C1136 13.08 1144 13.08 1152 8.46C1160 3.85 1168 3.85 1176 8.46C1184 13.08 1192 13.08 1200 8.46V20H0Z" fill="#FFFFFF"/></svg>
+    </div>
+  </div>
+
+  <!-- Bottom White Section -->
+  <div class="bottom-strip">
+    <span class="statement-line">EVERYDAY PANTRY GOODS FOR THE EVERYDAY CHEF.</span>
+    <div class="mini-push-btn">SHOP NOW</div>
+  </div>
+</div>
+
+<style>
+  .scene {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    min-height: 260px;
+    background: #FFFFFF;
+    overflow: hidden;
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    container-type: inline-size;
+    color: #000000;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* Hero Stage - Red background */
+  .hero-stage {
+    position: relative;
+    flex: 1;
+    background: #FF2524;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding-top: 0.8cqw;
+  }
+
+  /* Header Bar */
+  .header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5cqw;
+    font-size: 0.65cqw;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .hdr-menu { font-size: 0.9cqw; }
+  .hdr-nav { display: flex; gap: 1cqw; }
+  .hdr-right { display: flex; align-items: center; gap: 0.8cqw; }
+  .hdr-ic em {
+    font-style: normal;
+    background: #000;
+    color: #fff;
+    font-size: 0.45cqw;
+    border-radius: 50%;
+    padding: 0.05cqw 0.25cqw;
+  }
+  .hdr-pill {
+    background: #FFCC36;
+    color: #000;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 900;
+    font-size: 0.55cqw;
+    padding: 0.2cqw 0.7cqw;
+    border-radius: 9999px;
+    border: 0.12cqw solid #000;
+    box-shadow: 0.15cqw 0.15cqw 0 #000;
+  }
+
+  /* Wordmark */
+  .hero-wordmark {
+    max-width: 24cqw;
+    margin: 0.2cqw auto 0;
+  }
+  .wordmark-svg { width: 100%; height: auto; display: block; }
+
+  /* Hero Photo */
+  .hero-photo-holder {
+    position: relative;
+    max-width: 21cqw;
+    margin: -0.5cqw auto 0;
+    z-index: 5;
+  }
+
+  .hero-photo-box {
+    border: 0.2cqw solid #000;
+    border-radius: 0.4cqw;
+    box-shadow: 0.45cqw 0.45cqw 0 #000;
+    overflow: hidden;
+    background: #FFF;
+  }
+
+  .hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Floating Stickers */
+  .sticker-flavour {
+    position: absolute;
+    top: -1.2cqw;
+    right: -2.8cqw;
+    width: 4cqw;
+    height: 4cqw;
+    background: #5AFF24;
+    border: 0.12cqw solid #000;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 900;
+    font-size: 0.42cqw;
+    line-height: 1.1;
+    text-transform: uppercase;
+    transform: rotate(24deg);
+    z-index: 10;
+  }
+
+  .sticker-hot {
+    position: absolute;
+    bottom: 0.5cqw;
+    left: -2.2cqw;
+    width: 3.4cqw;
+    height: 2cqw;
+    background: #FFF;
+    border: 0.12cqw solid #000;
+    border-radius: 3.4cqw 3.4cqw 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 900;
+    font-size: 0.45cqw;
+    transform: rotate(-12deg);
+    z-index: 10;
+  }
+
+  .sticker-chili {
+    position: absolute;
+    bottom: -1cqw;
+    right: -2.2cqw;
+    width: 3.2cqw;
+    transform: rotate(-38deg);
+    z-index: 10;
+  }
+  .sticker-chili img { width: 100%; height: auto; display: block; filter: drop-shadow(0.15cqw 0.15cqw 0 #000); }
+
+  /* Wave Divider */
+  .wave-divider {
+    line-height: 0;
+    width: 100%;
+    z-index: 8;
+  }
+  .wave-divider svg { width: 100%; height: 1.1cqw; display: block; }
+
+  /* Bottom White Section */
+  .bottom-strip {
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6cqw 1.5cqw;
+    gap: 1cqw;
+  }
+
+  .statement-line {
+    font-family: 'Prompt', sans-serif;
+    font-weight: 900;
+    font-size: 0.72cqw;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .mini-push-btn {
+    background: #000;
+    border-radius: 9999px;
+    padding: 0.12cqw 0 0 0.12cqw;
+    flex-shrink: 0;
+    display: inline-block;
+    color: #000;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 900;
+    font-size: 0.55cqw;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .mini-push-btn {
+    background: #FFF;
+    border: 0.12cqw solid #000;
+    box-shadow: 0.18cqw 0.18cqw 0 #000;
+    padding: 0.25cqw 0.8cqw;
+    border-radius: 9999px;
+  }
+</style>

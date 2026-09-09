@@ -1,0 +1,169 @@
+---
+// Solara Clean Energy — Live card preview scene: sky hero with giant Solara wordmark,
+// wind turbine silhouette, earth-toned bottom stats bar, and why-solara card hints.
+// Pure CSS/SVG, cqw units.
+---
+
+<div class="scene" aria-hidden="true">
+  <div class="hero-bg">
+    <img src="/assets/solara/hero-wind.jpg" alt="" class="bg-img" />
+    <div class="sky-tint"></div>
+  </div>
+
+  <header class="header">
+    <nav class="navlinks">
+      <span>SOLUTIONS</span>
+      <span>PROJECTS</span>
+      <span>ABOUT</span>
+    </nav>
+    <span class="quote-btn">GET A SOLAR QUOTE</span>
+  </header>
+
+  <div class="brand-center">
+    <span class="giant-wordmark">Solara</span>
+  </div>
+
+  <!-- Bottom Earth Bar -->
+  <div class="bottom-bar">
+    <div class="bar-headline">
+      Power your home with the sun not rising bills
+    </div>
+    <div class="bar-stats">
+      <div class="stat">
+        <span class="num">25 Y</span>
+        <span class="lbl">warranty</span>
+      </div>
+      <div class="stat">
+        <span class="num">48 K</span>
+        <span class="lbl">installed</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .scene {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    min-height: 260px;
+    background: #2563EB;
+    overflow: hidden;
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    container-type: inline-size;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+  }
+
+  .sky-tint {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(20, 60, 100, 0.35) 0%,
+      transparent 50%,
+      rgba(0, 0, 0, 0.3) 100%
+    );
+  }
+
+  .header {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.6cqw 2.4cqw;
+  }
+
+  .navlinks {
+    display: flex;
+    gap: 1.2cqw;
+    font-size: 0.6cqw;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #FFFFFF;
+  }
+
+  .quote-btn {
+    background: #FFFFFF;
+    color: #111827;
+    font-size: 0.58cqw;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 0.35cqw 0.9cqw;
+    border-radius: 999px;
+  }
+
+  .brand-center {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    margin: 0;
+  }
+
+  .giant-wordmark {
+    font-size: 8.4cqw;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: #FFFFFF;
+    line-height: 0.85;
+    display: inline-block;
+    text-shadow: 0 0.4cqw 2cqw rgba(0,0,0,0.25);
+  }
+
+  .bottom-bar {
+    position: relative;
+    z-index: 10;
+    background: rgba(62, 58, 32, 0.94);
+    backdrop-filter: blur(8px);
+    padding: 1.2cqw 2.4cqw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #FFFFFF;
+  }
+
+  .bar-headline {
+    font-size: 0.85cqw;
+    font-weight: 700;
+    line-height: 1.2;
+    max-width: 24cqw;
+  }
+
+  .bar-stats {
+    display: flex;
+    gap: 1.6cqw;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .num {
+    font-size: 1.1cqw;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .lbl {
+    font-size: 0.5cqw;
+    color: rgba(255, 255, 255, 0.75);
+    text-transform: uppercase;
+  }
+</style>

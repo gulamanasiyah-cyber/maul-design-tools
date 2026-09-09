@@ -28,7 +28,7 @@ const fontQuery = fonts.length
         --line: #262b30;
         --text: #e8e6e1;
         --muted: #9aa0a6;
-        --accent: #c98f5e;
+        --accent: #e8e6e1;
         --radius: 14px;
         --ui-font: 'Avenir Next', 'Segoe UI', system-ui, -apple-system, sans-serif;
       }
@@ -42,9 +42,7 @@ const fontQuery = fonts.length
         margin: 0;
         font-family: var(--ui-font);
         color: var(--text);
-        background:
-          radial-gradient(1200px 500px at 70% -10%, rgba(201, 143, 94, 0.07), transparent 60%),
-          var(--bg);
+        background: var(--bg);
         min-height: 100vh;
         -webkit-font-smoothing: antialiased;
       }
@@ -82,8 +80,8 @@ const fontQuery = fonts.length
         width: 10px;
         height: 10px;
         border-radius: 50%;
-        background: var(--accent);
-        box-shadow: 0 0 14px rgba(201, 143, 94, 0.8);
+        background: #ffffff;
+        box-shadow: 0 0 14px rgba(255, 255, 255, 0.6);
       }
       .site-note {
         color: var(--muted);

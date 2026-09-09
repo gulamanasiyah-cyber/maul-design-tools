@@ -1,0 +1,332 @@
+---
+// Kidu Playful Kids Store — Live card preview scene: bright playful palette (#CE126E, #584592, #FDE9F3),
+// cute round badge, toy card mockup with quick add, and running ticker.
+// Pure CSS/SVG, cqw units.
+---
+
+<div class="scene" aria-hidden="true">
+  <!-- Top ticker strip -->
+  <div class="top-ticker">
+    <span class="ticker-badge">#WELCOME</span>
+    <span class="ticker-text">Explore Deals & Offers • SHOP NOW!</span>
+  </div>
+
+  <!-- Header Mini -->
+  <div class="header-bar">
+    <div class="logo">kidu</div>
+    <div class="nav-pills">
+      <span class="pill active">Home</span>
+      <span class="pill">Catalog</span>
+      <span class="pill flash">Sale <span class="badge">FLASH</span></span>
+      <span class="pill">Categories</span>
+    </div>
+    <div class="cart-btn">
+      <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 6h12l-1 9H5L4 6z" />
+        <path d="M7 6V4a3 3 0 016 0v2" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- Hero Content -->
+  <div class="hero-split">
+    <div class="hero-copy">
+      <span class="hero-tag">NEW ARRIVALS</span>
+      <h2 class="hero-title">Kidu - Explore the World of Play</h2>
+      <p class="hero-sub">Discover endless joy with our latest toys & plushies.</p>
+      <div class="hero-btns">
+        <span class="btn-primary">Shop now</span>
+        <span class="btn-link">Learn more →</span>
+      </div>
+    </div>
+
+    <!-- Product Card Float -->
+    <div class="product-preview-card">
+      <div class="card-img-wrap">
+        <img src="/assets/kidu/slide-1-1.png" alt="" class="card-img" />
+        <span class="sale-chip">SAVE 20%</span>
+      </div>
+      <div class="card-meta">
+        <span class="card-title">Strawberry Plush</span>
+        <div class="card-price">
+          <span class="p-now">$24.00</span>
+          <span class="p-was">$29.00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Category Circles Strip -->
+  <div class="cat-strip">
+    <div class="cat-item">
+      <div class="cat-circle c1"><img src="/assets/kidu/cat-plush.jpg" alt="" /></div>
+      <span class="cat-label">Plush</span>
+    </div>
+    <div class="cat-item">
+      <div class="cat-circle c2"><img src="/assets/kidu/cat-lights.jpg" alt="" /></div>
+      <span class="cat-label">Lights</span>
+    </div>
+    <div class="cat-item">
+      <div class="cat-circle c3"><img src="/assets/kidu/cat-mask.jpg" alt="" /></div>
+      <span class="cat-label">Masks</span>
+    </div>
+    <div class="cat-item">
+      <div class="cat-circle c4"><img src="/assets/kidu/cat-acc.png" alt="" /></div>
+      <span class="cat-label">Gear</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .scene {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    min-height: 260px;
+    background: #584592;
+    overflow: hidden;
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+    container-type: inline-size;
+    color: #FFFFFF;
+    padding: 0 0 1.2cqw;
+  }
+
+  * { box-sizing: border-box; }
+
+  /* Ticker */
+  .top-ticker {
+    background: #CE126E;
+    padding: 0.4cqw 1.5cqw;
+    display: flex;
+    align-items: center;
+    gap: 0.8cqw;
+    font-size: 0.7cqw;
+    font-weight: 800;
+  }
+
+  .ticker-badge {
+    background: rgba(255,255,255,0.25);
+    padding: 0.1cqw 0.5cqw;
+    border-radius: 0.3cqw;
+    letter-spacing: 0.05em;
+  }
+
+  .ticker-text {
+    color: #FFFFFF;
+  }
+
+  /* Header */
+  .header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6cqw 2cqw;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(8px);
+  }
+
+  .logo {
+    font-size: 1.8cqw;
+    font-weight: 900;
+    color: #99EBEB;
+    letter-spacing: -0.02em;
+    text-transform: lowercase;
+  }
+
+  .nav-pills {
+    display: flex;
+    gap: 1cqw;
+    align-items: center;
+  }
+
+  .pill {
+    font-size: 0.75cqw;
+    font-weight: 700;
+    color: rgba(255,255,255,0.8);
+    position: relative;
+  }
+
+  .pill.active {
+    color: #99EBEB;
+  }
+
+  .pill.flash .badge {
+    background: #D21170;
+    color: #FFFFFF;
+    font-size: 0.5cqw;
+    padding: 0.1cqw 0.3cqw;
+    border-radius: 0.2cqw;
+    margin-left: 0.2cqw;
+  }
+
+  .cart-btn {
+    width: 2cqw;
+    height: 2cqw;
+    background: #FFFFFF;
+    color: #222222;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Hero Split */
+  .hero-split {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 1.5cqw;
+    padding: 0.8cqw 2cqw;
+    align-items: center;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: #D21170;
+    color: #FFFFFF;
+    font-size: 0.6cqw;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    padding: 0.2cqw 0.6cqw;
+    border-radius: 0.4cqw;
+    margin-bottom: 0.4cqw;
+  }
+
+  .hero-title {
+    font-size: 1.9cqw;
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 0 0 0.4cqw;
+    color: #FFFFFF;
+  }
+
+  .hero-sub {
+    font-size: 0.75cqw;
+    color: rgba(255,255,255,0.85);
+    margin: 0 0 0.8cqw;
+    line-height: 1.3;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 0.8cqw;
+    align-items: center;
+  }
+
+  .btn-primary {
+    background: #99EBEB;
+    color: #222222;
+    font-size: 0.75cqw;
+    font-weight: 800;
+    padding: 0.4cqw 1cqw;
+    border-radius: 0.5cqw;
+  }
+
+  .btn-link {
+    font-size: 0.75cqw;
+    font-weight: 700;
+    color: #FFFFFF;
+  }
+
+  /* Product Card */
+  .product-preview-card {
+    background: #FFFFFF;
+    color: #222222;
+    border-radius: 0.8cqw;
+    padding: 0.6cqw;
+    box-shadow: 0 0.8cqw 2cqw rgba(0,0,0,0.25);
+  }
+
+  .card-img-wrap {
+    position: relative;
+    aspect-ratio: 1;
+    background: #F4F4F4;
+    border-radius: 0.5cqw;
+    overflow: hidden;
+  }
+
+  .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .sale-chip {
+    position: absolute;
+    top: 0.4cqw;
+    left: 0.4cqw;
+    background: #CE126E;
+    color: #FFFFFF;
+    font-size: 0.55cqw;
+    font-weight: 900;
+    padding: 0.15cqw 0.4cqw;
+    border-radius: 0.3cqw;
+  }
+
+  .card-meta {
+    padding: 0.4cqw 0.2cqw 0.1cqw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .card-title {
+    font-size: 0.75cqw;
+    font-weight: 800;
+  }
+
+  .card-price {
+    display: flex;
+    gap: 0.3cqw;
+    font-size: 0.7cqw;
+  }
+
+  .p-now {
+    color: #CE126E;
+    font-weight: 900;
+  }
+
+  .p-was {
+    color: #888888;
+    text-decoration: line-through;
+  }
+
+  /* Category Strip */
+  .cat-strip {
+    display: flex;
+    justify-content: center;
+    gap: 1.8cqw;
+    padding: 0.4cqw 2cqw 0;
+  }
+
+  .cat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2cqw;
+  }
+
+  .cat-circle {
+    width: 2.8cqw;
+    height: 2.8cqw;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 0.15cqw solid #99EBEB;
+    background: #F4F4F4;
+  }
+
+  .cat-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cat-label {
+    font-size: 0.6cqw;
+    font-weight: 800;
+    color: rgba(255,255,255,0.9);
+  }
+</style>

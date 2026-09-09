@@ -1,0 +1,1992 @@
+---
+// Kidu Playful Kids Store — Full-page recreation of the Shopify toy & kids brand storefront.
+// Palettes: Fuchsia #CE126E, Plum #584592, Mint #99EBEB, Pink Cloud #FDE9F3, Light Sand #FFF0D8, Off-white #F4F4F4.
+// Font: Nunito rounded sans-serif.
+---
+
+<div class="kidu-page">
+  <!-- ==================== ANNOUNCEMENT TICKER ==================== -->
+  <aside class="announcement-bar">
+    <div class="ticker-inner">
+      <div class="ticker-timer">
+        <span class="timer-label">Limited-time offer!</span>
+        <div class="timer-digits">
+          <span><strong>02</strong>d</span>
+          <span><strong>14</strong>h</span>
+          <span><strong>45</strong>m</span>
+          <span><strong>19</strong>s</span>
+        </div>
+      </div>
+      <div class="ticker-marquee">
+        <div class="marquee-track">
+          <span class="m-item"><em>#WELCOME :</em> Explore Deals & Offers <a href="#catalog">SHOP NOW!</a></span>
+          <span class="m-item"><em>#KiduSafeStyle :</em> Elevate Your Safety in Style 😷 <a href="#catalog">SHOP NOW!</a></span>
+          <span class="m-item"><em>#KiduFunTime :</em> Explore exclusive deals at Kidu! <a href="#catalog">SHOP NOW!</a></span>
+          <span class="m-item"><em>#WELCOME :</em> Explore Deals & Offers <a href="#catalog">SHOP NOW!</a></span>
+          <span class="m-item"><em>#KiduSafeStyle :</em> Elevate Your Safety in Style 😷 <a href="#catalog">SHOP NOW!</a></span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==================== MAIN HEADER ==================== -->
+  <header class="main-header">
+    <div class="container header-container">
+      <div class="logo-wrap">
+        <a href="/" class="logo-link">
+          <img src="/assets/kidu/logo-kidu.svg" alt="Kidu" class="logo-img" />
+        </a>
+      </div>
+
+      <nav class="nav-menu">
+        <a href="#" class="nav-link active">Home</a>
+        <div class="nav-dropdown-wrap">
+          <a href="#catalog" class="nav-link">Catalog <span class="caret">▾</span></a>
+        </div>
+        <div class="nav-dropdown-wrap">
+          <a href="#sale" class="nav-link">Sale <span class="nav-badge flash-badge">FLASH</span> <span class="caret">▾</span></a>
+        </div>
+        <a href="#snap-deal" class="nav-link">Snap Deal <span class="nav-badge wow-badge">WOW</span></a>
+        <a href="#categories" class="nav-link">Shop by Category <span class="caret">▾</span></a>
+        <a href="#resources" class="nav-link">Resources <span class="caret">▾</span></a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="currency-pill">
+          <span class="flag">🇺🇸</span>
+          <span>USD $</span>
+          <span class="caret">▾</span>
+        </div>
+        <div class="lang-pill">
+          <span>English</span>
+          <span class="caret">▾</span>
+        </div>
+        <button class="icon-circle" aria-label="Account">
+          <svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M10 10a4 4 0 100-8 4 4 0 000 8zm-7 8a7 7 0 0114 0H3z" />
+          </svg>
+        </button>
+        <button class="icon-circle cart-circle" aria-label="Cart">
+          <svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M4 6h12l-1 11H5L4 6z" />
+            <path d="M7 6V4a3 3 0 016 0v2" />
+          </svg>
+          <span class="cart-count">2</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== UTILITY BAR / SEARCH ==================== -->
+  <div class="utility-bar">
+    <div class="container utility-container">
+      <button class="new-arrival-btn">
+        <svg viewBox="0 0 13 13" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="3" cy="3" r="2" />
+          <circle cx="10" cy="3" r="2" />
+          <circle cx="3" cy="10" r="2" />
+          <circle cx="10" cy="10" r="2" />
+        </svg>
+        New Arrival
+      </button>
+
+      <div class="search-input-wrap">
+        <svg class="search-ico" viewBox="0 0 18 17" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="7" cy="7" r="5" />
+          <path d="M11 11l4 4" />
+        </svg>
+        <input type="search" placeholder="Search here for toys, plushes, masks..." class="search-input" />
+      </div>
+
+      <div class="store-locator-btn">
+        <svg viewBox="0 0 22 22" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="11" cy="9" r="4" />
+          <path d="M11 2a7 7 0 00-7 7c0 5 7 11 7 11s7-6 7-11a7 7 0 00-7-7z" />
+        </svg>
+        <span>Store Locations</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== HERO BANNER SLIDESHOW ==================== -->
+  <section class="hero-slideshow">
+    <div class="container">
+      <div class="hero-slide-card">
+        <!-- Slide 1 Content -->
+        <div class="slide-left-img">
+          <img src="/assets/kidu/slide-1-1.png" alt="Happy child playing with plush" class="hero-child-img" />
+        </div>
+
+        <div class="slide-center-copy">
+          <span class="slide-pill">New Arrivals</span>
+          <h1 class="slide-headline">Kidu - Explore the World of Play</h1>
+          <p class="slide-sub">Discover endless joy with our latest toys, plushies & creative collections.</p>
+          <div class="slide-ctas">
+            <a href="#catalog" class="btn btn-mint">Shop now</a>
+            <a href="#about" class="btn-link-white">Learn more <span class="arrow">→</span></a>
+          </div>
+        </div>
+
+        <div class="slide-right-img">
+          <img src="/assets/kidu/slide-1-2.png" alt="Toy items showcase" class="hero-toy-img" />
+        </div>
+
+        <!-- Carousel Pagination Dots -->
+        <div class="hero-pager">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== MARQUEE BRAND LOGOS ==================== -->
+  <section class="brand-logos-section">
+    <div class="container">
+      <div class="logos-track">
+        <img src="/assets/kidu/brand-1.svg" alt="Brand 1" class="brand-logo" />
+        <img src="/assets/kidu/brand-2.svg" alt="Brand 2" class="brand-logo" />
+        <img src="/assets/kidu/brand-3.svg" alt="Brand 3" class="brand-logo" />
+        <img src="/assets/kidu/brand-4.svg" alt="Brand 4" class="brand-logo" />
+        <img src="/assets/kidu/brand-5.svg" alt="Brand 5" class="brand-logo" />
+        <img src="/assets/kidu/brand-1.svg" alt="Brand 1" class="brand-logo" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== HIGHLIGHT VALUE STRIP ==================== -->
+  <section class="value-ticker-strip">
+    <div class="marquee-track-smooth">
+      <div class="v-pill">
+        <span class="v-dot"></span>
+        <strong>NEXT DAY DELIVERY - ORDER BY 6PM</strong>
+      </div>
+      <div class="v-pill">
+        <span class="v-dot"></span>
+        <strong>Get an extra 5% off with code 'XMAS5'</strong>
+      </div>
+      <div class="v-pill">
+        <span class="v-dot"></span>
+        <strong>Premier Toys: A Decade of Excellence</strong>
+      </div>
+      <div class="v-pill">
+        <span class="v-dot"></span>
+        <strong>LAST CHANCE TO BUY!</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TOP COLLECTIONS (SQUARE CARDS) ==================== -->
+  <section class="top-collections-section" id="categories">
+    <div class="container">
+      <h2 class="section-heading-center">Shop our top collections</h2>
+
+      <div class="collections-grid-5">
+        <a href="#plush" class="collection-square-card">
+          <div class="card-media">
+            <img src="/assets/kidu/cat-plush.jpg" alt="Mini Plush" />
+          </div>
+          <h3 class="card-name">Mini Plush</h3>
+        </a>
+
+        <a href="#lights" class="collection-square-card">
+          <div class="card-media">
+            <img src="/assets/kidu/cat-lights.jpg" alt="Little Lights" />
+          </div>
+          <h3 class="card-name">Little Lights</h3>
+        </a>
+
+        <a href="#accessories" class="collection-square-card">
+          <div class="card-media">
+            <img src="/assets/kidu/cat-acc.png" alt="Accessories" />
+          </div>
+          <h3 class="card-name">Accessories</h3>
+        </a>
+
+        <a href="#masks" class="collection-square-card">
+          <div class="card-media card-media-pink">
+            <img src="/assets/kidu/cat-mask.jpg" alt="Face Masks" />
+            <span class="badge-must-have">Must have</span>
+          </div>
+          <h3 class="card-name">Face Masks</h3>
+        </a>
+
+        <a href="#stickers" class="collection-square-card">
+          <div class="card-media">
+            <img src="/assets/kidu/cat-tape.png" alt="Stickers" />
+          </div>
+          <h3 class="card-name">Stickers</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PROMO BANNERS COLLAGE 1 ==================== -->
+  <section class="promo-collage-1">
+    <div class="container">
+      <div class="collage-grid-1">
+        <!-- Large Left Banner (Water Bottles) -->
+        <a href="#bottles" class="promo-banner-card b-tall">
+          <img src="/assets/kidu/banner-1-1.png" alt="Water bottles & travel gear collection" />
+        </a>
+
+        <!-- Top Right Banner (Mini Plush) -->
+        <a href="#plush" class="promo-banner-card b-wide-top">
+          <img src="/assets/kidu/banner-1-2.png" alt="Mini plush cuteness" />
+        </a>
+
+        <!-- Bottom Right Banner (Little Lights) -->
+        <a href="#lights" class="promo-banner-card b-wide-bottom">
+          <img src="/assets/kidu/banner-1-3.png" alt="Little lights bedside companion" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SHOP BY AGE (ECLIPSE PILLS) ==================== -->
+  <section class="shop-by-age-section">
+    <div class="container">
+      <h2 class="section-heading-center">Shop by age</h2>
+
+      <div class="age-pills-grid">
+        <a href="#age-1" class="age-card">
+          <div class="age-oval">
+            <img src="/assets/kidu/age-1.png" alt="1-12 months" />
+          </div>
+          <span class="age-label">1 - 12 months</span>
+        </a>
+
+        <a href="#age-2" class="age-card">
+          <div class="age-oval">
+            <img src="/assets/kidu/age-2.png" alt="2-3 years" />
+          </div>
+          <span class="age-label">2 - 3 years</span>
+        </a>
+
+        <a href="#age-3" class="age-card">
+          <div class="age-oval">
+            <img src="/assets/kidu/age-3.png" alt="4-5 years" />
+          </div>
+          <span class="age-label">4 - 5 years</span>
+        </a>
+
+        <a href="#age-4" class="age-card">
+          <div class="age-oval">
+            <img src="/assets/kidu/age-4.png" alt="6-7 years" />
+          </div>
+          <span class="age-label">6 - 7 years</span>
+        </a>
+
+        <a href="#age-5" class="age-card">
+          <div class="age-oval">
+            <img src="/assets/kidu/age-5.png" alt="Older Kids" />
+          </div>
+          <span class="age-label">Older Kids</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TRUST TICKER (FUCHSIA) ==================== -->
+  <section class="trust-ticker-fuchsia">
+    <div class="marquee-track-smooth">
+      <span class="t-item">Parent-Approved Toy Safety Standards •</span>
+      <span class="t-item">Low Price Guarantee •</span>
+      <span class="t-item">No Hassle Returns •</span>
+      <span class="t-item">Parent-Approved Toy Safety Standards •</span>
+      <span class="t-item">Low Price Guarantee •</span>
+      <span class="t-item">No Hassle Returns •</span>
+    </div>
+  </section>
+
+  <!-- ==================== 4-GRID ACTION BANNERS ==================== -->
+  <section class="action-banners-4">
+    <div class="container">
+      <div class="action-grid-4">
+        <div class="action-card ac-pink">
+          <img src="/assets/kidu/banner-2-1.png" alt="Explore Toys" />
+          <a href="#catalog" class="action-btn">Explore Toys <span class="arrow">→</span></a>
+        </div>
+        <div class="action-card ac-fuchsia">
+          <img src="/assets/kidu/banner-2-2.png" alt="Unlock Deals" />
+          <a href="#sale" class="action-btn">Unlock Deals <span class="arrow">→</span></a>
+        </div>
+        <div class="action-card ac-fuchsia">
+          <img src="/assets/kidu/banner-2-3.png" alt="Gift Cards" />
+          <a href="#giftcards" class="action-btn">Gift Cards <span class="arrow">→</span></a>
+        </div>
+        <div class="action-card ac-fuchsia">
+          <img src="/assets/kidu/banner-2-4.png" alt="Latest News" />
+          <a href="#blog" class="action-btn">Latest News <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FLASH SALE PRODUCT GRID ==================== -->
+  <section class="flash-sale-section" id="sale">
+    <div class="container">
+      <div class="flash-sale-header">
+        <div class="header-left">
+          <h2 class="section-title-left">Flash Sale</h2>
+          <span class="discount-sub">Take 20% off all items starting today!</span>
+        </div>
+        <div class="flash-timer">
+          <span class="time-box"><strong>02</strong> days</span>
+          <span class="time-box"><strong>14</strong> hours</span>
+          <span class="time-box"><strong>45</strong> mins</span>
+          <span class="time-box"><strong>19</strong> secs</span>
+        </div>
+      </div>
+
+      <div class="products-grid-4">
+        <!-- Product 1: Riceminty Little Light -->
+        <article class="product-item-card">
+          <div class="p-thumb-wrap">
+            <img src="/assets/kidu/riceminty.jpg" alt="Riceminty Little Light" class="p-img" />
+            <span class="p-save-chip">Save $4.00</span>
+            <div class="p-swatches-top">
+              <span class="sw-dot sw-pink active"></span>
+              <span class="sw-dot sw-green"></span>
+              <span class="sw-dot sw-red"></span>
+              <span class="sw-dot sw-gray"></span>
+            </div>
+          </div>
+          <div class="p-info">
+            <span class="p-stock-tag">In stock</span>
+            <div class="p-prices">
+              <span class="p-price-now">From $38.00</span>
+              <s class="p-price-old">$42.00</s>
+            </div>
+            <h3 class="p-title">Riceminty Little Light</h3>
+            <span class="p-vendor">noodoll</span>
+            <button class="quick-add-btn">
+              <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 6h12l-1 11H5L4 6z" />
+                <path d="M7 6V4a3 3 0 016 0v2" />
+              </svg>
+              Quick Add
+            </button>
+          </div>
+        </article>
+
+        <!-- Product 2: Ricepudding Little Light -->
+        <article class="product-item-card">
+          <div class="p-thumb-wrap">
+            <img src="/assets/kidu/ricecarrot.jpg" alt="Ricepudding Little Light" class="p-img" />
+            <span class="p-save-chip">Save $4.00</span>
+            <div class="p-swatches-top">
+              <span class="sw-dot sw-yellow active"></span>
+              <span class="sw-dot sw-blue"></span>
+              <span class="sw-dot sw-green"></span>
+              <span class="sw-dot sw-red"></span>
+            </div>
+          </div>
+          <div class="p-info">
+            <span class="p-stock-tag">In stock</span>
+            <div class="p-prices">
+              <span class="p-price-now">From $36.00</span>
+              <s class="p-price-old">$42.00</s>
+            </div>
+            <h3 class="p-title">Ricepudding Little Light</h3>
+            <span class="p-vendor">noodoll</span>
+            <button class="quick-add-btn">
+              <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 6h12l-1 11H5L4 6z" />
+                <path d="M7 6V4a3 3 0 016 0v2" />
+              </svg>
+              Quick Add
+            </button>
+          </div>
+        </article>
+
+        <!-- Product 3: Strawberry Ricespud Mini Plush -->
+        <article class="product-item-card">
+          <div class="p-thumb-wrap">
+            <img src="/assets/kidu/strawberry-ricespud.jpg" alt="Strawberry Ricespud Mini Plush" class="p-img" />
+            <span class="p-save-chip">Save $5.00</span>
+            <div class="p-swatches-top">
+              <span class="sw-dot sw-pink active"></span>
+              <span class="sw-dot sw-green"></span>
+              <span class="sw-dot sw-purple"></span>
+            </div>
+          </div>
+          <div class="p-info">
+            <span class="p-stock-tag">In stock</span>
+            <div class="p-prices">
+              <span class="p-price-now">From $24.00</span>
+              <s class="p-price-old">$29.00</s>
+            </div>
+            <h3 class="p-title">Strawberry Ricespud Mini Plush</h3>
+            <span class="p-vendor">noodoll</span>
+            <button class="quick-add-btn">
+              <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 6h12l-1 11H5L4 6z" />
+                <path d="M7 6V4a3 3 0 016 0v2" />
+              </svg>
+              Quick Add
+            </button>
+          </div>
+        </article>
+
+        <!-- Product 4: The Mushroom Collection -->
+        <article class="product-item-card">
+          <div class="p-thumb-wrap">
+            <img src="/assets/kidu/mushroom.jpg" alt="The Mushroom Collection" class="p-img" />
+            <span class="p-save-chip">Save $2.00</span>
+            <div class="p-swatches-top">
+              <span class="sw-dot sw-red active"></span>
+              <span class="sw-dot sw-brown"></span>
+              <span class="sw-dot sw-pink"></span>
+            </div>
+          </div>
+          <div class="p-info">
+            <span class="p-stock-tag">In stock</span>
+            <div class="p-prices">
+              <span class="p-price-now">From $23.00</span>
+              <s class="p-price-old">$25.00</s>
+            </div>
+            <h3 class="p-title">The Mushroom Collection</h3>
+            <span class="p-vendor">noodoll</span>
+            <button class="quick-add-btn">
+              <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 6h12l-1 11H5L4 6z" />
+                <path d="M7 6V4a3 3 0 016 0v2" />
+              </svg>
+              Quick Add
+            </button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== MEDIA WITH TEXT (SAND / OATMEAL) ==================== -->
+  <section class="media-with-text-section" id="about">
+    <div class="container">
+      <div class="mwt-card-sand">
+        <div class="mwt-media">
+          <img src="/assets/kidu/media-with-text.png" alt="Quality stuffed toys" class="mwt-img" />
+          <div class="video-play-btn">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="#FFFFFF">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="mwt-copy">
+          <span class="mwt-tag">Unmatched Quality</span>
+          <h2 class="mwt-title">Our Commitment to Excellence</h2>
+          <p class="mwt-desc">
+            Explore worry-free play with Kidu. Our toys meet the highest safety standards, crafted from non-toxic, hypoallergenic materials, and we guarantee your child's satisfaction. For trusted quality, whimsy and boundless joy, choose us.
+          </p>
+          <a href="#catalog" class="btn btn-dark">
+            <span class="arrow">→</span> Explore Kidu
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURED COLLECTION TABSET ==================== -->
+  <section class="featured-tabset-section">
+    <div class="container">
+      <h2 class="section-title-left">Shop by Category</h2>
+
+      <div class="tabset-layout">
+        <!-- 6-Product Thumbnail Grid -->
+        <div class="tab-products-column">
+          <div class="tab-product-header">
+            <h3 class="tab-title-cur">Little Lights</h3>
+            <a href="#lights" class="view-all-link">View All <span class="arrow">→</span></a>
+          </div>
+
+          <div class="thumbs-grid-6">
+            <div class="thumb-item"><img src="/assets/kidu/cat-lights.jpg" alt="Ricelogi" /></div>
+            <div class="thumb-item"><img src="/assets/kidu/ricecarrot.jpg" alt="Ricepudding" /></div>
+            <div class="thumb-item"><img src="/assets/kidu/riceminty.jpg" alt="Ricepuffy" /></div>
+            <div class="thumb-item"><img src="/assets/kidu/ricemogu.jpg" alt="Ricemogu" /></div>
+            <div class="thumb-item"><img src="/assets/kidu/strawberry-ricespud.jpg" alt="Ricedino" /></div>
+            <div class="thumb-item"><img src="/assets/kidu/riceminty.jpg" alt="Riceminty" /></div>
+          </div>
+        </div>
+
+        <!-- Sidebar Category Switcher Card -->
+        <aside class="tab-sidebar-card">
+          <div class="sidebar-img-wrap">
+            <img src="/assets/kidu/featured-tab-img.png" alt="Categories illustration" />
+          </div>
+          <div class="sidebar-tabs-list">
+            <button class="s-tab-btn active">
+              <span>Little Lights</span>
+              <span class="arrow">→</span>
+            </button>
+            <button class="s-tab-btn">
+              <span>Face Masks</span>
+              <span class="arrow">→</span>
+            </button>
+            <button class="s-tab-btn">
+              <span>Stickers</span>
+              <span class="arrow">→</span>
+            </button>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 4-COLUMN VALUE PROPS ==================== -->
+  <section class="value-props-section">
+    <div class="container">
+      <div class="value-props-grid-4">
+        <div class="vp-item">
+          <div class="vp-icon">🚚</div>
+          <h4 class="vp-title">Free shipping over $200</h4>
+          <p class="vp-desc">Enjoy the freedom of free shipping on all orders over $200.</p>
+        </div>
+        <div class="vp-item">
+          <div class="vp-icon">🌍</div>
+          <h4 class="vp-title">We ship worldwide</h4>
+          <p class="vp-desc">Experience global reach with our fast, tracked international shipping.</p>
+        </div>
+        <div class="vp-item">
+          <div class="vp-icon">🪡</div>
+          <h4 class="vp-title">Free repairs for life</h4>
+          <p class="vp-desc">Rest easy knowing your beloved plush purchase includes free repairs for life.</p>
+        </div>
+        <div class="vp-item">
+          <div class="vp-icon">⭐</div>
+          <h4 class="vp-title">Satisfaction guaranteed</h4>
+          <p class="vp-desc">Your little one's happiness is our unwavering promise — guaranteed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== GIFT CARDS CAROUSEL ==================== -->
+  <section class="giftcards-section" id="giftcards">
+    <div class="container">
+      <div class="gift-header">
+        <h2 class="section-title-left">Gift Cards</h2>
+        <span class="gift-sub">Send gift cards to your loved ones anywhere in the world.</span>
+      </div>
+
+      <div class="giftcards-grid-4">
+        <div class="gift-card-item">
+          <img src="/assets/kidu/gift-white.png" alt="White Friday Gift Card" />
+          <button class="gift-buy-btn">Buy gift card</button>
+        </div>
+        <div class="gift-card-item">
+          <img src="/assets/kidu/gift-cyber.png" alt="Cyber Monday Gift Card" />
+          <button class="gift-buy-btn">Buy gift card</button>
+        </div>
+        <div class="gift-card-item">
+          <img src="/assets/kidu/gift-newyear.png" alt="New Year Gift Card" />
+          <button class="gift-buy-btn">Buy gift card</button>
+        </div>
+        <div class="gift-card-item">
+          <img src="/assets/kidu/gift-blessed.png" alt="Blessed Friday Gift Card" />
+          <button class="gift-buy-btn">Buy gift card</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TESTIMONIALS ==================== -->
+  <section class="testimonials-section">
+    <div class="container">
+      <h2 class="section-title-left">Testimonials</h2>
+
+      <div class="testimonials-grid-3">
+        <blockquote class="testimonial-card">
+          <p class="quote-p">
+            "My kids are in love with the quality toys here. It's their happy place. The top-notch products keep them engaged, and I'm a happy parent too!"
+          </p>
+          <div class="author-row">
+            <strong class="author-name">Emily R.</strong>
+            <div class="stars">★★★★★</div>
+          </div>
+        </blockquote>
+
+        <blockquote class="testimonial-card">
+          <p class="quote-p">
+            "I highly recommend this store. They provide excellent service with lightning-fast shipping. My shopping experience has been top-notch."
+          </p>
+          <div class="author-row">
+            <strong class="author-name">Liam M.</strong>
+            <div class="stars">★★★★★</div>
+          </div>
+        </blockquote>
+
+        <blockquote class="testimonial-card">
+          <p class="quote-p">
+            "The variety in this store is impressive. From plushies to nightlights, they have it all. Outstanding customer support that has been a lifeline for me."
+          </p>
+          <div class="author-row">
+            <strong class="author-name">Sophia C.</strong>
+            <div class="stars">★★★★★</div>
+          </div>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== GET IN TOUCH BANNER (PINK) ==================== -->
+  <section class="contact-banner-pink">
+    <div class="container">
+      <div class="contact-card-pink">
+        <span class="underline-tag">We're here to assist you!</span>
+        <h2 class="contact-title">Get in Touch with Us</h2>
+        <p class="contact-desc">
+          Have questions, concerns, or just want to say hello? We'd love to hear from you. Reach out to our dedicated support team.
+        </p>
+        <div class="contact-btns">
+          <a href="#faq" class="btn btn-fuchsia">Help Resources →</a>
+          <a href="#contact" class="btn btn-fuchsia">Contact Support →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <!-- Newsletter Column -->
+      <div class="f-col newsletter-col">
+        <h3 class="f-title">Subscribe to newsletter</h3>
+        <p class="f-sub">Get 10% off your first order plus secret sales & cute drops.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault()">
+          <input type="email" placeholder="Email address" required class="f-input" />
+          <button type="submit" class="f-submit-btn" aria-label="Subscribe">➔</button>
+        </form>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="f-col">
+        <h3 class="f-title">Quick links</h3>
+        <ul class="f-links">
+          <li><a href="#blog">Blogs</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#bundles">Bundles</a></li>
+          <li><a href="#about">About us</a></li>
+        </ul>
+      </div>
+
+      <!-- Popular Collections -->
+      <div class="f-col">
+        <h3 class="f-title">Popular collections</h3>
+        <ul class="f-links">
+          <li><a href="#giftcards">Gift Cards</a></li>
+          <li><a href="#plush">Mini Plush</a></li>
+          <li><a href="#masks">Face Masks</a></li>
+          <li><a href="#catalog">All collections</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="f-col">
+        <h3 class="f-title">Contact</h3>
+        <p class="f-contact-p">
+          456 North New Ballas Road<br/>
+          Creve Coeur, MO 63141<br/>
+          United States<br/>
+          <strong>+1 555 123 4567</strong><br/>
+          <span class="f-email">customer.support@kidu.com</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright & Payment Badges -->
+    <div class="container footer-bottom">
+      <div class="copy-text">
+        Copyright © 2026, <strong>Kidu</strong>. Powered by Shopify.
+      </div>
+      <div class="payment-badges">
+        <span class="pay-chip">AMEX</span>
+        <span class="pay-chip">APPLE PAY</span>
+        <span class="pay-chip">G PAY</span>
+        <span class="pay-chip">MASTERCARD</span>
+        <span class="pay-chip">SHOP PAY</span>
+        <span class="pay-chip">VISA</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<style>
+  /* ==================== GLOBAL STYLES ==================== */
+  .kidu-page {
+    font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+    color: #222222;
+    background: #FFFFFF;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  * { box-sizing: border-box; }
+
+  .container {
+    max-width: 1380px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  a { text-decoration: none; color: inherit; }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+  }
+
+  .btn-mint { background: #99EBEB; color: #222222; }
+  .btn-fuchsia { background: #CE126E; color: #FFFFFF; }
+  .btn-dark { background: #222222; color: #FFFFFF; }
+
+  /* ==================== ANNOUNCEMENT BAR ==================== */
+  .announcement-bar {
+    background: #CE126E;
+    color: #FFFFFF;
+    padding: 10px 0;
+    font-size: 13px;
+    font-weight: 800;
+  }
+
+  .ticker-inner {
+    max-width: 1380px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .ticker-timer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  .timer-digits {
+    display: flex;
+    gap: 8px;
+    background: rgba(0,0,0,0.15);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+  }
+
+  .ticker-marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    flex: 1;
+  }
+
+  .marquee-track {
+    display: inline-flex;
+    gap: 36px;
+    animation: marquee 25s linear infinite;
+  }
+
+  .m-item em {
+    font-style: normal;
+    background: rgba(255,255,255,0.2);
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 6px;
+  }
+
+  .m-item a {
+    text-decoration: underline;
+    margin-left: 6px;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ==================== MAIN HEADER ==================== */
+  .main-header {
+    background: #F4F4F4;
+    padding: 18px 0;
+    border-bottom: 1px solid #E5E5E5;
+  }
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .logo-img {
+    height: 38px;
+    width: auto;
+    display: block;
+  }
+
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .nav-link {
+    font-size: 15px;
+    font-weight: 700;
+    color: #222222;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .nav-link.active {
+    color: #CE126E;
+  }
+
+  .nav-badge {
+    font-size: 10px;
+    font-weight: 900;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #FFFFFF;
+  }
+
+  .flash-badge { background: #D21170; }
+  .wow-badge { background: #584592; }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .currency-pill, .lang-pill {
+    font-size: 13px;
+    font-weight: 700;
+    background: #FFFFFF;
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid #E0E0E0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+  }
+
+  .icon-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #222222;
+    color: #FFFFFF;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .cart-count {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: #CE126E;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 900;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ==================== UTILITY BAR ==================== */
+  .utility-bar {
+    background: #FFFFFF;
+    padding: 16px 0;
+    border-bottom: 1px solid #EFEFEF;
+  }
+
+  .utility-container {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .new-arrival-btn {
+    background: #222222;
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .search-input-wrap {
+    flex: 1;
+    position: relative;
+  }
+
+  .search-ico {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888888;
+  }
+
+  .search-input {
+    width: 100%;
+    background: #F4F4F4;
+    border: 1px solid #F4F4F4;
+    border-radius: 9px;
+    padding: 12px 16px 12px 44px;
+    font-size: 14px;
+    font-family: inherit;
+  }
+
+  .store-locator-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 800;
+    color: #222222;
+    background: #F4F4F4;
+    padding: 12px 20px;
+    border-radius: 9px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  /* ==================== HERO SLIDESHOW ==================== */
+  .hero-slideshow {
+    padding: 24px 0 36px;
+    background: #FFFFFF;
+  }
+
+  .hero-slide-card {
+    background: #584592;
+    border-radius: 20px;
+    padding: 48px 40px;
+    color: #FFFFFF;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr 1fr;
+    gap: 24px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .slide-left-img, .slide-right-img {
+    line-height: 0;
+  }
+
+  .hero-child-img, .hero-toy-img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  .slide-center-copy {
+    text-align: left;
+  }
+
+  .slide-pill {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    color: #99EBEB;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+  }
+
+  .slide-headline {
+    font-size: clamp(32px, 4.5vw, 56px);
+    line-height: 1.08;
+    color: #FFFFFF;
+    margin: 0 0 16px;
+    font-weight: 900;
+  }
+
+  .slide-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.85);
+    margin: 0 0 24px;
+    line-height: 1.5;
+  }
+
+  .slide-ctas {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .btn-link-white {
+    font-size: 15px;
+    font-weight: 800;
+    color: #FFFFFF;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .hero-pager {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+  }
+
+  .hero-pager .dot {
+    width: 32px;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(255,255,255,0.3);
+  }
+
+  .hero-pager .dot.active {
+    background: #99EBEB;
+  }
+
+  /* ==================== BRAND LOGOS ==================== */
+  .brand-logos-section {
+    padding: 24px 0;
+    border-bottom: 1px solid #F0F0F0;
+  }
+
+  .logos-track {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    opacity: 0.7;
+  }
+
+  .brand-logo {
+    height: 36px;
+    width: auto;
+    filter: grayscale(100%);
+    transition: filter 0.2s, opacity 0.2s;
+  }
+
+  .brand-logo:hover {
+    filter: none;
+    opacity: 1;
+  }
+
+  /* ==================== VALUE TICKER STRIP ==================== */
+  .value-ticker-strip {
+    background: #FFFFFF;
+    border-top: 1px solid #EFEFEF;
+    border-bottom: 1px solid #EFEFEF;
+    padding: 16px 0;
+    overflow: hidden;
+  }
+
+  .marquee-track-smooth {
+    display: flex;
+    gap: 48px;
+    white-space: nowrap;
+    animation: marquee 30s linear infinite;
+  }
+
+  .v-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 800;
+    color: #222222;
+    letter-spacing: 0.04em;
+  }
+
+  .v-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #CE126E;
+  }
+
+  /* ==================== TOP COLLECTIONS (5 CARDS) ==================== */
+  .top-collections-section {
+    padding: 64px 0;
+    background: #FFFFFF;
+  }
+
+  .section-heading-center {
+    font-size: clamp(28px, 3.2vw, 42px);
+    text-align: center;
+    margin: 0 0 40px;
+    font-weight: 800;
+  }
+
+  .collections-grid-5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+  }
+
+  .collection-square-card {
+    text-align: center;
+    transition: transform 0.2s;
+  }
+
+  .collection-square-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .card-media {
+    position: relative;
+    aspect-ratio: 1;
+    background: #F4F4F4;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 14px;
+  }
+
+  .card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card-media-pink {
+    background: #FDE9F3;
+  }
+
+  .badge-must-have {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #121212;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+
+  .card-name {
+    font-size: 16px;
+    font-weight: 800;
+    color: #222222;
+  }
+
+  /* ==================== PROMO COLLAGE 1 ==================== */
+  .promo-collage-1 {
+    padding: 16px 0 48px;
+  }
+
+  .collage-grid-1 {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    height: 480px;
+  }
+
+  .promo-banner-card {
+    border-radius: 16px;
+    overflow: hidden;
+    display: block;
+    line-height: 0;
+  }
+
+  .promo-banner-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+
+  .promo-banner-card:hover img {
+    transform: scale(1.02);
+  }
+
+  .b-tall {
+    grid-row: span 2;
+  }
+
+  /* ==================== SHOP BY AGE ==================== */
+  .shop-by-age-section {
+    padding: 48px 0 64px;
+    background: #FFFFFF;
+  }
+
+  .age-pills-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    text-align: center;
+  }
+
+  .age-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s;
+  }
+
+  .age-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .age-oval {
+    width: 140px;
+    height: 170px;
+    border-radius: 70px;
+    background: #F4F4F4;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+
+  .age-oval img {
+    width: 80%;
+    height: auto;
+  }
+
+  .age-label {
+    font-size: 16px;
+    font-weight: 800;
+    color: #222222;
+  }
+
+  /* ==================== TRUST TICKER (FUCHSIA) ==================== */
+  .trust-ticker-fuchsia {
+    background: #CE126E;
+    color: #FFFFFF;
+    padding: 18px 0;
+    overflow: hidden;
+    font-size: 15px;
+    font-weight: 800;
+  }
+
+  .t-item {
+    display: inline-block;
+    padding: 0 16px;
+  }
+
+  /* ==================== ACTION BANNERS 4 ==================== */
+  .action-banners-4 {
+    padding: 64px 0 32px;
+  }
+
+  .action-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .action-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .action-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .action-btn {
+    position: absolute;
+    bottom: 18px;
+    right: 18px;
+    background: #CE126E;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 10px 18px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* ==================== FLASH SALE SECTION ==================== */
+  .flash-sale-section {
+    padding: 56px 0;
+    background: #FFFFFF;
+  }
+
+  .flash-sale-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 36px;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .section-title-left {
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 800;
+    margin: 0 0 6px;
+  }
+
+  .discount-sub {
+    font-size: 15px;
+    color: #666666;
+  }
+
+  .flash-timer {
+    display: flex;
+    gap: 10px;
+  }
+
+  .time-box {
+    background: #F4F4F4;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #444444;
+  }
+
+  .time-box strong {
+    color: #CE126E;
+    font-size: 16px;
+    margin-right: 4px;
+  }
+
+  .products-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .product-item-card {
+    background: #FFFFFF;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #EFEFEF;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .product-item-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+  }
+
+  .p-thumb-wrap {
+    position: relative;
+    aspect-ratio: 1;
+    background: #F4F4F4;
+    overflow: hidden;
+  }
+
+  .p-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .p-save-chip {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #CE126E;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+
+  .p-swatches-top {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    display: flex;
+    gap: 6px;
+  }
+
+  .sw-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid #FFFFFF;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  }
+
+  .sw-dot.active {
+    outline: 2px solid #222222;
+  }
+
+  .sw-pink { background: #FFB1C4; }
+  .sw-green { background: #6ED38A; }
+  .sw-red { background: #E53935; }
+  .sw-gray { background: #9E9E9E; }
+  .sw-yellow { background: #FFD54F; }
+  .sw-blue { background: #42A5F5; }
+  .sw-purple { background: #AB47BC; }
+  .sw-brown { background: #8D6E63; }
+
+  .p-info {
+    padding: 18px;
+  }
+
+  .p-stock-tag {
+    font-size: 12px;
+    font-weight: 800;
+    color: #18791C;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .p-prices {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .p-price-now {
+    font-size: 17px;
+    font-weight: 900;
+    color: #CE126E;
+  }
+
+  .p-price-old {
+    font-size: 14px;
+    color: #888888;
+  }
+
+  .p-title {
+    font-size: 16px;
+    font-weight: 800;
+    margin: 0 0 4px;
+    color: #222222;
+  }
+
+  .p-vendor {
+    font-size: 12px;
+    font-weight: 700;
+    color: #888888;
+    text-transform: lowercase;
+    display: block;
+    margin-bottom: 14px;
+  }
+
+  .quick-add-btn {
+    width: 100%;
+    background: #222222;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+  }
+
+  /* ==================== MEDIA WITH TEXT (SAND) ==================== */
+  .media-with-text-section {
+    padding: 48px 0;
+  }
+
+  .mwt-card-sand {
+    background: #FFF0D8;
+    border-radius: 20px;
+    padding: 48px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .mwt-media {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .mwt-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .video-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #CE126E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(206,18,110,0.4);
+    cursor: pointer;
+  }
+
+  .mwt-tag {
+    font-size: 14px;
+    font-weight: 800;
+    color: #8F5F15;
+    display: block;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .mwt-title {
+    font-size: clamp(28px, 3.5vw, 42px);
+    margin: 0 0 16px;
+    font-weight: 900;
+  }
+
+  .mwt-desc {
+    font-size: 16px;
+    color: #555555;
+    line-height: 1.6;
+    margin: 0 0 28px;
+  }
+
+  /* ==================== FEATURED TABSET ==================== */
+  .featured-tabset-section {
+    padding: 56px 0 72px;
+    background: #FFFFFF;
+  }
+
+  .tabset-layout {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 36px;
+    align-items: flex-start;
+    margin-top: 32px;
+  }
+
+  .tab-product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .tab-title-cur {
+    font-size: 22px;
+    font-weight: 800;
+  }
+
+  .view-all-link {
+    font-size: 14px;
+    font-weight: 800;
+    color: #CE126E;
+  }
+
+  .thumbs-grid-6 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .thumb-item {
+    aspect-ratio: 1;
+    background: #F4F4F4;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .thumb-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .tab-sidebar-card {
+    background: #F4F4F4;
+    border-radius: 20px;
+    padding: 32px;
+  }
+
+  .sidebar-img-wrap {
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    line-height: 0;
+  }
+
+  .sidebar-img-wrap img {
+    width: 100%;
+    height: auto;
+  }
+
+  .sidebar-tabs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .s-tab-btn {
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 10px;
+    padding: 14px 20px;
+    font-size: 15px;
+    font-weight: 800;
+    color: #222222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  .s-tab-btn.active {
+    background: #CE126E;
+    color: #FFFFFF;
+    border-color: #CE126E;
+  }
+
+  /* ==================== VALUE PROPS 4 ==================== */
+  .value-props-section {
+    padding: 48px 0;
+    border-top: 1px solid #EFEFEF;
+    border-bottom: 1px solid #EFEFEF;
+  }
+
+  .value-props-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+  }
+
+  .vp-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+
+  .vp-title {
+    font-size: 17px;
+    font-weight: 800;
+    margin: 0 0 6px;
+  }
+
+  .vp-desc {
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* ==================== GIFTCARDS ==================== */
+  .giftcards-section {
+    padding: 64px 0;
+  }
+
+  .gift-header {
+    margin-bottom: 32px;
+  }
+
+  .gift-sub {
+    font-size: 15px;
+    color: #666666;
+  }
+
+  .giftcards-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .gift-card-item {
+    background: #F4F4F4;
+    border-radius: 16px;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .gift-card-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .gift-buy-btn {
+    width: 100%;
+    background: #222222;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+  /* ==================== TESTIMONIALS ==================== */
+  .testimonials-section {
+    padding: 48px 0 64px;
+    background: #FFFFFF;
+  }
+
+  .testimonials-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  .testimonial-card {
+    background: #F9F9F9;
+    border-radius: 16px;
+    padding: 28px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .quote-p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #444444;
+    margin: 0 0 20px;
+  }
+
+  .author-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .author-name {
+    font-size: 15px;
+    font-weight: 800;
+  }
+
+  .stars {
+    color: #FFB300;
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+
+  /* ==================== CONTACT BANNER PINK ==================== */
+  .contact-banner-pink {
+    padding: 16px 0 64px;
+  }
+
+  .contact-card-pink {
+    background: #FDE9F3;
+    border-radius: 20px;
+    padding: 56px 40px;
+    text-align: center;
+  }
+
+  .underline-tag {
+    font-size: 14px;
+    font-weight: 800;
+    color: #CE126E;
+    text-decoration: underline;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .contact-title {
+    font-size: clamp(28px, 3.5vw, 42px);
+    margin: 0 0 14px;
+    font-weight: 900;
+  }
+
+  .contact-desc {
+    font-size: 16px;
+    color: #555555;
+    max-width: 600px;
+    margin: 0 auto 28px;
+    line-height: 1.6;
+  }
+
+  .contact-btns {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  /* ==================== FOOTER ==================== */
+  .main-footer {
+    background: #F4F4F4;
+    padding: 64px 0 28px;
+    border-top: 1px solid #E5E5E5;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+    gap: 36px;
+    margin-bottom: 48px;
+  }
+
+  .f-title {
+    font-size: 16px;
+    font-weight: 800;
+    margin: 0 0 14px;
+  }
+
+  .f-sub {
+    font-size: 14px;
+    color: #666666;
+    margin: 0 0 16px;
+  }
+
+  .newsletter-form {
+    display: flex;
+    background: #FFFFFF;
+    border-radius: 8px;
+    border: 1px solid #DDDDDD;
+    overflow: hidden;
+  }
+
+  .f-input {
+    flex: 1;
+    border: none;
+    padding: 12px 14px;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+  }
+
+  .f-submit-btn {
+    background: #222222;
+    color: #FFFFFF;
+    border: none;
+    padding: 0 18px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .f-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .f-links a {
+    font-size: 14px;
+    color: #555555;
+  }
+
+  .f-links a:hover {
+    color: #CE126E;
+  }
+
+  .f-contact-p {
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .f-email {
+    color: #CE126E;
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+    border-top: 1px solid #E0E0E0;
+    font-size: 13px;
+    color: #888888;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .payment-badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .pay-chip {
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 800;
+    color: #444444;
+  }
+
+  /* ==================== RESPONSIVE ==================== */
+  @media (max-width: 992px) {
+    .nav-menu, .utility-bar_store-btn { display: none; }
+    .hero-slide-card { grid-template-columns: 1fr; text-align: center; }
+    .slide-center-copy { text-align: center; }
+    .slide-ctas { justify-content: center; }
+    .collections-grid-5, .age-pills-grid { grid-template-columns: repeat(3, 1fr); }
+    .products-grid-4, .giftcards-grid-4, .action-grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .tabset-layout, .mwt-card-sand { grid-template-columns: 1fr; }
+    .value-props-grid-4, .testimonials-grid-3, .footer-grid { grid-template-columns: 1fr 1fr; }
+    .collage-grid-1 { grid-template-columns: 1fr; height: auto; }
+    .b-tall { grid-row: auto; }
+  }
+
+  @media (max-width: 600px) {
+    .collections-grid-5, .age-pills-grid { grid-template-columns: repeat(2, 1fr); }
+    .products-grid-4, .giftcards-grid-4, .action-grid-4, .value-props-grid-4, .testimonials-grid-3, .footer-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

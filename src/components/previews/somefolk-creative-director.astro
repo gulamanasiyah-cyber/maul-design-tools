@@ -1,0 +1,154 @@
+---
+// Somefolk Creative Director — Live card preview scene: deep void forest background,
+// high-voltage acid lime typography (#C5F82A), and retro rubber-hose character illustration.
+// Pure CSS/SVG, cqw units.
+---
+
+<div class="scene" aria-hidden="true">
+  <header class="header">
+    <span class="brand">SOMEFOLK®</span>
+    <span class="script">by Somefolk</span>
+    <span class="pill-info">INFO · WORK</span>
+  </header>
+
+  <div class="hero">
+    <h1 class="title">
+      <span>LONDON—BASED ART</span>
+      <span>DIRECTOR | DESIGNER</span>
+      <span class="lime-text">CREATIVE DEVELOPER</span>
+    </h1>
+    <p class="sub">TELLING MEANINGFUL STORIES THAT NEED TO BE TOLD (BY HUMANS, NOT AI)</p>
+  </div>
+
+  <div class="mascot-bar">
+    <div class="mascot-left">
+      <span class="tag">BRAND IDENTITY</span>
+      <span class="tag">TYPOGRAPHY</span>
+    </div>
+
+    <!-- Mini Rubber-Hose Mascot -->
+    <div class="mascot-center">
+      <svg class="mini-mascot" viewBox="0 0 100 100" fill="none">
+        <circle cx="50" cy="40" r="16" fill="#C5F82A" stroke="#0A0F0D" stroke-width="2.5" />
+        <circle cx="45" cy="38" r="2.5" fill="#0A0F0D" />
+        <circle cx="55" cy="38" r="2.5" fill="#0A0F0D" />
+        <path d="M44 46 Q50 52 56 46" stroke="#0A0F0D" stroke-width="2" fill="none" stroke-linecap="round" />
+        <path d="M50 56 L50 78 M42 78 L38 92 M58 78 L62 92" stroke="#0A0F0D" stroke-width="3" stroke-linecap="round" />
+        <ellipse cx="34" cy="94" rx="7" ry="4" fill="#C5F82A" stroke="#0A0F0D" stroke-width="2" />
+        <ellipse cx="66" cy="94" rx="7" ry="4" fill="#C5F82A" stroke="#0A0F0D" stroke-width="2" />
+      </svg>
+      <span class="version">V2.0 (2K23)</span>
+    </div>
+
+    <div class="mascot-right">
+      <span class="tag">ART DIRECTION</span>
+      <span class="tag">DEVELOPMENT</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .scene {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    min-height: 260px;
+    background: #0A0F0D;
+    overflow: hidden;
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    container-type: inline-size;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2cqw 2.2cqw;
+    border-bottom: 1px solid rgba(197, 248, 42, 0.15);
+  }
+
+  .brand {
+    font-size: 0.95cqw;
+    font-weight: 950;
+    letter-spacing: 0.1em;
+    color: #C5F82A;
+  }
+
+  .script {
+    font-family: 'Caveat', cursive, sans-serif;
+    font-size: 0.85cqw;
+    color: #FFFFFF;
+  }
+
+  .pill-info {
+    font-size: 0.55cqw;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    color: #C5F82A;
+  }
+
+  .hero {
+    text-align: center;
+    padding: 0.5cqw 2.2cqw;
+  }
+
+  .title {
+    font-size: 2.5cqw;
+    font-weight: 950;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: #C5F82A;
+    margin: 0 0 0.5cqw;
+    text-transform: uppercase;
+  }
+
+  .title span {
+    display: block;
+  }
+
+  .sub {
+    font-size: 0.55cqw;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: #FFFFFF;
+    margin: 0;
+  }
+
+  .mascot-bar {
+    background: #0D1612;
+    border-top: 1px solid rgba(197, 248, 42, 0.15);
+    padding: 0.8cqw 2.2cqw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .tag {
+    display: block;
+    font-size: 0.48cqw;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    color: #C5F82A;
+  }
+
+  .mascot-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mini-mascot {
+    width: 3.2cqw;
+    height: 3.2cqw;
+  }
+
+  .version {
+    font-size: 0.52cqw;
+    font-weight: 900;
+    color: #C5F82A;
+  }
+</style>

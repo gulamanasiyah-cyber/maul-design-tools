@@ -1,0 +1,1948 @@
+---
+// Majestic Luxury Furniture Store — Full-page recreation of the live storefront template.
+// Palettes: Pure White #FFFFFF, Off-white Cream #FFF3E1, Charcoal/Black #111111, Accent Gold #89662F, Muted Gray #707070.
+// Fonts: Newsreader (italic serif headings), Poppins (clean body), Comfortaa (pill buttons).
+---
+
+<div class="majestic-store">
+  <!-- ==================== TOP ANNOUNCEMENT TICKER ==================== -->
+  <aside class="announcement-bar">
+    <div class="ticker-track">
+      <div class="ticker-content">
+        <span>Use this space for a store update or special offer</span>
+        <span class="sep">•</span>
+        <span>Free shipping on orders over $150 — Shop now</span>
+        <span class="sep">•</span>
+        <span>Complimentary in-room delivery & white-glove setup</span>
+        <span class="sep">•</span>
+        <span>Use this space for a store update or special offer</span>
+        <span class="sep">•</span>
+        <span>Free shipping on orders over $150 — Shop now</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==================== HEADER WITH LOGO & MEGA MENU ==================== -->
+  <header class="main-header">
+    <div class="container header-container">
+      <!-- Left Logo -->
+      <div class="header-left">
+        <a href="/" class="brand-logo">
+          <img src="/assets/majestic/logo-dark.svg" alt="Majestic" class="logo-svg" />
+        </a>
+      </div>
+
+      <!-- Center Navigation -->
+      <nav class="header-nav">
+        <a href="/" class="nav-item active">Home</a>
+        <div class="nav-item nav-has-mega">
+          <a href="#catalog">Shop All <span class="caret">▾</span></a>
+        </div>
+        <div class="nav-item nav-has-mega">
+          <a href="#collections">Collections <span class="caret">▾</span></a>
+        </div>
+        <div class="nav-item">
+          <a href="#layout">Product Layout <span class="caret">▾</span></a>
+        </div>
+        <a href="#about" class="nav-item">About</a>
+        <a href="#journal" class="nav-item">Journal</a>
+        <a href="#contact" class="nav-item">Contact</a>
+      </nav>
+
+      <!-- Right Actions -->
+      <div class="header-right">
+        <div class="region-pill">
+          <span class="flag">🇮🇳</span>
+          <span class="region-text">India (USD $) / English</span>
+        </div>
+        <button class="action-btn" aria-label="Search">
+          <svg viewBox="0 0 21 21" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="8.75" cy="8.75" r="7" />
+            <path d="M14 14l5.5 5.5" />
+          </svg>
+        </button>
+        <button class="action-btn" aria-label="Account">
+          <svg viewBox="0 0 21 21" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="10.5" cy="5.25" r="3.5" />
+            <path d="M3.5 18.5a7 7 0 0114 0" />
+          </svg>
+        </button>
+        <button class="action-btn cart-btn" aria-label="Cart">
+          <svg viewBox="0 0 22 21" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M19.25 5.25H16.5a5.5 5.5 0 00-11 0H2.75A2.75 2.75 0 000 8v8.75A4.25 4.25 0 004.25 21h13.5a4.25 4.25 0 004.25-4.25V8a2.75 2.75 0 00-2.75-2.75z" />
+          </svg>
+          <span class="cart-badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO FULL-HEIGHT BANNER ==================== -->
+  <section class="hero-section">
+    <div class="hero-media-wrapper">
+      <img src="/assets/majestic/hero-banner.jpg" alt="Living Room with modern furniture" class="hero-banner-img" />
+      <div class="hero-scrim"></div>
+      
+      <div class="container hero-content-container">
+        <div class="hero-content-box">
+          <span class="hero-eyebrow">HOME DECOR & LIVING</span>
+          <h1 class="hero-title">
+            <span>Make Your House</span>
+            <em>Feel Like Home</em>
+          </h1>
+          <p class="hero-subtitle">
+            Thoughtfully designed pieces made with premium materials, crafted for comfort, built to last, and styled to feel like home.
+          </p>
+          <div class="hero-actions">
+            <a href="#featured" class="btn btn-white">NEW COLLECTION</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURED COLLECTION (TABBED SLIDER) ==================== -->
+  <section class="featured-collection-section" id="featured">
+    <div class="container">
+      <div class="section-head-center">
+        <h2 class="serif-heading">Featured collection</h2>
+        
+        <!-- Category Tabs -->
+        <div class="collection-tabs-row">
+          <button class="tab-btn active">Chairs</button>
+          <button class="tab-btn">Living Room</button>
+          <button class="tab-btn">Bedroom</button>
+          <button class="tab-btn">Dining Room</button>
+        </div>
+      </div>
+
+      <!-- 4-Column Product Grid -->
+      <div class="product-grid-4">
+        <!-- Item 1: Veloura Two-Seater Sofa -->
+        <article class="product-card">
+          <a href="#product" class="p-card-media">
+            <img src="/assets/majestic/p-veloura.png" alt="Veloura Two-Seater Sofa" class="p-img-primary" />
+          </a>
+          <div class="p-card-info">
+            <span class="p-vendor">Majestic</span>
+            <h3 class="p-name">Veloura Two-Seater Sofa</h3>
+            <div class="p-price-row">
+              <span class="p-price">$1,099.00 USD</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 2: Aurelle Swivel Lounge Chair -->
+        <article class="product-card">
+          <a href="#product" class="p-card-media">
+            <img src="/assets/majestic/p-aurelle.png" alt="Aurelle Swivel Lounge Chair" class="p-img-primary" />
+          </a>
+          <div class="p-card-info">
+            <span class="p-vendor">Majestic</span>
+            <h3 class="p-name">Aurelle Swivel Lounge Chair</h3>
+            <div class="p-price-row">
+              <span class="p-price">$599.00 USD</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 3: Verona Accent Lounge Chair -->
+        <article class="product-card">
+          <a href="#product" class="p-card-media">
+            <img src="/assets/majestic/p-verona.png" alt="Verona Accent Lounge Chair" class="p-img-primary" />
+          </a>
+          <div class="p-card-info">
+            <span class="p-vendor">Majestic</span>
+            <h3 class="p-name">Verona Accent Lounge Chair</h3>
+            <div class="p-price-row">
+              <span class="p-price">$699.00 USD</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 4: Arden Wooden Accent Chair -->
+        <article class="product-card">
+          <a href="#product" class="p-card-media">
+            <img src="/assets/majestic/p-arden.png" alt="Arden Wooden Accent Chair" class="p-img-primary" />
+          </a>
+          <div class="p-card-info">
+            <span class="p-vendor">Majestic</span>
+            <h3 class="p-name">Arden Wooden Accent Chair</h3>
+            <div class="p-price-row">
+              <span class="p-price">$459.00 USD</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SPACES THAT DEFINE (SELECTION CARDS) ==================== -->
+  <section class="selection-spaces-section" id="collections">
+    <div class="container">
+      <h2 class="serif-heading text-center">Spaces That Define Your Home</h2>
+
+      <div class="selection-grid-3">
+        <!-- Dining Room -->
+        <div class="space-card">
+          <div class="space-media">
+            <img src="/assets/majestic/sbc-dining.png" alt="Dining Room" />
+            <div class="space-overlay">
+              <h3 class="space-title">Dining Room</h3>
+              <a href="#dining" class="btn btn-white-pill">View Collection</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bedroom -->
+        <div class="space-card">
+          <div class="space-media">
+            <img src="/assets/majestic/sel-bedroom.jpg" alt="Bedroom" />
+            <div class="space-overlay">
+              <h3 class="space-title">Bedroom</h3>
+              <a href="#bedroom" class="btn btn-white-pill">View Collection</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Living Room -->
+        <div class="space-card">
+          <div class="space-media">
+            <img src="/assets/majestic/sbc-living.png" alt="Living room" />
+            <div class="space-overlay">
+              <h3 class="space-title">Living room</h3>
+              <a href="#living" class="btn btn-white-pill">View Collection</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== EDITORIAL STATEMENT ==================== -->
+  <section class="editorial-statement-section">
+    <div class="container statement-container">
+      <h2 class="serif-statement">
+        Thoughtfully Designed Furniture for Modern Living That Brings Comfort, Style, and Purpose Into Every Corner
+      </h2>
+    </div>
+  </section>
+
+  <!-- ==================== PRODUCT BUNDLE BUILDER ==================== -->
+  <section class="bundle-builder-section">
+    <div class="container">
+      <div class="bundle-head">
+        <span class="sub-kicker">Build Your Perfect Set</span>
+        <h2 class="serif-heading">A Cohesive Collection</h2>
+      </div>
+
+      <div class="bundle-layout">
+        <!-- Left: Summary Tier Box -->
+        <aside class="bundle-summary-card">
+          <div class="summary-head">
+            <h3 class="summary-title">Your bundle</h3>
+            <span class="bundle-count">0 / 4</span>
+          </div>
+
+          <div class="bundle-tiers-track">
+            <div class="tier-step"><span class="t-name">1 Product</span><strong>15% OFF</strong></div>
+            <div class="tier-step"><span class="t-name">2 Products</span><strong>30% OFF</strong></div>
+            <div class="tier-step"><span class="t-name">3 Products</span><strong>45% OFF</strong></div>
+            <div class="tier-step"><span class="t-name">4 Products</span><strong>60% OFF</strong></div>
+          </div>
+
+          <div class="summary-rows">
+            <div class="s-row"><span>Subtotal</span><strong>$0.00 USD</strong></div>
+            <div class="s-row"><span>Savings</span><strong>$0.00 USD</strong></div>
+            <div class="s-row s-total"><span>Total</span><strong>$0.00 USD</strong></div>
+          </div>
+
+          <button class="btn btn-dark-full" disabled>Add bundle to cart</button>
+        </aside>
+
+        <!-- Right: 4-Product Bundle Selectors -->
+        <div class="bundle-items-grid">
+          <div class="bundle-item">
+            <div class="b-img"><img src="/assets/majestic/p-arden.png" alt="Arden Wooden Accent Chair" /></div>
+            <h4 class="b-name">Arden Wooden Accent Chair</h4>
+            <span class="b-price">$459.00 USD</span>
+            <button class="btn-bundle-toggle">+ Add to bundle</button>
+          </div>
+
+          <div class="bundle-item">
+            <div class="b-img"><img src="/assets/majestic/p-lunara.png" alt="Lunara Round Coffee Table" /></div>
+            <h4 class="b-name">Lunara Round Coffee Table</h4>
+            <span class="b-price">$549.00 USD</span>
+            <button class="btn-bundle-toggle">+ Add to bundle</button>
+          </div>
+
+          <div class="bundle-item">
+            <div class="b-img"><img src="/assets/majestic/p-verona.png" alt="Verona Accent Lounge Chair" /></div>
+            <h4 class="b-name">Verona Accent Lounge Chair</h4>
+            <span class="b-price">$699.00 USD</span>
+            <button class="btn-bundle-toggle">+ Add to bundle</button>
+          </div>
+
+          <div class="bundle-item">
+            <div class="b-img"><img src="/assets/majestic/p-solenne.png" alt="Solenne Sideboard Console" /></div>
+            <h4 class="b-name">Solenne Sideboard Console</h4>
+            <span class="b-price">$799.00 USD</span>
+            <button class="btn-bundle-toggle">+ Add to bundle</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SHOP BY COLLECTION (FULL-BLEED HERO) ==================== -->
+  <section class="shop-by-collection-hero">
+    <div class="sbc-bg-frame">
+      <img src="/assets/majestic/sbc-living.png" alt="Living Room Collection" class="sbc-bg-img" />
+      <div class="sbc-scrim"></div>
+      
+      <div class="container sbc-content-container">
+        <h2 class="serif-heading sbc-title">Designed for Every Space</h2>
+        
+        <nav class="sbc-links-row">
+          <a href="#living" class="sbc-nav-item active">Living Room <sup>(14)</sup></a>
+          <span class="sbc-dot">·</span>
+          <a href="#bedroom" class="sbc-nav-item">Bedroom <sup>(5)</sup></a>
+          <span class="sbc-dot">·</span>
+          <a href="#dining" class="sbc-nav-item">Dining Room <sup>(5)</sup></a>
+          <span class="sbc-dot">·</span>
+          <a href="#seating" class="sbc-nav-item">Seating <sup>(11)</sup></a>
+          <span class="sbc-dot">·</span>
+          <a href="#storage" class="sbc-nav-item">Storage <sup>(5)</sup></a>
+          <span class="sbc-dot">·</span>
+          <a href="#tables" class="sbc-nav-item">Tables <sup>(7)</sup></a>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TEXT WITH IMAGE (SPLIT EDITORIAL) ==================== -->
+  <section class="text-with-image-section">
+    <div class="container twi-grid">
+      <div class="twi-media-collage">
+        <div class="twi-primary">
+          <img src="/assets/majestic/twi-primary.png" alt="Crafted for the Way You Live" />
+        </div>
+        <div class="twi-secondary">
+          <img src="/assets/majestic/twi-secondary.png" alt="Lifestyle detail" />
+        </div>
+      </div>
+
+      <div class="twi-copy">
+        <h2 class="serif-heading">Crafted for the Way You Live</h2>
+        <p class="twi-desc">
+          We believe a home should feel as good as it looks. Every piece we create is designed with intention — balancing timeless aesthetics, everyday comfort, and lasting quality. From quiet mornings to lively evenings, our furniture is made to be part of your life, not just your space.
+        </p>
+        <a href="#collections" class="btn btn-dark">Discover our collection →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STATEMENT PIECES (CAROUSEL) ==================== -->
+  <section class="statement-pieces-section">
+    <div class="container">
+      <div class="sp-head">
+        <h2 class="serif-heading">Statement Pieces</h2>
+      </div>
+
+      <div class="sp-grid-4">
+        <article class="sp-card">
+          <div class="sp-media"><img src="/assets/majestic/p-marble.png" alt="Marble Dining Table" /></div>
+          <h3 class="sp-name">Marble Dining Table</h3>
+          <span class="sp-price">$3,499.00 USD</span>
+        </article>
+
+        <article class="sp-card">
+          <div class="sp-media"><img src="/assets/majestic/p-pebble.png" alt="Pebble Ottoman" /></div>
+          <h3 class="sp-name">Pebble Ottoman</h3>
+          <span class="sp-price">$299.00 USD</span>
+        </article>
+
+        <article class="sp-card">
+          <div class="sp-media"><img src="/assets/majestic/p-form.png" alt="Form Bookshelf" /></div>
+          <h3 class="sp-name">Form Bookshelf</h3>
+          <span class="sp-price">$799.00 USD <s class="old">$999.00</s></span>
+        </article>
+
+        <article class="sp-card">
+          <div class="sp-media"><img src="/assets/majestic/p-reign.png" alt="Reign Dining Chair" /></div>
+          <h3 class="sp-name">Reign Dining Chair</h3>
+          <span class="sp-price">$449.00 USD</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ROOM TRANSFORMATION (BEFORE / AFTER) ==================== -->
+  <section class="room-transform-section">
+    <div class="container">
+      <div class="section-head-center">
+        <span class="sub-kicker">Room transformation</span>
+        <h2 class="serif-heading">From empty space to a lived-in home</h2>
+        <p class="section-sub">See how thoughtful furniture and balanced layouts completely transform the feel of a room.</p>
+      </div>
+
+      <div class="comparison-stage">
+        <div class="compare-frame">
+          <img src="/assets/majestic/compare-before.png" alt="Before furniture setup" class="compare-img" />
+          <span class="tag-before">Before</span>
+          <span class="tag-after">After</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TICKER BANNER (MAJESTIC LOGO) ==================== -->
+  <section class="logo-ticker-strip">
+    <div class="logo-ticker-track">
+      <span><img src="/assets/majestic/logo-dark.svg" alt="Majestic" class="t-logo" /></span>
+      <span class="t-text">Designed for you</span>
+      <span class="t-sep">•</span>
+      <span><img src="/assets/majestic/logo-dark.svg" alt="Majestic" class="t-logo" /></span>
+      <span class="t-text">Designed for you</span>
+      <span class="t-sep">•</span>
+      <span><img src="/assets/majestic/logo-dark.svg" alt="Majestic" class="t-logo" /></span>
+      <span class="t-text">Designed for you</span>
+    </div>
+  </section>
+
+  <!-- ==================== FAQ COLLAPSIBLE ROWS ==================== -->
+  <section class="faq-section">
+    <div class="container faq-grid">
+      <div class="faq-media-col">
+        <img src="/assets/majestic/faq-main.png" alt="Interior styling" class="faq-main-img" />
+      </div>
+
+      <div class="faq-accordion-col">
+        <span class="sub-kicker">Frequently asked questions</span>
+        <h2 class="serif-heading">Everything You Need to Know</h2>
+
+        <div class="accordion-list">
+          <details class="faq-row" open>
+            <summary>How long does delivery take? <span class="arrow">▾</span></summary>
+            <p>In-stock items usually dispatch within 24–48 hours. Delivery timelines are shown at checkout based on your location.</p>
+          </details>
+          <details class="faq-row">
+            <summary>What is your return policy? <span class="arrow">▾</span></summary>
+            <p>You can request a return within 30 days of delivery for eligible products in original condition.</p>
+          </details>
+          <details class="faq-row">
+            <summary>Can I get styling or product help? <span class="arrow">▾</span></summary>
+            <p>Yes. Our team can help with sizing, materials, and room planning so you can shop with confidence.</p>
+          </details>
+          <details class="faq-row">
+            <summary>What warranty is included? <span class="arrow">▾</span></summary>
+            <p>Our products include a standard manufacturer warranty. Coverage details vary by product and are listed on each product page.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 4-COLUMN VALUE PROPS ==================== -->
+  <section class="value-props-cream-section">
+    <div class="container">
+      <div class="vp-grid-4">
+        <div class="vp-card">
+          <span class="vp-icon">⏳</span>
+          <h3 class="vp-title">Timeless Materials</h3>
+          <p class="vp-text">Carefully selected woods, fabrics, and finishes that are made to last and age beautifully over time.</p>
+        </div>
+
+        <div class="vp-card">
+          <span class="vp-icon">🌿</span>
+          <h3 class="vp-title">Everyday Comfort</h3>
+          <p class="vp-text">Designed for real living, our pieces offer comfort that feels effortless from morning to night.</p>
+        </div>
+
+        <div class="vp-card">
+          <span class="vp-icon">★</span>
+          <h3 class="vp-title">Refined Aesthetics</h3>
+          <p class="vp-text">Sculptural silhouettes and harmonious palettes tailored for modern luxury residences.</p>
+        </div>
+
+        <div class="vp-card">
+          <span class="vp-icon">↺</span>
+          <h3 class="vp-title">Seamless Experience</h3>
+          <p class="vp-text">From browsing to delivery, we ensure a smooth and reliable experience at every step.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TESTIMONIAL SPOTLIGHT ==================== -->
+  <section class="testimonial-spotlight-section">
+    <div class="container">
+      <div class="section-head-center">
+        <span class="sub-kicker">Homes That Speak for Us</span>
+        <h2 class="serif-heading">Lived & Loved</h2>
+      </div>
+
+      <div class="spotlight-card">
+        <div class="spotlight-img-col">
+          <img src="/assets/majestic/test-room-1.png" alt="Client living room" class="spotlight-room-img" />
+        </div>
+
+        <div class="spotlight-quote-col">
+          <div class="stars-gold">★★★★★</div>
+          <blockquote class="quote-text">
+            "The finish and craftsmanship exceeded our expectations. Every detail feels thoughtful, sculptural and premium."
+          </blockquote>
+          
+          <div class="author-info">
+            <strong>Maya Chen</strong>
+            <span>Home owner, Mumbai</span>
+          </div>
+
+          <div class="reviewed-product-chip">
+            <img src="/assets/majestic/p-lunara.png" alt="" />
+            <div>
+              <small>Reviewed product</small>
+              <span>Lunara Round Coffee Table</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== JOURNAL / BLOG POSTS ==================== -->
+  <section class="journal-section" id="journal">
+    <div class="container">
+      <div class="journal-head">
+        <h2 class="serif-heading">From the blog</h2>
+      </div>
+
+      <div class="journal-grid-4">
+        <article class="article-card">
+          <div class="art-media"><img src="/assets/majestic/blog-1.png" alt="Dining Table Guide" /></div>
+          <div class="art-meta"><span>Aug 31, 2026</span> • <span>1 min read</span></div>
+          <h3 class="art-title">The Art of Choosing the Perfect Dining Table for Your Home</h3>
+          <p class="art-excerpt">Choosing the perfect dining table involves more than aesthetics. Learn how to balance space and material.</p>
+        </article>
+
+        <article class="article-card">
+          <div class="art-media"><img src="/assets/majestic/blog-2.png" alt="Modern & Classic" /></div>
+          <div class="art-meta"><span>Aug 31, 2026</span> • <span>1 min read</span></div>
+          <h3 class="art-title">How to Mix Modern and Classic Furniture Like a Pro</h3>
+          <p class="art-excerpt">Learn how to confidently mix modern and classic furniture styles to create interiors that feel curated.</p>
+        </article>
+
+        <article class="article-card">
+          <div class="art-media"><img src="/assets/majestic/blog-3.png" alt="Reading Nook" /></div>
+          <div class="art-meta"><span>Aug 31, 2026</span> • <span>1 min read</span></div>
+          <h3 class="art-title">The Ultimate Guide to Creating a Cosy Reading Nook at Home</h3>
+          <p class="art-excerpt">Transform any corner of your home into a cosy, beautiful reading nook with the right chair and lighting.</p>
+        </article>
+
+        <article class="article-card">
+          <div class="art-media"><img src="/assets/majestic/blog-4.png" alt="Bedroom Trends" /></div>
+          <div class="art-meta"><span>Aug 31, 2026</span> • <span>1 min read</span></div>
+          <h3 class="art-title">5 Timeless Bedroom Design Trends That Never Go Out of Style</h3>
+          <p class="art-excerpt">Discover 5 timeless bedroom design principles — from upholstered beds and calming palettes to layered lighting.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SOCIAL MEDIA COLLAGE ==================== -->
+  <section class="social-collage-section">
+    <div class="container">
+      <div class="section-head-center">
+        <span class="sub-kicker">@majesticstudio</span>
+        <h2 class="serif-heading">As seen on the feed.</h2>
+      </div>
+
+      <div class="social-grid-4">
+        <div class="social-card">
+          <img src="/assets/majestic/social-1.png" alt="Soft Neutrals" />
+          <div class="social-meta"><span>Soft Neutrals</span></div>
+        </div>
+        <div class="social-card">
+          <img src="/assets/majestic/social-2.png" alt="Gathered Warmth" />
+          <div class="social-meta"><span>Gathered Warmth</span></div>
+        </div>
+        <div class="social-card">
+          <img src="/assets/majestic/social-3.png" alt="Rest in Texture" />
+          <div class="social-meta"><span>Rest in Texture</span></div>
+        </div>
+        <div class="social-card">
+          <img src="/assets/majestic/social-4.png" alt="Shelf Styling" />
+          <div class="social-meta"><span>Shelf Styling</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== EMAIL SIGNUP BANNER ==================== -->
+  <section class="email-signup-banner">
+    <div class="email-bg-frame">
+      <img src="/assets/majestic/email-bg.png" alt="Interior backdrop" class="email-bg-img" />
+      <div class="email-scrim"></div>
+
+      <div class="container email-content-container">
+        <span class="email-kicker">Stay Connected</span>
+        <h2 class="serif-heading email-heading">A More Thoughtful Way to Live</h2>
+        <p class="email-sub">Be the first to discover new collections, thoughtful design ideas, and curated pieces for your space.</p>
+        
+        <form class="email-form" onsubmit="event.preventDefault()">
+          <input type="email" placeholder="Enter your email" required class="email-input" />
+          <button type="submit" class="btn btn-white-pill">Subscribe →</button>
+        </form>
+        <small class="email-privacy">We respect your inbox — only meaningful updates, always.</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="storefront-footer">
+    <div class="container footer-main-grid">
+      <!-- Col 1: About -->
+      <div class="f-col">
+        <h3 class="f-title">About us</h3>
+        <p class="f-text">
+          Majestic brings intentional design, timeless silhouettes, and heirloom-quality craftsmanship into modern residential spaces.
+        </p>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div class="f-col">
+        <h3 class="f-title">Quick Links</h3>
+        <ul class="f-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="#catalog">Shop All</a></li>
+          <li><a href="#collections">Collections</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#journal">Journal</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Collections -->
+      <div class="f-col">
+        <h3 class="f-title">Collections</h3>
+        <ul class="f-links">
+          <li><a href="#sofas">Sofas & Sectionals</a></li>
+          <li><a href="#coffee">Coffee Tables</a></li>
+          <li><a href="#dining-tables">Dining Tables</a></li>
+          <li><a href="#dining-chairs">Dining Chairs</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Support -->
+      <div class="f-col">
+        <h3 class="f-title">Support</h3>
+        <ul class="f-links">
+          <li><a href="#faqs">FAQs</a></li>
+          <li><a href="#shipping">Shipping Policy</a></li>
+          <li><a href="#contact">Contact Information</a></li>
+          <li><a href="#terms">Terms of Service</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 5: Newsletter -->
+      <div class="f-col f-col-newsletter">
+        <h3 class="f-title">Sign up & Get 20% Off</h3>
+        <p class="f-text">Join the Majestic family and enjoy exclusive benefits like early access and special discounts.</p>
+        <form class="f-newsletter-form" onsubmit="event.preventDefault()">
+          <input type="email" placeholder="Email" required class="f-input" />
+          <button type="submit" class="f-btn">→</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Bottom Strip -->
+    <div class="container footer-bottom-row">
+      <span class="f-copy">© 2026, Majestic. Powered by Shopify.</span>
+      <div class="f-region-pill">
+        <span>🇮🇳 India (USD $) / English</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<style>
+  /* ==================== BASE STYLES ==================== */
+  .majestic-store {
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+    color: #323232;
+    background: #FFFFFF;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  * { box-sizing: border-box; }
+
+  .container {
+    max-width: 1380px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  a { text-decoration: none; color: inherit; }
+
+  /* Serif Typography */
+  .serif-heading {
+    font-family: 'Newsreader', Georgia, serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(32px, 3.8vw, 54px);
+    line-height: 1.15;
+    color: #454545;
+    margin: 0 0 16px;
+  }
+
+  .serif-statement {
+    font-family: 'Newsreader', Georgia, serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(28px, 4.2vw, 58px);
+    line-height: 1.25;
+    color: #454545;
+    text-align: center;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  .sub-kicker {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #89662F;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .text-center { text-align: center; }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn-white {
+    background: #FFFFFF;
+    color: #111111;
+    border: none;
+  }
+
+  .btn-white-pill {
+    background: #FFFFFF;
+    color: #111111;
+    border-radius: 9999px;
+    padding: 12px 24px;
+    font-size: 13px;
+  }
+
+  .btn-dark {
+    background: #111111;
+    color: #FFFFFF;
+    border: none;
+  }
+
+  .btn-dark-full {
+    width: 100%;
+    background: #111111;
+    color: #FFFFFF;
+    border: none;
+    padding: 16px;
+    border-radius: 4px;
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .btn-dark-full:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  /* ==================== ANNOUNCEMENT BAR ==================== */
+  .announcement-bar {
+    background: #111111;
+    color: #FFFFFF;
+    padding: 8px 0;
+    font-size: 13px;
+    font-weight: 400;
+    overflow: hidden;
+  }
+
+  .ticker-track {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .ticker-content {
+    display: inline-flex;
+    gap: 32px;
+    animation: ticker 35s linear infinite;
+  }
+
+  .sep { opacity: 0.5; }
+
+  @keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ==================== MAIN HEADER ==================== */
+  .main-header {
+    background: #FFFFFF;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  .header-container {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .logo-svg {
+    height: 32px;
+    width: auto;
+    display: block;
+  }
+
+  .header-nav {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+  }
+
+  .nav-item {
+    font-size: 15px;
+    font-weight: 400;
+    color: #454545;
+    transition: color 0.2s;
+  }
+
+  .nav-item.active, .nav-item:hover {
+    color: #111111;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .region-pill {
+    font-size: 12px;
+    font-weight: 500;
+    background: #F4F4F4;
+    padding: 6px 12px;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+  }
+
+  .action-btn {
+    background: transparent;
+    border: none;
+    color: #454545;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 6px;
+  }
+
+  .cart-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #111111;
+    color: #FFFFFF;
+    font-size: 10px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ==================== HERO SECTION ==================== */
+  .hero-section {
+    position: relative;
+    height: 90vh;
+    min-height: 600px;
+  }
+
+  .hero-media-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .hero-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-scrim {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+  }
+
+  .hero-content-container {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #FFFFFF;
+  }
+
+  .hero-content-box {
+    max-width: 780px;
+  }
+
+  .hero-eyebrow {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    display: block;
+    margin-bottom: 12px;
+    opacity: 0.9;
+  }
+
+  .hero-title {
+    font-family: 'Newsreader', Georgia, serif;
+    font-weight: 300;
+    font-size: clamp(48px, 6vw, 84px);
+    line-height: 1.05;
+    margin: 0 0 20px;
+  }
+
+  .hero-title span { display: block; }
+  .hero-title em { font-style: italic; font-weight: 400; }
+
+  .hero-subtitle {
+    font-size: 17px;
+    line-height: 1.6;
+    opacity: 0.9;
+    margin: 0 auto 32px;
+    max-width: 560px;
+  }
+
+  /* ==================== FEATURED COLLECTION ==================== */
+  .featured-collection-section {
+    padding: 96px 0;
+    background: #FFFFFF;
+  }
+
+  .section-head-center {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .collection-tabs-row {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    margin-top: 24px;
+    border-bottom: 1px solid #E5E5E5;
+    padding-bottom: 12px;
+  }
+
+  .tab-btn {
+    background: transparent;
+    border: none;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    color: #707070;
+    cursor: pointer;
+    padding-bottom: 8px;
+    position: relative;
+  }
+
+  .tab-btn.active {
+    color: #111111;
+    font-weight: 600;
+  }
+
+  .tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -13px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #111111;
+  }
+
+  .product-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+  }
+
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .p-card-media {
+    aspect-ratio: 0.85;
+    background: #F4F4F4;
+    border-radius: 4px;
+    overflow: hidden;
+    display: block;
+  }
+
+  .p-img-primary {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .product-card:hover .p-img-primary {
+    transform: scale(1.04);
+  }
+
+  .p-vendor {
+    font-size: 12px;
+    color: #888888;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .p-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #222222;
+    margin: 0 0 6px;
+  }
+
+  .p-price {
+    font-size: 15px;
+    font-weight: 600;
+    color: #454545;
+  }
+
+  /* ==================== SELECTION SPACES ==================== */
+  .selection-spaces-section {
+    padding: 48px 0 96px;
+    background: #FFFFFF;
+  }
+
+  .selection-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .space-card {
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .space-media {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+  }
+
+  .space-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .space-card:hover .space-media img {
+    transform: scale(1.05);
+  }
+
+  .space-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 60%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 32px;
+    text-align: center;
+    color: #FFFFFF;
+  }
+
+  .space-title {
+    font-family: 'Newsreader', Georgia, serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 32px;
+    margin: 0 0 16px;
+  }
+
+  /* ==================== EDITORIAL STATEMENT ==================== */
+  .editorial-statement-section {
+    padding: 120px 0;
+    background: #FFFFFF;
+    border-top: 1px solid #EFEFEF;
+    border-bottom: 1px solid #EFEFEF;
+  }
+
+  /* ==================== BUNDLE BUILDER ==================== */
+  .bundle-builder-section {
+    padding: 96px 0;
+    background: #FFFFFF;
+  }
+
+  .bundle-head {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .bundle-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 48px;
+    align-items: flex-start;
+  }
+
+  .bundle-summary-card {
+    background: #F9F9F9;
+    border-radius: 8px;
+    padding: 36px;
+    position: sticky;
+    top: 100px;
+  }
+
+  .summary-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  .summary-title {
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 26px;
+    font-style: italic;
+    margin: 0;
+  }
+
+  .bundle-tiers-track {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    background: #FFFFFF;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 28px;
+    text-align: center;
+  }
+
+  .tier-step .t-name {
+    font-size: 11px;
+    display: block;
+    color: #888888;
+  }
+
+  .tier-step strong {
+    font-size: 13px;
+    color: #89662F;
+  }
+
+  .summary-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 28px;
+    font-size: 14px;
+  }
+
+  .s-row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .s-total {
+    border-top: 1px solid #E5E5E5;
+    padding-top: 12px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .bundle-items-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  .bundle-item {
+    background: #FFFFFF;
+    border: 1px solid #EFEFEF;
+    border-radius: 8px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .b-img {
+    aspect-ratio: 1;
+    background: #F4F4F4;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .b-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .b-name {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .b-price {
+    font-size: 15px;
+    font-weight: 600;
+    color: #454545;
+  }
+
+  .btn-bundle-toggle {
+    background: #111111;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  /* ==================== SHOP BY COLLECTION HERO ==================== */
+  .shop-by-collection-hero {
+    position: relative;
+    height: 70vh;
+    min-height: 500px;
+  }
+
+  .sbc-bg-frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .sbc-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .sbc-scrim {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+  }
+
+  .sbc-content-container {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #FFFFFF;
+  }
+
+  .sbc-title {
+    color: #FFFFFF;
+    font-size: clamp(36px, 4.5vw, 60px);
+    margin-bottom: 32px;
+  }
+
+  .sbc-links-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .sbc-nav-item {
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 28px;
+    font-style: italic;
+    opacity: 0.75;
+    transition: opacity 0.2s;
+  }
+
+  .sbc-nav-item.active, .sbc-nav-item:hover {
+    opacity: 1;
+    text-decoration: underline;
+  }
+
+  .sbc-nav-item sup {
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+  }
+
+  .sbc-dot {
+    font-size: 24px;
+    opacity: 0.5;
+  }
+
+  /* ==================== TEXT WITH IMAGE ==================== */
+  .text-with-image-section {
+    padding: 100px 0;
+    background: #FFFFFF;
+  }
+
+  .twi-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .twi-media-collage {
+    position: relative;
+  }
+
+  .twi-primary img {
+    width: 100%;
+    border-radius: 6px;
+  }
+
+  .twi-secondary {
+    position: absolute;
+    bottom: -32px;
+    right: -24px;
+    width: 45%;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.15);
+  }
+
+  .twi-secondary img {
+    width: 100%;
+    display: block;
+  }
+
+  .twi-desc {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #555555;
+    margin: 0 0 32px;
+  }
+
+  /* ==================== STATEMENT PIECES ==================== */
+  .statement-pieces-section {
+    padding: 80px 0;
+    background: #FFFFFF;
+  }
+
+  .sp-head {
+    margin-bottom: 40px;
+  }
+
+  .sp-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .sp-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .sp-media {
+    aspect-ratio: 0.85;
+    background: #F4F4F4;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .sp-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .sp-name {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .sp-price {
+    font-size: 15px;
+    font-weight: 600;
+    color: #454545;
+  }
+
+  .sp-price .old {
+    color: #999999;
+    font-weight: 400;
+    margin-left: 6px;
+  }
+
+  /* ==================== ROOM TRANSFORMATION ==================== */
+  .room-transform-section {
+    padding: 96px 0;
+    background: #FFFFFF;
+  }
+
+  .section-sub {
+    font-size: 16px;
+    color: #777777;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .comparison-stage {
+    margin-top: 48px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .compare-frame {
+    position: relative;
+    max-width: 1000px;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .compare-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .tag-before, .tag-after {
+    position: absolute;
+    bottom: 20px;
+    background: rgba(0,0,0,0.7);
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+  }
+
+  .tag-before { left: 20px; }
+  .tag-after { right: 20px; }
+
+  /* ==================== LOGO TICKER STRIP ==================== */
+  .logo-ticker-strip {
+    padding: 32px 0;
+    border-top: 1px solid #EFEFEF;
+    border-bottom: 1px solid #EFEFEF;
+    overflow: hidden;
+  }
+
+  .logo-ticker-track {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    white-space: nowrap;
+    animation: ticker 25s linear infinite;
+  }
+
+  .t-logo {
+    height: 24px;
+    width: auto;
+  }
+
+  .t-text {
+    font-family: 'Newsreader', Georgia, serif;
+    font-style: italic;
+    font-size: 22px;
+    color: #454545;
+  }
+
+  .t-sep { opacity: 0.3; }
+
+  /* ==================== FAQ SECTION ==================== */
+  .faq-section {
+    padding: 96px 0;
+    background: #FFFFFF;
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 64px;
+    align-items: flex-start;
+  }
+
+  .faq-main-img {
+    width: 100%;
+    border-radius: 6px;
+    display: block;
+  }
+
+  .accordion-list {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .faq-row {
+    border-bottom: 1px solid #E5E5E5;
+    padding-bottom: 16px;
+  }
+
+  .faq-row summary {
+    font-size: 18px;
+    font-weight: 500;
+    color: #222222;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .faq-row summary::-webkit-details-marker { display: none; }
+
+  .faq-row p {
+    font-size: 15px;
+    color: #666666;
+    line-height: 1.6;
+    margin: 12px 0 0;
+  }
+
+  /* ==================== VALUE PROPS CREAM ==================== */
+  .value-props-cream-section {
+    padding: 80px 0;
+    background: #FFF3E1;
+    color: #614417;
+  }
+
+  .vp-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 36px;
+    text-align: center;
+  }
+
+  .vp-icon {
+    font-size: 32px;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .vp-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #614417;
+    margin: 0 0 8px;
+  }
+
+  .vp-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #89662F;
+    margin: 0;
+  }
+
+  /* ==================== TESTIMONIAL SPOTLIGHT ==================== */
+  .testimonial-spotlight-section {
+    padding: 96px 0;
+    background: #FFFFFF;
+  }
+
+  .spotlight-card {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 56px;
+    align-items: center;
+    background: #F9F9F9;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 48px;
+  }
+
+  .spotlight-room-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .spotlight-quote-col {
+    padding: 48px 48px 48px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .stars-gold {
+    color: #89662F;
+    font-size: 20px;
+    letter-spacing: 4px;
+  }
+
+  .quote-text {
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 24px;
+    font-style: italic;
+    line-height: 1.4;
+    color: #222222;
+    margin: 0;
+  }
+
+  .author-info strong {
+    display: block;
+    font-size: 16px;
+  }
+
+  .author-info span {
+    font-size: 14px;
+    color: #888888;
+  }
+
+  .reviewed-product-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #FFFFFF;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid #E5E5E5;
+    max-width: fit-content;
+  }
+
+  .reviewed-product-chip img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+  }
+
+  .reviewed-product-chip small {
+    display: block;
+    font-size: 11px;
+    color: #888888;
+  }
+
+  .reviewed-product-chip span {
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  /* ==================== JOURNAL ==================== */
+  .journal-section {
+    padding: 80px 0;
+    background: #FFFFFF;
+  }
+
+  .journal-head {
+    margin-bottom: 40px;
+  }
+
+  .journal-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .article-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .art-media {
+    aspect-ratio: 4 / 3;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #F4F4F4;
+  }
+
+  .art-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .art-meta {
+    font-size: 12px;
+    color: #888888;
+  }
+
+  .art-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #222222;
+    line-height: 1.35;
+    margin: 0;
+  }
+
+  .art-excerpt {
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* ==================== SOCIAL COLLAGE ==================== */
+  .social-collage-section {
+    padding: 80px 0;
+    background: #FFFFFF;
+  }
+
+  .social-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 40px;
+  }
+
+  .social-card {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .social-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .social-meta {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: rgba(0,0,0,0.7);
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+
+  /* ==================== EMAIL SIGNUP BANNER ==================== */
+  .email-signup-banner {
+    position: relative;
+    height: 520px;
+  }
+
+  .email-bg-frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .email-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .email-scrim {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+  }
+
+  .email-content-container {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #FFFFFF;
+  }
+
+  .email-kicker {
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    opacity: 0.9;
+  }
+
+  .email-heading {
+    color: #FFFFFF;
+    font-size: clamp(36px, 4vw, 56px);
+    margin-bottom: 16px;
+  }
+
+  .email-sub {
+    font-size: 16px;
+    max-width: 520px;
+    opacity: 0.9;
+    margin: 0 auto 28px;
+    line-height: 1.6;
+  }
+
+  .email-form {
+    display: flex;
+    gap: 12px;
+    max-width: 480px;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .email-input {
+    flex: 1;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    backdrop-filter: blur(8px);
+    border-radius: 9999px;
+    padding: 12px 20px;
+    color: #FFFFFF;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+  }
+
+  .email-input::placeholder { color: rgba(255,255,255,0.7); }
+
+  .email-privacy {
+    font-size: 12px;
+    opacity: 0.7;
+  }
+
+  /* ==================== FOOTER ==================== */
+  .storefront-footer {
+    background: #F4F4F4;
+    padding: 80px 0 32px;
+    border-top: 1px solid #E5E5E5;
+    font-size: 14px;
+    color: #555555;
+  }
+
+  .footer-main-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr 1.4fr;
+    gap: 36px;
+    margin-bottom: 48px;
+  }
+
+  .f-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #111111;
+    margin: 0 0 16px;
+  }
+
+  .f-text {
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .f-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .f-links a:hover { color: #111111; }
+
+  .f-newsletter-form {
+    display: flex;
+    border: 1px solid #DDDDDD;
+    background: #FFFFFF;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 12px;
+  }
+
+  .f-input {
+    flex: 1;
+    border: none;
+    padding: 10px 14px;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+  }
+
+  .f-btn {
+    background: #111111;
+    color: #FFFFFF;
+    border: none;
+    padding: 0 16px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .footer-bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+    border-top: 1px solid #E0E0E0;
+    font-size: 13px;
+    color: #888888;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  /* ==================== RESPONSIVE ==================== */
+  @media (max-width: 992px) {
+    .header-nav { display: none; }
+    .product-grid-4, .sp-grid-4, .journal-grid-4, .social-grid-4, .vp-grid-4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .selection-grid-3, .bundle-layout, .twi-grid, .faq-grid, .spotlight-card {
+      grid-template-columns: 1fr;
+    }
+    .spotlight-quote-col { padding: 32px; }
+    .footer-main-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 600px) {
+    .product-grid-4, .sp-grid-4, .journal-grid-4, .social-grid-4, .vp-grid-4, .footer-main-grid, .bundle-items-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-title { font-size: 38px; }
+  }
+</style>

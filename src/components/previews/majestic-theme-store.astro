@@ -1,0 +1,260 @@
+---
+// Majestic Luxury Furniture — Live card preview scene: pure luxury editorial minimalism.
+// Deep warm cream backdrop (#FFF3E1) & charcoal (#111111), italic serif typography (Newsreader),
+// hero room scene, elegant collection pills, and plush dining chair preview.
+// Pure CSS/SVG, cqw units.
+---
+
+<div class="scene" aria-hidden="true">
+  <!-- Top Ticker -->
+  <div class="top-announcement">
+    <span>Free shipping on orders over $150 — Shop now</span>
+  </div>
+
+  <!-- Editorial Header -->
+  <div class="header-nav-bar">
+    <div class="logo">
+      <img src="/assets/majestic/logo-dark.svg" alt="Majestic" class="logo-svg" />
+    </div>
+    <div class="nav-links">
+      <span class="link active">Home</span>
+      <span class="link">Shop All ▾</span>
+      <span class="link">Collections ▾</span>
+      <span class="link">Journal</span>
+    </div>
+    <div class="nav-icons">
+      <span class="icon">🔍</span>
+      <span class="icon">👤</span>
+      <span class="icon cart">👜</span>
+    </div>
+  </div>
+
+  <!-- Hero Editorial Stage -->
+  <div class="hero-editorial">
+    <div class="hero-bg-frame">
+      <img src="/assets/majestic/hero-banner.jpg" alt="Living room" class="hero-room-img" />
+      <div class="hero-overlay-text">
+        <span class="hero-eyebrow">NEW COLLECTION 2026</span>
+        <h1 class="hero-headline">Make Your House<br/><em>Feel Like Home</em></h1>
+        <div class="hero-cta-btn">NEW COLLECTION →</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured Product Mini Row -->
+  <div class="bottom-product-bar">
+    <div class="b-prod">
+      <div class="b-thumb"><img src="/assets/majestic/p-veloura.png" alt="" /></div>
+      <div class="b-meta">
+        <span class="b-name">Veloura Sofa</span>
+        <span class="b-price">$1,099</span>
+      </div>
+    </div>
+    <div class="b-prod">
+      <div class="b-thumb"><img src="/assets/majestic/p-aurelle.png" alt="" /></div>
+      <div class="b-meta">
+        <span class="b-name">Aurelle Swivel</span>
+        <span class="b-price">$599</span>
+      </div>
+    </div>
+    <div class="b-prod">
+      <div class="b-thumb"><img src="/assets/majestic/p-verona.png" alt="" /></div>
+      <div class="b-meta">
+        <span class="b-name">Verona Accent</span>
+        <span class="b-price">$699</span>
+      </div>
+    </div>
+    <div class="b-prod">
+      <div class="b-thumb"><img src="/assets/majestic/p-arden.png" alt="" /></div>
+      <div class="b-meta">
+        <span class="b-name">Arden Chair</span>
+        <span class="b-price">$459</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .scene {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    min-height: 260px;
+    background: #FFFFFF;
+    overflow: hidden;
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+    container-type: inline-size;
+    color: #111111;
+  }
+
+  * { box-sizing: border-box; }
+
+  /* Top Ticker */
+  .top-announcement {
+    background: #111111;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 0.3cqw 1cqw;
+    font-size: 0.6cqw;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+  }
+
+  /* Header */
+  .header-nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5cqw 2cqw;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .logo-svg {
+    height: 1.4cqw;
+    width: auto;
+    display: block;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.2cqw;
+  }
+
+  .nav-links .link {
+    font-size: 0.7cqw;
+    font-weight: 500;
+    color: #666666;
+  }
+
+  .nav-links .link.active {
+    color: #111111;
+  }
+
+  .nav-icons {
+    display: flex;
+    gap: 0.8cqw;
+    font-size: 0.75cqw;
+  }
+
+  /* Hero */
+  .hero-editorial {
+    padding: 0 1.5cqw;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin: 0.5cqw 0;
+  }
+
+  .hero-bg-frame {
+    position: relative;
+    width: 100%;
+    height: 11cqw;
+    border-radius: 0.8cqw;
+    overflow: hidden;
+  }
+
+  .hero-room-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.75);
+  }
+
+  .hero-overlay-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 1cqw;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.55cqw;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+    margin-bottom: 0.3cqw;
+    opacity: 0.9;
+  }
+
+  .hero-headline {
+    font-family: 'Newsreader', Georgia, serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 2.2cqw;
+    line-height: 1.05;
+    margin: 0 0 0.6cqw;
+  }
+
+  .hero-headline em {
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .hero-cta-btn {
+    background: #FFFFFF;
+    color: #111111;
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 0.6cqw;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 0.35cqw 0.9cqw;
+    border-radius: 0.3cqw;
+  }
+
+  /* Bottom Product Row */
+  .bottom-product-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1cqw;
+    padding: 0.4cqw 1.5cqw 0.8cqw;
+    border-top: 1px solid #F0F0F0;
+  }
+
+  .b-prod {
+    display: flex;
+    align-items: center;
+    gap: 0.5cqw;
+    background: #F9F9F9;
+    padding: 0.3cqw 0.5cqw;
+    border-radius: 0.4cqw;
+  }
+
+  .b-thumb {
+    width: 2.2cqw;
+    height: 2.2cqw;
+    background: #FFFFFF;
+    border-radius: 0.3cqw;
+    overflow: hidden;
+  }
+
+  .b-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .b-meta {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .b-name {
+    font-size: 0.65cqw;
+    font-weight: 600;
+    color: #222222;
+  }
+
+  .b-price {
+    font-size: 0.6cqw;
+    font-weight: 700;
+    color: #707070;
+  }
+</style>
