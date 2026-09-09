@@ -1,0 +1,258 @@
+---
+// OATSIDE Playful — FULL-PAGE single-column recreation of the @uiuxsharon
+// oat-milk landing reference: cream grid page, sticker badges, chunky Anton
+// headlines, bordered cards, product carousel, why-oatside, good-box,
+// recipes, FAQ, newsletter, blob strip, footer. No side-by-side columns —
+// every section stacks full-width top to bottom.
+// Photos: Unsplash hotlinked with cream fallback behind every <img>.
+const hero = [
+  { src: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=500&auto=format&fit=crop", alt: "Happy kid enjoying OATSIDE" },
+  { src: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=500&auto=format&fit=crop", alt: "Girl sipping oat milk" },
+  { src: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=500&auto=format&fit=crop", alt: "Friends sharing breakfast" },
+  { src: "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=500&auto=format&fit=crop", alt: "OATSIDE oat milk pour" },
+];
+const products = [
+  { name: "Chocolate (1L)", price: "$ 6.00", img: "https://images.unsplash.com/photo-1577805947697-89e18249d767?q=80&w=500&auto=format&fit=crop", alt: "Chocolate oat milk", active: false },
+  { name: "Barista Blend Pocket Packs (24 x 200ml)", price: "$ 29.90", img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=500&auto=format&fit=crop", alt: "Barista blend coffee with oat milk", active: true },
+  { name: "Caramel Macchiato Packs (24 x 200ml)", price: "$ 29.90", img: "https://images.unsplash.com/photo-1485808191679-5f86510681a4?q=80&w=500&auto=format&fit=crop", alt: "Caramel macchiato", active: false },
+  { name: "Peanut Butter Cookie Dough", price: "$ 6.50", img: "https://images.unsplash.com/photo-1551024506-0bccd828d307?q=80&w=500&auto=format&fit=crop", alt: "Cookie dough dessert", active: false },
+];
+const recipes = [
+  { title: "Choco Oat Blast", from: "From Choco Chef", cls: "yellow", img: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?q=80&w=500&auto=format&fit=crop", alt: "Chocolate oat blast" },
+  { title: "Strawberry Mint Oat Bliss", from: "From Berry Lab", cls: "red", img: "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?q=80&w=500&auto=format&fit=crop", alt: "Strawberry oat drink" },
+  { title: "Creamy Oat Matcha", from: "From Matcha Club", cls: "green", img: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?q=80&w=500&auto=format&fit=crop", alt: "Oat matcha latte" },
+];
+const strip = [
+  { src: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=300&auto=format&fit=crop", alt: "OATSIDE fan" },
+  { src: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=300&auto=format&fit=crop", alt: "Girl with oat latte" },
+  { src: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=300&auto=format&fit=crop", alt: "Smiling customer" },
+  { src: "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=300&auto=format&fit=crop", alt: "Oat milk pour" },
+  { src: "https://images.unsplash.com/photo-1485808191679-5f86510681a4?q=80&w=300&auto=format&fit=crop", alt: "Coffee moment" },
+];
+const faqs = [
+  { q: "What is OATSIDE?", a: "OATSIDE is Asia's delicious take on oat milk — made creamier and maltier so everyone can enjoy it. Plant-based, planet-friendly, and lactose-free." },
+  { q: "Why does OATSIDE exist?", a: "Because plant milk shouldn't taste like a compromise. We wanted the creamy oat milk that's anything but ordinary." },
+  { q: "Where is OATSIDE made?", a: "Brewed with high-quality Australian oats, packed fresh across Asia." },
+  { q: "What goes into OATSIDE?", a: "Oats, water, a pinch of salt and natural flavour. No weird stuff — no artificial flavours or colours." },
+  { q: "How is OATSIDE best consumed?", a: "Chilled, shaken, and sipped straight — or steamed for latte art. Keep it cool!" },
+];
+---
+
+<div class="oat">
+  <!-- HEADER -->
+  <header class="hdr">
+    <span class="logo">OATSIDE</span>
+    <nav class="nav">
+      <a href="#shop">Products</a><a href="#recipes">Recipes</a><a href="#why">About</a><a href="#shop">Shop</a><a href="#footer">Contact</a>
+    </nav>
+    <span class="icons"><i>⌕</i><i>🛒</i><i>◉</i><b class="burger">☰</b></span>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Always Look On<br />the OATSIDE of Life</h1>
+    <p class="sub">No artificial flavors, no fake colors — just pure goodness in every sip :)</p>
+    <div class="collage-wrap">
+      <span class="bubble">No weird stuff. Just ridiculously good oat milk.</span>
+      <div class="collage">
+        {hero.map((p, i) => (
+          <figure class={i === 1 ? "ph tall" : "ph"}><img src={p.src} alt={p.alt} loading={i > 1 ? "lazy" : "eager"} /><figcaption>{p.alt}</figcaption></figure>
+        ))}
+      </div>
+      <span class="spark s1">✦</span><span class="smiley">☺</span>
+    </div>
+  </section>
+
+  <!-- SHOP -->
+  <section class="shop" id="shop">
+    <div class="sec-head"><span class="badge">Top Picks</span><h2>Sip the Difference!</h2>
+      <p>From barista-approved blends to rich chocolatey indulgence, discover the oat milk that's anything but ordinary.</p></div>
+    <div class="track">
+      {products.map((p) => (
+        <article class={p.active ? "pcard active" : "pcard"}>
+          <div class="pack"><img src={p.img} alt={p.alt} loading="lazy" /></div>
+          <p class="pname">{p.name}</p>
+          <p class="pprice"><b>{p.price}</b></p>
+          <button class="add">🛒 Add to cart</button>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="why" id="why">
+    <div class="cartons">
+      <span class="spark">✦</span>
+      <img class="c c1" src="https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=400&auto=format&fit=crop" alt="OATSIDE original carton" loading="lazy" />
+      <img class="c c2" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=400&auto=format&fit=crop" alt="OATSIDE barista blend" loading="lazy" />
+      <img class="c c3" src="https://images.unsplash.com/photo-1577805947697-89e18249d767?q=80&w=400&auto=format&fit=crop" alt="OATSIDE chocolate" loading="lazy" />
+      <span class="bubble green">Keep It Cool!</span>
+    </div>
+    <div class="why-copy">
+      <span class="badge">Why Oatside?</span>
+      <h2>OAT-rageously Good!</h2>
+      <p>Creamy, sustainable, and ridiculously good, OATSIDE is made for everyone who wants better taste without the bad stuff.</p>
+    </div>
+  </section>
+
+  <!-- GOOD -->
+  <section class="good">
+    <img class="good-img" src="https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop" alt="OATSIDE cartons pouring out of a box" loading="lazy" />
+    <div class="good-copy">
+      <h2>Good!</h2>
+      <p class="tiny">Creamy, sustainable, and ridiculously good, OATSIDE is made for everyone who wants better taste.</p>
+      <ul>
+        <li><i>✓</i> Naturally creamy texture without artificial thickeners</li>
+        <li><i>✓</i> Made from high-quality Australian oats</li>
+        <li><i>✓</i> Cholesterol-free and lower in saturated fats</li>
+      </ul>
+      <button class="btn-y">Shop now</button>
+    </div>
+  </section>
+
+  <!-- RECIPES -->
+  <section class="recipes" id="recipes">
+    <span class="badge">Favorites</span>
+    <h2>Try OATSIDE Your Way</h2>
+    <div class="flavors">
+      {recipes.map((r) => (
+        <article class={`flav ${r.cls}`}>
+          <b>{r.title}</b>
+          <img src={r.img} alt={r.alt} loading="lazy" />
+          <span class="from">{r.from}</span>
+        </article>
+      ))}
+    </div>
+    <button class="ghost">Explore more</button>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <span class="badge">FAQ</span>
+    <h2>Got Questions?</h2>
+    <p class="tiny">Still got questions? <button class="ghost sm">Contact Us</button></p>
+    {faqs.map((f) => (
+      <details class="qa"><summary>{f.q}<i>+</i></summary><p>{f.a}</p></details>
+    ))}
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="news">
+    <h3>Be the first to know about<br />new flavors, exclusive<br />deals, and get 10% OFF<br />your first order!</h3>
+    <form class="email" onsubmit="return false">
+      <input type="email" placeholder="EMAIL ADDRESS" aria-label="Email address" />
+      <button class="btn-y" type="submit">Get discounts</button>
+    </form>
+    <span class="spark">✦</span>
+  </section>
+
+  <!-- STRIP -->
+  <div class="strip">
+    {strip.map((s) => (
+      <span class="blob"><img src={s.src} alt={s.alt} loading="lazy" /></span>
+    ))}
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="foot" id="footer">
+    <div><p class="logo">OATSIDE</p><p class="tiny">Stay Goofy, Stay Oat-rageous!</p><p class="tiny soc">◉ ✕ ♪ ▶</p></div>
+    <div class="touch"><b>Get in Touch</b><i>↗</i></div>
+  </footer>
+  <p class="ps">P.S. No cows were harmed in the making of this website.</p>
+</div>
+
+<style>
+.oat{--cream:#FFFBF2;--ink:#111;--blue:#2F80ED;--yellow:#FFD60A;--line:1.5px solid #111;box-sizing:border-box;
+background:var(--cream);background-image:linear-gradient(#00000007 1px,transparent 1px),linear-gradient(90deg,#00000007 1px,transparent 1px);background-size:28px 28px;
+color:var(--ink);font-family:'Space Grotesk',system-ui,-apple-system,sans-serif;
+width:100%;min-height:100vh;border:none;border-radius:0;margin:0;padding:0 clamp(16px,3vw,44px) 26px;overflow-x:clip}
+.oat>*{box-sizing:border-box;max-width:1120px;margin-left:auto;margin-right:auto}
+.oat h1,.oat h2,.oat h3,.oat .logo,.oat .flav b{font-family:Anton,'Arial Black',sans-serif;font-weight:400;text-transform:uppercase;line-height:.95;letter-spacing:.01em}
+.oat img{background:#F3E6CF;display:block}
+.oat section{margin-top:26px}
+.badge{display:inline-block;background:var(--blue);color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;padding:4px 12px;border-radius:999px;border:var(--line);transform:rotate(-4deg);text-transform:uppercase}
+.hdr{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0 4px;border:none;background:transparent}
+.logo{font-size:20px}
+.nav{display:flex;gap:16px;font-size:12px}.nav a{color:inherit;text-decoration:none}
+.icons{display:flex;gap:8px;align-items:center}.icons i,.icons b{width:28px;height:28px;border:var(--line);border-radius:50%;display:grid;place-items:center;background:#fff;font-style:normal;font-size:14px}.icons .burger{display:none;cursor:pointer}
+.hero{text-align:center;padding-top:30px}.hero h1{font-size:clamp(36px,6vw,72px)}
+.sub{font-size:13px;opacity:.65;margin-top:10px}
+.collage-wrap{position:relative;margin-top:10px}
+.bubble{position:absolute;left:4%;top:-14px;z-index:3;background:#CDEFFF;border:var(--line);border-radius:12px;font-size:11px;font-weight:700;padding:8px 10px;max-width:180px;transform:rotate(-4deg);text-align:left}
+.bubble.green{background:#B8E62E;left:auto;right:2%;top:auto;bottom:6px}
+.collage{display:flex;justify-content:center;align-items:flex-end;padding:28px 0 6px;overflow-x:auto}
+.ph{width:170px;height:170px;border:var(--line);border-radius:18px;overflow:hidden;margin-left:-20px;transform:rotate(-3deg);flex-shrink:0;background:#fff;position:relative}
+.ph:first-child{margin-left:0}
+.ph.tall{width:200px;height:190px;transform:rotate(2deg) translateY(4px);z-index:2}
+.ph:nth-child(3){transform:rotate(-2deg)}.ph:nth-child(4){transform:rotate(3deg)}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph figcaption{position:absolute;left:-9999px}
+.spark{color:#D9A400;font-size:22px}.s1{position:absolute;right:14%;top:0}.smiley{position:absolute;right:8%;bottom:8px;background:#B8E62E;border:var(--line);border-radius:50%;width:30px;height:30px;display:grid;place-items:center;font-size:16px}
+.sec-head{text-align:center;margin:0 0 14px}.sec-head h2{font-size:clamp(32px,4.5vw,52px)}.sec-head p{font-size:12px;opacity:.6;margin:8px auto 0;max-width:560px}
+.track{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1040px;margin:0 auto}
+.pcard{background:#fff;border:var(--line);border-radius:18px;padding:14px;display:flex;flex-direction:column}
+.pcard.active{background:var(--blue);color:#fff}
+.pack{height:210px;border-radius:12px;overflow:hidden;border:var(--line);margin-bottom:10px;background:#F6E9D2}
+.pack img{width:100%;height:100%;object-fit:cover}
+.pname{font-size:12px;line-height:1.4;margin-top:2px}
+.pprice{font-size:15px;margin-top:6px}
+.add{margin-top:14px;width:100%;border:var(--line);border-radius:999px;padding:10px;background:#fff;font-weight:700;font-size:13px;cursor:pointer;color:var(--ink)}
+.pcard.active .add{background:var(--yellow)}
+.why{border:var(--line);border-radius:20px;background:#FFF7EB;padding:26px;text-align:center}
+.cartons{position:relative;height:230px;max-width:420px;margin:0 auto}
+.cartons .c{position:absolute;width:104px;height:150px;object-fit:cover;border:var(--line);border-radius:8px}
+.c1{left:8%;top:12px;transform:rotate(-12deg)}.c2{left:42%;top:54px;transform:rotate(7deg)}.c3{left:16%;top:84px;transform:rotate(-5deg)}
+.why-copy{max-width:560px;margin:6px auto 0}
+.why-copy h2{font-size:clamp(32px,4.5vw,52px)}
+.why-copy p{font-size:13px;opacity:.65;margin-top:10px;line-height:1.6}
+.good{border:var(--line);border-radius:18px;background:#FFFDF5;padding:20px;text-align:center}
+.good-img{width:100%;max-height:300px;object-fit:cover;border:var(--line);border-radius:12px}
+.good-copy{max-width:560px;margin:14px auto 0}
+.good-copy h2{font-size:30px}.tiny{font-size:11px;opacity:.65;line-height:1.55}
+.good ul{list-style:none;margin:10px auto;padding:0;max-width:440px;text-align:left}
+.good li{font-size:12px;margin:8px 0;display:flex;gap:8px;align-items:flex-start;line-height:1.4}
+.good li i{width:18px;height:18px;background:var(--blue);border-radius:50%;border:1px solid #111;color:#fff;font-size:10px;display:grid;place-items:center;flex-shrink:0;font-style:normal}
+.btn-y{background:var(--yellow);border:var(--line);border-radius:999px;padding:10px 22px;font-weight:700;cursor:pointer;font-size:12px;color:var(--ink);margin-top:6px}
+.recipes{text-align:center}.recipes h2,.faq h2{font-size:clamp(26px,3.5vw,38px);margin-top:8px}
+.flavors{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:14px;text-align:left;max-width:1040px;margin-left:auto;margin-right:auto}
+.flav{border:var(--line);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:12px;overflow:hidden}
+.flav.yellow{background:#FFD60A}.flav.red{background:#FF5A5A;color:#fff}.flav.green{background:#B8E62E}
+.flav b{font-size:17px}
+.flav img{width:100%;height:200px;object-fit:cover;border:var(--line);border-radius:12px;background:#fff}
+.from{font-size:10px;background:#fff;color:#111;border:1px solid #111;border-radius:8px;padding:4px 8px;width:fit-content}
+.ghost{border:var(--line);border-radius:999px;padding:8px 22px;background:#fff;font-size:12px;font-weight:700;cursor:pointer;margin-top:12px;color:var(--ink)}
+.ghost.sm{margin-top:0;padding:4px 14px;font-size:11px}
+.faq{text-align:center;max-width:640px;margin-left:auto;margin-right:auto}
+.qa{background:#fff;border:var(--line);border-radius:12px;margin:8px 0;font-size:12px;overflow:hidden;text-align:left}
+.qa summary{list-style:none;display:flex;justify-content:space-between;align-items:center;padding:10px 12px;cursor:pointer;font-weight:500}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary i{width:20px;height:20px;background:var(--blue);color:#fff;border:1px solid #111;border-radius:50%;display:grid;place-items:center;font-style:normal;flex-shrink:0}
+.qa p{padding:0 12px 12px;font-size:11px;opacity:.7;line-height:1.6;margin:0}
+.news{text-align:center}.news h3{font-size:20px;line-height:1.3}
+.email{display:flex;gap:8px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.email input{border:var(--line);border-radius:999px;padding:10px 14px;width:min(240px,100%);font:inherit;font-size:12px;background:#fff}
+.strip{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:40px auto 44px;max-width:1120px}
+.blob{width:92px;height:92px;border:var(--line);border-radius:46% 54% 52% 48%/52% 48% 54% 46%;overflow:hidden;background:#FFCFCF;flex-shrink:0}
+.blob img{width:100%;height:100%;object-fit:cover}
+.foot{border:var(--line);border-radius:18px;padding:18px;background:#FFFEFB;display:flex;flex-direction:column;gap:10px;text-align:center;align-items:center}
+.soc{letter-spacing:.2em}
+.touch{display:flex;gap:8px;align-items:center;font-size:14px}.touch i{width:26px;height:26px;background:var(--blue);color:#fff;border:var(--line);border-radius:50%;display:grid;place-items:center;font-style:normal}
+.ps{font-size:10px;text-align:center;opacity:.55;margin-top:10px}
+/* MOBILE */
+@media(max-width:900px){
+.track,.flavors{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+.nav{display:none}.icons .burger{display:grid}
+.bubble{position:static;display:inline-block;transform:rotate(-3deg);margin-bottom:6px;max-width:100%}
+.cartons .bubble.green{position:absolute;bottom:0}
+}
+@media(max-width:560px){
+.oat{padding:0 12px 14px}
+.hdr{padding:12px 0 2px}
+.ph{width:128px;height:138px}.ph.tall{width:150px;height:155px}
+.email input{width:100%}.email .btn-y{width:100%}
+.track,.flavors{grid-template-columns:1fr}
+}
+</style>
+

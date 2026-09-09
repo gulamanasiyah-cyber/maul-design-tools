@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mode — Business Intelligence built around data teams (Replica)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    /* Mode's real tokens */
+    --g1: #EEF2E3;  /* sage ground */
+    --g2: #C8F169;  /* lime accent */
+    --g3: #78C51C;
+    --g4: #2A6F2B;
+    --g5: #043F2E;  /* deep green ink */
+    --gray1: #F8F8F8; --gray2: #F3F3F3; --gray3: #E7E7E6; --gray5: #CECFCD;
+    --gray7: #80827D; --gray8: #6B6D68; --gray9: #5A5C58;
+    --white: #FCFCFC;
+    --sans: 'Hanken Grotesk', system-ui, sans-serif;   /* Graphik stand-in */
+    --serif: 'Fraunces', Georgia, serif;               /* Grenette stand-in */
+    --radius: 8px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--g1); color: var(--g5); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 48px); }
+
+  /* ---------- buttons (radius 4, square-ish — as the real site) ---------- */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    border-radius: 4px; padding: 17px 24px; border: 1px solid transparent;
+    font: 500 14px/1.1 var(--sans); cursor: pointer; text-decoration: none; white-space: nowrap;
+    transition: background-color .25s ease-in-out, color .25s ease-in-out;
+  }
+  .btn-primary { background: var(--g5); color: var(--g2); }
+  .btn-primary:hover { background: #0a5a44; }
+  .btn-secondary { background: transparent; border-color: var(--g5); color: var(--g5); }
+  .btn-secondary:hover { background: rgba(4,63,46,.08); }
+  .btn-lime { background: var(--g2); color: var(--g5); }
+  .btn-lime:hover { filter: brightness(.96); }
+  .btn-ghost-light { background: transparent; border-color: rgba(252,252,252,.55); color: var(--white); }
+  .btn-ghost-light:hover { background: rgba(252,252,252,.1); }
+
+  /* ---------- announcement (lime bar) ---------- */
+  .announce {
+    background: var(--g2); color: var(--g5); text-align: center;
+    padding: 10px 16px; font: 500 14px/1.4 var(--sans); position: relative; z-index: 20;
+  }
+  .announce a { font-weight: 700; text-underline-offset: 3px; }
+
+  /* ---------- header ---------- */
+  header.site {
+    position: sticky; top: 0; z-index: 30;
+    background: rgba(238,242,227,.92); backdrop-filter: blur(10px);
+  }
+  .nav {
+    display: flex; align-items: center; gap: 28px;
+    padding: 14px clamp(20px, 4vw, 48px); max-width: 1320px; margin: 0 auto;
+  }
+  .logo svg { height: 22px; width: auto; display: block; }
+  .nav-links { display: flex; gap: 26px; margin: 0 auto; }
+  .nav-links a {
+    font: 500 14px/1 var(--sans); color: var(--g5); text-decoration: none;
+    display: inline-flex; align-items: center; gap: 5px; padding: 10px 0;
+  }
+  .nav-links a:hover { opacity: .72; }
+  .nav-links .caret { font-size: 9px; opacity: .6; }
+  .nav-cta { display: flex; align-items: center; gap: 12px; }
+  .signin { font: 500 14px/1 var(--sans); text-decoration: none; padding: 10px 4px; }
+  .nav .btn { padding: 12px 18px; }
+
+  /* ---------- hero ---------- */
+  .hero { padding: clamp(40px, 6vw, 84px) 0 0; }
+  .hero-grid {
+    display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: clamp(28px, 5vw, 72px); align-items: end;
+  }
+  .pills { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+  .pill {
+    font-family: var(--serif); font-weight: 500; color: var(--g5);
+    background: var(--g2); border-radius: var(--radius);
+    font-size: clamp(38px, 5.4vw, 68px); line-height: .9; letter-spacing: -.02em;
+    padding: 12px 20px; display: inline-block;
+  }
+  .pill-1 { border-bottom-right-radius: 0; }
+  .pill-2 { border-top-left-radius: 0; border-top-right-radius: 0; }
+  .pill-word {
+    display: inline-block; min-width: 5.2ch; text-align: left;
+    border-bottom: 3px solid transparent;
+  }
+  .pill-3 { border-top-left-radius: 0; max-width: 550px; }
+  .word-fade { animation: wordIn .45s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes wordIn { from { opacity: 0; transform: translateY(.18em); } to { opacity: 1; transform: none; } }
+
+  .hero-side { padding-bottom: 10px; }
+  .hero-side p { font: 400 18px/1.5 var(--sans); color: var(--g5); max-width: 42ch; }
+  .hero-side .row { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+
+  .hero-shot { margin-top: clamp(36px, 5vw, 64px); }
+  .hero-shot .frame {
+    border-radius: var(--radius) var(--radius) 0 0; overflow: hidden;
+    background: var(--white); max-width: 1000px; margin-left: auto;
+    box-shadow: 0 30px 60px rgba(4, 63, 46, .14);
+  }
+
+  /* ---------- section headings ---------- */
+  section { padding: clamp(64px, 8vw, 110px) 0; }
+  .kicker { font: 600 12px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--g4); margin-bottom: 18px; }
+  h2.big { font: 500 clamp(34px, 4.4vw, 56px)/1.03 var(--serif); letter-spacing: -.02em; color: var(--g5); }
+  h2.big em { font-style: italic; font-weight: 400; }
+  .lede { font: 400 18px/1.55 var(--sans); color: var(--gray9); max-width: 56ch; margin-top: 18px; }
+
+  /* ---------- capabilities accordion ---------- */
+  .caps { background: var(--g1); }
+  .acc { margin-top: 44px; border-top: 1px solid rgba(4,63,46,.18); }
+  .acc-item { border-bottom: 1px solid rgba(4,63,46,.18); transition: background .2s ease-in-out; }
+  .acc-item.open { background: var(--g2); }
+  .acc-head {
+    width: 100%; display: flex; align-items: center; gap: 18px;
+    background: none; border: 0; cursor: pointer; text-align: left;
+    padding: 22px clamp(16px, 2.5vw, 28px); font-family: var(--sans);
+  }
+  .acc-head .num { font: 500 13px/1 var(--sans); color: var(--g4); width: 2ch; }
+  .acc-head .t { font: 500 clamp(20px, 2.4vw, 28px)/1.1 var(--sans); color: var(--g5); flex: 1; }
+  .acc-head .plus { font: 400 22px/1 var(--sans); color: var(--g5); transition: transform .25s ease; }
+  .acc-item.open .plus { transform: rotate(45deg); }
+  .acc-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .3s ease; }
+  .acc-item.open .acc-body { grid-template-rows: 1fr; }
+  .acc-inner { overflow: hidden; }
+  .acc-cols {
+    display: grid; grid-template-columns: 1.1fr .9fr; gap: 28px; align-items: center;
+    padding: 0 clamp(16px, 2.5vw, 28px) 26px calc(clamp(16px, 2.5vw, 28px) + 2ch + 18px);
+  }
+  .acc-cols p { font: 400 16px/1.6 var(--sans); color: var(--g5); max-width: 46ch; }
+  .acc-cols img { border-radius: var(--radius); width: 100%; }
+
+  /* ---------- two-audience ---------- */
+  .duo { background: var(--white); }
+  .duo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 80px); margin-top: 48px; }
+  .duo-col h3 { font: 500 clamp(24px, 2.6vw, 32px)/1.1 var(--serif); color: var(--g5); margin-bottom: 14px; }
+  .duo-col p { font: 400 16px/1.65 var(--sans); color: var(--gray9); }
+  .duo-col .tag { display: inline-block; font: 600 12px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--g4); background: var(--g1); border-radius: 4px; padding: 8px 12px; margin-bottom: 18px; }
+
+  /* ---------- stack diagram ---------- */
+  .stack-sec { background: var(--g1); }
+  .stack { max-width: 860px; margin: 48px auto 0; display: flex; flex-direction: column; gap: 10px; }
+  .srow {
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    border-radius: var(--radius); padding: 18px 24px;
+    font: 500 16px/1 var(--sans); color: var(--g5);
+  }
+  .srow.mode {
+    background: var(--g5); color: var(--white); justify-content: space-between;
+    padding: 22px 28px; font-size: 20px; font-weight: 600;
+  }
+  .srow.mode .chip { background: var(--g2); color: var(--g5); font: 600 11px/1 var(--sans); letter-spacing: .08em; text-transform: uppercase; padding: 7px 10px; border-radius: 4px; }
+  .srow.b1 { background: var(--white); }
+  .srow.b2 { background: var(--gray2); }
+  .srow.b3 { background: var(--gray3); }
+  .srow.b4 { background: var(--gray5); }
+  .stack-links { display: flex; gap: 12px; justify-content: center; margin-top: 36px; flex-wrap: wrap; }
+
+  /* ---------- logos ---------- */
+  .logos-sec { background: var(--white); padding: clamp(48px, 6vw, 80px) 0; }
+  .logos-head { text-align: center; font: 600 13px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--gray7); margin-bottom: 36px; }
+  .logos { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: clamp(28px, 5vw, 64px); }
+  .logos span { font: 700 clamp(16px, 2vw, 22px)/1 var(--sans); color: var(--gray5); letter-spacing: -.01em; }
+
+  /* ---------- quote ---------- */
+  .quote-sec { background: var(--g1); text-align: center; }
+  .quote-sec blockquote {
+    font: 400 clamp(24px, 3.2vw, 36px)/1.2 var(--serif); font-style: italic;
+    color: var(--g5); max-width: 880px; margin: 0 auto;
+  }
+  .q-who { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 32px; }
+  .q-who .av { width: 48px; height: 48px; border-radius: 50%; background: var(--g2); color: var(--g5); display: grid; place-items: center; font: 600 16px/1 var(--sans); }
+  .q-who .nm { text-align: left; }
+  .q-who b { display: block; font: 600 15px/1.2 var(--sans); }
+  .q-who i { font: 400 13px/1.2 var(--sans); font-style: normal; color: var(--gray8); }
+
+  /* ---------- demo card ---------- */
+  .demo-sec { background: var(--g1); padding-top: 0; }
+  .demo-card {
+    background: var(--white); border-radius: 20px; padding: clamp(36px, 5vw, 64px);
+    display: grid; grid-template-columns: 1.2fr .8fr; gap: 32px; align-items: center;
+    box-shadow: 0 24px 48px rgba(4,63,46,.08);
+  }
+  .demo-card .kick { font: 600 12px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--g4); margin-bottom: 14px; }
+  .demo-card h3 { font: 500 clamp(26px, 3vw, 38px)/1.05 var(--serif); color: var(--g5); margin-bottom: 14px; }
+  .demo-card p { font: 400 16px/1.6 var(--sans); color: var(--gray9); }
+  .demo-visual { display: flex; gap: 10px; }
+  .demo-visual .cell { flex: 1; border-radius: var(--radius); height: 120px; background: var(--g1); }
+  .demo-visual .cell.lime { background: var(--g2); }
+  .demo-visual .cell.green { background: var(--g5); }
+
+  /* ---------- beyond ---------- */
+  .beyond { background: var(--white); }
+  .beyond .lede { margin-bottom: 32px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 12px; }
+  .chip-link {
+    display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
+    border: 1px solid rgba(4,63,46,.25); color: var(--g5);
+    border-radius: 999px; padding: 12px 20px; font: 500 14px/1 var(--sans);
+    transition: background .2s ease, border-color .2s ease;
+  }
+  .chip-link:hover { border-color: var(--g5); background: rgba(4,63,46,.06); }
+  .chip-link .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--g2); }
+
+  /* ---------- final CTA + footer ---------- */
+  .cta-sec { background: var(--g5); color: var(--white); text-align: center; padding: clamp(80px, 10vw, 140px) 0 clamp(48px, 6vw, 72px); }
+  .cta-sec h2 { font: 500 clamp(36px, 5vw, 64px)/1.02 var(--serif); letter-spacing: -.02em; }
+  .cta-sec p { font: 400 18px/1.5 var(--sans); color: rgba(252,252,252,.72); margin: 18px 0 32px; }
+  .cta-sec .row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  footer.site { background: var(--g5); color: var(--white); padding: 24px 0 48px; }
+  .foot-grid { display: grid; grid-template-columns: 1.2fr repeat(3, .8fr); gap: 32px; padding-bottom: 56px; }
+  .foot-grid .brand svg { height: 20px; width: auto; }
+  .foot-grid b { display: block; font: 600 12px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: rgba(252,252,252,.55); margin-bottom: 16px; }
+  .foot-grid a { display: block; font: 400 14px/2.1 var(--sans); color: rgba(252,252,252,.85); text-decoration: none; }
+  .foot-grid a:hover { color: var(--g2); }
+  .wordmark { margin-top: 40px; opacity: .98; }
+  .wordmark svg { width: min(420px, 70vw); height: auto; }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 1024px) {
+    .nav-links { display: none; }
+    .hero-grid { grid-template-columns: 1fr; align-items: start; }
+    .hero-shot .frame { margin-left: 0; }
+    .duo-grid { grid-template-columns: 1fr; }
+    .demo-card { grid-template-columns: 1fr; }
+    .demo-visual { display: none; }
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    .nav .btn-secondary, .nav .signin { display: none; }
+    .acc-cols { grid-template-columns: 1fr; padding-left: clamp(16px, 2.5vw, 28px); }
+    .foot-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- announcement -->
+<div class="announce">
+  ThoughtSpot acquires Mode to define the next generation of collaborative BI&nbsp;&nbsp;&rarr;&nbsp;&nbsp;<a href="#">Learn More</a>
+</div>
+
+<!-- header -->
+<header class="site">
+  <nav class="nav">
+    <a class="logo" href="#" aria-label="Mode">
+      <svg viewBox="0 0 111 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#043F2E" d="M36.04 27.44c0-.34 0-.5-.03-.64a1.06 1.06 0 0 0-.9-.85c-.15-.03-.32-.03-.66-.03h-1.1c-.34 0-.51 0-.65-.03a1.06 1.06 0 0 1-.9-.89 5.6 5.6 0 0 1-.04-.64v-8.07c0-.33 0-.5.04-.64a1.06 1.06 0 0 1 .9-.88c.15-.04.32-.04.66-.04h1.1c.34 0 .51 0 .65-.03a1.06 1.06 0 0 0 .9-.89c.04-.14.04-.31.04-.64V1.56c0-.33 0-.5-.04-.64a1.06 1.06 0 0 0-.9-.89c-.14-.03-.31-.03-.65-.03h-6.94c-.21 0-.32 0-.42.02-.31.05-.59.22-.78.47-.06.08-.11.17-.21.36l-6.65 12.67-6.57-12.67c-.1-.19-.15-.28-.21-.36a1.06 1.06 0 0 0-.78-.47c-.1-.02-.21-.02-.43-.02H2.07c-.34 0-.51 0-.65.03a1.06 1.06 0 0 0-.9.89c-.04.14-.04.3-.04.64v5.26c0 .33 0 .5.04.64a1.06 1.06 0 0 0 .9.88c.14.04.31.04.65.04h1.07c.34 0 .51 0 .65.03a1.06 1.06 0 0 1 .9.89c.04.14.04.3.04.64v7.64c0 .33 0 .5-.04.64a1.06 1.06 0 0 1-.9.89c-.14.03-.31.03-.65.03H2.07c-.34 0-.51 0-.65.03a1.06 1.06 0 0 0-.9.89c-.04.14-.04.3-.04.64v12.55c0 .33 0 .5.04.64a1.06 1.06 0 0 0 .9.88c.14.04.31.04.65.04h9.6c.33 0 .5 0 .64-.04a1.06 1.06 0 0 0 .9-.88c.04-.14.04-.31.04-.64v-5.79c0-.34 0-.5-.03-.64a1.06 1.06 0 0 0-.9-.89c-.15-.03-.32-.03-.66-.03h-1.05c-.34 0-.51 0-.65-.03a1.06 1.06 0 0 1-.9-.89 5.6 5.6 0 0 1-.04-.64V12.48l6.93 13.43c.18.36.27.53.37.63.31.3.81.3 1.13.01.1-.09.19-.27.38-.62l7.69-14.21v12.6c0 .34 0 .5-.04.65a1.06 1.06 0 0 1-.9.88c-.14.03-.31.03-.65.03h-2.06c-.34 0-.51 0-.65.03a1.06 1.06 0 0 0-.9.89c-.03.14-.03.31-.03.64v5.85c0 .33 0 .5.03.64a1.06 1.06 0 0 0 .9.88c.15.04.32.04.66.04h12.58c.34 0 .51 0 .65-.04a1.06 1.06 0 0 0 .9-.88c.04-.14.04-.31.04-.64v-5.85Z"/>
+        <path fill="#043F2E" d="M60.08 12.93a5.71 5.71 0 0 0-4.19-4.1c-.98-.32-2.2-.32-4.62-.32h-3.63c-2.43 0-3.64 0-4.63.32a5.71 5.71 0 0 0-4.19 4.1c-.31.97-.31 2.16-.31 4.53v8.46c0 2.38 0 3.57.31 4.53a5.71 5.71 0 0 0 4.19 4.11c.99.31 2.2.31 4.63.31h3.63c2.42 0 3.64 0 4.62-.31a5.71 5.71 0 0 0 4.19-4.11c.32-.96.32-2.15.32-4.53v-8.46c0-2.38 0-3.56-.32-4.53Zm-4.51 9.18c0 1.01 0 1.51-.14 1.92a2.4 2.4 0 0 1-1.78 1.75c-.42.13-.93.13-1.97.13h-4.47c-1.03 0-1.55 0-1.96-.13a2.4 2.4 0 0 1-1.79-1.75 5.6 5.6 0 0 1-.13-1.92v-.79c0-1.01 0-1.51.13-1.92a2.4 2.4 0 0 1 1.79-1.75c.41-.13.93-.13 1.96-.13h4.47c1.04 0 1.55 0 1.97.13a2.4 2.4 0 0 1 1.78 1.75c.14.41.14.91.14 1.92v.79Z"/>
+        <path fill="#043F2E" d="M85.34.66a1.06 1.06 0 0 0-.63-.61c-.15-.05-.33-.05-.7-.05h-3.82c-.37 0-.55 0-.7.05a1.06 1.06 0 0 0-.62.61c-.05.14-.05.32-.05.68v5.46c0 .45 0 .67-.06.85a1.06 1.06 0 0 1-.79.77c-.18.06-.41.06-.87.06h-4.48c-2.43 0-3.65 0-4.63.31a5.71 5.71 0 0 0-4.19 4.11c-.31.96-.31 2.15-.31 4.53v8.46c0 2.38 0 3.57.31 4.53a5.71 5.71 0 0 0 4.19 4.11c.98.31 2.2.31 4.63.31h3.63c2.43 0 3.64 0 4.63-.31a5.71 5.71 0 0 0 4.19-4.11c.31-.96.31-2.15.31-4.53V1.34c0-.35 0-.53-.05-.68Zm-5.4 21.42c0 1.01 0 1.52-.14 1.93a2.4 2.4 0 0 1-1.78 1.74c-.42.14-.93.14-1.97.14h-3.85c-1.04 0-1.55 0-1.97-.14a2.4 2.4 0 0 1-1.78-1.74 5.6 5.6 0 0 1-.14-1.93v-.78c0-1.01 0-1.52.14-1.93a2.4 2.4 0 0 1 1.78-1.74c.42-.13.93-.13 1.97-.13h3.85c1.04 0 1.55 0 1.97.13a2.4 2.4 0 0 1 1.78 1.74c.14.41.14.92.14 1.93v.78Z"/>
+        <path fill="#043F2E" d="M97.47 28.78c-1.04 0-1.55 0-1.97-.14a2.4 2.4 0 0 1-1.78-1.74 5.6 5.6 0 0 1-.13-1.93h15.59c.63 0 1.14-.5 1.14-1.12v-7.29c0-2.38 0-3.57-.32-4.53a5.71 5.71 0 0 0-4.19-4.11c-.98-.31-2.2-.31-4.62-.31h-3.64c-2.42 0-3.64 0-4.62.31a5.71 5.71 0 0 0-4.19 4.11c-.32.96-.32 2.15-.32 4.53v8.46c0 2.38 0 3.57.32 4.53a5.71 5.71 0 0 0 4.19 4.11c.98.32 2.2.32 4.62.32h6.53c3.05 0 5.59-2.15 6.13-4.98.12-.59-.34-1.13-.95-1.13H97.47Zm-3.75-9.41a2.4 2.4 0 0 1 1.78-1.75c.42-.13.94-.13 1.97-.13h3.81c1.04 0 1.55 0 1.97.13a2.4 2.4 0 0 1 1.78 1.75c.14.41.14.91.14 1.92v.45h-11.58v-.45c0-1.01 0-1.51.13-1.92Z"/>
+      </svg>
+    </a>
+    <div class="nav-links">
+      <a href="#">Modern BI <span class="caret">▾</span></a>
+      <a href="#">Why Mode <span class="caret">▾</span></a>
+      <a href="#">Customer Stories <span class="caret">▾</span></a>
+      <a href="#">Compare Plans <span class="caret">▾</span></a>
+      <a href="#">Resources <span class="caret">▾</span></a>
+    </div>
+    <div class="nav-cta">
+      <a class="signin" href="#">Sign in</a>
+      <a class="btn btn-primary" href="#">Try for free</a>
+      <a class="btn btn-secondary" href="#">Request demo</a>
+    </div>
+  </nav>
+</header>
+
+<!-- hero -->
+<section class="hero" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="pills">
+        <span class="pill pill-1">Business Intelligence</span>
+        <span class="pill pill-2">built around <span class="pill-word" id="rotor">data teams</span></span>
+      </div>
+      <div class="hero-side">
+        <p>Mode is the central hub for your organization&rsquo;s analysis, uniting data teams and business teams around data to drive business outcomes.</p>
+        <div class="row">
+          <a class="btn btn-primary" href="#">Try for free</a>
+          <a class="btn btn-secondary" href="#">Request demo</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-shot">
+      <div class="frame"><img src="assets/hero.png" alt="Mode platform" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- capabilities -->
+<section class="caps">
+  <div class="wrap">
+    <h2 class="big">Capabilities you can <em>count on</em></h2>
+    <div class="acc" id="acc">
+
+      <div class="acc-item open">
+        <button class="acc-head" aria-expanded="true">
+          <span class="num">01</span><span class="t">Ad Hoc Analysis</span><span class="plus">+</span>
+        </button>
+        <div class="acc-body"><div class="acc-inner"><div class="acc-cols">
+          <p>Dive right into your data using SQL and rapidly iterate through queries to deliver results.</p>
+          <img src="assets/cap1.png" alt="" loading="lazy" />
+        </div></div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="num">02</span><span class="t">Advanced Analytics</span><span class="plus">+</span>
+        </button>
+        <div class="acc-body"><div class="acc-inner"><div class="acc-cols">
+          <p>Analyze and model on the same platform as your charts and dashboards.</p>
+          <img src="assets/cap2.png" alt="" loading="lazy" />
+        </div></div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="num">03</span><span class="t">Interactive Dashboards</span><span class="plus">+</span>
+        </button>
+        <div class="acc-body"><div class="acc-inner"><div class="acc-cols">
+          <p>Share the insights you find through drag-and-drop visual analytics tools.</p>
+          <img src="assets/cap3.png" alt="" loading="lazy" />
+        </div></div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="num">04</span><span class="t">Self-Service Reporting</span><span class="plus">+</span>
+        </button>
+        <div class="acc-body"><div class="acc-inner"><div class="acc-cols">
+          <p>Build your own modern reporting, backed up by governed datasets and metrics.</p>
+          <img src="assets/cap4.png" alt="" loading="lazy" />
+        </div></div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="num">05</span><span class="t">Explorable, Reusable Datasets</span><span class="plus">+</span>
+        </button>
+        <div class="acc-body"><div class="acc-inner"><div class="acc-cols">
+          <p>Curate governed, reusable datasets that everyone can trust, explore and build on.</p>
+          <img src="assets/cap5.png" alt="" loading="lazy" />
+        </div></div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="num">06</span><span class="t">Custom Data Apps</span><span class="plus">+</span>
+        </button>
+        <div class="acc-body"><div class="acc-inner"><div class="acc-cols">
+          <p>Build custom internal tools for thousands of data and business team needs.</p>
+          <img src="assets/cap6.png" alt="" loading="lazy" />
+        </div></div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- two audiences -->
+<section class="duo">
+  <div class="wrap">
+    <p class="kicker">Clear the path from data to insights, together</p>
+    <h2 class="big">One platform.<br /><em>Two teams.</em></h2>
+    <div class="duo-grid">
+      <div class="duo-col">
+        <span class="tag">Made for your data team</span>
+        <h3>Go deep, fast</h3>
+        <p>In Mode, SQL, R, Python and data viz are all connected to help you deliver insights, faster than ever. No rigid data model should stand in the way of the analysis needed to support business decisions, big and small.</p>
+      </div>
+      <div class="duo-col">
+        <span class="tag">And the teams you work with</span>
+        <h3>Trusted self-service</h3>
+        <p>Deliver tools for easy, trusted self-service, in record time. Because everyone&rsquo;s analytical tools can live in one place, Mode becomes a central hub full of easy-to-understand data, curated by the data team.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- stack -->
+<section class="stack-sec">
+  <div class="wrap">
+    <p class="kicker">The modern data stack</p>
+    <h2 class="big" style="text-align:center">The intelligence layer for your <em>modern data stack</em></h2>
+    <p class="lede" style="text-align:center;margin-inline:auto">Mode amplifies the investment you&rsquo;ve made in every layer of the stack, by getting data you&rsquo;ve made meaningful into everyone&rsquo;s hands.</p>
+    <div class="stack">
+      <div class="srow mode">Mode&nbsp;&mdash;&nbsp;the intelligence layer <span class="chip">Analytics &middot; Reporting &middot; Apps</span></div>
+      <div class="srow b1">Modern BI</div>
+      <div class="srow b2">Transformation</div>
+      <div class="srow b3">Warehouse</div>
+      <div class="srow b4">Ingestion</div>
+      <div class="srow b4" style="opacity:.75">Raw Data</div>
+    </div>
+    <div class="stack-links">
+      <a class="btn btn-primary" href="#">Explore the platform</a>
+      <a class="btn btn-secondary" href="#">Take a tour</a>
+    </div>
+  </div>
+</section>
+
+<!-- logos -->
+<section class="logos-sec">
+  <div class="wrap">
+    <p class="logos-head">Mode customers lead their industries</p>
+    <div class="logos">
+      <span>airbnb</span><span>&#9632; Square</span><span>COMCAST</span><span>McKinsey &amp; Company</span>
+      <span>indeed</span><span>Blue Apron</span><span>CROWDSTRIKE</span><span>Ford Foundation</span>
+    </div>
+  </div>
+</section>
+
+<!-- quote -->
+<section class="quote-sec">
+  <div class="wrap">
+    <blockquote>&ldquo;Mode is incredibly valuable as a full stack, full-service platform from a data analyst all the way to an end user. Analysts can go deep, end users get the data they need, and our team gets to make everyone a part of the data strategy.&rdquo;</blockquote>
+    <div class="q-who">
+      <span class="av">AS</span>
+      <span class="nm"><b>Adam Smith</b><i>Analytics Manager</i></span>
+    </div>
+  </div>
+</section>
+
+<!-- demo -->
+<section class="demo-sec">
+  <div class="wrap">
+    <div class="demo-card">
+      <div>
+        <p class="kick">Live weekly group demo</p>
+        <h3>Get to know Mode</h3>
+        <p>Get a firsthand look at how Mode helps data teams deliver high-impact ad hoc analysis and self-service reporting in one platform.</p>
+        <div style="margin-top:24px"><a class="btn btn-primary" href="#">Save your seat</a></div>
+      </div>
+      <div class="demo-visual" aria-hidden="true">
+        <div class="cell"></div><div class="cell lime"></div><div class="cell green"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- beyond -->
+<section class="beyond">
+  <div class="wrap">
+    <p class="kicker">Modern Business Intelligence</p>
+    <h2 class="big">Beyond BI as <em>you know it</em></h2>
+    <p class="lede">Behind every great idea is really great data. Mode is the single platform to unite data teams and business teams around analytical work.</p>
+    <div class="chips">
+      <a class="chip-link" href="#"><span class="dot"></span> Ad hoc analysis</a>
+      <a class="chip-link" href="#"><span class="dot"></span> Advanced analytics</a>
+      <a class="chip-link" href="#"><span class="dot"></span> Self serve reporting</a>
+      <a class="chip-link" href="#"><span class="dot"></span> Custom data apps</a>
+      <a class="chip-link" href="#"><span class="dot"></span> Interactive dashboards</a>
+    </div>
+  </div>
+</section>
+
+<!-- final CTA -->
+<section class="cta-sec" style="padding-bottom:0">
+  <div class="wrap">
+    <h2>Get more from your data</h2>
+    <p>Your team can be up and running in 30 minutes or less.</p>
+    <div class="row">
+      <a class="btn btn-lime" href="#">Try for free</a>
+      <a class="btn btn-ghost-light" href="#">Request demo</a>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="brand">
+        <svg viewBox="0 0 111 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#C8F169" d="M36.04 27.44c0-.34 0-.5-.03-.64a1.06 1.06 0 0 0-.9-.85c-.15-.03-.32-.03-.66-.03h-1.1c-.34 0-.51 0-.65-.03a1.06 1.06 0 0 1-.9-.89 5.6 5.6 0 0 1-.04-.64v-8.07c0-.33 0-.5.04-.64a1.06 1.06 0 0 1 .9-.88c.15-.04.32-.04.66-.04h1.1c.34 0 .51 0 .65-.03a1.06 1.06 0 0 0 .9-.89c.04-.14.04-.31.04-.64V1.56c0-.33 0-.5-.04-.64a1.06 1.06 0 0 0-.9-.89c-.14-.03-.31-.03-.65-.03h-6.94c-.21 0-.32 0-.42.02-.31.05-.59.22-.78.47-.06.08-.11.17-.21.36l-6.65 12.67-6.57-12.67c-.1-.19-.15-.28-.21-.36a1.06 1.06 0 0 0-.78-.47c-.1-.02-.21-.02-.43-.02H2.07c-.34 0-.51 0-.65.03a1.06 1.06 0 0 0-.9.89c-.04.14-.04.3-.04.64v5.26c0 .33 0 .5.04.64a1.06 1.06 0 0 0 .9.88c.14.04.31.04.65.04h1.07c.34 0 .51 0 .65.03a1.06 1.06 0 0 1 .9.89c.04.14.04.3.04.64v7.64c0 .33 0 .5-.04.64a1.06 1.06 0 0 1-.9.89c-.14.03-.31.03-.65.03H2.07c-.34 0-.51 0-.65.03a1.06 1.06 0 0 0-.9.89c-.04.14-.04.3-.04.64v12.55c0 .33 0 .5.04.64a1.06 1.06 0 0 0 .9.88c.14.04.31.04.65.04h9.6c.33 0 .5 0 .64-.04a1.06 1.06 0 0 0 .9-.88c.04-.14.04-.31.04-.64v-5.79c0-.34 0-.5-.03-.64a1.06 1.06 0 0 0-.9-.89c-.15-.03-.32-.03-.66-.03h-1.05c-.34 0-.51 0-.65-.03a1.06 1.06 0 0 1-.9-.89 5.6 5.6 0 0 1-.04-.64V12.48l6.93 13.43c.18.36.27.53.37.63.31.3.81.3 1.13.01.1-.09.19-.27.38-.62l7.69-14.21v12.6c0 .34 0 .5-.04.65a1.06 1.06 0 0 1-.9.88c-.14.03-.31.03-.65.03h-2.06c-.34 0-.51 0-.65.03a1.06 1.06 0 0 0-.9.89c-.03.14-.03.31-.03.64v5.85c0 .33 0 .5.03.64a1.06 1.06 0 0 0 .9.88c.15.04.32.04.66.04h12.58c.34 0 .51 0 .65-.04a1.06 1.06 0 0 0 .9-.88c.04-.14.04-.31.04-.64v-5.85Z"/>
+          <path fill="#C8F169" d="M60.08 12.93a5.71 5.71 0 0 0-4.19-4.1c-.98-.32-2.2-.32-4.62-.32h-3.63c-2.43 0-3.64 0-4.63.32a5.71 5.71 0 0 0-4.19 4.1c-.31.97-.31 2.16-.31 4.53v8.46c0 2.38 0 3.57.31 4.53a5.71 5.71 0 0 0 4.19 4.11c.99.31 2.2.31 4.63.31h3.63c2.42 0 3.64 0 4.62-.31a5.71 5.71 0 0 0 4.19-4.11c.32-.96.32-2.15.32-4.53v-8.46c0-2.38 0-3.56-.32-4.53Zm-4.51 9.18c0 1.01 0 1.51-.14 1.92a2.4 2.4 0 0 1-1.78 1.75c-.42.13-.93.13-1.97.13h-4.47c-1.03 0-1.55 0-1.96-.13a2.4 2.4 0 0 1-1.79-1.75 5.6 5.6 0 0 1-.13-1.92v-.79c0-1.01 0-1.51.13-1.92a2.4 2.4 0 0 1 1.79-1.75c.41-.13.93-.13 1.96-.13h4.47c1.04 0 1.55 0 1.97.13a2.4 2.4 0 0 1 1.78 1.75c.14.41.14.91.14 1.92v.79Z"/>
+          <path fill="#C8F169" d="M85.34.66a1.06 1.06 0 0 0-.63-.61c-.15-.05-.33-.05-.7-.05h-3.82c-.37 0-.55 0-.7.05a1.06 1.06 0 0 0-.62.61c-.05.14-.05.32-.05.68v5.46c0 .45 0 .67-.06.85a1.06 1.06 0 0 1-.79.77c-.18.06-.41.06-.87.06h-4.48c-2.43 0-3.65 0-4.63.31a5.71 5.71 0 0 0-4.19 4.11c-.31.96-.31 2.15-.31 4.53v8.46c0 2.38 0 3.57.31 4.53a5.71 5.71 0 0 0 4.19 4.11c.98.31 2.2.31 4.63.31h3.63c2.43 0 3.64 0 4.63-.31a5.71 5.71 0 0 0 4.19-4.11c.31-.96.31-2.15.31-4.53V1.34c0-.35 0-.53-.05-.68Zm-5.4 21.42c0 1.01 0 1.52-.14 1.93a2.4 2.4 0 0 1-1.78 1.74c-.42.14-.93.14-1.97.14h-3.85c-1.04 0-1.55 0-1.97-.14a2.4 2.4 0 0 1-1.78-1.74 5.6 5.6 0 0 1-.14-1.93v-.78c0-1.01 0-1.52.14-1.93a2.4 2.4 0 0 1 1.78-1.74c.42-.13.93-.13 1.97-.13h3.85c1.04 0 1.55 0 1.97.13a2.4 2.4 0 0 1 1.78 1.74c.14.41.14.92.14 1.93v.78Z"/>
+          <path fill="#C8F169" d="M97.47 28.78c-1.04 0-1.55 0-1.97-.14a2.4 2.4 0 0 1-1.78-1.74 5.6 5.6 0 0 1-.13-1.93h15.59c.63 0 1.14-.5 1.14-1.12v-7.29c0-2.38 0-3.57-.32-4.53a5.71 5.71 0 0 0-4.19-4.11c-.98-.31-2.2-.31-4.62-.31h-3.64c-2.42 0-3.64 0-4.62.31a5.71 5.71 0 0 0-4.19 4.11c-.32.96-.32 2.15-.32 4.53v8.46c0 2.38 0 3.57.32 4.53a5.71 5.71 0 0 0 4.19 4.11c.98.32 2.2.32 4.62.32h6.53c3.05 0 5.59-2.15 6.13-4.98.12-.59-.34-1.13-.95-1.13H97.47Zm-3.75-9.41a2.4 2.4 0 0 1 1.78-1.75c.42-.13.94-.13 1.97-.13h3.81c1.04 0 1.55 0 1.97.13a2.4 2.4 0 0 1 1.78 1.75c.14.41.14.91.14 1.92v.45h-11.58v-.45c0-1.01 0-1.51.13-1.92Z"/>
+        </svg>
+      </div>
+      <div>
+        <b>Platform</b>
+        <a href="#">Ad Hoc Analysis</a><a href="#">Advanced Analytics</a><a href="#">Dashboards</a><a href="#">Custom Data Apps</a>
+      </div>
+      <div>
+        <b>Company</b>
+        <a href="#">Customer Stories</a><a href="#">Compare Plans</a><a href="#">Careers</a><a href="#">Contact</a>
+      </div>
+      <div>
+        <b>Resources</b>
+        <a href="#">Blog</a><a href="#">Help Center</a><a href="#">Developer Hub</a><a href="#">Mode University</a>
+      </div>
+    </div>
+    <div class="wordmark" aria-hidden="true">
+      <svg viewBox="0 0 111 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#C8F169" d="M36.04 27.44c0-.34 0-.5-.03-.64a1.06 1.06 0 0 0-.9-.85c-.15-.03-.32-.03-.66-.03h-1.1c-.34 0-.51 0-.65-.03a1.06 1.06 0 0 1-.9-.89 5.6 5.6 0 0 1-.04-.64v-8.07c0-.33 0-.5.04-.64a1.06 1.06 0 0 1 .9-.88c.15-.04.32-.04.66-.04h1.1c.34 0 .51 0 .65-.03a1.06 1.06 0 0 0 .9-.89c.04-.14.04-.31.04-.64V1.56c0-.33 0-.5-.04-.64a1.06 1.06 0 0 0-.9-.89c-.14-.03-.31-.03-.65-.03h-6.94c-.21 0-.32 0-.42.02-.31.05-.59.22-.78.47-.06.08-.11.17-.21.36l-6.65 12.67-6.57-12.67c-.1-.19-.15-.28-.21-.36a1.06 1.06 0 0 0-.78-.47c-.1-.02-.21-.02-.43-.02H2.07c-.34 0-.51 0-.65.03a1.06 1.06 0 0 0-.9.89c-.04.14-.04.3-.04.64v5.26c0 .33 0 .5.04.64a1.06 1.06 0 0 0 .9.88c.14.04.31.04.65.04h1.07c.34 0 .51 0 .65.03a1.06 1.06 0 0 1 .9.89c.04.14.04.3.04.64v7.64c0 .33 0 .5-.04.64a1.06 1.06 0 0 1-.9.89c-.14.03-.31.03-.65.03H2.07c-.34 0-.51 0-.65.03a1.06 1.06 0 0 0-.9.89c-.04.14-.04.3-.04.64v12.55c0 .33 0 .5.04.64a1.06 1.06 0 0 0 .9.88c.14.04.31.04.65.04h9.6c.33 0 .5 0 .64-.04a1.06 1.06 0 0 0 .9-.88c.04-.14.04-.31.04-.64v-5.79c0-.34 0-.5-.03-.64a1.06 1.06 0 0 0-.9-.89c-.15-.03-.32-.03-.66-.03h-1.05c-.34 0-.51 0-.65-.03a1.06 1.06 0 0 1-.9-.89 5.6 5.6 0 0 1-.04-.64V12.48l6.93 13.43c.18.36.27.53.37.63.31.3.81.3 1.13.01.1-.09.19-.27.38-.62l7.69-14.21v12.6c0 .34 0 .5-.04.65a1.06 1.06 0 0 1-.9.88c-.14.03-.31.03-.65.03h-2.06c-.34 0-.51 0-.65.03a1.06 1.06 0 0 0-.9.89c-.03.14-.03.31-.03.64v5.85c0 .33 0 .5.03.64a1.06 1.06 0 0 0 .9.88c.15.04.32.04.66.04h12.58c.34 0 .51 0 .65-.04a1.06 1.06 0 0 0 .9-.88c.04-.14.04-.31.04-.64v-5.85Z"/>
+        <path fill="#C8F169" d="M60.08 12.93a5.71 5.71 0 0 0-4.19-4.1c-.98-.32-2.2-.32-4.62-.32h-3.63c-2.43 0-3.64 0-4.63.32a5.71 5.71 0 0 0-4.19 4.1c-.31.97-.31 2.16-.31 4.53v8.46c0 2.38 0 3.57.31 4.53a5.71 5.71 0 0 0 4.19 4.11c.99.31 2.2.31 4.63.31h3.63c2.42 0 3.64 0 4.62-.31a5.71 5.71 0 0 0 4.19-4.11c.32-.96.32-2.15.32-4.53v-8.46c0-2.38 0-3.56-.32-4.53Zm-4.51 9.18c0 1.01 0 1.51-.14 1.92a2.4 2.4 0 0 1-1.78 1.75c-.42.13-.93.13-1.97.13h-4.47c-1.03 0-1.55 0-1.96-.13a2.4 2.4 0 0 1-1.79-1.75 5.6 5.6 0 0 1-.13-1.92v-.79c0-1.01 0-1.51.13-1.92a2.4 2.4 0 0 1 1.79-1.75c.41-.13.93-.13 1.96-.13h4.47c1.04 0 1.55 0 1.97.13a2.4 2.4 0 0 1 1.78 1.75c.14.41.14.91.14 1.92v.79Z"/>
+        <path fill="#C8F169" d="M85.34.66a1.06 1.06 0 0 0-.63-.61c-.15-.05-.33-.05-.7-.05h-3.82c-.37 0-.55 0-.7.05a1.06 1.06 0 0 0-.62.61c-.05.14-.05.32-.05.68v5.46c0 .45 0 .67-.06.85a1.06 1.06 0 0 1-.79.77c-.18.06-.41.06-.87.06h-4.48c-2.43 0-3.65 0-4.63.31a5.71 5.71 0 0 0-4.19 4.11c-.31.96-.31 2.15-.31 4.53v8.46c0 2.38 0 3.57.31 4.53a5.71 5.71 0 0 0 4.19 4.11c.98.31 2.2.31 4.63.31h3.63c2.43 0 3.64 0 4.63-.31a5.71 5.71 0 0 0 4.19-4.11c.31-.96.31-2.15.31-4.53V1.34c0-.35 0-.53-.05-.68Zm-5.4 21.42c0 1.01 0 1.52-.14 1.93a2.4 2.4 0 0 1-1.78 1.74c-.42.14-.93.14-1.97.14h-3.85c-1.04 0-1.55 0-1.97-.14a2.4 2.4 0 0 1-1.78-1.74 5.6 5.6 0 0 1-.14-1.93v-.78c0-1.01 0-1.52.14-1.93a2.4 2.4 0 0 1 1.78-1.74c.42-.13.93-.13 1.97-.13h3.85c1.04 0 1.55 0 1.97.13a2.4 2.4 0 0 1 1.78 1.74c.14.41.14.92.14 1.93v.78Z"/>
+        <path fill="#C8F169" d="M97.47 28.78c-1.04 0-1.55 0-1.97-.14a2.4 2.4 0 0 1-1.78-1.74 5.6 5.6 0 0 1-.13-1.93h15.59c.63 0 1.14-.5 1.14-1.12v-7.29c0-2.38 0-3.57-.32-4.53a5.71 5.71 0 0 0-4.19-4.11c-.98-.31-2.2-.31-4.62-.31h-3.64c-2.42 0-3.64 0-4.62.31a5.71 5.71 0 0 0-4.19 4.11c-.32.96-.32 2.15-.32 4.53v8.46c0 2.38 0 3.57.32 4.53a5.71 5.71 0 0 0 4.19 4.11c.98.32 2.2.32 4.62.32h6.53c3.05 0 5.59-2.15 6.13-4.98.12-.59-.34-1.13-.95-1.13H97.47Zm-3.75-9.41a2.4 2.4 0 0 1 1.78-1.75c.42-.13.94-.13 1.97-.13h3.81c1.04 0 1.55 0 1.97.13a2.4 2.4 0 0 1 1.78 1.75c.14.41.14.91.14 1.92v.45h-11.58v-.45c0-1.01 0-1.51.13-1.92Z"/>
+      </svg>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // rotating word in the hero pill
+  const words = ['data teams', 'business teams', 'the whole org'];
+  const rotor = document.getElementById('rotor');
+  let wi = 0;
+  setInterval(() => {
+    wi = (wi + 1) % words.length;
+    rotor.classList.remove('word-fade');
+    void rotor.offsetWidth;
+    rotor.textContent = words[wi];
+    rotor.classList.add('word-fade');
+  }, 2600);
+
+  // capabilities accordion
+  document.querySelectorAll('#acc .acc-head').forEach((head) => {
+    head.addEventListener('click', () => {
+      const item = head.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('#acc .acc-item.open').forEach((o) => {
+        o.classList.remove('open');
+        o.querySelector('.acc-head').setAttribute('aria-expanded', 'false');
+      });
+      if (!wasOpen) {
+        item.classList.add('open');
+        head.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+---
+/* Creative Artsy — thumbnail matching lined-paper hero */
+---
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500;700&family=Handjet:wght@800&family=Just+Me+Again+Down+Here&family=Inter:wght@800&display=swap"
+  rel="stylesheet"
+/>
+
+<div class="scene" aria-hidden="true">
+  <div class="bar">
+    <span class="smile">☺</span>
+    <span class="tabs"><em class="on">★ HOME</em><em>ABOUT</em><em>CASE STUDY</em></span>
+    <span class="contact">♥ CONTACT</span>
+  </div>
+  <p class="myname">my name is</p>
+  <div class="stage">
+    <span class="pill pl">MADE THINGS</span>
+    <span class="pill pr">SWEAT THE DETAILS</span>
+    <span class="robin-box"><b>ROBIN</b></span>
+    <span class="note nl">Product Designer</span>
+    <span class="note nr">Chicago, IL</span>
+  </div>
+  <p class="avail">● OPEN TO NEW WORK AND GOOD PROBLEMS</p>
+  <div class="head-row">
+    <i class="av"></i>
+    <p class="head">I design software that<br />gets out of your way.</p>
+    <i class="av"></i>
+  </div>
+</div>
+
+<style>
+.scene{position:relative;width:100%;aspect-ratio:16/10;min-height:260px;background-color:#f3f3f1;background-image:repeating-linear-gradient(to bottom,transparent 0 1.9cqw,#e2e0db 1.9cqw 2cqw);color:#191510;overflow:hidden;border-radius:inherit;display:flex;flex-direction:column;padding:1.2cqw 1.8cqw;font-family:'DM Mono',monospace}
+.bar{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #e0ded9;padding-bottom:.7cqw;font-size:.8cqw;font-weight:700}
+.smile{width:1.8cqw;height:1.8cqw;border-radius:50%;background:#ff7aa2;color:#fff;display:grid;place-items:center;font-size:1.1cqw}
+.tabs{display:flex;gap:.4cqw}.tabs em{font-style:normal;padding:.3cqw .7cqw;font-size:.72cqw}.tabs .on{background:#ffd23f}
+.contact{border:1.5px solid #111;padding:.25cqw .6cqw;font-size:.72cqw;background:#fff}
+.myname{font-family:'Just Me Again Down Here',cursive;font-size:1.7cqw;text-align:center;margin:.6cqw 0 0}
+.stage{position:relative;text-align:center;margin-top:.2cqw}
+.robin-box{display:inline-block;border:.22cqw solid #ff6a35;border-radius:1cqw 1.4cqw 1cqw 1.5cqw/1.4cqw 1cqw 1.5cqw 1cqw;padding:.1cqw 2cqw;background:rgba(255,255,255,.5)}
+.robin-box b{font-family:'Handjet',sans-serif;font-weight:800;font-size:6.6cqw;line-height:.9;letter-spacing:-.02em}
+.pill{position:absolute;top:-.5cqw;font-size:.62cqw;font-weight:800;padding:.25cqw .7cqw;border-radius:99px;border:1.5px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+.pl{left:8cqw;background:#c4e9d2;transform:rotate(-8deg)}
+.pr{right:8cqw;background:#fff3c9;transform:rotate(6deg)}
+.note{position:absolute;bottom:-1.1cqw;font-family:'Just Me Again Down Here',cursive;font-size:1.1cqw;padding:.2cqw .6cqw;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+.nl{left:12cqw;background:#ffd23f;transform:rotate(-3deg)}
+.nr{right:12cqw;background:#c4e9d2;transform:rotate(2deg)}
+.avail{text-align:center;font-size:.62cqw;font-weight:700;letter-spacing:.18em;margin:.9cqw 0 0}
+.head-row{display:flex;align-items:center;justify-content:center;gap:1.4cqw;margin-top:.5cqw}
+.av{width:3.4cqw;height:3.4cqw;border-radius:50%;background:#bbb;border:.25cqw solid #ff6a35;flex:none}
+.head{font-family:'Inter',sans-serif;font-weight:800;font-size:2.1cqw;line-height:1.1;margin:0;text-align:center;letter-spacing:-.02em}
+</style>

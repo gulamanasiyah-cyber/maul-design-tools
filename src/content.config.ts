@@ -17,6 +17,7 @@ const references = defineCollection({
     texture: z.string().optional(),
     notes: z.string().default(''),
     preview: z.string().optional(),
+    card: z.string().optional(),
     prompts: z
       .array(
         z.object({

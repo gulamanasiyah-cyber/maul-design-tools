@@ -1,0 +1,399 @@
+---
+// Five Pathways Financial — Editorial Retirement Planning preview card
+---
+
+<div class="scene" aria-hidden="true">
+  <!-- Nav Header -->
+  <header class="nav">
+    <div class="brand">
+      <div class="logo-mark">
+        <svg viewBox="0 0 45 52" fill="none" class="fp-p-icon">
+          <polygon points="7.4,5.9 13.6,5.9 13.6,5.9 37.9,5.9 43,0 9,0" fill="#111111" />
+          <path d="M32.4,13.1H7.9l-2.3,0L0,35.1l0.1,0h6.1L10.3,19l22.2,0c1.4,0,2.7,0.6,3.6,1.7c0.9,1.1,1.1,2.5,0.7,3.9c-0.3,0.9-0.8,1.7-1.6,2.3c-0.8,0.6-1.7,0.9-2.7,0.9H13.3L8,51.5h6.1l4-17.8h14.3c2.3,0,4.5-0.7,6.3-2.1c1.8-1.3,3.1-3.2,3.7-5.4c0.9-3.1,0.3-6.4-1.7-9C38.8,14.6,35.7,13.1,32.4,13.1z" fill="#111111" />
+        </svg>
+      </div>
+      <div class="brand-text">
+        <span class="brand-name">FIVE PATHWAYS</span>
+        <span class="brand-sub">FINANCIAL</span>
+      </div>
+    </div>
+    <div class="nav-right">
+      <div class="jar-icon" title="Question Jar">
+        <span class="jar-emoji">🏺</span>
+      </div>
+      <div class="btn-meet">
+        <span>Schedule a meeting</span>
+        <span class="btn-circle">→</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <div class="hero">
+    <div class="hero-body">
+      <div class="hero-left">
+        <span class="tagline-pill">Retirement Planning Roadmap</span>
+        <h1>A retirement<br /><span class="serif-italic">roadmap</span> for<br />everyone.</h1>
+        <p class="sub">Retirement is a journey. Take it with confidence.</p>
+        <div class="hero-cta">
+          <div class="btn-primary">
+            <span>Schedule a meeting</span>
+            <span class="btn-circle-white">→</span>
+          </div>
+          <span class="free-badge">No pressure · 100% fiduciary</span>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="road-card">
+          <img src="/assets/fivepathways/why-different.jpg" alt="" class="card-photo" />
+          <div class="pointing-tag">
+            <span class="hand-icon">👉</span>
+            <span>Where all roads converge</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Press Strip -->
+    <div class="press-strip">
+      <span class="press-label">As featured in</span>
+      <div class="press-logos">
+        <span class="press-item">CBS NEWS</span>
+        <span class="press-dot">•</span>
+        <span class="press-item">YAHOO!</span>
+        <span class="press-dot">•</span>
+        <span class="press-item">NASDAQ</span>
+        <span class="press-dot">•</span>
+        <span class="press-item">AARP</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5 Pathways Row Preview -->
+  <div class="pathways-strip">
+    <div class="p-col p-green">
+      <span class="p-num">01</span>
+      <span class="p-name">Income Planning</span>
+    </div>
+    <div class="p-col p-pink">
+      <span class="p-num">02</span>
+      <span class="p-name">Tax Planning</span>
+    </div>
+    <div class="p-col p-yellow">
+      <span class="p-num">03</span>
+      <span class="p-name">Investments</span>
+    </div>
+    <div class="p-col p-blue">
+      <span class="p-num">04</span>
+      <span class="p-name">Medicare / LTC</span>
+    </div>
+    <div class="p-col p-cream">
+      <span class="p-num">05</span>
+      <span class="p-name">Estate & Legacy</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .scene {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    min-height: 260px;
+    background: #fffaf5;
+    overflow: hidden;
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    color: #111111;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9cqw 2cqw;
+    background: rgba(255, 250, 245, 0.95);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    position: relative;
+    z-index: 10;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6cqw;
+  }
+
+  .logo-mark {
+    width: 1.8cqw;
+    height: 1.8cqw;
+  }
+
+  .fp-p-icon {
+    width: 100%;
+    height: 100%;
+  }
+
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+
+  .brand-name {
+    font-size: 0.85cqw;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: #111111;
+  }
+
+  .brand-sub {
+    font-size: 0.42cqw;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: #888888;
+    margin-top: 0.15cqw;
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.8cqw;
+  }
+
+  .jar-icon {
+    font-size: 0.9cqw;
+    padding: 0.3cqw 0.5cqw;
+    background: #faf5e8;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .btn-meet {
+    display: flex;
+    align-items: center;
+    gap: 0.4cqw;
+    background: #111111;
+    color: #ffffff;
+    font-size: 0.65cqw;
+    font-weight: 600;
+    padding: 0.35cqw 0.7cqw;
+    border-radius: 999px;
+  }
+
+  .btn-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.1cqw;
+    height: 1.1cqw;
+    background: #ffffff;
+    color: #111111;
+    border-radius: 50%;
+    font-size: 0.6cqw;
+    font-weight: 800;
+  }
+
+  .hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.4cqw 2cqw 0.8cqw;
+    background: radial-gradient(circle at 80% 20%, rgba(231, 242, 237, 0.6) 0%, rgba(255, 250, 245, 0) 50%);
+  }
+
+  .hero-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5cqw;
+  }
+
+  .hero-left {
+    flex: 1;
+    max-width: 58%;
+  }
+
+  .tagline-pill {
+    display: inline-block;
+    font-size: 0.48cqw;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #1e3f2f;
+    background: #e7f2ed;
+    padding: 0.2cqw 0.6cqw;
+    border-radius: 999px;
+    margin-bottom: 0.5cqw;
+  }
+
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-size: 2.1cqw;
+    line-height: 1.05;
+    font-weight: 700;
+    color: #111111;
+    margin: 0 0 0.4cqw;
+    letter-spacing: -0.02em;
+  }
+
+  .serif-italic {
+    font-style: italic;
+    color: #1e3f2f;
+  }
+
+  .sub {
+    font-size: 0.62cqw;
+    color: #555555;
+    line-height: 1.35;
+    margin: 0 0 0.8cqw;
+  }
+
+  .hero-cta {
+    display: flex;
+    align-items: center;
+    gap: 0.7cqw;
+  }
+
+  .btn-primary {
+    display: flex;
+    align-items: center;
+    gap: 0.4cqw;
+    background: #111111;
+    color: #ffffff;
+    font-size: 0.62cqw;
+    font-weight: 600;
+    padding: 0.4cqw 0.8cqw;
+    border-radius: 999px;
+  }
+
+  .btn-circle-white {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1cqw;
+    height: 1cqw;
+    background: #ffffff;
+    color: #111111;
+    border-radius: 50%;
+    font-size: 0.55cqw;
+  }
+
+  .free-badge {
+    font-size: 0.48cqw;
+    color: #666666;
+  }
+
+  .hero-right {
+    width: 36%;
+  }
+
+  .road-card {
+    position: relative;
+    border-radius: 0.8cqw;
+    overflow: hidden;
+    box-shadow: 0 0.8cqw 1.8cqw rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    background: #ffffff;
+  }
+
+  .card-photo {
+    width: 100%;
+    height: 8.5cqw;
+    object-fit: cover;
+    display: block;
+  }
+
+  .pointing-tag {
+    position: absolute;
+    bottom: 0.4cqw;
+    left: 0.4cqw;
+    right: 0.4cqw;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(4px);
+    border-radius: 0.4cqw;
+    padding: 0.25cqw 0.5cqw;
+    display: flex;
+    align-items: center;
+    gap: 0.3cqw;
+    font-size: 0.46cqw;
+    font-weight: 700;
+    color: #111111;
+  }
+
+  .press-strip {
+    display: flex;
+    align-items: center;
+    gap: 0.8cqw;
+    padding-top: 0.6cqw;
+    border-top: 1px dashed rgba(0, 0, 0, 0.1);
+  }
+
+  .press-label {
+    font-size: 0.46cqw;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #888888;
+  }
+
+  .press-logos {
+    display: flex;
+    align-items: center;
+    gap: 0.6cqw;
+    font-size: 0.52cqw;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    color: #444444;
+  }
+
+  .press-dot {
+    color: #cccccc;
+  }
+
+  .pathways-strip {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background: #ffffff;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .p-col {
+    padding: 0.5cqw 0.4cqw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-right: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .p-col:last-child {
+    border-right: none;
+  }
+
+  .p-green { background: #e7f2ed; }
+  .p-pink { background: #fee3d9; }
+  .p-yellow { background: #faf5e8; }
+  .p-blue { background: #ecf5f5; }
+  .p-cream { background: #fffaf5; }
+
+  .p-num {
+    font-size: 0.46cqw;
+    font-weight: 800;
+    color: #888888;
+    margin-bottom: 0.1cqw;
+  }
+
+  .p-name {
+    font-size: 0.52cqw;
+    font-weight: 700;
+    color: #111111;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+</style>

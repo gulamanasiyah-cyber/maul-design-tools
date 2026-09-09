@@ -1,0 +1,261 @@
+---
+// Novella Modern Market — card scene: light utility bar, header with centered
+// search + circular icons, category nav with orange "Top Deals", warm cream hero
+// board (eyebrow + heading + copy + shopping bag pill) over a still-life sofa
+// silhouette, and the 3 trust features row. Pure CSS/SVG, cqw units, 16/10.
+---
+
+<div class="scene" aria-hidden="true">
+  <div class="utility">
+    <span class="u-left"><i class="dot"></i> Free shipping on orders over $50 <em>·</em> <i class="dot"></i> Easy 30-day returns</span>
+    <span class="u-right">Track Order <em>·</em> Help Center <em>·</em> Sell on Novella</span>
+  </div>
+
+  <header class="header">
+    <span class="brand"><i class="mark">◈</i> NOVELLA</span>
+    <span class="search">Search products, brands and more… <i class="sgo">⌕</i></span>
+    <span class="icons"><i>⌂</i><i>♡</i><i class="cart">▣<em>2</em></i></span>
+  </header>
+
+  <nav class="cats">
+    <span class="cat">Categories</span>
+    <span class="cat">New Arrivals</span>
+    <span class="cat hot">Top Deals</span>
+    <span class="cat">Best Sellers</span>
+    <span class="cat">Home Essentials</span>
+    <span class="cat">Electronics</span>
+    <span class="cat">Fashion</span>
+    <span class="cat">Beauty</span>
+    <span class="cat">Baby &amp; Kids</span>
+  </nav>
+
+  <div class="hero">
+    <div class="copy">
+      <span class="eyebrow">QUALITY. STYLE. EVERYDAY.</span>
+      <h1 class="h">Everything You Love,<br />All in One Place.</h1>
+      <p>Shop top-quality products across all categories with unbeatable prices and a seamless shopping experience.</p>
+      <span class="pill">Shop Now <i>→</i></span>
+    </div>
+    <div class="still">
+      <i class="plant"></i>
+      <i class="lamp"></i>
+      <i class="sofa"><b class="cush"></b><b class="cush"></b><b class="cush"></b></i>
+      <i class="table"></i>
+      <i class="pot"></i>
+    </div>
+  </div>
+
+  <div class="trust">
+    <span class="t"><i>▦</i> Secure Payments</span>
+    <span class="t"><i>✓</i> Premium Quality</span>
+    <span class="t"><i>⚡</i> Fast Delivery</span>
+  </div>
+</div>
+
+<style>
+  .scene {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    min-height: 260px;
+    background: #ffffff;
+    overflow: hidden;
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    container-type: inline-size;
+  }
+
+  /* ---- utility bar ---- */
+  .utility {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #faf8f4;
+    color: #8a8378;
+    font-size: 0.48cqw;
+    padding: 0.6cqw 2.2cqw;
+    white-space: nowrap;
+  }
+  .u-left, .u-right { display: inline-flex; align-items: center; gap: 0.5cqw; }
+  .utility em { opacity: 0.5; }
+  .dot { width: 0.55cqw; height: 0.55cqw; border-radius: 50%; background: #d8d2c7; }
+
+  /* ---- header ---- */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.4cqw;
+    padding: 1cqw 2.2cqw;
+  }
+  .brand {
+    font-family: 'Jost', 'Avenir', sans-serif;
+    font-weight: 700;
+    color: #241b12;
+    font-size: 1.2cqw;
+    letter-spacing: 0.08em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4cqw;
+  }
+  .mark { color: #241b12; font-size: 1.3cqw; font-style: normal; line-height: 1; }
+  .search {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ece7de;
+    background: #faf8f4;
+    color: #9a948a;
+    font-size: 0.62cqw;
+    padding: 0.5cqw 0.6cqw 0.5cqw 1cqw;
+    border-radius: 999px;
+    max-width: 44cqw;
+  }
+  .sgo {
+    width: 1.3cqw; height: 1.3cqw;
+    background: #241b12; color: #fff;
+    border-radius: 50%;
+    display: grid; place-items: center;
+    font-size: 0.7cqw; font-style: normal;
+  }
+  .icons { display: inline-flex; gap: 0.6cqw; }
+  .icons i {
+    width: 1.8cqw; height: 1.8cqw; border-radius: 50%;
+    border: 1px solid #ece7de;
+    display: grid; place-items: center;
+    font-style: normal; font-size: 0.8cqw; color: #241b12;
+  }
+  .icons .cart { position: relative; }
+  .icons .cart em {
+    position: absolute; top: -0.4cqw; right: -0.4cqw;
+    width: 0.85cqw; height: 0.85cqw; border-radius: 50%;
+    background: #241b12; color: #fff; font-size: 0.48cqw;
+    display: grid; place-items: center; font-style: normal;
+  }
+
+  /* ---- category nav ---- */
+  .cats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.6cqw;
+    padding: 0.4cqw 2.2cqw 1cqw;
+  }
+  .cat {
+    font-size: 0.6cqw;
+    font-weight: 700;
+    color: #241b12;
+  }
+  .cat.hot { color: #e2713c; }
+
+  /* ---- hero board ---- */
+  .hero {
+    position: relative;
+    flex: 1;
+    margin: 0 2.2cqw;
+    border-radius: 0.9cqw;
+    background: #f7f2eb;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    overflow: hidden;
+    min-height: 0;
+  }
+  .copy {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 1.4cqw 0 2.4cqw;
+  }
+  .eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.58cqw;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: #a85834;
+  }
+  .h {
+    margin: 0.8cqw 0 0.7cqw;
+    font-family: 'Jost', sans-serif;
+    font-weight: 700;
+    color: #241b12;
+    font-size: 2.1cqw;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+  }
+  .copy p {
+    margin: 0 0 1.1cqw;
+    color: #6b655b;
+    font-size: 0.72cqw;
+    line-height: 1.5;
+    max-width: 24cqw;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7cqw;
+    align-self: flex-start;
+    background: #241b12;
+    color: #fff;
+    font-size: 0.7cqw;
+    font-weight: 700;
+    padding: 0.6cqw 1cqw 0.6cqw 1.3cqw;
+    border-radius: 999px;
+  }
+  .pill i { font-style: normal; }
+
+  .still { position: relative; }
+  .sofa {
+    position: absolute; left: 8%; bottom: 6%; right: 10%; height: 45%;
+    background: #e7ddcc; border-radius: 2.4cqw 2.4cqw 0.6cqw 0.6cqw;
+  }
+  .cush {
+    position: absolute; bottom: 52%; width: 22%; height: 72%;
+    background: #efe7d8; border-radius: 0.8cqw; left: 6%;
+  }
+  .cush:nth-child(2) { left: 32%; background: #ded2bd; }
+  .cush:nth-child(3) { left: 58%; background: #e7ddcc; }
+  .table {
+    position: absolute; left: 3%; bottom: 46%; width: 20%; height: 9%;
+    background: #d8cdb9; border-radius: 50% 50% 0.3cqw 0.3cqw;
+  }
+  .pot {
+    position: absolute; left: 44%; bottom: 51%; width: 8%; height: 14%;
+    background: #c9bca6; border-radius: 0.5cqw;
+  }
+  .plant {
+    position: absolute; left: 78%; bottom: 42%; width: 11%; height: 6%;
+    background: #b8ce9f; border-radius: 0.5cqw;
+  }
+  .plant::before {
+    content: ""; position: absolute; left: 50%; bottom: 65%; transform: translateX(-50%);
+    width: 40%; height: 300%; background: #b8ce9f; border-radius: 50% 50% 40% 40%;
+  }
+  .lamp {
+    position: absolute; right: 6%; top: 6%; width: 12%; height: 34%;
+    background: radial-gradient(circle at 50% 18%, #d8cdb9 0%, #d8cdb9 40%, transparent 40%);
+  }
+
+  /* ---- trust row ---- */
+  .trust {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.4cqw;
+    padding: 0.9cqw 0 1.2cqw;
+  }
+  .t {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5cqw;
+    color: #6b655b;
+    font-size: 0.58cqw;
+    font-weight: 600;
+  }
+  .t i { font-style: normal; color: #241b12; font-size: 0.72cqw; }
+</style>

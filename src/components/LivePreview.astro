@@ -1,4 +1,8 @@
 ---
+---
+// Legacy fallback for pages without a <fullpages/<slug>.astro> component.
+// List cards and /ref/ pages now use <PreviewFrame> (iframe of the real
+// /preview/<slug>/ render); this is kept only as the /preview fallback path.
 interface Props {
   slug?: string;
   large?: boolean;

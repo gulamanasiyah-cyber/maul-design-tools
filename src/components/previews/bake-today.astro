@@ -1,0 +1,112 @@
+---
+
+<div class="scene" aria-hidden="true">
+  <div class="tick">BAKE TODAY <em>•</em> BAKE TODAY <em>•</em> BAKE TODAY</div>
+  <header class="nav">
+    <span class="logo">BAKE TODAY</span>
+    <span class="links"><b>SHOP</b><b>ABOUT</b><b>SUBSCRIBE</b><b>STORE LOCATOR</b></span>
+    <span class="cart">CART ( 0 )</span>
+  </header>
+
+  <div class="hero"><i class="pan"></i><i class="syrup"></i><i class="plate"></i></div>
+
+  <div class="product">
+    <div class="copy">
+      <span class="eta">ORGANIC</span>
+      <b class="h1">ORGANIC PANCAKE<br />&amp; WAFFLE MIX</b>
+      <span class="stars">★★★★★</span>
+      <p>Organic flour and pure ingredients blended. No artificial colors or preservatives.</p>
+    </div>
+    <div class="cans"><i class="can c1">BAKE<br />TODAY</i><i class="can c2">BAKE<br />TODAY</i></div>
+  </div>
+
+  <div class="quote"><b>SOME THINGS &amp; THOUGHTS<br />ABOUT THESE THINGS TAKE<br />FOREVER, BUT BREAKFAST<br />SHOULDN'T BE ONE OF IT</b></div>
+
+  <div class="footer"><span>BAKE TODAY</span></div>
+</div>
+
+<style>
+  .scene {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    min-height: 260px;
+    background: #F3E7CE;
+    overflow: hidden;
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    container-type: inline-size;
+  }
+  .tick {
+    background: #5C1A22; color: #F3E7CE;
+    font-family: 'Anton', 'Arial Black', sans-serif;
+    font-size: 0.95cqw; letter-spacing: .12em;
+    text-align: center; padding: 0.5cqw 0; white-space: nowrap;
+  }
+  .tick em { font-style: normal; opacity: .6; margin: 0 0.8cqw; }
+  .nav {
+    background: #5C1A22; color: #F3E7CE;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.8cqw 2.4cqw;
+  }
+  .logo { font-family: 'Anton', 'Arial Black', sans-serif; font-size: 1.7cqw; }
+  .links { display: flex; gap: 1.6cqw; font-size: 0.7cqw; letter-spacing: .04em; }
+  .links b { font-weight: 500; }
+  .cart { font-size: 0.7cqw; border: 1px solid #F3E7CE; border-radius: 999px; padding: 0.4cqw 1.1cqw; }
+  .hero {
+    position: relative; height: 22cqw; background: #EADFC2; overflow: hidden;
+  }
+  .plate {
+    position: absolute; left: 50%; top: 58%; transform: translate(-50%, -50%);
+    width: 34cqw; height: 14cqw; border-radius: 50%; background: #FBF7EC;
+    border: 0.2cqw solid #d8cdb0;
+  }
+  .pan {
+    position: absolute; left: 50%; top: 34%; transform: translate(-50%, -50%);
+    width: 22cqw; height: 13cqw; border-radius: 46%;
+    background: linear-gradient(#F0B264, #C97F35);
+    box-shadow: inset 0 -0.6cqw 0 #a8622a;
+  }
+  .syrup {
+    position: absolute; left: 50%; top: 20%; transform: translate(-50%, -50%) rotate(-14deg);
+    width: 0.9cqw; height: 7cqw; background: #6b2b12; border-radius: 999px;
+  }
+  .product {
+    display: grid; grid-template-columns: 1.1fr .9fr; gap: 3cqw;
+    padding: 2.6cqw 3cqw; align-items: center;
+  }
+  .eta {
+    display: inline-block; background: #5C1A22; color: #F3E7CE;
+    font-size: 0.6cqw; letter-spacing: .14em; padding: 0.3cqw 1cqw; border-radius: 999px;
+  }
+  .h1 {
+    display: block; font-family: 'Anton', 'Arial Black', sans-serif;
+    font-size: 2.1cqw; line-height: 1.02; margin: 0.9cqw 0 0.5cqw; color: #2a1414;
+  }
+  .stars { color: #5C1A22; font-size: 1cqw; display: block; }
+  .copy p { font-size: 0.75cqw; line-height: 1.55; opacity: .75; margin: 0.7cqw 0 0; }
+  .cans { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8cqw; align-items: end; }
+  .can {
+    background: #7b2d2f; color: #F3E7CE; height: 14cqw; border-radius: 1.4cqw;
+    display: grid; place-items: center; text-align: center;
+    font-family: 'Anton', 'Arial Black', sans-serif; font-size: 1.5cqw; line-height: .95;
+    font-style: normal;
+  }
+  .can.c1 { transform: rotate(-7deg); }
+  .can.c2 { background: #93342f; transform: rotate(4deg); height: 16cqw; }
+  .quote {
+    background: #5C1A22; color: #F3E7CE; text-align: center; padding: 2.6cqw 3cqw;
+  }
+  .quote b {
+    font-family: 'Anton', 'Arial Black', sans-serif; font-size: 1.9cqw; line-height: 1.15;
+    font-weight: 400; letter-spacing: .02em;
+  }
+  .footer {
+    margin-top: auto; background: #5C1A22; color: #F3E7CE; text-align: center; padding: 2cqw 0 3cqw;
+  }
+  .footer span {
+    font-family: 'Anton', 'Arial Black', sans-serif; font-size: 8cqw; line-height: .85;
+  }
+</style>

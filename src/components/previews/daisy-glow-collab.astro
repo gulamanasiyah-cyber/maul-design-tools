@@ -1,0 +1,189 @@
+---
+// Daisy Glow Collab — cream grid hero, tilted sticker collage (photo + tarot + daisy + dash),
+// chaos→creativity pills + mona/brain hint, lime midnight panel. Pure CSS/SVG, cqw units, 16/10.
+---
+
+<div class="scene" aria-hidden="true">
+  <div class="grid-bg"></div>
+
+  <header class="nav">
+    <span class="brand"><i class="mark">✿</i> daisy</span>
+    <span class="wait">Join the Waitlist</span>
+  </header>
+
+  <h1 class="h1">Give your ideas a glow up. Meet<br />your new <em>AI creative collaborator.</em></h1>
+  <p class="sub">Capture, organize, and elevate your ideas across work, life, and leisure.</p>
+
+  <div class="collage">
+    <span class="sticky y1">Help me promote our new neighbourhood book club</span>
+    <div class="card photo r1"><span class="img room"></span><span class="sticky lime">Create a blog post outline about dopamine decorating</span></div>
+    <div class="card tarot">
+      <b>Book</b>
+      <span class="tart">☠</span>
+      <b>Club</b>
+    </div>
+    <div class="card daisy-c">
+      <b>Let it Flow</b>
+      <span class="fl">✿</span>
+      <span class="soon">Coming Soon</span>
+    </div>
+    <div class="card photo r2"><span class="img man"></span><span class="sticky lav">Help me create a tax season content calendar</span></div>
+    <div class="card dash">
+      <span class="smile">☺</span>
+      <b>Accounting for creators, makers and shakers.</b>
+      <span class="dots"><i class="a"></i><i class="b"></i><i class="c"></i></span>
+      <span class="row"><i></i><i></i><i></i></span>
+    </div>
+  </div>
+
+  <div class="chaos">
+    <div class="left">
+      <h2>Transform chaos<br />into creativity</h2>
+      <span class="pill"></span>
+      <span class="pill short"></span>
+      <span class="pill"></span>
+    </div>
+    <div class="right">
+      <span class="orb"></span>
+      <span class="ghost">👻</span>
+      <span class="flo">🌼</span>
+      <figure class="mona"><span class="brain">🧠</span><span class="face"></span></figure>
+    </div>
+  </div>
+
+  <div class="limebar"><b>Turn midnight musings into morning action plans</b><span class="panel"></span></div>
+</div>
+
+<style>
+  .scene {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    min-height: 260px;
+    background: #F6F4EB;
+    overflow: hidden;
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Space Mono', ui-monospace, monospace;
+    color: #1a1a1a;
+    container-type: inline-size;
+  }
+  .grid-bg {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(26,26,26,0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(26,26,26,0.07) 1px, transparent 1px);
+    background-size: 3cqw 3cqw;
+    pointer-events: none;
+  }
+  .nav {
+    position: relative; z-index: 3;
+    width: 100%;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.6cqw 3cqw 0;
+  }
+  .brand { font-family: 'Instrument Serif', Georgia, serif; font-size: 1.8cqw; display: inline-flex; align-items: center; gap: 0.6cqw; }
+  .mark { font-style: normal; font-size: 1.8cqw; }
+  .wait {
+    font-size: 0.85cqw; font-weight: 700;
+    background: #CDFB8A; border: 0.15cqw solid #1a1a1a; border-radius: 0.6cqw;
+    padding: 0.6cqw 1cqw; box-shadow: 0.25cqw 0.25cqw 0 #1a1a1a;
+  }
+  .h1 {
+    position: relative; z-index: 2;
+    margin: 1.2cqw 0 0; text-align: center;
+    font-family: 'Instrument Serif', Georgia, serif; font-weight: 400;
+    font-size: 2.9cqw; line-height: 1.12;
+  }
+  .h1 em { font-style: normal; background: #FFB9E2; padding: 0 0.7cqw; }
+  .sub { position: relative; z-index: 2; margin: 0.7cqw 0 0; font-size: 0.85cqw; opacity: 0.8; text-align: center; }
+
+  .collage {
+    position: relative; z-index: 2;
+    display: flex; align-items: flex-end; justify-content: center;
+    margin-top: 2cqw; padding-bottom: 1.6cqw;
+  }
+  .card {
+    position: relative; flex: none;
+    background: #fff; border: 0.16cqw solid #1a1a1a; border-radius: 1cqw;
+    box-shadow: 0.35cqw 0.4cqw 0 rgba(26,26,26,0.9);
+    width: 13.5cqw; height: 15cqw; margin-left: -1.8cqw; padding: 0.7cqw;
+  }
+  .card:first-of-type { margin-left: 0; }
+  .photo.r1 { transform: rotate(-6deg); height: 14cqw; }
+  .photo.r2 { transform: rotate(3deg); height: 15.5cqw; width: 14cqw; }
+  .img { display: block; width: 100%; height: 100%; border-radius: 0.6cqw; border: 0.12cqw solid #1a1a1a; }
+  .img.room { background: linear-gradient(135deg, #F3D9C2 0 30%, #DCE8C8 30% 45%, #F5A623 45% 55%, #7FB069 55% 70%, #F6F4EB 70%); }
+  .img.man { background: radial-gradient(circle at 50% 30%, #8A5A3B 1.8cqw, #5A3A28 2.2cqw, transparent 2.3cqw), radial-gradient(circle at 28% 72%, #FF8FA3 1.2cqw, transparent 1.3cqw), radial-gradient(circle at 74% 74%, #FFC46B 1.5cqw, transparent 1.6cqw), linear-gradient(160deg, #6FB3E0, #2B6CB0); }
+  .tarot {
+    width: 12.5cqw; height: 17cqw; transform: rotate(4deg); z-index: 3;
+    background: #1e1e1e; color: #F6F4EB;
+    display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+  }
+  .tarot b { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 2.2cqw; line-height: 1; }
+  .tart {
+    border: 0.12cqw solid #F6F4EB; border-radius: 0.5cqw;
+    width: 80%; flex: 1; margin: 0.6cqw 0;
+    display: grid; place-items: center; font-size: 2.4cqw;
+  }
+  .daisy-c {
+    width: 12.5cqw; height: 16.5cqw; transform: rotate(-2deg); z-index: 4;
+    background: #FDFBF3; display: flex; flex-direction: column; align-items: center;
+  }
+  .daisy-c b { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 1.3cqw; }
+  .fl { font-size: 5.2cqw; color: #fff; text-shadow: 0 0 0 #1a1a1a, -0.1cqw -0.1cqw 0 #1a1a1a, 0.1cqw 0.1cqw 0 #1a1a1a; line-height: 1; }
+  .soon { font-size: 0.62cqw; background: #CDFB8A; border: 0.1cqw solid #1a1a1a; border-radius: 999px; padding: 0.25cqw 0.6cqw; margin-top: auto; }
+  .dash { width: 15cqw; height: 15.5cqw; transform: rotate(5deg); text-align: left; display: flex; flex-direction: column; gap: 0.6cqw; }
+  .dash b { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 0.95cqw; line-height: 1.3; }
+  .smile {
+    position: absolute; top: -1.8cqw; right: 0.6cqw; width: 3.2cqw; height: 3.2cqw; border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #FFB9E2, #F5A623);
+    border: 0.14cqw solid #1a1a1a; display: grid; place-items: center; font-size: 1.7cqw;
+  }
+  .dots { display: flex; gap: 0.5cqw; }
+  .dots i { width: 2.1cqw; height: 2.1cqw; border-radius: 50%; border: 0.1cqw solid #1a1a1a; }
+  .dots .a { background: #CDFB8A; } .dots .b { background: #8B7CF6; } .dots .c { background: #FFF36B; }
+  .row { display: flex; gap: 0.4cqw; margin-top: auto; }
+  .row i { flex: 1; height: 2.8cqw; border-radius: 0.4cqw; border: 0.1cqw solid #1a1a1a; background: linear-gradient(#E8E2D2, #D8CFB8); }
+
+  .sticky {
+    position: absolute; font-size: 0.6cqw; line-height: 1.4; font-weight: 700;
+    border: 0.12cqw solid #1a1a1a; border-radius: 0.4cqw; padding: 0.4cqw 0.55cqw;
+    max-width: 10cqw; box-shadow: 0.18cqw 0.18cqw 0 #1a1a1a; z-index: 5; text-align: left;
+  }
+  .y1 { background: #FFD84D; top: -1.6cqw; left: 12%; transform: rotate(-4deg); }
+  .sticky.lime { background: #CDFB8A; bottom: -1.1cqw; left: -2cqw; transform: rotate(-3deg); }
+  .sticky.lav { background: #E4CFFF; bottom: -1.2cqw; right: -1.8cqw; transform: rotate(4deg); }
+
+  .chaos {
+    position: relative; z-index: 3;
+    width: 100%; margin-top: -0.6cqw;
+    background: #EFEDEE; border-top: 0.16cqw solid #1a1a1a;
+    border-radius: 1.8cqw 1.8cqw 0 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2cqw;
+    padding: 2cqw 4cqw 0; align-items: end;
+  }
+  .left h2 { margin: 0 0 1cqw; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 2.4cqw; line-height: 1.05; }
+  .pill { display: block; border: 0.13cqw solid #1a1a1a; border-radius: 0.8cqw; background: #F6F4EB; height: 2.6cqw; margin-bottom: 0.7cqw; max-width: 30cqw; }
+  .pill.short { max-width: 26cqw; }
+  .right { position: relative; min-height: 16cqw; }
+  .orb { position: absolute; top: 0; left: 30%; width: 2.6cqw; height: 2.6cqw; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #FFD7E8, #C95B8A 70%); border: 0.1cqw solid #1a1a1a; }
+  .ghost { position: absolute; top: 1cqw; right: 4%; font-size: 3cqw; filter: grayscale(1); }
+  .flo { position: absolute; top: 5cqw; left: 40%; font-size: 2.4cqw; }
+  .mona { position: absolute; bottom: 0; left: 50%; transform: translateX(-40%); margin: 0; width: 15cqw; }
+  .brain { display: block; text-align: center; font-size: 3cqw; margin-bottom: -1.2cqw; position: relative; z-index: 2; }
+  .face { display: block; height: 10cqw; background: #3A2317; border-radius: 7cqw 7cqw 0.8cqw 0.8cqw; border: 0.2cqw solid #F5A6B7; border-bottom: none; position: relative; }
+  .face::after { content: ""; position: absolute; left: 50%; top: 2.4cqw; transform: translateX(-50%); width: 6.5cqw; height: 7cqw; background: linear-gradient(#E8C39E, #C99B6E); border-radius: 3cqw 3cqw 4cqw 4cqw; }
+
+  .limebar {
+    position: relative; z-index: 4; width: 100%;
+    background-color: #F6F4EB;
+    background-image: linear-gradient(rgba(26,26,26,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(26,26,26,0.07) 1px, transparent 1px);
+    background-size: 3cqw 3cqw;
+    border-top: 0.16cqw solid #1a1a1a;
+    padding: 1.4cqw 4cqw 1.8cqw; text-align: center;
+  }
+  .limebar b { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 1.9cqw; }
+  .panel { display: block; margin: 1cqw auto 0; max-width: 62cqw; height: 5.5cqw; background: #CDFB8A; border: 0.14cqw solid #1a1a1a; border-radius: 1cqw; box-shadow: 0.3cqw 0.3cqw 0 #1a1a1a; }
+</style>

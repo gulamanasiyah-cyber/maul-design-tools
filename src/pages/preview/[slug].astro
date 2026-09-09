@@ -1,6 +1,6 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
-import LivePreview from '../../components/LivePreview.astro';
+import FullPageShell from '../../components/FullPageShell.astro';
 
 export async function getStaticPaths() {
   const entries = await getCollection('references');
@@ -40,90 +40,21 @@ const fontQuery = webFonts.length
     <title>{ref.name} — Full-page Preview</title>
     {fontQuery && <link rel="stylesheet" href={fontQuery} />}
     <style>
-      :root {
-        --bg: #0c0e10;
-      }
-      * {
-        box-sizing: border-box;
-      }
+      /* bare resets only — the component owns the look. */
       html,
       body {
         margin: 0;
-        background: var(--bg);
+        padding: 0;
+        background: #FBFBF7;
       }
-      .frame {
-        width: 100%;
+      body {
         min-height: 100vh;
-        overflow-x: clip;
-      }
-      .frame :global(.live-preview) {
-        width: 100%;
-        height: 100%;
-      }
-      .hud {
-        position: fixed;
-        left: 50%;
-        bottom: 54px;
-        transform: translateX(-50%);
-        z-index: 99;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding: 8px 10px 8px 14px;
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        border-radius: 999px;
-        background: rgba(12, 14, 16, 0.72);
-        backdrop-filter: blur(12px);
-        opacity: 0.55;
-        transition: opacity 0.2s ease;
-        font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
-      }
-      .hud:hover,
-      .hud:focus-within {
-        opacity: 1;
-      }
-      .hud .name {
-        color: rgba(255, 255, 255, 0.92);
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 0.02em;
-        white-space: nowrap;
-      }
-      .hud .fam {
-        color: rgba(255, 255, 255, 0.5);
-        font-size: 10px;
-        text-transform: uppercase;
-        letter-spacing: 0.18em;
-        white-space: nowrap;
-      }
-      .hud a {
-        appearance: none;
-        border: 1px solid rgba(255, 255, 255, 0.16);
-        background: rgba(255, 255, 255, 0.08);
-        color: rgba(255, 255, 255, 0.85);
-        font: 600 11px/1 system-ui, sans-serif;
-        letter-spacing: 0.06em;
-        padding: 6px 10px;
-        border-radius: 999px;
-        text-decoration: none;
-        white-space: nowrap;
-      }
-      .hud a:hover {
-        color: #fff;
-        border-color: rgba(255, 255, 255, 0.4);
       }
     </style>
   </head>
-  <body>
+  <body class={Astro.url.searchParams.get('v') === 'thumb' ? 'thumb' : ''}>
     <div class="frame">
-      {FullPage ? <FullPage /> : <LivePreview slug={ref.preview} large />}
-    </div>
-
-    <div class="hud">
-      <span class="name">{ref.name}</span>
-      <span class="fam">{ref.family}</span>
-      <a href={`/ref/${entry.id}/`}>Detail →</a>
-      <a href="/">Library</a>
+      {FullPage ? <FullPage /> : <FullPageShell slug={ref.preview} />}
     </div>
   </body>
 </html>

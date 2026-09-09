@@ -1,0 +1,194 @@
+---
+// BAKE TODAY — full-page recreation of the pancake-mix reference:
+// maroon ticker → cream nav (chunky Titan One wordmark) → maroon hero band
+// with rounded pancake photo → cream product section (copy left / tub cans
+// in bordered card + ORGANIC badge + right edge photo strip) → maroon quote
+// band (serif uppercase, boxed highlights, tilted pill stickers) → light
+// ticker → 3-step walkthrough → giant maroon BAKE TODAY wordmark footer.
+// Photos: Wikimedia Commons local assets with cream fallback.
+const A = "/assets/bake-today";
+const strip = "BAKE TODAY, QUESTION THINGS TO ASK THEM";
+const tickerItems = Array.from({ length: 8 }, () => strip);
+const steps = [
+  { n: "STEP 1", t: "Add water", d: "Add one and a quarter cups of water with one full mix. Stir until combined.", img: `${A}/step-egg.jpg`, alt: "Mixing pancake batter in a bowl" },
+  { n: "STEP 2", t: "Bake", d: "Pour batter into the pan and cook each pancake until golden perfection.", img: `${A}/step-pour.jpg`, alt: "Pouring pancake batter into a hot pan" },
+  { n: "STEP 3", t: "Enjoy", d: "Serve warm, drizzle generously and enjoy fresh out of the pan.", img: `${A}/pancake-fork.jpg`, alt: "Fork slicing a pancake" },
+];
+---
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titan+One&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600&display=swap" />
+<div class="bt">
+  <!-- TICKER -->
+  <div class="ticker dark" aria-hidden="true">
+    <div class="ttrack">
+      {tickerItems.concat(tickerItems).map((t, i) => (<span>{t}</span>))}
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <header class="nav">
+    <span class="logo">BAKE TODAY</span>
+    <nav class="links"><a href="#product">Shop</a><a href="#steps">About</a><a href="#product">Subscribe</a><a href="#footer">Store Locator</a></nav>
+    <span class="cart">Cart ( 0 )</span>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src={`${A}/hero-pancake.jpg`} alt="Stack of organic pancakes drizzled with chocolate syrup" />
+  </section>
+
+  <!-- PRODUCT -->
+  <section class="product" id="product">
+    <div class="p-copy">
+      <h1>Organic Pancake &amp;<br />Waffle Baking Mix</h1>
+      <div class="stars">★★★★★ <small>3,497 reviews</small></div>
+      <p>Meet your morning go-to: our organic pancake &amp; waffle baking mix. Made with organic flour and real, simple ingredients. No artificial colors, no weird flavorings, no preservatives — we keep it out.</p>
+      <p class="news">Sign up for our newsletter — Looking for fresh recipes, early drops &amp; 10% off your first order?</p>
+      <p class="tiny">Ingredients: Organic wheat flour, baking powder (aluminum-free), sea salt, cane sugar &amp; a pinch of cinnamon. May contain milk, soy and wheat. More info</p>
+      <div class="buy-row">
+        <span class="qty"><b>−</b><i>2</i><b>+</b></span>
+        <button class="add">ADD TO CART</button>
+      </div>
+    </div>
+    <div class="p-visual">
+      <span class="badge">ORGANIC<br />BAKE TODAY</span>
+      <div class="can-card">
+        <div class="tub tub-cream">
+          <span class="tublabel">BAKE TODAY</span>
+          <span class="doodle"><i></i><i></i><i></i></span>
+          <small>NET WT 16 OZ</small>
+        </div>
+        <div class="tub tub-maroon"><span class="tublabel2">BAKE<br />TODAY</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE BAND -->
+  <section class="quote">
+    <span class="pill p1">Bakeclub</span>
+    <span class="pill p2">The Waffle</span>
+    <span class="pill p3">Waffles</span>
+    <span class="pill p4">Hot Choice</span>
+    <h2>Some Things &amp; Thoughts<br />About <span class="hl">These Things</span> Take<br />Forever, But Breakfast<br />Shouldn't Be One of <span class="hl">It</span></h2>
+  </section>
+
+  <!-- TICKER 2 -->
+  <div class="ticker light" aria-hidden="true">
+    <div class="ttrack">
+      {tickerItems.concat(tickerItems).map((t, i) => (<span>{t}</span>))}
+    </div>
+  </div>
+
+  <!-- STEPS -->
+  <section class="steps" id="steps">
+    <span class="step-badge">ORGANIC<br />BAKE TODAY</span>
+    <div class="stepgrid">
+      {steps.map((s) => (
+        <article class="step">
+          <div class="simg"><img src={s.img} alt={s.alt} loading="lazy" /></div>
+          <div class="slabel">
+            <span class="spill">{s.n}</span>
+            <span class="stitle">{s.t}</span>
+          </div>
+          <p>{s.d}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- GIANT WORDMARK -->
+  <footer class="wordmark" id="footer">BAKE TODAY</footer>
+</div>
+
+<style>
+.bt{--maroon:#7A1E26;--maroon-deep:#6B1A21;--cream:#F6EFE0;--cream-2:#EFE5CF;--ink:#26130F;
+font-family:'Space Grotesk',system-ui,sans-serif;color:var(--ink);background:var(--cream);width:100%;min-height:100vh;margin:0}
+.bt img{display:block;background:#E8DCC0;width:100%}
+.bt button{cursor:pointer}
+
+/* ── ticker ── */
+.ticker{overflow:hidden}
+.ticker.dark{background:var(--maroon);color:var(--cream)}
+.ticker.light{background:var(--cream);color:var(--ink);border-bottom:1px solid rgba(38,19,15,.14)}
+.ttrack{display:flex;gap:2.4em;width:max-content;padding:7px 0;font-size:10.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;animation:mq 30s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ── nav ── */
+.nav{background:var(--cream);display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px 44px}
+.logo{font-family:'Titan One',sans-serif;font-size:clamp(20px,2.4vw,28px);color:var(--maroon);letter-spacing:.01em;white-space:nowrap}
+.links{display:flex;gap:26px;font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+.links a{color:var(--ink);text-decoration:none;opacity:.85}
+.cart{font-size:11px;font-weight:600;letter-spacing:.06em;background:var(--maroon);color:var(--cream);border-radius:999px;padding:8px 18px;white-space:nowrap}
+
+/* ── hero ── */
+.hero{background:var(--maroon);padding:clamp(18px,3vw,34px)}
+.hero img{border-radius:clamp(14px,1.8vw,22px);height:clamp(300px,50vw,560px);object-fit:cover}
+
+/* ── product ── */
+.product{position:relative;background:var(--cream);display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,56px);align-items:center;padding:clamp(40px,6vw,72px) clamp(24px,6vw,80px)}
+.p-copy h1{font-family:'Instrument Serif',Georgia,serif;font-weight:400;text-transform:uppercase;color:var(--maroon);font-size:clamp(24px,2.6vw,34px);line-height:1.18;letter-spacing:.04em;margin:0}
+.stars{color:var(--maroon);font-size:15px;letter-spacing:.14em;margin:16px 0 4px}
+.stars small{color:var(--ink);opacity:.65;letter-spacing:.02em;font-size:11.5px;margin-left:8px}
+.p-copy p{font-size:12.5px;line-height:1.7;opacity:.8;margin:12px 0 0;max-width:48ch}
+.p-copy .news{color:var(--maroon);opacity:1;font-weight:500}
+.p-copy .tiny{font-size:11px;opacity:.6}
+.buy-row{display:flex;align-items:center;gap:14px;margin-top:22px}
+.qty{display:inline-flex;align-items:center;border:1.5px solid var(--ink);border-radius:999px;overflow:hidden}
+.qty b{width:36px;height:36px;display:grid;place-items:center;font-size:16px;font-weight:500;cursor:pointer}
+.qty i{width:38px;height:36px;display:grid;place-items:center;font-style:normal;font-weight:600;border-left:1.5px solid var(--ink);border-right:1.5px solid var(--ink)}
+.add{background:var(--maroon);color:var(--cream);border:1.5px solid var(--ink);border-radius:999px;padding:11px 30px;font-weight:600;font-size:12px;letter-spacing:.1em;font-family:inherit}
+.p-visual{position:relative}
+.badge{position:absolute;top:-26px;left:16%;z-index:3;width:66px;height:66px;border-radius:50%;background:var(--maroon);color:var(--cream);border:1.5px solid var(--ink);display:grid;place-items:center;text-align:center;font-size:8.5px;font-weight:600;letter-spacing:.18em;line-height:1.5}
+.can-card{background:var(--cream-2);border:1.5px solid var(--ink);border-radius:22px;display:flex;justify-content:center;align-items:flex-end;gap:26px;padding:52px 30px 34px;min-height:380px}
+.tub{position:relative;flex-shrink:0}
+.tub::before{content:"";position:absolute;top:-11px;left:50%;transform:translateX(-50%);width:100%;height:22px;border-radius:50%;border:1.5px solid var(--ink)}
+.tub-cream{background:#F3EAD6;border:1.5px solid var(--ink);border-radius:16px 16px 26px 26px;width:132px;height:238px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
+.tub-cream::before{background:#E4D6B8}
+.tublabel{writing-mode:vertical-rl;transform:rotate(180deg);font-family:'Titan One',sans-serif;font-size:24px;color:var(--maroon);letter-spacing:.02em;line-height:1}
+.doodle{display:flex;flex-direction:column;align-items:center;gap:3px}
+.doodle i{display:block;border-radius:999px;background:var(--maroon)}
+.doodle i:nth-child(1){width:34px;height:7px}
+.doodle i:nth-child(2){width:28px;height:7px}
+.doodle i:nth-child(3){width:22px;height:7px}
+.tub-cream small{font-size:7.5px;font-weight:600;letter-spacing:.14em;color:var(--maroon)}
+.tub-maroon{background:var(--maroon);border:1.5px solid var(--ink);border-radius:16px 16px 26px 26px;width:126px;height:208px;display:grid;place-items:center;transform:rotate(6deg) translateY(-6px)}
+.tub-maroon::before{background:var(--maroon-deep);border-color:var(--cream)}
+.tublabel2{font-family:'Titan One',sans-serif;font-size:22px;color:var(--cream);text-align:center;line-height:.95;transform:rotate(-6deg)}
+.edge-strip{display:none}
+
+/* ── quote band ── */
+.quote{position:relative;background:var(--maroon);color:var(--cream);text-align:center;padding:clamp(56px,7vw,86px) 24px clamp(48px,6vw,72px);border-radius:clamp(22px,3vw,34px) clamp(22px,3vw,34px) 0 0}
+.quote h2{font-family:'Instrument Serif',Georgia,serif;font-weight:400;text-transform:uppercase;font-size:clamp(20px,3vw,38px);line-height:1.55;letter-spacing:.13em;max-width:820px;margin:0 auto}
+.hl{display:inline-block;border:1.5px solid var(--cream);border-radius:8px;padding:0 .18em;line-height:1.18}
+.pill{position:absolute;font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:11px;letter-spacing:.06em;border:1.2px solid var(--cream);border-radius:999px;padding:4px 13px;opacity:.9}
+.p1{top:34px;left:11%;transform:rotate(-10deg)}
+.p2{top:28px;right:13%;transform:rotate(8deg)}
+.p3{top:47%;right:4.5%;transform:rotate(14deg)}
+.p4{bottom:26px;left:44%;transform:rotate(-4deg)}
+
+/* ── steps ── */
+.steps{position:relative;background:var(--cream);padding:clamp(40px,5.5vw,64px) clamp(24px,6vw,80px) clamp(28px,4vw,44px)}
+.step-badge{position:absolute;top:-24px;left:40%;z-index:3;width:58px;height:58px;border-radius:50%;background:var(--maroon);color:var(--cream);border:1.2px solid var(--cream);display:grid;place-items:center;text-align:center;font-size:7.5px;font-weight:600;letter-spacing:.14em;line-height:1.4}
+.stepgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.6vw,32px)}
+.step{display:flex;flex-direction:column}
+.simg{border-radius:18px;overflow:hidden;aspect-ratio:1.08/1;background:#E8DCC0}
+.simg img{width:100%;height:100%;object-fit:cover;display:block}
+.slabel{display:flex;align-items:center;gap:12px;margin:18px 0 8px}
+.spill{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--maroon);border:1.5px solid var(--maroon);border-radius:999px;padding:4px 14px;white-space:nowrap;background:transparent}
+.stitle{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;color:var(--ink);letter-spacing:.01em}
+.step p{font-family:'Space Grotesk',sans-serif;font-size:12px;line-height:1.6;color:var(--ink);opacity:.75;margin:0;max-width:32ch}
+
+/* ── giant wordmark ── */
+.wordmark{background:var(--cream);color:var(--maroon);text-align:center;font-family:'Titan One',sans-serif;font-size:clamp(54px,14.2vw,215px);line-height:.9;letter-spacing:0;padding:clamp(20px,3vw,40px) 10px clamp(34px,4.5vw,64px);white-space:nowrap;overflow:hidden}
+
+@media(max-width:880px){
+.nav{padding:14px 20px}
+.links{display:none}
+.product{grid-template-columns:1fr}
+.edge-strip{display:none}
+.can-card{min-height:320px}
+.stepgrid{grid-template-columns:1fr}
+.step p{max-width:100%}
+.p1{left:6%}.p2{right:6%}.p3{display:none}.p4{left:30%}
+}
+</style>

@@ -1,0 +1,129 @@
+---
+// PreviewFrame — embeds the real /preview/<slug>/ render in an <iframe>.
+//   variant="thumb" -> desktop-width page scaled down to fill its holder (list card).
+//   variant="hero"  -> natural-width, scrollable embed (detail page).
+interface Props {
+  slug?: string;
+  variant?: 'thumb' | 'hero';
+}
+const { slug, variant = 'thumb' } = Astro.props;
+---
+
+{
+  slug ? (
+    <div class:list={['preview-frame', variant]} data-desk="1280">
+      <iframe
+        src={`/preview/${slug}/?v=${variant}`}
+        title={variant === 'thumb' ? undefined : `Full-page live preview of ${slug}`}
+        loading="lazy"
+        referrerpolicy="no-referrer"
+        {...(variant === 'thumb'
+          ? { tabindex: '-1', 'aria-hidden': 'true' }
+          : {})}
+      ></iframe>
+    </div>
+  ) : (
+    <div class="preview-frame missing">
+      <p>No preview component yet.</p>
+      <code>src/components/previews/{slug || '<preview-slug>'}.astro</code>
+    </div>
+  )
+}
+
+<style>
+  .preview-frame {
+    position: relative;
+    background: #101214;
+  }
+  .preview-frame iframe {
+    border: 0;
+    display: block;
+  }
+
+  /* thumb: holder-sized crop of a desktop-width page */
+  .preview-frame.thumb {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .preview-frame.thumb iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1280px;
+    transform-origin: top left;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+  .preview-frame.thumb.loaded iframe {
+    opacity: 1;
+  }
+
+  /* hero: real, scrollable embed */
+  .preview-frame.hero {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: #0c0e10;
+  }
+  .preview-frame.hero iframe {
+    width: 100%;
+    height: clamp(440px, 76vh, 920px);
+  }
+
+  .missing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 13px;
+    padding: 24px;
+    min-height: 220px;
+    border: 1px dashed var(--line);
+    border-radius: 12px;
+  }
+  .missing code {
+    font-size: 12px;
+    color: #cfd3d7;
+    background: var(--surface-2);
+    padding: 2px 6px;
+    border-radius: 6px;
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    function fit(f) {
+      var w = f.clientWidth;
+      if (!w) return;
+      var desk = parseInt(f.dataset.desk || '1280', 10);
+      var im = f.querySelector('iframe');
+      if (!im) return;
+      var s = Math.min(1, w / desk);
+      var h = f.clientHeight;
+      im.style.width = desk + 'px';
+      im.style.height = Math.max(Math.ceil(h / s), 480) + 'px';
+      im.style.transform = 'scale(' + s + ')';
+    }
+    function run() {
+      document.querySelectorAll('.preview-frame.thumb').forEach(fit);
+    }
+    function loaded(e) {
+      var frame = e.target.closest('.preview-frame.thumb');
+      if (frame) frame.classList.add('loaded');
+    }
+    document.addEventListener('load', loaded, true);
+    run();
+    var t;
+    window.addEventListener('resize', function () {
+      clearTimeout(t);
+      t = setTimeout(run, 120);
+    });
+    setTimeout(run, 600);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(run);
+  })();
+</script>

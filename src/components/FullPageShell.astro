@@ -1,0 +1,17 @@
+---
+// FullPageShell — renders a component full-bleed, edge to edge.
+// Used by /preview/<slug>/ to normalize the page root so fullpage
+// components' own <html>/<body>-level styles are preserved when the
+// page is embedded in an <iframe>.
+---
+<div class="fullpage-shell">
+  <slot />
+</div>
+
+<style>
+  .fullpage-shell {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: clip;
+  }
+</style>

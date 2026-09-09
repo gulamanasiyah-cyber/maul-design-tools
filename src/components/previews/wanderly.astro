@@ -1,0 +1,322 @@
+---
+// Wanderly — Modern Travel & Tour agency preview card
+---
+
+<div class="scene" aria-hidden="true">
+  <!-- Nav -->
+  <header class="nav">
+    <div class="brand">
+      <svg class="compass-icon" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="16" r="14" stroke="#0075FF" stroke-width="2.5" />
+        <path d="M16 2V6M16 26V30M2 16H6M26 16H30" stroke="#0075FF" stroke-width="2.5" stroke-linecap="round" />
+        <path d="M21 11L14 14L11 21L18 18L21 11Z" fill="#0075FF" />
+      </svg>
+      <div class="brand-text">
+        <span class="brand-name">Wanderly</span>
+        <span class="brand-sub">Explore. Dream. Discover.</span>
+      </div>
+    </div>
+    <div class="links">
+      <span class="active">Home</span>
+      <span>Destinations</span>
+      <span>Tours</span>
+      <span>About Us</span>
+      <span>Blog</span>
+      <span>Contact</span>
+    </div>
+    <div class="btn-book">Book Now</div>
+  </header>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-bg">
+      <img src="/assets/wanderly/hero-santorini.jpg" alt="" class="bg-img" />
+      <div class="gradient-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <span class="script-tag">Explore the World</span>
+      <h1>Adventure<br />Awaits You</h1>
+      <p class="sub">Discover breathtaking destinations, unforgettable experiences.</p>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <div class="s-field">
+        <span class="s-label">📍 Where to?</span>
+        <span class="s-val">Search destinations</span>
+      </div>
+      <div class="s-divider"></div>
+      <div class="s-field">
+        <span class="s-label">📅 Check In</span>
+        <span class="s-val">Add dates</span>
+      </div>
+      <div class="s-divider"></div>
+      <div class="s-field">
+        <span class="s-label">📅 Check Out</span>
+        <span class="s-val">Add dates</span>
+      </div>
+      <div class="s-divider"></div>
+      <div class="s-field">
+        <span class="s-label">👥 Travelers</span>
+        <span class="s-val">2 Travelers</span>
+      </div>
+      <div class="s-btn">Search</div>
+    </div>
+  </div>
+
+  <!-- Cards Row -->
+  <div class="dest-row">
+    <div class="card">
+      <img src="/assets/wanderly/bali.jpg" alt="" />
+      <div class="c-info">
+        <span class="c-title">Bali, Indonesia</span>
+        <span class="c-price">From $499</span>
+      </div>
+    </div>
+    <div class="card">
+      <img src="/assets/wanderly/switzerland.jpg" alt="" />
+      <div class="c-info">
+        <span class="c-title">Switzerland</span>
+        <span class="c-price">From $899</span>
+      </div>
+    </div>
+    <div class="card">
+      <img src="/assets/wanderly/santorini.jpg" alt="" />
+      <div class="c-info">
+        <span class="c-title">Santorini, Greece</span>
+        <span class="c-price">From $699</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .scene {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    min-height: 260px;
+    background: #ffffff;
+    overflow: hidden;
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1cqw 2cqw;
+    background: #ffffff;
+    border-bottom: 1px solid #f1f5f9;
+    position: relative;
+    z-index: 10;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6cqw;
+  }
+
+  .compass-icon {
+    width: 2.2cqw;
+    height: 2.2cqw;
+  }
+
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .brand-name {
+    font-size: 1.15cqw;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1;
+  }
+
+  .brand-sub {
+    font-size: 0.46cqw;
+    color: #64748b;
+  }
+
+  .links {
+    display: flex;
+    gap: 1.2cqw;
+    font-size: 0.72cqw;
+    font-weight: 500;
+    color: #64748b;
+  }
+
+  .links .active {
+    color: #0075ff;
+    font-weight: 700;
+    border-bottom: 2px solid #0075ff;
+  }
+
+  .btn-book {
+    background: #0075ff;
+    color: #ffffff;
+    font-size: 0.7cqw;
+    font-weight: 700;
+    padding: 0.4cqw 1cqw;
+    border-radius: 0.4cqw;
+  }
+
+  .hero {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.6cqw 2cqw 1.2cqw;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center right;
+  }
+
+  .gradient-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.96) 0%,
+      rgba(255, 255, 255, 0.85) 45%,
+      rgba(255, 255, 255, 0.2) 75%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 25cqw;
+  }
+
+  .script-tag {
+    font-family: 'Caveat', cursive;
+    font-size: 1.6cqw;
+    color: #0284c7;
+    font-weight: 700;
+    display: block;
+    line-height: 1;
+  }
+
+  h1 {
+    font-size: 2.5cqw;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.08;
+    margin: 0.3cqw 0 0.4cqw;
+  }
+
+  .sub {
+    font-size: 0.65cqw;
+    color: #475569;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .search-bar {
+    position: relative;
+    z-index: 4;
+    background: #ffffff;
+    border-radius: 0.8cqw;
+    box-shadow: 0 0.8cqw 2.4cqw rgba(15, 23, 42, 0.15);
+    display: flex;
+    align-items: center;
+    padding: 0.4cqw 0.6cqw;
+    max-width: 38cqw;
+    gap: 0.4cqw;
+  }
+
+  .s-field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0.2cqw 0.4cqw;
+  }
+
+  .s-label {
+    font-size: 0.62cqw;
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  .s-val {
+    font-size: 0.52cqw;
+    color: #94a3b8;
+  }
+
+  .s-divider {
+    width: 1px;
+    height: 1.8cqw;
+    background: #e2e8f0;
+  }
+
+  .s-btn {
+    background: #0075ff;
+    color: #ffffff;
+    font-size: 0.68cqw;
+    font-weight: 700;
+    padding: 0.5cqw 1cqw;
+    border-radius: 0.5cqw;
+  }
+
+  .dest-row {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1cqw;
+    padding: 0 2cqw 1.2cqw;
+  }
+
+  .card {
+    background: #ffffff;
+    border-radius: 0.6cqw;
+    overflow: hidden;
+    box-shadow: 0 0.4cqw 1.2cqw rgba(15, 23, 42, 0.08);
+    border: 1px solid #f1f5f9;
+  }
+
+  .card img {
+    width: 100%;
+    height: 4.8cqw;
+    object-fit: cover;
+    display: block;
+  }
+
+  .c-info {
+    padding: 0.4cqw 0.6cqw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .c-title {
+    font-size: 0.65cqw;
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  .c-price {
+    font-size: 0.65cqw;
+    font-weight: 800;
+    color: #0075ff;
+  }
+</style>

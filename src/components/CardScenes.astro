@@ -1,0 +1,20 @@
+---
+// CardScenes — static registry of dedicated card scenes (src/components/previews/*).
+// A reference can opt into a readable in-grid thumbnail by setting `card: <slug>`
+// in its frontmatter. Static imports only (no import.meta.glob) so pre-existing
+// preview components with latent build issues are never force-compiled.
+import ContentOndemand from './previews/content-ondemand.astro';
+
+interface Props {
+  slug?: string;
+}
+const { slug } = Astro.props;
+
+const registry: Record<string, any> = {
+  'content-ondemand': ContentOndemand,
+};
+const Scene = slug ? registry[slug] : undefined;
+---
+{Scene ? <Scene /> : null}
+
+<slot />

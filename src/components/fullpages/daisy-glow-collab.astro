@@ -1,0 +1,319 @@
+---
+// Daisy — Glow Up AI collaborator.
+// Cream grid hero + tilted sticker collage, chaos→creativity with Mona+brain,
+// midnight musings lime panel. Real photos from public/assets/daisy-glow-collab/,
+// tarot + daisy kept as inline SVG illustration.
+const A = "/assets/daisy-glow-collab";
+---
+
+<div class="page">
+  <!-- ============ NAV + HERO ============ -->
+  <section class="hero">
+    <header class="nav">
+      <span class="logo">
+        <svg viewBox="0 0 32 32" class="mark" aria-hidden="true">
+          <g fill="#1a1a1a">
+            <ellipse cx="16" cy="7" rx="4.4" ry="6" />
+            <ellipse cx="16" cy="25" rx="4.4" ry="6" />
+            <ellipse cx="7" cy="16" rx="6" ry="4.4" />
+            <ellipse cx="25" cy="16" rx="6" ry="4.4" />
+            <ellipse cx="9.6" cy="9.6" rx="5" ry="4" transform="rotate(-45 9.6 9.6)" />
+            <ellipse cx="22.4" cy="9.6" rx="5" ry="4" transform="rotate(45 22.4 9.6)" />
+            <ellipse cx="9.6" cy="22.4" rx="5" ry="4" transform="rotate(45 9.6 22.4)" />
+            <ellipse cx="22.4" cy="22.4" rx="5" ry="4" transform="rotate(-45 22.4 22.4)" />
+          </g>
+          <circle cx="16" cy="16" r="4.6" fill="#CDFB8A" stroke="#1a1a1a" stroke-width="1.6" />
+        </svg>
+        <b>daisy</b>
+      </span>
+      <span class="wait">Join the Waitlist</span>
+    </header>
+
+    <h1>Give your ideas a glow up. Meet<br />your new <span class="hl">AI creative collaborator.</span></h1>
+    <p class="sub">Capture, organize, and elevate your ideas<br />across work, life, and leisure.</p>
+
+    <div class="collage">
+      <span class="sticky s-yellow-top">Help me promote our new neighbourhood book club</span>
+
+      <figure class="card photo left">
+        <span class="ph"><img src={`${A}/room.jpg`} alt="Dopamine-decor living room with rainbow art and plants" loading="eager" /><figcaption>Dopamine decorating</figcaption></span>
+        <span class="sticky s-lime">Create a blog post outline about dopamine decorating</span>
+      </figure>
+
+      <figure class="card tarot">
+        <b class="tarot-top">Book</b>
+        <span class="tarot-art">
+          <svg viewBox="0 0 100 110"><g fill="none" stroke="#F6F4EB" stroke-width="2"><path d="M50 12 L58 40 L86 40 L63 56 L71 84 L50 68 L29 84 L37 56 L14 40 L42 40 Z" opacity="0.9"/><circle cx="50" cy="52" r="26"/><path d="M30 92 h40 M34 98 h32"/></g><text x="50" y="54" text-anchor="middle" font-size="26" fill="#F6F4EB">☠</text></svg>
+        </span>
+        <b class="tarot-bot">Club</b>
+      </figure>
+
+      <figure class="card daisy-card">
+        <b>Let it Flow</b>
+        <span class="d-flower">
+          <svg viewBox="0 0 120 130"><g fill="#fff" stroke="#1a1a1a" stroke-width="2"><ellipse cx="60" cy="42" rx="14" ry="22"/><ellipse cx="36" cy="54" rx="20" ry="12" transform="rotate(-30 36 54)"/><ellipse cx="84" cy="54" rx="20" ry="12" transform="rotate(30 84 54)"/><ellipse cx="42" cy="74" rx="18" ry="11" transform="rotate(25 42 74)"/><ellipse cx="78" cy="74" rx="18" ry="11" transform="rotate(-25 78 74)"/></g><circle cx="60" cy="58" r="13" fill="#F5A623" stroke="#1a1a1a" stroke-width="2"/><path d="M60 84 V124 M60 104 C48 100 42 92 40 84 M60 110 C72 106 78 98 80 90" stroke="#2E9E4F" stroke-width="4" fill="none" stroke-linecap="round"/></svg>
+        </span>
+        <i>Coming Soon</i>
+      </figure>
+
+      <figure class="card photo mid">
+        <span class="ph"><img src={`${A}/portrait.jpg`} alt="Creator portrait with warm flash" loading="eager" /><figcaption>Creator portrait</figcaption></span>
+        <span class="sticky s-lav">Help me create a tax season content calendar</span>
+      </figure>
+
+      <figure class="card dash">
+        <span class="smile">☺</span>
+        <b>Accounting for creators, makers and shakers.</b>
+        <span class="dash-dots"><i class="d1"></i><i class="d2"></i><i class="d3"></i></span>
+        <em>Make tax season a breeze.</em>
+        <span class="dash-row">
+          <i><img src={`${A}/dash1.jpg`} alt="Creator community event" loading="lazy" /></i><i><img src={`${A}/dash2.jpg`} alt="Maker portrait" loading="lazy" /></i><i><img src={`${A}/dash3.jpg`} alt="Happy creator" loading="lazy" /></i>
+        </span>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ CHAOS → CREATIVITY ============ -->
+  <section class="chaos">
+    <div class="chaos-grid">
+      <div class="chaos-left">
+        <h2>Transform chaos<br />into creativity</h2>
+        <ul class="pills">
+          <li>Throw your thoughts onto an infinite canvas and watch them evolve</li>
+          <li>Turn scattered ideas into coherent plans with your AI collaborator</li>
+          <li>Save anything that sparks your creativity from across the web</li>
+          <li>Experience the blissful feeling of a perfectly organized junk drawer</li>
+        </ul>
+      </div>
+      <div class="chaos-right">
+        <span class="orb"></span>
+        <span class="ghost">👻</span>
+        <span class="scribble s1">✎ plan ✎ draft ✎ remix ✎ moodboard ✎ zine ✎ scrap ✎ glow</span>
+        <span class="butterfly">🦋</span>
+        <span class="sunflower">🌼</span>
+        <span class="scribble s2">~ chaos ~ chaos ~ chaos ~</span>
+        <span class="squiggle">〰</span>
+        <figure class="mona">
+          <span class="brain">🧠</span>
+          <span class="mona-photo"><img src={`${A}/mona.jpg`} alt="Mona Lisa with pink brain collage" loading="lazy" /></span>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MIDNIGHT MUSINGS ============ -->
+  <section class="midnight">
+    <h2>Turn midnight musings into<br />morning action plans</h2>
+    <div class="lime-panel">
+      <div class="lime-copy">
+        <h3>Wide open<br />spaces</h3>
+        <p>An infinite canvas for every version of you — work, life, and leisure in one glow-up.</p>
+        <span class="ink-pill">Start creating →</span>
+      </div>
+      <div class="browser">
+        <span class="bar"><i></i><i></i><i></i><em>Landing Page — Daisy Canvas</em><b>⤢ Share</b></span>
+        <div class="b-body">
+          <span class="b-lines"><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="b-img"><img src={`${A}/board1.jpg`} alt="Moodboard interior" loading="lazy" /></span>
+          <span class="b-img"><img src={`${A}/flowers.jpg`} alt="Flower flatlay" loading="lazy" /></span>
+          <span class="b-img"><img src={`${A}/room.jpg`} alt="Canvas detail" loading="lazy" /></span>
+        </div>
+      </div>
+    </div>
+    <p class="foot-note">daisy — your AI creative collaborator · join the waitlist</p>
+  </section>
+</div>
+
+<style>
+  .page {
+    background: #F6F4EB;
+    color: #1a1a1a;
+    font-family: 'Space Mono', ui-monospace, monospace;
+    overflow-x: clip;
+  }
+  h1, h2, h3 {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-weight: 400;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  /* ---- hero ---- */
+  .hero {
+    position: relative;
+    padding: 22px clamp(20px, 4vw, 56px) 70px;
+    text-align: center;
+    background-image: linear-gradient(rgba(26,26,26,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(26,26,26,0.06) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  .nav {
+    display: flex; align-items: center; justify-content: space-between;
+    max-width: 1220px; margin: 0 auto 26px; text-align: left;
+  }
+  .logo { display: inline-flex; align-items: center; gap: 8px; }
+  .logo .mark { width: 30px; height: 30px; }
+  .logo b { font-family: 'Instrument Serif', serif; font-size: 22px; font-weight: 400; }
+  .wait {
+    font-size: 11px; font-weight: 700;
+    background: #CDFB8A; border: 1.5px solid #1a1a1a; border-radius: 8px;
+    padding: 9px 14px; box-shadow: 3px 3px 0 #1a1a1a;
+  }
+  .hero h1 { font-size: clamp(28px, 4vw, 52px); line-height: 1.12; }
+  .hl { background: #FFB9E2; padding: 0 10px; border-radius: 2px; white-space: nowrap; }
+  .sub { font-size: 12.5px; line-height: 1.7; margin: 16px 0 40px; }
+
+  .collage {
+    position: relative; max-width: 1080px; margin: 0 auto;
+    display: flex; align-items: flex-end; justify-content: center;
+    min-height: 300px;
+  }
+  .card {
+    position: relative; margin: 0 0 0 -26px; flex: none;
+    background: #fff; border: 1.5px solid #1a1a1a; border-radius: 14px;
+    box-shadow: 4px 5px 0 rgba(26,26,26,0.9);
+    padding: 10px; width: 200px;
+  }
+  .card:first-of-type { margin-left: 0; }
+  .photo.left { transform: rotate(-6deg); height: 230px; }
+  .tarot {
+    width: 190px; height: 280px; z-index: 3; transform: rotate(4deg);
+    background: #1e1e1e; color: #F6F4EB; display: flex; flex-direction: column;
+    align-items: center; justify-content: space-between; padding: 14px 10px;
+  }
+  .tarot-top, .tarot-bot { font-family: 'Instrument Serif', serif; font-size: 34px; line-height: 1; }
+  .tarot-art { border: 1.5px solid #F6F4EB; border-radius: 8px; padding: 8px; width: 82%; }
+  .daisy-card {
+    width: 190px; height: 270px; z-index: 4; transform: rotate(-2deg);
+    background: #FDFBF3; display: flex; flex-direction: column; align-items: center;
+  }
+  .daisy-card b { font-family: 'Instrument Serif', serif; font-size: 20px; }
+  .d-flower svg { width: 120px; height: 150px; }
+  .daisy-card i { font-style: normal; font-size: 9px; background: #CDFB8A; border: 1px solid #1a1a1a; border-radius: 999px; padding: 3px 8px; }
+  .photo.mid { transform: rotate(3deg); height: 250px; z-index: 2; width: 210px; }
+  .ph { display: block; border-radius: 8px; height: 100%; border: 1px solid #1a1a1a; overflow: hidden; background: #E8E2D2; position: relative; }
+  .ph img { width: 100%; height: 100%; object-fit: cover; display: block; background: #E8E2D2; }
+  .ph figcaption { position: absolute; left: -9999px; }
+  .dash {
+    width: 230px; height: 250px; transform: rotate(5deg); z-index: 1; text-align: left;
+    display: flex; flex-direction: column; gap: 8px; background: #fff;
+  }
+  .dash .smile {
+    position: absolute; top: -34px; right: 6px; width: 52px; height: 52px; border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #FFB9E2, #F5A623); border: 1.5px solid #1a1a1a;
+    display: grid; place-items: center; font-size: 28px;
+  }
+  .dash b { font-family: 'Instrument Serif', serif; font-size: 13px; line-height: 1.3; }
+  .dash em { font-style: normal; font-size: 10px; }
+  .dash-dots { display: flex; gap: 8px; }
+  .dash-dots i { width: 34px; height: 34px; border-radius: 50%; border: 1px solid #1a1a1a; }
+  .d1 { background: #CDFB8A; } .d2 { background: #8B7CF6; } .d3 { background: #FFF36B; }
+  .dash-row { display: flex; gap: 6px; margin-top: auto; }
+  .dash-row i { flex: 1; height: 44px; border-radius: 6px; border: 1px solid #1a1a1a; background: #E8E2D2; overflow: hidden; }
+  .dash-row img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .sticky {
+    position: absolute; font-size: 8.5px; line-height: 1.45; font-weight: 700;
+    border: 1.5px solid #1a1a1a; border-radius: 6px; padding: 6px 8px; max-width: 150px;
+    box-shadow: 2px 2px 0 #1a1a1a; z-index: 5; text-align: left;
+  }
+  .s-yellow-top { background: #FFD84D; top: -24px; left: 16%; transform: rotate(-4deg); }
+  .s-lime { background: #CDFB8A; bottom: -18px; left: -30px; transform: rotate(-3deg); }
+  .s-lav { background: #E4CFFF; bottom: -20px; right: -24px; transform: rotate(4deg); }
+
+  /* ---- chaos ---- */
+  .chaos {
+    background: #EFEDEE; border: 1.5px solid #1a1a1a; border-radius: 26px 26px 0 0;
+    margin-top: -18px; position: relative; z-index: 6;
+    padding: clamp(40px, 5vw, 70px) clamp(20px, 5vw, 64px) 0;
+  }
+  .chaos-grid {
+    max-width: 1160px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1.1fr; gap: 30px; align-items: end;
+  }
+  .chaos-left h2 { font-size: clamp(30px, 3.6vw, 48px); line-height: 1.05; margin-bottom: 28px; }
+  .pills { list-style: none; margin: 0 0 30px; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+  .pills li {
+    border: 1.5px solid #1a1a1a; border-radius: 14px; background: #F6F4EB;
+    font-size: 12px; line-height: 1.6; padding: 14px 18px; max-width: 460px;
+  }
+  .chaos-right { position: relative; min-height: 480px; }
+  .orb {
+    position: absolute; top: 0; left: 32%; width: 44px; height: 44px; border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #FFD7E8, #C95B8A 70%); border: 1px solid #1a1a1a;
+  }
+  .ghost { position: absolute; top: 30px; right: 6%; font-size: 54px; filter: grayscale(1); }
+  .butterfly { position: absolute; top: 34%; left: 6%; font-size: 44px; }
+  .sunflower { position: absolute; top: 36%; left: 44%; font-size: 40px; }
+  .squiggle { position: absolute; top: 58%; right: 8%; font-size: 34px; color: #E8930C; font-weight: 900; }
+  .scribble { position: absolute; font-size: 10px; opacity: 0.7; max-width: 150px; line-height: 1.5; }
+  .scribble.s1 { top: 52%; left: 0; transform: rotate(-8deg); }
+  .scribble.s2 { top: 30%; right: 0; transform: rotate(6deg); }
+  .mona { position: absolute; bottom: 0; left: 50%; transform: translateX(-42%); margin: 0; width: 340px; }
+  .mona .brain { position: relative; z-index: 2; display: block; text-align: center; font-size: 64px; margin-bottom: -24px; }
+  .mona-photo {
+    display: block; height: 300px; overflow: hidden;
+    border-radius: 150px 150px 18px 18px;
+    border: 3px solid #F5A6B7; border-bottom: none;
+    background: #3A2317;
+  }
+  .mona-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+
+  /* ---- midnight ---- */
+  .midnight {
+    background-color: #F6F4EB;
+    background-image: linear-gradient(rgba(26,26,26,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(26,26,26,0.06) 1px, transparent 1px);
+    background-size: 28px 28px;
+    border: 1.5px solid #1a1a1a; border-radius: 26px 26px 0 0;
+    margin-top: -18px; position: relative; z-index: 7;
+    padding: clamp(40px, 5vw, 64px) clamp(20px, 4vw, 56px) 30px; text-align: center;
+  }
+  .midnight h2 { font-size: clamp(28px, 3.6vw, 46px); line-height: 1.12; margin-bottom: 34px; }
+  .lime-panel {
+    max-width: 1160px; margin: 0 auto; background: #CDFB8A;
+    border: 1.5px solid #1a1a1a; border-radius: 22px; box-shadow: 5px 5px 0 #1a1a1a;
+    display: grid; grid-template-columns: 260px 1fr; gap: 26px; text-align: left;
+    padding: 30px; align-items: center;
+  }
+  .lime-copy h3 { font-size: 32px; line-height: 1.05; margin-bottom: 14px; }
+  .lime-copy p { font-size: 11.5px; line-height: 1.7; margin: 0 0 18px; }
+  .ink-pill {
+    display: inline-block; background: #1a1a1a; color: #F6F4EB; font-size: 11px;
+    padding: 10px 18px; border-radius: 999px;
+  }
+  .browser {
+    background: #fff; border: 1.5px solid #1a1a1a; border-radius: 14px; overflow: hidden;
+  }
+  .browser .bar {
+    display: flex; align-items: center; gap: 6px; padding: 10px 14px;
+    border-bottom: 1.5px solid #1a1a1a; background: #FDFBF3;
+  }
+  .browser .bar i { width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid #1a1a1a; background: #FFB9E2; }
+  .browser .bar em { font-style: normal; font-size: 10px; margin-left: 10px; flex: 1; }
+  .browser .bar b { font-size: 10px; background: #8B7CF6; color: #fff; border-radius: 999px; padding: 4px 10px; }
+  .b-body { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; padding: 14px; }
+  .b-lines { display: flex; flex-direction: column; gap: 8px; }
+  .b-lines i { display: block; height: 10px; border-radius: 999px; background: #E8E2D2; border: 1px solid #1a1a1a; }
+  .b-lines i:first-child { background: #1a1a1a; }
+  .b-img { height: 110px; border-radius: 8px; border: 1.5px solid #1a1a1a; overflow: hidden; background: #E8E2D2; }
+  .b-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .foot-note { margin: 26px 0 0; font-size: 11px; opacity: 0.7; }
+
+  @media (max-width: 1024px) {
+    .collage { flex-wrap: wrap; gap: 18px; }
+    .card { margin: 0; }
+    .chaos-grid { grid-template-columns: 1fr; }
+    .chaos-right { min-height: 420px; }
+    .lime-panel { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 30px; }
+    .hl { white-space: normal; }
+    .sticky { position: relative; inset: auto; display: inline-block; margin: 8px 4px 0; }
+    .s-yellow-top { position: relative; top: auto; left: auto; }
+    .collage { min-height: 0; }
+    .mona { width: 260px; }
+    .b-body { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,246 @@
+---
+// Content On Demand — card scene (rendered in library grid cards).
+// Faithful miniature of the real hero: cream nav + hero block (ticker strip of
+// IG tiles with fade-mask edges, CENTERED Cossette uppercase headline, sub with
+// red script "(or better)", lime hard-shadow CTA) and the red review card with
+// halo + overlapping avatars. Pure layout, cqw units, 16/10 scene.
+---
+<div class="scene" aria-hidden="true">
+  <div class="top">
+    <!-- NAV -->
+    <div class="nav">
+      <span class="wordmark">content<em>on</em>demand</span>
+      <span class="links"><b>How it Works</b><b>Pricing</b><b>FAQs</b><b class="strong">COD for agencies</b></span>
+      <span class="nav-cta">GRAB A BUNDLE</span>
+    </div>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="ticker">
+        <div class="track">
+          <span class="tile"><img src="/assets/content-ondemand/tile-01.png" alt="" loading="lazy" /></span>
+          <span class="tile"><img src="/assets/content-ondemand/tile-02.png" alt="" loading="lazy" /></span>
+          <span class="tile"><img src="/assets/content-ondemand/tile-03.png" alt="" loading="lazy" /></span>
+          <span class="tile"><img src="/assets/content-ondemand/tile-04.png" alt="" loading="lazy" /></span>
+          <span class="tile"><img src="/assets/content-ondemand/tile-05.png" alt="" loading="lazy" /></span>
+          <span class="tile"><img src="/assets/content-ondemand/tile-06.png" alt="" loading="lazy" /></span>
+          <span class="tile"><img src="/assets/content-ondemand/tile-01.png" alt="" loading="lazy" /></span>
+          <span class="tile"><img src="/assets/content-ondemand/tile-02.png" alt="" loading="lazy" /></span>
+          <span class="tile"><img src="/assets/content-ondemand/tile-03.png" alt="" loading="lazy" /></span>
+          <span class="tile"><img src="/assets/content-ondemand/tile-04.png" alt="" loading="lazy" /></span>
+          <span class="tile"><img src="/assets/content-ondemand/tile-05.png" alt="" loading="lazy" /></span>
+          <span class="tile"><img src="/assets/content-ondemand/tile-06.png" alt="" loading="lazy" /></span>
+        </div>
+      </div>
+
+      <h1>TURN YOUR GHOST TOWN<br />GRID INTO THIS</h1>
+
+      <p class="sub">Zero effort from you &amp; no strings attached to us.</p>
+      <p class="sub">12 content pieces exactly how you imagine them <span class="script">(or better)</span> in just 7 days.</p>
+
+      <span class="cta">UN-GHOST MY GRID</span>
+
+      <!-- REVIEW -->
+      <div class="review">
+        <span class="halo"></span>
+        <span class="pfps">
+          <span class="p p1"><img src="/assets/content-ondemand/avatar-1.jpg" alt="" loading="lazy" /></span>
+          <span class="p p2"><img src="/assets/content-ondemand/avatar-2.jpg" alt="" loading="lazy" /></span>
+          <span class="p p3"><img src="/assets/content-ondemand/avatar-3.jpg" alt="" loading="lazy" /></span>
+        </span>
+        <p class="q">&ldquo;These aren&rsquo;t templates you&rsquo;d find on Canva, and that&rsquo;s what I love most. It feels so custom.&rdquo;</p>
+        <p class="name">Caitlyn <span>&middot; Caitlyn Grad Marketing</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  @font-face {
+    font-family: 'TAY Sweetheart';
+    src: url('/assets/content-ondemand/tay-sweetheart.woff') format('woff');
+    font-display: swap;
+  }
+
+  .scene {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    min-height: 260px;
+    background: #e13f30;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Pontano Sans', system-ui, sans-serif;
+    color: #6b3a1f;
+    border-radius: inherit;
+  }
+
+  /* one continuous cream block: nav + hero (red peeks only below) */
+  .top {
+    background: #f7f5f0;
+    border-radius: 0 0 2.4cqw 2.4cqw;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    flex: 1;
+  }
+
+  /* NAV */
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.4cqw;
+    padding: 0.9cqw 2.4cqw 0.8cqw;
+  }
+  .wordmark {
+    font-family: 'Cossette Texte', 'Pontano Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.35cqw;
+    letter-spacing: -0.02em;
+    text-transform: lowercase;
+    white-space: nowrap;
+  }
+  .wordmark em { font-style: normal; color: #e13f30; }
+  .links { display: inline-flex; gap: 1.3cqw; }
+  .links b { font-weight: 500; font-size: 0.72cqw; }
+  .links .strong { font-weight: 700; }
+  .nav-cta {
+    background: #c8f028;
+    color: #1a1814;
+    font-weight: 600;
+    font-size: 0.72cqw;
+    padding: 0.5cqw 0.9cqw;
+    border-radius: 0.6cqw;
+    box-shadow: 0.22cqw 0.22cqw 0 0 #b7de1d;
+    white-space: nowrap;
+  }
+
+  /* HERO */
+  .hero {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.1cqw 2.4cqw 1.8cqw;
+  }
+
+  /* ticker strip across the top, edges fade like the original */
+  .ticker {
+    width: 100%;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  }
+  .track {
+    display: flex;
+    gap: 0.35cqw;
+    width: max-content;
+    animation: codTicker 48s linear infinite;
+  }
+  @keyframes codTicker { to { transform: translateX(calc(-50% - 0.18cqw)); } }
+  .tile {
+    display: block;
+    width: 8.2cqw;
+    height: 10.2cqw;
+    border-radius: 0.8cqw;
+    overflow: hidden;
+    background: #eee7dd;
+    flex: 0 0 auto;
+  }
+  .tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  h1 {
+    margin: 1.3cqw 0 0;
+    font-family: 'Cossette Texte', 'Pontano Sans', sans-serif;
+    font-weight: 400;
+    font-size: 3.1cqw;
+    line-height: 110%;
+    letter-spacing: -0.02em;
+    text-align: center;
+    text-transform: uppercase;
+    color: #6b3a1f;
+  }
+
+  .sub {
+    margin: 0.5cqw 0 0;
+    font-size: 0.85cqw;
+    line-height: 135%;
+    text-align: center;
+    color: #6b3a1f;
+  }
+  .script {
+    font-family: 'TAY Sweetheart', cursive;
+    font-size: 1.2cqw;
+    color: #e13f30;
+  }
+
+  .cta {
+    margin-top: 1.1cqw;
+    display: inline-block;
+    background: #c8f028;
+    color: #6b3a1f;
+    font-family: 'Cossette Texte', 'Pontano Sans', sans-serif;
+    font-size: 0.9cqw;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    padding: 0.7cqw 1.3cqw;
+    border-radius: 0.75cqw;
+    box-shadow: 0.28cqw 0.28cqw 0 0 #b7de1d;
+    white-space: nowrap;
+  }
+
+  /* REVIEW — red card on cream, like the original hero's closing block */
+  .review {
+    position: relative;
+    margin-top: 1.5cqw;
+    width: 66cqw;
+    background: #e13f30;
+    border-radius: 1.8cqw;
+    padding: 1.3cqw 2.2cqw 1.2cqw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .halo {
+    position: absolute;
+    top: -3.5cqw;
+    left: -3cqw;
+    width: 9cqw;
+    height: 9cqw;
+    border-radius: 1000px;
+    background: rgba(247, 245, 240, 0.45);
+  }
+  .pfps { position: relative; display: flex; align-items: center; }
+  .p {
+    display: block;
+    border-radius: 1000px;
+    border: 1px solid #6b3a1f;
+    overflow: hidden;
+    background: #f7f5f0;
+    flex: 0 0 auto;
+  }
+  .p img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .p.p1 { width: 2.5cqw; height: 2.5cqw; }
+  .p.p2 { width: 1.7cqw; height: 1.7cqw; margin-left: -0.5cqw; }
+  .p.p3 { width: 1.3cqw; height: 1.3cqw; margin-left: -0.4cqw; }
+  .q {
+    position: relative;
+    margin: 0.5cqw 0 0;
+    font-family: 'Cossette Texte', 'Pontano Sans', sans-serif;
+    font-size: 1cqw;
+    line-height: 135%;
+    color: #f7f5f0;
+  }
+  .name {
+    position: relative;
+    margin: 0.35cqw 0 0;
+    font-weight: 700;
+    font-size: 0.72cqw;
+    color: #f7f5f0;
+  }
+  .name span { font-weight: 500; opacity: 0.85; }
+</style>

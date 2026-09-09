@@ -1,7 +1,7 @@
 ---
 import { render, getCollection, type CollectionEntry } from 'astro:content';
 import Base from '../../layouts/Base.astro';
-import LivePreview from '../../components/LivePreview.astro';
+import PreviewFrame from '../../components/PreviewFrame.astro';
 import PaletteSwatches from '../../components/PaletteSwatches.astro';
 import PromptBox from '../../components/PromptBox.astro';
 
@@ -50,7 +50,11 @@ const webFonts = [ref.fonts.heading, ref.fonts.body].filter(Boolean);
           >Open full page ↗</a>
         )}
       </div>
-      <LivePreview slug={ref.preview} large />
+      {ref.preview ? (
+        <PreviewFrame slug={ref.preview} variant="hero" />
+      ) : (
+        <p class="no-preview">No preview component yet.</p>
+      )}
     </section>
 
     <section class="grid-2">
@@ -177,6 +181,14 @@ const webFonts = [ref.fonts.heading, ref.fonts.body].filter(Boolean);
   .full-btn:hover {
     color: var(--text);
     border-color: #3a4046;
+  }
+  .no-preview {
+    color: var(--muted);
+    font-size: 13px;
+    border: 1px dashed var(--line);
+    border-radius: 12px;
+    padding: 24px;
+    margin: 0;
   }
   .grid-2 {
     display: grid;
