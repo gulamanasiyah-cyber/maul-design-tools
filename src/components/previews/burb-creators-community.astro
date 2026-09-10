@@ -1,0 +1,180 @@
+---
+// Burb — Card preview scene: black hero with glass pill header, chunky photo-chip
+// headline, pastel feature-card bento, and uppercase marquee. Pure CSS/SVG, cqw units.
+const A = '/assets/burb';
+---
+
+<div class="scene" aria-hidden="true">
+  <!-- Glass pill header -->
+  <div class="pill-header">
+    <img class="logo" src={`${A}/logo.svg`} alt="" />
+    <span class="navlinks"><i>Product</i><i>Blog</i><i>Resources</i><i>Pricing</i></span>
+    <span class="login">Log In</span>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="dotbg"></div>
+    <h1 class="giant">
+      <span class="row">How <em class="chip peach"><img src={`${A}/lady.webp`} alt="" /></em> Creators</span>
+      <span class="row r2">Operate <em class="chip green"><img src={`${A}/handwrench.png`} alt="" /></em></span>
+      <span class="row r3">Community.</span>
+    </h1>
+    <div class="hero-foot">
+      <div class="shot"></div>
+      <div class="cta">Learn More <span class="dots"><i></i><i></i><i></i></span></div>
+    </div>
+  </div>
+
+  <!-- Marquee -->
+  <div class="marquee">
+    <div class="track">
+      {Array.from({ length: 2 }).map(() => (
+        <span class="set">COURSES · LMS · EMAIL MARKETING · AUTOMATION · COMMUNITY · SOCIAL APPS · MEMBERSHIPS · FORUMS ·</span>
+      ))}
+    </div>
+  </div>
+
+  <!-- Pastel cards -->
+  <div class="cards">
+    <div class="card c-green">
+      <b>Avoid that awkward radio silence.</b>
+      <span class="pillink">Learn More</span>
+    </div>
+    <div class="card c-orange">
+      <div class="cimg g1"></div>
+      <b>Let us get everyone settled.</b>
+    </div>
+    <div class="card c-pink full">
+      <b>Take a peek around.</b>
+      <span class="chart">
+        <svg viewBox="0 0 120 44" fill="none"><path d="M2 40 C 24 38, 30 20, 48 22 S 84 30, 96 14 S 112 6, 118 4" stroke="#000" stroke-width="2.4" stroke-linecap="round"/><circle cx="48" cy="22" r="3" fill="#000"/><circle cx="96" cy="14" r="3" fill="#000"/></svg>
+      </span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .scene {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    min-height: 260px;
+    background: #000;
+    overflow: hidden;
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', system-ui, sans-serif;
+    container-type: inline-size;
+    color: #fff;
+  }
+  .scene * { box-sizing: border-box; }
+
+  /* Glass pill header */
+  .pill-header {
+    position: absolute;
+    top: 2.2cqw; left: 2.4cqw; right: 2.4cqw;
+    z-index: 3;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.55cqw 0.6cqw 0.55cqw 1cqw;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 100px;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(6px);
+  }
+  .logo { height: 1.15cqw; filter: invert(1); opacity: 0.95; }
+  .navlinks { display: flex; gap: 1.6cqw; }
+  .navlinks i { font-style: normal; font-size: 0.62cqw; opacity: 0.9; }
+  .login { font-size: 0.62cqw; font-weight: 600; padding: 0.3cqw 0.9cqw; border-radius: 100px; background: rgba(255,255,255,0.12); }
+
+  /* Hero */
+  .hero { position: relative; flex: 1; padding: 6.4cqw 2.4cqw 0; overflow: hidden; }
+  .dotbg {
+    position: absolute; right: -8cqw; bottom: -6cqw;
+    width: 34cqw; height: 34cqw; border-radius: 50%;
+    background-image: radial-gradient(rgba(175,215,179,0.55) 0.22cqw, transparent 0.28cqw);
+    background-size: 1.5cqw 1.5cqw;
+    opacity: 0.35;
+  }
+  .giant {
+    font-family: 'Archivo Black', 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 3.5cqw;
+    line-height: 1.06;
+    letter-spacing: 0.01em;
+    margin: 0;
+    position: relative; z-index: 2;
+  }
+  .row { display: flex; align-items: center; gap: 0.7cqw; white-space: nowrap; }
+  .row.r2 { padding-left: 8cqw; }
+  .row.r3 { padding-left: 16cqw; }
+  .chip {
+    width: 3cqw; height: 3cqw; border-radius: 50%;
+    display: inline-flex; overflow: hidden; align-items: flex-end; justify-content: center;
+    flex: 0 0 auto;
+  }
+  .chip img { width: 3.4cqw; }
+  .chip.peach { background: linear-gradient(280deg, #f0b38c, #ffd6c0); }
+  .chip.green { background: linear-gradient(327deg, #afd7b3 35%, #ceefd0 56%); }
+
+  .hero-foot {
+    display: flex; align-items: flex-end; gap: 1.4cqw;
+    margin-top: 1.8cqw; position: relative; z-index: 2;
+  }
+  .shot {
+    flex: 1; height: 6.5cqw; border-radius: 0.7cqw 0.7cqw 0 0;
+    background:
+      linear-gradient(0deg, rgba(255,255,255,0.09), rgba(255,255,255,0.02)),
+      repeating-linear-gradient(90deg, rgba(255,255,255,0.14) 0 2px, transparent 2px 12cqw),
+      linear-gradient(180deg, #17181a, #0c0d0e);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-bottom: 0;
+  }
+  .cta {
+    display: inline-flex; align-items: center;
+    background: #afd7b3; color: #000;
+    font-size: 0.62cqw; font-weight: 700; text-transform: uppercase;
+    padding: 0.55cqw 1.2cqw; border-radius: 100px;
+    margin-bottom: 1cqw; flex: 0 0 auto;
+  }
+  .cta .dots { display: inline-flex; gap: 0.16cqw; margin-left: 0.45cqw; align-items: center; }
+  .cta .dots i { width: 0.22cqw; height: 0.22cqw; border-radius: 50%; background: #000; }
+  .cta .dots i:nth-child(2) { width: 0.3cqw; height: 0.3cqw; }
+  .cta .dots i:nth-child(3) { width: 0.38cqw; height: 0.38cqw; }
+
+  /* Marquee */
+  .marquee { overflow: hidden; padding: 0.55cqw 0; border-top: 1px solid rgba(255,255,255,0.16); }
+  .track { display: flex; width: max-content; animation: burbcard-marquee 22s linear infinite; }
+  .set {
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.58cqw; letter-spacing: 0.14em;
+    color: rgba(255,255,255,0.64);
+    white-space: nowrap; padding-right: 1cqw;
+  }
+  @keyframes burbcard-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* Cards */
+  .cards {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.9cqw; padding: 0.9cqw 2.4cqw 1.4cqw;
+    background: #fff; color: #000;
+  }
+  .card {
+    border-radius: 1cqw; background: #f0f0f0;
+    padding: 0.9cqw; display: flex; flex-direction: column; gap: 0.5cqw;
+    font-size: 0.72cqw; line-height: 1.25; font-weight: 700;
+  }
+  .card.c-green:hover { background: #ceefd0; }
+  .card.c-orange:hover { background: #ffd6c0; }
+  .cimg { height: 2.6cqw; border-radius: 0.5cqw; }
+  .g1 { background: linear-gradient(135deg, #f6d8c4, #f0b38c 70%, #d98d64); }
+  .pillink {
+    margin-top: auto; font-size: 0.55cqw; font-weight: 700;
+    display: inline-flex; align-items: center; gap: 0.3cqw;
+  }
+  .pillink::after { content: ''; width: 0.85cqw; height: 0.16cqw; background: #000; border-radius: 2px; }
+  .card.full { grid-column: span 2; flex-direction: row; align-items: center; justify-content: space-between; }
+  .chart { width: 9cqw; }
+  .chart svg { width: 100%; display: block; }
+</style>

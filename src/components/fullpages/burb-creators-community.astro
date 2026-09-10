@@ -1,0 +1,920 @@
+---
+// Burb — How Creators Grow Community. Full recreation of the Webflow landing page.
+// Palette: Black #000000, White #FFFFFF, pastel Green #CEEFD0, pastel Orange #FFD6C0,
+// pastel Pink #FFE1E1, Salmon #FBC5C4, Green #AFD7B3, Peach #F0B38C.
+// Fonts: Ginto Nord (display) → Archivo Black, Neue Montreal (body) → Inter.
+// Sections: glass pill header (hide on scroll), black hero with photo-chip headline +
+// dashboard shot + marquee, pastel feature-card bento, black how-it-works panel with
+// overlapping steps, green testimonials wall, black integrations box with dotted arc,
+// join banner with hover invert + footer.
+const A = '/assets/burb';
+
+const marqueeItems = [
+  'Courses', 'Learning management platforms', 'Email marketing', 'Automation',
+  'Scaling Courses', 'Public social', 'Community', 'Social apps', 'Online Chat',
+  'Learning community', 'Membership Communities', 'Forums', 'Teaching', 'Online forums'
+];
+const loop = [...marqueeItems, ...marqueeItems];
+
+const tools = [
+  { name: 'Slack', cat: 'Community Platform', logo: `${A}/slack.svg`, bg: '#4a154b' },
+  { name: 'Circle', cat: 'Community Platform', logo: `${A}/circle.svg`, bg: '#506bf0' },
+  { name: 'Discord', cat: 'Community Platform', logo: `${A}/discord.svg`, bg: '#5865f2' },
+  { name: 'Google Workspace', cat: 'Productivity and Communication', logo: `${A}/google.svg`, bg: '#f4f4f4' },
+  { name: 'ConvertKit', cat: 'Email Marketing', logo: `${A}/convertkit.svg`, bg: '#fb6970' },
+  { name: 'Typeform', cat: 'Forms App', logo: `${A}/typeform.png`, bg: '#000000' },
+  { name: 'Thinkific', cat: 'Learning Managment System', logo: `${A}/thinkific.svg`, bg: '#1a365d' },
+  { name: 'Teachable', cat: 'Learning Managment System', logo: `${A}/teachable.svg`, bg: '#21cd9c' }
+];
+
+const cards = [
+  {
+    mod: 'greenbg', layout: 'text-top', title: 'Avoid that awkward radio silence.',
+    body: 'Start discussions in your channels, spaces, groups, or with members directly in Slack, Circle, Discord, and email—either pre-scheduled or in real-time.',
+    img: `${A}/fashion-school.webp`, srcset: `${A}/fashion-school-500.webp 500w, ${A}/fashion-school.webp 800w`, alt: 'Fashion school community'
+  },
+  {
+    mod: 'orangebg', layout: 'img-top', title: 'Let us get everyone settled.',
+    body: 'Automatically add members to community spaces or give them access to content in Thinkific, Teachable, and more—without lifting a finger.',
+    img: `${A}/group.webp`, srcset: `${A}/group-500.webp 500w, ${A}/group-800.webp 800w, ${A}/group.webp 1228w`, alt: 'Group of creators'
+  },
+  {
+    mod: 'orangebg', layout: 'img-top', title: 'Gather everything you need under one roof.',
+    body: 'Access all your member details in one central spot with rich profiles across all apps.',
+    img: `${A}/gather-everything.webp`, srcset: `${A}/gather-everything-500.webp 500w, ${A}/gather-everything-800.webp 800w, ${A}/gather-everything.webp 1228w`, alt: 'Gather member profiles'
+  },
+  {
+    mod: 'greenbg', layout: 'text-top', title: 'Declunkify.',
+    body: 'Skip the messy workarounds. Sync everything for a unified view of member activity across community platforms, learning management systems, and email marketing platforms.',
+    img: `${A}/declunkify.webp`, srcset: `${A}/declunkify-500.webp 500w, ${A}/declunkify-800.webp 800w, ${A}/declunkify.webp 1228w`, alt: 'Unified member view'
+  }
+];
+
+const steps = [
+  { img: `${A}/step1.webp`, srcset: `${A}/step1-500.webp 500w, ${A}/step1.webp 750w`, title: 'Step 1', text: 'Connect your community, marketing, and online course platforms.' },
+  { img: `${A}/step2.webp`, srcset: `${A}/step2-500.webp 500w, ${A}/step2.webp 752w`, title: 'Step 2', text: "Understand the full range of your members' journeys, engagement, and activities." },
+  { img: `${A}/step3.webp`, srcset: `${A}/step3-500.webp 500w, ${A}/step3.webp 750w`, title: 'Step 3', text: 'Create workflows, schedule messages, and track the success of your community-building strategies.' }
+];
+
+const quotes = [
+  {
+    name: 'Tatiana Figueiredo', role: 'Build A Community Business', logo: null, tint: '#fbc5c4',
+    img: `${A}/tatiana-figueiredo.png`, alt: 'Tatiana Figueiredo',
+    text: 'A thoughtful tool by great, community-minded humans.'
+  },
+  {
+    name: 'Jillian Benbow', role: 'Senior Community Manager', logo: `${A}/spi.svg`, tint: '#ceefd0',
+    img: `${A}/jillian-benbow.png`, alt: 'Jillian Benbow',
+    text: 'Burb gives us the tools to make intelligent engagement decisions and get real time analytics.'
+  },
+  {
+    name: 'Bryony Cole', role: 'Founder', logo: `${A}/sextech-school.png`, tint: '#fbc5c4',
+    img: `${A}/bryony-cole.png`, alt: 'Bryony Cole',
+    text: 'Burb allowed me to serve 50 people at once instead of 12.'
+  },
+  {
+    name: 'Carrie Melissa Jones', role: 'Entrepreneur', logo: `${A}/cmj.png`, tint: '#afd7b3',
+    img: `${A}/carrie-melissa-jones.png`, alt: 'Carrie Melissa Jones',
+    text: 'Burb helps me build deeper relationships with my community members, and their team is INCREDIBLE!'
+  }
+];
+---
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" />
+
+<div class="burb">
+  <!-- ==================== HEADER ==================== -->
+  <header class="header" id="burbHeader">
+    <div class="head-container">
+      <div class="header-row">
+        <a href="#top" class="brand"><img src={`${A}/logo.svg`} alt="Burb" /></a>
+        <nav class="nav-menu" id="burbNav">
+          <div class="nav-list">
+            <a href="#creators" class="nav-link">Product</a>
+            <a href="#how" class="nav-link">Blog</a>
+            <a href="#customers" class="nav-link">Resources</a>
+            <a href="#integrations" class="nav-link">Pricing</a>
+          </div>
+          <div class="nav-box" id="burbLogin">Log In</div>
+        </nav>
+        <button class="navmenu-icon" id="burbBurger" aria-label="Menu">
+          <img src={`${A}/menu.svg`} alt="" class="ic-open" />
+          <img src={`${A}/close-menu.svg`} alt="" class="ic-close" />
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== SIGNUP MODAL ==================== -->
+  <div class="modal-wrapper" id="burbModal">
+    <button class="close-modal-button" id="burbModalClose" aria-label="Close">
+      <img src={`${A}/modal-close.webp`} alt="" />
+    </button>
+    <div class="detail-form-modal">
+      <h2 class="heading5-2">Tell us a little more about yourself</h2>
+      <form class="details-form" onsubmit="return false">
+        <input type="text" class="input-default" placeholder="Full Name" />
+        <input type="email" class="input-default" placeholder="Email" required />
+        <input type="text" class="input-default" placeholder="Twitter Handle (optional)" />
+        <button type="submit" class="button-3 w100">Continue</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero-section" id="top">
+    <div class="container pr">
+      <div class="hero-head">
+        <div class="headingbox">
+          <h1 class="heading2 white">How</h1>
+          <div class="box106"><img src={`${A}/lady.webp`} alt="Lady" width="106" /></div>
+          <h1 class="heading2 white"><span class="orangetext whitetext">Creators</span></h1>
+        </div>
+        <div class="headingbox padding">
+          <h1 class="heading2 white"><span class="green-text whitetext">Operate</span></h1>
+          <div class="box80"><img src={`${A}/handwrench.png`} alt="Hand holding a wrench" width="106" class="pineappleimg" /></div>
+        </div>
+        <h1 class="heading2 white pad">Community.</h1>
+      </div>
+      <div class="hero-row">
+        <div class="hero-img">
+          <img
+            src={`${A}/hero-img.webp`}
+            srcset={`${A}/hero-img-500.webp 500w, ${A}/hero-img-800.webp 800w, ${A}/hero-img.webp 1628w`}
+            sizes="(max-width: 991px) 93vw, 50vw"
+            width="814" alt="Burb dashboard" class="heroimg"
+          />
+        </div>
+        <div class="hero-detail">
+          <h3 class="heading3 white none">How Creators Operate Community.</h3>
+          <p class="hero-p">Easy automation and analytics for your community on Circle, Slack, and Discord.</p>
+          <a href="#creators" class="button-3 w100">
+            <span class="btn-text">Learn More</span>
+            <span class="btn-icon"><i class="bi bi-t"></i><i class="bi bi-b"></i><i class="bi bi-big"></i></span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="marquee hero-marquee" aria-hidden="true">
+      <div class="marquee-track">
+        {loop.map((t) => <span class="hero-item"><span class="herotext">{t}</span></span>)}
+      </div>
+    </div>
+    <div class="roundicon">
+      <img
+        src={`${A}/dot.webp`}
+        srcset={`${A}/dot-500.png 500w, ${A}/dot-1080.png 1080w, ${A}/dot-1600.webp 1600w, ${A}/dot.webp 2976w`}
+        sizes="100vw" width="1488" alt="" loading="lazy"
+      />
+    </div>
+  </section>
+
+  <!-- ==================== FEATURE CARDS ==================== -->
+  <section class="slider-section" id="creators">
+    <div class="container pr max1608">
+      <div class="communityhead">
+        <h3 class="heading4">Top educational creators have engaged communities <br /> <span class="pinktext">now you can too!</span></h3>
+      </div>
+      <div class="community-list">
+        <div class="community-item fullitem">
+          <div class="community-box max560">
+            <h5 class="heading5">Take a peek around.</h5>
+            <p class="p20 mb40">Peruse insights from community activity, online courses, and private spaces to really understand how to get—and keep—your members engaged.</p>
+            <a href="#how" class="button-link">
+              <span>Learn More</span>
+              <span class="linkiconbox"><i class="li li-one"></i><i class="li li-two"></i><i class="li li-three"></i></span>
+            </a>
+          </div>
+          <div class="community-img communityimg">
+            <img
+              src={`${A}/chart2x-800.webp`}
+              srcset={`${A}/chart2x-500.webp 500w, ${A}/chart2x-800.webp 800w`}
+              sizes="(max-width: 991px) 100vw, 41vw"
+              width="896" alt="Line graph of new members and course enrollments" class="fullimg" loading="lazy"
+            />
+          </div>
+        </div>
+
+        {cards.map((c) => (
+          <div class={`community-item ${c.mod}`}>
+            {c.layout === 'img-top' && (
+              <div class="community-img pb40">
+                <img src={c.img} srcset={c.srcset} sizes="(max-width: 991px) 100vw, 38vw" width="614" alt={c.alt} loading="lazy" />
+              </div>
+            )}
+            <div class="community-box pb40">
+              <h5 class="heading5">{c.title}</h5>
+              <p class="p20 mb40 max500">{c.body}</p>
+              <a href="#how" class="button-link">
+                <span>Learn More</span>
+                <span class="linkiconbox"><i class="li li-one"></i><i class="li li-two"></i><i class="li li-three"></i></span>
+              </a>
+            </div>
+            {c.layout === 'text-top' && (
+              <div class="community-img">
+                <img src={c.img} srcset={c.srcset} sizes="(max-width: 991px) 100vw, 38vw" width="614" alt={c.alt} loading="lazy" />
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== HOW IT WORKS ==================== -->
+  <section class="community-section" id="how">
+    <div class="container pr2">
+      <div class="communityicon">
+        <img src={`${A}/team.webp`} srcset={`${A}/team-500.webp 500w, ${A}/team.webp 684w`} sizes="(max-width: 991px) 200px, 342px" width="342" alt="A graphic of a team of people" loading="lazy" />
+      </div>
+      <div class="howitworksbox">
+        <h2 class="heading3 white"><span class="pr20">Here's how</span> <span class="green-text">it works</span></h2>
+        <div class="heading5 white">You're busy, so we'll make this easy.</div>
+      </div>
+      <div class="steplist">
+        {steps.map((s) => (
+          <div class="stepitem">
+            <div class="stepbox">
+              <img src={s.img} srcset={s.srcset} sizes="(max-width: 991px) 86vw, 23vw" width="375" alt={s.title} loading="lazy" />
+            </div>
+            <div class="heading5">{s.title}</div>
+            <p class="p24 mb0 font20">{s.text}</p>
+          </div>
+        ))}
+      </div>
+      <div class="blackbox"><div class="blackbg"></div></div>
+    </div>
+  </section>
+
+  <!-- ==================== CUSTOMERS ==================== -->
+  <section class="customer-section" id="customers">
+    <div class="container pr">
+      <div class="customer-row">
+        <div class="customer-head">
+          <h1 class="heading lh110"><span class="font200">Our</span> <span class="font112">customers</span></h1>
+          <h1 class="heading white font40">
+            l<span class="box89" style={`background-image:url(${A}/gabrielle.png)`}></span>ve us.
+          </h1>
+        </div>
+        <div class="customertwo-wrap">
+          <div class="customertwo-item pb40">
+            <div class="customer-box max470">
+              <div class="customerrow">
+                <div class="customer-img" style="background-color:#ffd6c0">
+                  <img src={`${A}/nivi-achanta.png`} alt="Nivi Achanta" class="customerimg" />
+                </div>
+                <div class="customer-detail">
+                  <div class="subheading2 bold">Nivi Achanta</div>
+                  <div class="customer-logo"><div class="customer-text">Founder &amp; CEO at Soapbox Project</div></div>
+                </div>
+              </div>
+              <div class="p20 richtext">
+                <p>Burb has been designed with true human connection in mind - it's helping me scale not just community operations, but also thoughtful leadership, gratitude, and joy within the Soapbox Project community. <a href="#customers" class="case-link"><sub>Read case study.</sub></a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="customer-wrap">
+        {quotes.map((q) => (
+          <div class="customer-item">
+            <div class="customer-box">
+              <div class="customerrow">
+                <div class="customer-img" style={`background-color:${q.tint}`}>
+                  <img src={q.img} alt={q.alt} class="customerimg" loading="lazy" />
+                </div>
+                <div class="customer-detail">
+                  <div class="subheading2 bold font18">{q.name}</div>
+                  <div class="customer-logo">
+                    <div class="customer-text">{q.role}</div>
+                    {q.logo && <img src={q.logo} alt="" loading="lazy" />}
+                  </div>
+                </div>
+              </div>
+              <div class="p20 richtext"><p>{q.text}</p></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+    <div class="marquee customer-marquee" aria-hidden="true">
+      <div class="marquee-track">
+        {loop.map((t) => <span class="hero-item"><span class="herotext blacktext">{t}</span></span>)}
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== INTEGRATIONS ==================== -->
+  <section class="integration-section" id="integrations">
+    <div class="greenboxbg"></div>
+    <div class="integrationbg">
+      <div class="integrationbox">
+        <div class="container">
+          <h2 class="heading2 white mb40"><span class="orangetext">Integrations<br /></span>We've got 'em</h2>
+          <div class="integrationrow">
+            <h5 class="heading5 white max570 font20">Don't worry, we play nice with the tools you're already using.</h5>
+          </div>
+          <div class="tools-list">
+            {tools.map((t) => (
+              <div class="toolsitem">
+                <div class="tools-item">
+                  <div class="toolsimg" style={`background-color:${t.bg}`}>
+                    <img src={t.logo} alt={t.name} width="175" loading="lazy" />
+                  </div>
+                  <div class="toolsbox">
+                    <div class="subheading2 bold">{t.name}</div>
+                    <div>{t.cat}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div class="integrationdotimgbox">
+        <img src={`${A}/dot-arc.svg`} alt="" class="integrationdotimg" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <section class="footer">
+    <div class="joinblock">
+      <div class="container">
+        <div class="joinrow">
+          <div class="joinushead">
+            <div class="joinuscol1">
+              <h1 class="heading white mb0">Join us in the <span class="pinktext">'burbs</span></h1>
+            </div>
+            <div class="joinuscol2">
+              <div class="subheading pb15">We'll manage the mundane so you have the space (and brainpower) to create an experience your community can't get enough of.</div>
+              <a href="#top" class="button-3 w100">
+                <span class="btn-text">Learn More</span>
+                <span class="btn-icon"><i class="bi bi-t"></i><i class="bi bi-b"></i><i class="bi bi-big"></i></span>
+              </a>
+            </div>
+          </div>
+          <div class="joinimg">
+            <img
+              src={`${A}/jointeam.webp`}
+              srcset={`${A}/jointeam-500.webp 500w, ${A}/jointeam-800.webp 800w, ${A}/jointeam.webp 2628w`}
+              sizes="(max-width: 991px) 88vw, 85vw" alt="Join the team" class="img" loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footerblock">
+      <div class="container1680">
+        <div class="footerrow">
+          <div class="footercol1">
+            <div class="max750">
+              <div class="footeritem pr165">
+                <div class="subheading2 bold white">Company</div>
+                <div class="footerlist">
+                  <a href="#top" class="footlink">About Us</a>
+                  <a href="#how" class="footlink">Blog</a>
+                  <a href="#creators" class="footlink">Use Cases</a>
+                  <span class="footlink nolink">Docs</span>
+                </div>
+              </div>
+              <div class="footeritem"><div class="subheading2 bold white">Socials</div></div>
+              <div class="socialbox-2">
+                <a href="https://twitter.com/burbteam" target="_blank" rel="noopener noreferrer" class="socialicon-2 w88">
+                  <img src={`${A}/twittericon.svg`} alt="Twitter" />
+                </a>
+                <a href="https://www.instagram.com/burbteam/" target="_blank" rel="noopener noreferrer" class="socialicon-2">
+                  <img src={`${A}/instagram.webp`} alt="Instagram" width="35" />
+                </a>
+              </div>
+              <div class="socialbox-2">
+                <a href="https://www.tiktok.com/@burbteam" target="_blank" rel="noopener noreferrer" class="socialicon-2">
+                  <img src={`${A}/tiktok.svg`} alt="TikTok" class="image-15" />
+                </a>
+                <a href="https://twitter.com/burbteam" target="_blank" rel="noopener noreferrer" class="socialicon-2 w88">
+                  <img src={`${A}/facebook.svg`} alt="Facebook" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="footercol2">
+            <div class="footercolbox">
+              <div class="subheading2 bold white mb25">Contact</div>
+              <a href="mailto:hello@burb.co" class="footerlink">hello@burb.co</a>
+              <div class="footerlink hovernone">2323 Broadway Oakland, CA 94612</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footerbottom">
+      <div class="container1680 p0">
+        <div class="footerrow auto">
+          <div class="footercol1 p30">
+            <div class="foottext">© 2023 Burb Inc. Copyrights</div>
+            <div class="policynav">
+              <a href="#top" class="footlink mr60 font16">Terms of Services</a>
+              <a href="#top" class="footlink mb0 font16">Privacy Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<style>
+  /* ============ BASE ============ */
+  .burb {
+    font-family: 'Inter', 'Neue Montreal', sans-serif;
+    color: #000;
+    font-size: 18px;
+    line-height: 32px;
+    font-weight: 400;
+    background: #fff;
+    overflow-x: clip;
+  }
+  .burb * { box-sizing: border-box; }
+  .burb h1, .burb h2, .burb h3, .burb h5, .burb p { margin: 0; }
+  .burb a { color: inherit; text-decoration: none; }
+  .burb img { max-width: 100%; display: inline-block; }
+  .white { color: #fff; }
+  .orangetext { color: #f0b38c; }
+  .orangetext.whitetext { color: #fff; }
+  .green-text { color: #afd7b3; }
+  .green-text.whitetext { color: #fff; padding-right: 10px; }
+  .pinktext { color: #fbc5c4; }
+  .pr20 { padding-right: 20px; }
+  .pb15 { padding-bottom: 15px; }
+  .pb40 { padding-bottom: 40px; }
+  .mb0 { margin-bottom: 0; }
+  .mb25 { margin-bottom: 25px; }
+  .mb40 { margin-bottom: 40px; }
+  .max500 { max-width: 500px; }
+  .max570 { max-width: 610px; padding-right: 15px; }
+  .font18 { font-size: 18px; }
+  .font20 { font-size: 20px; line-height: 28px; }
+
+  .container { max-width: 1548px; margin: 0 auto; padding: 0 30px; }
+  .container.pr { position: relative; }
+  .container.max1608 { max-width: 1608px; padding: 0 60px 40px; }
+  .container1680 { max-width: 1680px; margin: 0 auto; padding: 0 40px; }
+  .container1680.p0 { padding: 0; }
+
+  /* ============ TYPO ============ */
+  .heading2, .heading3, .heading4, .heading {
+    font-family: 'Archivo Black', 'Ginto Nord', sans-serif;
+    font-weight: 400;
+  }
+  .heading2 { font-size: 96px; line-height: 96px; }
+  .heading3 { font-size: 80px; line-height: 88px; margin-bottom: 16px; }
+  .heading4 { font-size: 72px; line-height: 88px; margin-bottom: 16px; }
+  .heading { font-size: 140px; line-height: 140px; }
+  .heading.lh110 { line-height: 110px; }
+  .font200 { font-size: 200px; line-height: 200px; }
+  .font112 { font-size: 112px; line-height: 112px; }
+  .heading.white.font40 { font-size: 40px; line-height: 40px; }
+  .heading5 { color: #000; font-size: 40px; line-height: 48px; font-weight: 700; }
+  .subheading2 { font-size: 24px; line-height: 30px; font-weight: 400; }
+  .subheading2.bold { font-weight: 700; }
+  .subheading2.bold.white { color: #fff; }
+  .p20 { font-size: 20px; line-height: 32px; }
+  .p24 { font-size: 24px; line-height: 32px; }
+  .p24.mb0 { margin-bottom: 0; }
+
+  /* ============ HEADER ============ */
+  .header {
+    position: fixed; left: 0; right: 0; top: 0; z-index: 100;
+    padding-bottom: 24px;
+    transition: top 0.3s ease-in-out;
+  }
+  .header.hidden { top: -120px; }
+  .head-container { max-width: 1708px; margin: 0 auto; padding: 24px 30px 0; }
+  .header-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 12px 12px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 100px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  .brand { display: flex; align-items: flex-end; flex: 0 0 246px; padding: 0 20px 0 10px; }
+  .nav-menu {
+    display: flex; align-items: center; justify-content: space-between;
+    flex: 1; height: 85px; padding: 16px 16px 16px 64px;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+  }
+  .nav-list { display: flex; align-items: center; }
+  .nav-link {
+    margin-right: 64px; color: #fff; font-weight: 400;
+    transition: color 0.2s ease-in-out;
+  }
+  .nav-link:hover { color: #afd7b3; }
+  .nav-box { display: flex; align-items: center; color: #fff; cursor: pointer; }
+  .navmenu-icon { display: none; background: none; border: 0; padding: 10px; cursor: pointer; width: 40px; height: 40px; }
+  .navmenu-icon .ic-close { display: none; }
+  .burb.nav-open .navmenu-icon .ic-close { display: block; }
+  .burb.nav-open .navmenu-icon .ic-open { display: none; }
+
+  /* ============ MODAL ============ */
+  .modal-wrapper {
+    position: fixed; inset: 0; z-index: 9999;
+    display: none; justify-content: center; align-items: center;
+    background: rgba(0, 0, 0, 0.9);
+  }
+  .modal-wrapper.open { display: flex; }
+  .close-modal-button { position: absolute; top: 0; right: 0; width: 30px; margin: 20px 20px 0 0; padding: 5px; background: none; border: 0; cursor: pointer; }
+  .detail-form-modal { padding: 80px 88px 88px; border-radius: 24px; background: #f0f0f0; max-width: 560px; width: calc(100% - 40px); }
+  .heading5-2 { color: #000; font-size: 40px; line-height: 48px; font-weight: 700; margin-bottom: 16px; }
+  .details-form { display: flex; flex-direction: column; align-items: flex-start; padding-top: 30px; }
+  .input-default {
+    width: 100%; height: 64px; margin-bottom: 24px; padding: 0 32px;
+    border: 2px solid #000; border-radius: 100px; background: #fff;
+    font-family: inherit; font-size: 18px; color: rgba(0, 0, 0, 0.64);
+  }
+  .input-default:focus { border-color: #afd7b3; outline: none; }
+
+  /* ============ BUTTONS ============ */
+  .button-3 {
+    display: flex; justify-content: center; align-items: center;
+    padding: 16px 32px; border-radius: 128px; background: #afd7b3;
+    transition: background 0.2s ease-in-out;
+    color: #000; font-size: 16px; font-weight: 700; text-transform: uppercase;
+    cursor: pointer; border: 0; font-family: inherit; width: auto;
+  }
+  .button-3:hover { background: #fbc5c4; }
+  .button-3.w100 { width: 100%; }
+  .btn-icon { position: relative; width: 11px; height: 14px; margin-left: 12px; }
+  .btn-icon .bi { position: absolute; border-radius: 50%; background: #000; }
+  .btn-icon .bi-t { left: 0; top: 0; width: 4px; height: 4px; }
+  .btn-icon .bi-b { left: 0; bottom: 0; width: 4px; height: 4px; }
+  .btn-icon .bi-big { right: 0; top: 50%; margin-top: -3px; width: 6px; height: 6px; }
+  .button-link {
+    display: flex; align-items: center;
+    color: #000; font-size: 18px; line-height: 24px; font-weight: 700;
+  }
+  .linkiconbox { display: flex; justify-content: space-between; align-items: center; width: 22px; height: 8px; margin-left: 8px; }
+  .linkiconbox .li { border-radius: 50%; background: #000; display: block; }
+  .li-one { width: 4px; height: 4px; }
+  .li-two { width: 6px; height: 6px; }
+  .li-three { width: 8px; height: 8px; }
+
+  /* ============ HERO ============ */
+  .hero-section {
+    position: relative; z-index: 1; overflow: hidden;
+    padding: 160px 0 65px; background: #000;
+  }
+  .hero-head { padding-bottom: 88px; }
+  .headingbox { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; }
+  .headingbox.padding { padding-left: 194px; }
+  .heading2.pad { padding-left: 388px; }
+  .box106 {
+    display: flex; justify-content: center; align-items: flex-end;
+    width: 90px; height: 90px; margin: 0 20px 0 15px;
+    border-radius: 50%; background: linear-gradient(280deg, #f0b38c, #ffd6c0);
+  }
+  .box80 {
+    display: flex; align-items: flex-end;
+    width: 80px; height: 80px; margin-left: 20px;
+    border-radius: 200px; background: linear-gradient(327deg, #afd7b3 35.07%, #ceefd0 56.13%);
+  }
+  .box106 img, .box80 img { width: 106px; }
+  .hero-row {
+    position: relative; z-index: 2;
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding-bottom: 110px;
+  }
+  .hero-img { flex: 1; padding-right: 76px; }
+  .heroimg { width: 100%; max-width: 814px; }
+  .hero-detail { display: flex; flex-direction: column; align-items: flex-start; flex: 0 0 553px; padding-right: 44px; }
+  .heading3.white.none { display: none; }
+  .hero-p { margin-bottom: 48px; color: #fff; font-size: 32px; line-height: 44px; }
+  .roundicon {
+    position: absolute; bottom: 160px; left: 50%;
+    width: 100%; max-width: 1488px; margin-left: -744px;
+    opacity: 0.3; pointer-events: none;
+  }
+  .roundicon img { width: 100%; vertical-align: middle; }
+
+  /* ============ MARQUEE ============ */
+  .marquee { position: relative; z-index: 2; overflow: hidden; }
+  .marquee-track {
+    display: flex; width: max-content;
+    animation: burb-marquee 30s linear infinite;
+  }
+  .hero-item { flex: 0 0 auto; float: left; }
+  .herotext {
+    padding-right: 38px; font-family: 'Archivo', 'Ginto Nord', sans-serif;
+    color: rgba(255, 255, 255, 0.64); font-size: 16px; line-height: 32px;
+    font-weight: 500; text-transform: uppercase; white-space: nowrap;
+  }
+  .herotext.blacktext { color: #000; }
+  @keyframes burb-marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ============ FEATURE CARDS ============ */
+  .slider-section { position: relative; z-index: 1; overflow: hidden; padding: 220px 0 160px; background: #fff; }
+  .communityhead { position: relative; z-index: 2; padding: 40px 0 60px; }
+  .community-list {
+    position: relative; z-index: 2;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+  }
+  .community-item {
+    display: flex; flex-direction: column; align-items: flex-start;
+    overflow: hidden; padding: 56px; border-radius: 24px; background: #f0f0f0;
+    transition: background 0.2s ease-in-out;
+  }
+  .community-item.greenbg { display: block; }
+  .community-item.greenbg:hover { background: #ceefd0; }
+  .community-item.orangebg { display: block; }
+  .community-item.orangebg:hover { background: #ffd6c0; }
+  .community-item.fullitem {
+    grid-column: 1 / -1;
+    display: flex; flex-direction: row; align-items: center; justify-content: space-between;
+    padding: 0;
+  }
+  .community-item.fullitem:hover { background: #ffe1e1; }
+  .community-box { display: flex; flex-direction: column; align-items: flex-start; }
+  .community-box.max560 { max-width: 560px; width: 100%; padding: 30px 20px 30px 56px; }
+  .community-box.pb40 { padding-bottom: 40px; }
+  .community-img { display: flex; flex-direction: column; align-items: center; width: 100%; }
+  .community-img img { max-width: 614px; width: 100%; height: auto; }
+  .community-img.communityimg { max-width: 872px; }
+  .fullimg { display: block; }
+
+  /* ============ HOW IT WORKS ============ */
+  .community-section { position: relative; z-index: 1; padding: 120px 0 140px; background: #fff; }
+  .container.pr2 { position: relative; }
+  .communityicon {
+    position: absolute; top: -374px; right: 110px; z-index: 1;
+    width: 342px; height: 380px;
+  }
+  .communityicon img { width: 100%; height: 100%; object-fit: contain; }
+  .howitworksbox { position: relative; z-index: 2; padding: 40px 0 20px; }
+  .steplist {
+    position: relative; z-index: 2;
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px;
+  }
+  .stepitem { position: relative; z-index: 2; padding: 48px; border-radius: 24px; background: #f4f4f4; }
+  .stepbox { padding-bottom: 48px; }
+  .stepbox img { width: 100%; }
+  .blackbox {
+    position: absolute; top: 0; left: 0; right: 0;
+    width: 100%; height: 600px; padding: 0 30px;
+  }
+  .blackbg { width: 100%; height: 100%; border-radius: 24px; background: #000; }
+
+  /* ============ CUSTOMERS ============ */
+  .customer-section { overflow: hidden; padding: 144px 0 56px; background: #ceefd0; }
+  .customer-row { display: flex; justify-content: space-between; align-items: flex-end; }
+  .customer-head { display: flex; flex-direction: column; align-items: flex-start; flex: 1; padding: 35px 20px 0 0; }
+  .customertwo-wrap { flex: 0 0 41%; }
+  .customertwo-item { width: 100%; }
+  .customertwo-item.pb40 { padding-bottom: 40px; }
+  .customer-wrap { display: flex; flex-wrap: wrap; margin: 0 -20px; padding-bottom: 50px; }
+  .customer-item { width: 33.333%; padding: 0 20px 40px; }
+  .customer-item:nth-child(1) { display: none; }
+  .customer-item:nth-child(2) { margin-top: 45px; }
+  .customer-item:nth-child(3) { margin-top: 110px; }
+  .customer-item:nth-child(5) { margin-top: -97px; }
+  .customer-box { padding: 32px; border-radius: 70px 15px 15px; background: #fff; }
+  .customer-box.max470 { max-width: 470px; }
+  .customerrow { display: flex; align-items: center; padding-bottom: 16px; }
+  .customer-img {
+    display: flex; justify-content: center; align-items: flex-end;
+    overflow: hidden; flex: 0 0 auto; width: 88px; height: 88px;
+    border-radius: 176px;
+  }
+  .customerimg { width: 100%; height: 100%; object-fit: cover; }
+  .customer-detail { display: flex; flex-direction: column; align-items: flex-start; padding-left: 24px; }
+  .customer-logo { display: flex; flex-wrap: wrap; align-items: center; padding-top: 3px; }
+  .customer-logo img { margin-left: 8px; max-height: 24px; }
+  .customer-text { padding-right: 8px; font-size: 16px; line-height: 24px; }
+  .richtext p { margin: 0; }
+  .case-link { color: #000; }
+  .customer-marquee { padding: 20px 0 30px; }
+
+  /* ============ INTEGRATIONS ============ */
+  .integration-section { position: relative; z-index: 1; padding: 0 40px; }
+  .greenboxbg { position: absolute; top: 0; left: 0; right: 0; width: 100%; height: 460px; background: #ceefd0; }
+  .integrationbg { position: relative; z-index: 2; padding-bottom: 220px; }
+  .integrationbox { position: relative; z-index: 2; padding: 140px 0; border-radius: 24px 24px 0 0; background: #000; }
+  .integrationbox .heading2 { margin-bottom: 40px; }
+  .integrationrow { display: flex; justify-content: space-between; align-items: center; width: 100%; padding-bottom: 96px; }
+  .heading5.white { color: #fff; }
+  .heading5.white.font20 { font-size: 20px; line-height: 32px; }
+  .tools-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
+  .toolsitem { display: flex; }
+  .tools-item {
+    display: flex; flex-direction: column; overflow: hidden;
+    width: 100%; height: 100%; transition: margin 0.3s ease-in-out;
+  }
+  .tools-item:hover { margin-top: -10px; }
+  .toolsimg {
+    display: flex; justify-content: center; align-items: center;
+    width: 100%; height: 200px; padding: 10px 20px;
+    border-radius: 16px 16px 0 0;
+  }
+  .toolsbox { padding: 28px 32px 32px; flex: 1; border-radius: 0 0 16px 16px; background: #fff; }
+  .integrationdotimgbox {
+    position: absolute; left: 0; right: 0; bottom: 0.3%;
+    display: flex; width: 100%; height: 234px; overflow: hidden;
+    justify-content: center; align-items: flex-end;
+  }
+  .integrationdotimg { display: block; width: auto; max-width: none; }
+
+  /* ============ FOOTER ============ */
+  .footer { display: flex; flex-direction: column; padding-top: 40px; background: #000; }
+  .joinblock {
+    margin: 0 40px; padding: 84px 0;
+    border: 1px solid rgba(255, 255, 255, 0.5); border-radius: 24px;
+    transition: background 0.2s ease-in-out;
+  }
+  .joinblock:hover { background: #ffe1e1; }
+  .joinblock:hover .heading.white, .joinblock:hover .subheading { color: #000; }
+  .joinblock:hover .heading .pinktext { color: #fff; }
+  .joinrow { display: flex; flex-direction: column; align-items: flex-start; max-width: 1354px; margin: 0 auto; padding: 0 20px; width: 100%; }
+  .joinushead { display: flex; justify-content: space-between; align-items: stretch; padding-bottom: 48px; width: 100%; }
+  .joinuscol1 { width: 60%; }
+  .joinuscol2 { display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; width: 40%; padding: 14px 0 30px 20px; }
+  .subheading { color: #fff; font-size: 32px; line-height: 40px; font-weight: 700; transition: color 0.2s ease-in-out; }
+  .joinimg { width: 100%; }
+  .footerblock { padding: 40px 0 0; }
+  .footerrow { display: flex; justify-content: space-between; min-height: 340px; }
+  .footerrow.auto { min-height: auto; }
+  .footercol1 { display: flex; align-items: flex-start; flex: 1; padding-top: 80px; }
+  .footercol1.p30 { padding: 30px; align-items: center; }
+  .max750 { display: flex; justify-content: space-between; align-items: flex-start; width: 100%; max-width: 770px; padding-right: 30px; }
+  .footeritem { display: flex; }
+  .footeritem.pr165 { padding-right: 40px; }
+  .footerlist { display: flex; flex-direction: column; align-items: flex-start; padding: 4px 0 0 60px; }
+  .footlink {
+    margin-bottom: 24px; color: rgba(255, 255, 255, 0.8); line-height: 24px;
+    text-decoration: underline; transition: color 0.2s ease-in-out;
+  }
+  .footlink:hover { color: #fff; text-decoration: none; }
+  .footlink.nolink { text-decoration: none; }
+  .footlink.mr60 { margin-right: 60px; margin-bottom: 0; }
+  .footlink.font16, .footlink.mb0.font16 { font-size: 16px; }
+  .socialbox-2 {
+    display: flex; flex-direction: column; justify-content: space-between;
+    min-height: 184px; padding-top: 6px;
+  }
+  .socialicon-2 {
+    display: flex; justify-content: center; align-items: center;
+    width: 64px; height: 64px; border-radius: 50%; background: #fff;
+    transition: background 0.2s ease-in-out;
+  }
+  .socialicon-2:hover { background: #ffe1e1; }
+  .socialicon-2.w88 { width: 88px; height: 88px; }
+  .socialicon-2.w88:hover { background: #ffd6c0; }
+  .footercol2 {
+    display: flex; flex-direction: column; align-items: center;
+    flex: 0 0 280px; padding: 80px 0 0 50px;
+    border-left: 1px solid rgba(255, 237, 237, 0.5);
+  }
+  .footercolbox { display: flex; flex-direction: column; align-items: flex-start; }
+  .footerlink { margin-bottom: 12px; color: rgba(255, 255, 255, 0.8); transition: color 0.2s ease-in-out; }
+  .footerlink:hover { color: #fff; }
+  .footerlink.hovernone:hover { color: rgba(255, 255, 255, 0.8); }
+  .footerbottom { border-top: 1px solid rgba(255, 255, 255, 0.5); }
+  .foottext { color: rgba(255, 255, 255, 0.8); font-size: 16px; line-height: 24px; }
+  .policynav { display: flex; align-items: center; padding-left: 60px; }
+
+  /* ============ RESPONSIVE ============ */
+  @media screen and (min-width: 992px) and (max-width: 1500px) {
+    .heading { font-size: 100px; line-height: 110px; }
+    .font200 { font-size: 120px; line-height: 120px; }
+    .font112 { font-size: 90px; line-height: 100px; }
+  }
+  @media screen and (min-width: 992px) and (max-width: 1280px) {
+    .nav-link { margin-right: 24px; font-size: 16px; }
+    .brand { flex: 0 0 200px; }
+  }
+  @media screen and (max-width: 1199px) {
+    .customer-wrap .customer-item { width: 50%; }
+    .customer-wrap .customer-item:nth-child(n) { margin-top: 0; }
+  }
+  @media screen and (max-width: 991px) {
+    .heading2 { font-size: 64px; line-height: 68px; }
+    .heading3 { font-size: 48px; line-height: 56px; }
+    .heading4 { font-size: 40px; line-height: 48px; }
+    .heading { font-size: 56px; line-height: 60px; }
+    .font200, .font112 { font-size: 40px; line-height: 40px; }
+    .heading2.pad, .headingbox.padding { padding-left: 0; }
+    .headingbox.padding { padding-top: 12px; }
+    .heading3.white.none { display: block; margin-bottom: 24px; }
+    .hero-section { padding-top: 140px; }
+    .hero-row { flex-direction: column; padding-bottom: 40px; }
+    .hero-img { padding-right: 0; padding-bottom: 20px; }
+    .hero-detail { flex-basis: auto; padding-right: 0; }
+    .hero-p { font-size: 20px; line-height: 26px; margin-bottom: 40px; }
+    .roundicon { bottom: 60px; }
+    .slider-section { padding: 120px 0 80px; }
+    .container.max1608 { padding: 0 24px 40px; }
+    .community-list { grid-template-columns: 1fr; gap: 20px; }
+    .community-item { padding: 40px 30px; }
+    .community-item.fullitem { flex-direction: column; align-items: flex-start; }
+    .community-box.max560 { padding: 0; }
+    .communityhead { padding-bottom: 30px; }
+    .communityicon { display: none; }
+    .community-section { padding: 80px 0; }
+    .steplist { grid-template-columns: 1fr; gap: 30px; }
+    .stepitem { padding: 40px 30px; }
+    .blackbox { height: 700px; padding: 0; }
+    .customer-section { padding: 80px; }
+    .customer-row { flex-direction: column; align-items: flex-start; padding-bottom: 40px; }
+    .customer-head { padding-top: 0; padding-right: 0; }
+    .customertwo-wrap { width: 100%; }
+    .customer-wrap { margin: 0; }
+    .customer-item { width: 100%; padding: 0 0 30px; }
+    .integration-section { padding: 0 15px; }
+    .integrationbg { padding-bottom: 120px; }
+    .integrationbox { padding: 100px 0; border-radius: 0; }
+    .integrationrow { flex-direction: column; align-items: flex-start; padding-bottom: 55px; }
+    .tools-list { grid-template-columns: 1fr 1fr; gap: 20px 20px; }
+    .toolsimg { height: 150px; border-radius: 8px 8px 0 0; }
+    .toolsbox { padding: 20px; border-radius: 0 0 8px 8px; }
+    .tools-item:hover { margin-top: 0; }
+    .integrationdotimgbox { display: none; }
+    .joinblock { margin: 0 15px; padding: 60px 0; }
+    .joinushead { flex-direction: column; padding-bottom: 30px; }
+    .joinuscol1, .joinuscol2 { width: 100%; }
+    .joinuscol2 { padding: 30px 0 0; }
+    .joinimg { display: none; }
+    .footercol1 { padding-top: 60px; }
+    .max750 { max-width: 100%; }
+    .footeritem { flex-direction: column; }
+    .footeritem.pr165 { padding: 0 0 20px; }
+    .footerlist { padding: 20px 0 0; }
+    .socialbox-2 { min-height: 200px; padding-top: 30px; }
+    .footercol2 { flex: 0 0 auto; padding: 60px 0 0 30px; }
+    .footerrow { flex-direction: column; min-height: auto; }
+    .policynav { padding: 10px 0 0; }
+  }
+  @media screen and (max-width: 767px) {
+    .head-container { padding: 16px 16px 0; }
+    .header { padding-bottom: 16px; }
+    .nav-menu {
+      position: fixed; top: 0; right: 0; bottom: 0;
+      display: flex; flex-direction: column; align-items: stretch;
+      width: min(420px, 86vw); height: 100vh; padding: 125px 24px 24px;
+      background: #000; border-left: 0;
+      transform: translateX(100%); transition: transform 0.35s ease;
+      z-index: 90;
+    }
+    .burb.nav-open .nav-menu { transform: translateX(0); }
+    .nav-list { flex-direction: column; align-items: flex-start; padding-bottom: 60px; }
+    .nav-link { margin: 0 0 24px; font-size: 24px; }
+    .nav-box { max-width: 330px; width: 100%; margin: 0 auto; justify-content: center; padding: 16px; border-radius: 128px; background: #afd7b3; color: #000; font-weight: 700; }
+    .navmenu-icon { display: flex; justify-content: center; align-items: center; position: relative; z-index: 95; }
+    .customer-section { padding: 80px 24px; }
+    .box106, .box80 { width: 56px; height: 56px; }
+    .box106 img, .box80 img { width: 64px; }
+    .subheading { font-size: 24px; line-height: 32px; }
+    .detail-form-modal { padding: 40px; }
+    .heading5, .heading5-2 { font-size: 28px; line-height: 36px; }
+    .policynav { flex-direction: column; align-items: flex-start; }
+    .footlink.mr60 { margin: 0 0 16px; }
+    .footercol1.p30 { flex-direction: column; align-items: flex-start; }
+  }
+  @media screen and (max-width: 479px) {
+    .heading2 { font-size: 44px; line-height: 48px; }
+    .heading3 { font-size: 36px; line-height: 44px; }
+    .heading { font-size: 40px; line-height: 44px; }
+    .box106, .box80 { width: 44px; height: 44px; }
+    .customer-section { padding: 60px 16px; }
+  }
+</style>
+
+<script>
+  const burb = document.querySelector('.burb');
+  if (burb) {
+    // Hide header on scroll down, show on scroll up
+    const header = burb.querySelector('#burbHeader');
+    let lastTop = 0;
+    window.addEventListener('scroll', () => {
+      const st = window.scrollY || document.documentElement.scrollTop;
+      if (Math.abs(lastTop - st) <= 5) return;
+      if (st > lastTop && lastTop > 0) header.classList.add('hidden');
+      else header.classList.remove('hidden');
+      lastTop = st;
+    }, { passive: true });
+
+    // Mobile nav
+    const burger = burb.querySelector('#burbBurger');
+    burger?.addEventListener('click', () => burb.classList.toggle('nav-open'));
+    burb.querySelectorAll('.nav-link').forEach((l) =>
+      l.addEventListener('click', () => burb.classList.remove('nav-open'))
+    );
+
+    // Signup modal
+    const modal = burb.querySelector('#burbModal');
+    burb.querySelector('#burbLogin')?.addEventListener('click', () => modal?.classList.add('open'));
+    burb.querySelector('#burbModalClose')?.addEventListener('click', () => modal?.classList.remove('open'));
+    modal?.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('open'); });
+  }
+</script>

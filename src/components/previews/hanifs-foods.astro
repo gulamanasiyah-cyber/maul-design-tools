@@ -1,0 +1,130 @@
+---
+// Hanif's Foods — Card preview scene: cream grocery brand with pale-yellow hero,
+// chunky Bricolage headline with script accents, product-on-circle slideshow
+// vibe, orange marquee band, and pastel product cards. Pure CSS, cqw units.
+const A = '/assets/hanifs';
+---
+
+<div class="scene" aria-hidden="true">
+  <!-- Nav -->
+  <div class="nav">
+    <img class="logo" src={`${A}/logo.png`} alt="" />
+    <span class="links"><i>About us</i><i>Recipes</i><i>Testimonials</i><i>Contact</i></span>
+    <span class="shop">Shop all <b>→</b></span>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="dots-tex"></div>
+    <div class="hero-copy">
+      <span class="kicker">✦ SINCE 1985</span>
+      <h1>Loved in <em>Homes</em><br/>&amp; <em>Restaurants.</em></h1>
+      <span class="order">Order now →</span>
+    </div>
+    <div class="stage">
+      <span class="circle"></span>
+      <img class="prod" src={`${A}/prod-crispy-onions.webp`} alt="" />
+      <img class="sticker" src={`${A}/sticker-crispy.webp`} alt="" />
+    </div>
+  </div>
+
+  <!-- Orange marquee band -->
+  <div class="band">
+    <div class="track">
+      {Array.from({ length: 2 }).map(() => (
+        <span class="set">What People Say ✦ What People Say ✦ What People Say ✦ </span>
+      ))}
+    </div>
+  </div>
+
+  <!-- Product cards -->
+  <div class="cards">
+    <div class="card c1"><img src={`${A}/prod-basmati-rice.webp`} alt="" /><b>Basmati Rice</b></div>
+    <div class="card c2"><img src={`${A}/prod-tamarind.png`} alt="" /><b>Tamarind</b></div>
+    <div class="card c3"><img src={`${A}/prod-mango-chutney.webp`} alt="" /><b>Mango Chutney</b></div>
+    <div class="card c4"><img src={`${A}/prod-saffron.webp`} alt="" /><b>Saffron</b></div>
+  </div>
+</div>
+
+<style>
+  .scene {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    min-height: 260px;
+    background: #f6f0d3;
+    overflow: hidden;
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', system-ui, sans-serif;
+    container-type: inline-size;
+    color: #462905;
+  }
+  .scene * { box-sizing: border-box; }
+
+  /* Nav */
+  .nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.9cqw 1.6cqw;
+  }
+  .logo { height: 2.1cqw; }
+  .links { display: flex; gap: 1.3cqw; font-size: 0.62cqw; font-weight: 600; }
+  .links i { font-style: normal; }
+  .shop {
+    background: #ffc300; border-radius: 999px; font-size: 0.6cqw; font-weight: 700;
+    padding: 0.42cqw 0.95cqw;
+  }
+  .shop b { font-weight: 700; }
+
+  /* Hero */
+  .hero {
+    position: relative; flex: 1; margin: 0 1.1cqw;
+    background: #ffe594; border-radius: 1.6cqw 1.6cqw 4.5cqw 4.5cqw;
+    overflow: hidden;
+  }
+  .dots-tex {
+    position: absolute; inset: 0;
+    background-image: radial-gradient(rgba(70,41,5,0.1) 0.07cqw, transparent 0.09cqw);
+    background-size: 1.15cqw 1.15cqw;
+  }
+  .hero-copy { position: absolute; left: 2cqw; top: 2cqw; z-index: 2; }
+  .kicker { font-size: 0.56cqw; letter-spacing: 0.14em; font-weight: 700; }
+  .hero-copy h1 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800; letter-spacing: -0.02em;
+    font-size: 2.9cqw; line-height: 1.0;
+    margin: 0.7cqw 0 1cqw;
+  }
+  .hero-copy em { font-style: normal; color: #f77f00; }
+  .order {
+    display: inline-block; background: #ffc300; border-radius: 999px;
+    font-size: 0.66cqw; font-weight: 700; padding: 0.5cqw 1.15cqw;
+  }
+  .stage { position: absolute; right: 3cqw; top: 0; bottom: 0; width: 16cqw; }
+  .circle { position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 14cqw; aspect-ratio: 1; border-radius: 50%; background: #f4d69f; }
+  .prod { position: absolute; right: 1.6cqw; top: 50%; transform: translateY(-50%); width: 8.4cqw; z-index: 2; filter: drop-shadow(0 1cqw 1.6cqw rgba(70,41,5,0.28)); }
+  .sticker { position: absolute; left: 0.4cqw; top: 1.4cqw; width: 2.6cqw; z-index: 3; }
+
+  /* Band */
+  .band { background: #f77f00; overflow: hidden; padding: 0.7cqw 0; }
+  .track { display: flex; width: max-content; animation: hanifs-card-marquee 18s linear infinite; }
+  .set { color: #fff3e2; font-size: 0.78cqw; white-space: nowrap; letter-spacing: 0.04em; }
+  @keyframes hanifs-card-marquee { to { transform: translateX(-50%); } }
+
+  /* Cards */
+  .cards {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.8cqw;
+    padding: 0.9cqw 1.6cqw 1.2cqw;
+  }
+  .card {
+    border-radius: 1.1cqw 1.1cqw 2.6cqw 2.6cqw;
+    padding: 0.7cqw; display: flex; flex-direction: column; align-items: center; gap: 0.35cqw;
+    font-size: 0.58cqw; font-weight: 700; text-transform: uppercase; text-align: center;
+  }
+  .card img { width: 55%; filter: drop-shadow(0 0.4cqw 0.7cqw rgba(70,41,5,0.22)); }
+  .c1 { background: #ddccae; }
+  .c2 { background: #dbc8aa; }
+  .c3 { background: #dbf093; }
+  .c4 { background: #f1b695; }
+</style>
